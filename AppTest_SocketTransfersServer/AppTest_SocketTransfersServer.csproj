@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{96CA8D62-BE10-400A-B155-4F0B76B502B9}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AppTest_SocketTransfersServer</RootNamespace>
+    <AssemblyName>AppTest_SocketTransfersServer</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AMS.Model\AMS.Model.csproj">
+      <Project>{E523D887-004C-41D9-B9A3-6FC088C9CF92}</Project>
+      <Name>AMS.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AMS.TcpTransfersServer\AMS.TcpTransfersServer.csproj">
+      <Project>{E4790A21-A7FD-4D05-9280-C7C65A646F2D}</Project>
+      <Name>AMS.TcpTransfersServer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EnumType\EnumType.csproj">
+      <Project>{3e7c2198-f6b3-4fae-8ebf-2271e752dff3}</Project>
+      <Name>EnumType</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IService\IService.csproj">
+      <Project>{2F8165A3-5F0A-4516-8185-15A1A9708E00}</Project>
+      <Name>IService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JsonModel\SeatManage.JsonModel.csproj">
+      <Project>{58e9874a-16a6-4735-ad23-28a74449f625}</Project>
+      <Name>SeatManage.JsonModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SeatManage.DataTransfersTcpServer\SeatManage.Middleware.csproj">
+      <Project>{54d9e3a2-4f16-4cc5-91f3-c2b4aa756476}</Project>
+      <Name>SeatManage.Middleware</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SeatManageComm\SeatManageComm.csproj">
+      <Project>{19063808-3340-4563-8b40-573d8dd0baba}</Project>
+      <Name>SeatManageComm</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

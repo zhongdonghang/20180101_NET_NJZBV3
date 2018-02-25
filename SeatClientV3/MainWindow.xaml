@@ -1,0 +1,63 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="SeatClientV3.MainWindow"
+        Title="SeatMainWindow" WindowStartupLocation="Manual" Width="{Binding Path=WindowWidth,Mode=TwoWay}" Icon="/SeatClient;component/Logo.ico"  Height="{Binding Path=WindowHeight,Mode=TwoWay}" Top="{Binding Path=WindowTop,Mode=TwoWay}" Left="{Binding Path=WindowLeft,Mode=TwoWay}" Style="{DynamicResource MainWindowsStyle}" Loaded="Window_Loaded"  ShowInTaskbar ="False" Closing="Window_Closing">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Dictionary/ImageDictionary.xaml"/>
+                <ResourceDictionary Source="/Dictionary/MainWindowStyleDictionary.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Viewbox>
+        <Grid x:Name="m_Grid" Width="1080" Height="1000">
+            <TextBlock  x:Name="textBlock1" Text="{Binding NowDateTimeString}" Style="{DynamicResource DateTime}" />
+            <Image Source="{Binding LogoImage}" Margin="0,50,0,0" Width="1080" Height="178" VerticalAlignment="Top" />
+            <Canvas Style="{DynamicResource MainCanvas}" Margin="0,230,150,50" PreviewMouseDown="tab_PreviewMouseDown">
+                <!--<Image Height="700" Canvas.Left="75" Stretch="Fill" Width="825" Canvas.Top="8" Source="Resources/Background/loading.gif"/>-->
+                <Canvas x:Name="image_Canvas"  Height="700" Canvas.Left="75" Width="840" Canvas.Top="15" ClipToBounds="True">
+                    <Canvas x:Name="image_Move_Canvas" Canvas.Top="0" Canvas.Left="0" Height="2300" Width="840">
+                        <!--<Path Style="{DynamicResource PathOut}" Height="700" Canvas.Left="0" Width="840" Canvas.Top="0"/>
+                        <Path Style="{DynamicResource PathOut}" Height="700" Canvas.Left="900" Width="840" Canvas.Top="0"/>
+                        <Path Style="{DynamicResource PathOut}" Height="700" Canvas.Left="1800" Width="840" Canvas.Top="0"/>
+                        <Path Style="{DynamicResource PathOut}" Height="700" Canvas.Left="0" Width="840" Canvas.Top="800"/>
+                        <Path Style="{DynamicResource PathOut}" Height="700" Canvas.Left="900" Width="840" Canvas.Top="800"/>
+                        <Path Style="{DynamicResource PathOut}" Height="700" Canvas.Left="1800" Width="840" Canvas.Top="800"/>
+                        <Path Style="{DynamicResource PathOut}" Height="700" Canvas.Left="0" Width="840" Canvas.Top="1600"/>-->
+                    </Canvas>
+                </Canvas>
+                <Path Style="{DynamicResource PathIn}" Height="702" Canvas.Left="74" Width="842" Canvas.Top="14" Stretch="Fill"/>
+                <RadioButton x:Name="btn_Guide" Click="btn_Guide_Click" Content="使&#xa;用&#xa;手&#xa;册" Canvas.Left="15" Canvas.Top="404" Style="{DynamicResource RadioButton_Main}"/>
+                <RadioButton x:Name="btn_Note" Click="btn_Note_Click"  Content="校&#xa;园&#xa;通&#xa;知" Canvas.Left="15" Canvas.Top="508" Style="{DynamicResource RadioButton_Main}"/>
+                <RadioButton x:Name="btn_Promotion" Click="btn_Promotion_Click" Content="校&#xa;园&#xa;推&#xa;广" Canvas.Left="15" Canvas.Top="612" Style="{DynamicResource RadioButton_Main}" IsChecked="True"/>
+
+                <!--<RadioButton x:Name="btn_Guide" Click="btn_Guide_Click" Content="使&#xa;用&#xa;手&#xa;册" Canvas.Left="15" Canvas.Top="508" Style="{DynamicResource RadioButton_Main}"/>
+                <RadioButton x:Name="btn_Note" Click="btn_Note_Click"  Content="校&#xa;园&#xa;通&#xa;知" Canvas.Left="15" Canvas.Top="612" Style="{DynamicResource RadioButton_Main}" IsChecked="True"/>-->
+
+                <Button Content="Button" Canvas.Left="125" Canvas.Top="580" Width="80" Style="{DynamicResource ButtonStyle_MoveLeft}" Height="80" Click="btnlLeft_Click" Visibility="{Binding LeftBtn}"/>
+                <Button Content="Button" Canvas.Left="785" Canvas.Top="580" Width="80" Style="{DynamicResource ButtonStyle_MoveRight}" Height="80" Click="btnRight_Click" Visibility="{Binding RightBtn}"/>
+            </Canvas>
+            <ed:Callout Style="{DynamicResource MainBtnCallout}">
+                <StackPanel Style="{DynamicResource MainCalloutStackPanel}">
+                    <Line Style="{DynamicResource MainCalloutLine}" />
+                    <TextBlock  Height="auto" Text="预 约&#xa;激 活" Style="{DynamicResource MainWindowBtn}" Visibility="{Binding ActiveBokkBtn}" x:Name="activebtn" MouseDown="activebtn_MouseDown"/>
+                    <Line  Style="{DynamicResource MainCalloutLine}" Visibility="{Binding ActiveBokkBtn}"/>
+                    <TextBlock  Height="auto" Text="记 录&#xa;查 询"  Style="{DynamicResource MainWindowBtn}" x:Name="logbtn" MouseDown="logbtn_MouseDown"/>
+                    <Line  Style="{DynamicResource MainCalloutLine}"/>
+                    <TextBlock Height="auto" Text="微 信&#xa;绑 定" Style="{DynamicResource MainWindowBtn}" Visibility="{Binding WeiCharBtn}" HorizontalAlignment="Right"  x:Name="weicharbtn" MouseDown="weicharbtn_MouseDown"/>
+                    <Line  Style="{DynamicResource MainCalloutLine}" Visibility="{Binding WeiCharBtn}"/>
+                    <TextBlock Height="auto" Text="{Binding LastSeat}" Style="{DynamicResource MainWindowBtn}" HorizontalAlignment="Right" />
+                </StackPanel>
+            </ed:Callout>
+
+            <TextBox HorizontalAlignment="Right" x:Name="txt_CardNo" Margin="0,0,14,171.65" TextWrapping="NoWrap" Text="" VerticalAlignment="Bottom" Width="130" Style="{DynamicResource TextBoxStyle_S}" Visibility="{Binding TestMode}"/>
+            <Button Content="确定" HorizontalAlignment="Right" Margin="0,0,17.758,117.006" x:Name="btnGetNo" VerticalAlignment="Bottom" Style="{DynamicResource PopupButtonStyle}" Visibility="{Binding TestMode}" Click="btnGetNo_Click" />
+            <TextBlock HorizontalAlignment="Right" Margin="0,0,104,8" TextAlignment="Right" TextWrapping="Wrap" Text="{Binding PrintError}" VerticalAlignment="Bottom" Style="{DynamicResource TextBlock_Orange_M}" Width="439"/>
+            <Button Content="Button" x:Name="btn_ReCardRead" HorizontalAlignment="Right" Margin="0,0,28,224" VerticalAlignment="Bottom" Height="100" Width="100" Style="{DynamicResource ButtonStyle_ReCardReader}" Visibility="{Binding CardReaderBtn}" Click="btn_ReCardRead_Click" />
+            <Button Content="Button" Height="100" x:Name="btn_blankClose" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="100" Style="{DynamicResource ButtonStyle_HClose}" PreviewMouseLeftButtonDown="btn_blankClose_MouseLeftButtonDown" />
+            <!--<Rectangle Height="150" Margin="0,0,7,180" x:Name="imgCode" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="150" Visibility="{Binding ShowCode}"/>-->
+        </Grid>
+    </Viewbox>
+</Window>

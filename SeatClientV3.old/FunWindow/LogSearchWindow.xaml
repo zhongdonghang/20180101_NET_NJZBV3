@@ -1,0 +1,56 @@
+﻿<Window x:Class="SeatClientV3.FunWindow.LogSearchWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="LogSearchWindow"   
+        xmlns:MyUserControl="clr-namespace:SeatClientV3.MyUserControl" 
+        Width="{Binding Path=WindowWidth,Mode=TwoWay}" Height="{Binding Path=WindowHeight,Mode=TwoWay}" Top="{Binding Path=WindowTop,Mode=TwoWay}" Left="{Binding Path=WindowLeft,Mode=TwoWay}" WindowStartupLocation="Manual" Style="{DynamicResource MainWindowsStyle}" Background="{x:Null}" Closing="Window_Closing">
+    <Grid>
+        <Grid.Background>
+            <RadialGradientBrush Opacity="0.75">
+                <GradientStop Color="Black" Offset="1"/>
+                <GradientStop Color="White"/>
+            </RadialGradientBrush>
+        </Grid.Background>
+        <Viewbox>
+            <Canvas Height="1000" Width="1080">
+               <Rectangle Height="761.72" Canvas.Left="70" Stroke="#FF060606" Canvas.Top="119.28" Width="940" RadiusY="10" RadiusX="10" StrokeThickness="0">
+                	<Rectangle.Fill>
+                		<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                			<GradientStop Color="#FF0F1C2D" Offset="1"/>
+                			<GradientStop Color="#FF2F62A1"/>
+                		</LinearGradientBrush>
+                	</Rectangle.Fill>
+                    <Rectangle.Effect>
+                        <DropShadowEffect Direction="0" ShadowDepth="0" Color="Black" BlurRadius="30"/>
+                    </Rectangle.Effect>
+                </Rectangle>
+				<Rectangle Fill="#FF586C99" Height="93" Canvas.Left="70" RadiusY="10" RadiusX="10" StrokeThickness="0" Canvas.Top="119.28" Width="940"/>	
+				<Rectangle Fill="#FF586C99" Height="24" Canvas.Left="70" RadiusY="0" RadiusX="0" Stroke="White" StrokeThickness="0" Canvas.Top="192" Width="940"/>
+			    <Rectangle Fill="#FF586C99" Height="123.065" Canvas.Left="70" RadiusY="0" RadiusX="0" Stroke="White" StrokeThickness="0" Canvas.Top="235.065" Width="940"/>
+				<TextBlock Height="38" Canvas.Left="100" TextWrapping="NoWrap" Text="读者信息" Canvas.Top="241.626" Width="189" FontSize="26.667" Foreground="#FFF2E122"/>
+                <TextBlock Height="26" Canvas.Left="100" TextWrapping="NoWrap" Text="{Binding Reader.CardNo}" Canvas.Top="284.626" Width="225" FontSize="20" Foreground="#FFFFFFFF"/>
+                <TextBlock Height="26" Canvas.Left="100" TextWrapping="NoWrap" Text="{Binding Reader.ReaderName}" Canvas.Top="321.13" Width="225" FontSize="20" Foreground="#FFFFFFFF"/>
+                <TextBlock Height="26" Canvas.Left="460.187" TextWrapping="NoWrap" Text="{Binding Reader.EnterOutState}" Canvas.Top="284.626" Width="400" FontSize="20" Foreground="#FFFFFFFF"/>
+                <TextBlock Height="26" Canvas.Left="460.187" TextWrapping="NoWrap" Text="{Binding Reader.RoomSeat}" Canvas.Top="321.13" Width="400" FontSize="20" Foreground="#FFFFFFFF"/>
+                <TextBlock Height="68" Canvas.Left="100" TextWrapping="Wrap" Text="进出记录" Canvas.Top="144.28" Width="250" FontSize="45" Foreground="White" />
+                <Rectangle Fill="#FFA5B2BF" Height="84.28" Canvas.Right="60" RadiusY="5" RadiusX="5" Stroke="White" StrokeThickness="2" Canvas.Top="123" Width="84.28" Canvas.Left="890">
+                    <Rectangle.Effect>
+                        <DropShadowEffect Direction="0" ShadowDepth="0"/>
+                    </Rectangle.Effect>
+                </Rectangle>
+                <TextBlock Height="59.72" Canvas.Right="60" TextWrapping="Wrap" Text="{Binding CloseTime}" Canvas.Top="132.28" Width="84.28" FontSize="55" TextAlignment="Center" Foreground="#FFFA7E12" Canvas.Left="890"/>
+                <ScrollViewer  Canvas.Top="372.972" Grid.Column="1" Canvas.Left="100" Template="{DynamicResource Dictionary_ScrollBar}" Name="scrollViewer1" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto"  Width="880" Height="483.028">
+                    <StackPanel Margin="10,0,0,0" x:Name="Panels" Orientation="Vertical">
+
+                    </StackPanel>
+                </ScrollViewer>
+                <Button Canvas.Left="785.915" Canvas.Top="65"  x:Name="btnRead" Content="确认"  Visibility="{Binding TestMode}" Click="btnRead_Click" RenderTransformOrigin="-2.392,2.326" />
+                <TextBox TextWrapping="NoWrap" x:Name="txt_cardno" Text="" Visibility="{Binding TestMode}" Canvas.Left="629.262" Canvas.Top="65" Width="130"/>
+                <Button Content="关闭" Height="60" Canvas.Bottom="35" Canvas.Right="40" Width="160" Style="{DynamicResource ButtonStyle_Submit_Big}" Canvas.Left="850" Canvas.Top="910" Click="Button_Click"/>
+                
+                
+                
+            </Canvas>
+        </Viewbox>
+    </Grid>
+</Window>

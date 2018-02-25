@@ -1,0 +1,67 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<!--剩余座位框样式-->
+	<Style x:Key="TextBlockStyleClose" TargetType="{x:Type TextBlock}">
+		<Setter Property="Height" Value="22"/>
+		<Setter Property="TextWrapping" Value="Wrap"/>
+		<Setter Property="TextAlignment" Value="Center"/>
+        <Setter Property="Background" Value="#EBAFAFAF"/>
+		<Setter Property="Foreground" Value="White"/>
+		<Setter Property="FontFamily" Value="微软雅黑"/>
+		<Setter Property="FontSize" Value="16"/>
+	</Style>
+    <Style x:Key="TextBlockStyleNormal" TargetType="{x:Type TextBlock}">
+        <Setter Property="Height" Value="22"/>
+        <Setter Property="TextWrapping" Value="Wrap"/>
+        <Setter Property="TextAlignment" Value="Center"/>
+        <Setter Property="Background" Value="#FF44548A"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="FontFamily" Value="微软雅黑"/>
+        <Setter Property="FontSize" Value="16"/>
+    </Style>
+    <Style x:Key="TextBlockStyleCrowd" TargetType="{x:Type TextBlock}">
+        <Setter Property="Height" Value="22"/>
+        <Setter Property="TextWrapping" Value="Wrap"/>
+        <Setter Property="TextAlignment" Value="Center"/>
+        <Setter Property="Background" Value="#FFF0782C"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="FontFamily" Value="微软雅黑"/>
+        <Setter Property="FontSize" Value="16"/>
+    </Style>
+    <Style x:Key="TextBlockStyleFull" TargetType="{x:Type TextBlock}">
+        <Setter Property="Height" Value="22"/>
+        <Setter Property="TextWrapping" Value="Wrap"/>
+        <Setter Property="TextAlignment" Value="Center"/>
+        <Setter Property="Background" Value="#FFD85A5A"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="FontFamily" Value="微软雅黑"/>
+        <Setter Property="FontSize" Value="16"/>
+    </Style>
+    <!--阅览室名称样式-->
+	<Style x:Key="TextBlockStyleName" TargetType="{x:Type TextBlock}">
+		<Setter Property="Height" Value="22"/>
+		<Setter Property="TextWrapping" Value="Wrap"/>
+		<Setter Property="TextAlignment" Value="Center"/>
+		<Setter Property="Foreground" Value="White"/>
+		<Setter Property="FontFamily" Value="微软雅黑"/>
+		<Setter Property="FontSize" Value="17"/>
+	</Style>
+	<!--圆圈底色样式-->
+    <Style x:Key="EllipseStyleClose" TargetType="{x:Type Ellipse}">
+        <Setter Property="Fill" Value="#EBAFAFAF"/>
+        <Setter Property="Stroke" Value="#EBC8C3C3"/>
+	</Style>
+    <Style x:Key="EllipseStyleNormal" TargetType="{x:Type Ellipse}">
+        <Setter Property="Fill" Value="#FF44548A"/>
+        <Setter Property="Stroke" Value="#FF7186B6"/>
+    </Style>
+    <Style x:Key="EllipseStyleCrowd" TargetType="{x:Type Ellipse}">
+        <Setter Property="Fill" Value="#FFF1792D"/>
+        <Setter Property="Stroke" Value="#FFE3976B"/>
+    </Style>
+    <Style x:Key="EllipseStyleFull" TargetType="{x:Type Ellipse}">
+        <Setter Property="Fill" Value="#FFD85A5A"/>
+        <Setter Property="Stroke" Value="#FFFF8080"/>
+    </Style>
+
+</ResourceDictionary>

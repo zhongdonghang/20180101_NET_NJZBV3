@@ -1,0 +1,38 @@
+﻿<UserControl x:Class="AdvertManageClient.FunPage.UC_MainForm"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:my="clr-namespace:AdvertManageClient.FunPage.MainPageInfo"
+             mc:Ignorable="d" 
+             d:DesignHeight="550" d:DesignWidth="990">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../MyDictionary/UC_MainFormDictionary.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid Background="White" Height="550" Width="990">
+        <Rectangle Fill="#FFA39797" Height="2" Margin="0,36,0,0" Width="990" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="-1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <TextBlock HorizontalAlignment="Left" Height="28" Margin="13,5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Foreground="#E28B5D" FontFamily="微软雅黑" FontWeight="Bold" FontSize="18"><Run Language="zh-cn" Text="主页"/></TextBlock>
+        <Rectangle Fill="#FFA39797" HorizontalAlignment="Right" Margin="0,40,95,11.5" Width="2"/>
+        <Button Content="故障反馈" HorizontalAlignment="Left" Margin="906,48,0,0" Name="ErrorCallbackbtn" VerticalAlignment="Top" Width="70" Height="80" Style="{DynamicResource ButtonStyle1}" Click="ErrorCallbackbtn_Click" />
+        <Button Content="下发进度" HorizontalAlignment="Left" Margin="906,134,0,0" Name="Issuedprogressbtn" VerticalAlignment="Top" Width="70" Height="80" Style="{DynamicResource ButtonStyle3}" Click="Issuedprogressbtn_Click" />
+        <!--<Button Content="设备状态" HorizontalAlignment="Left" Margin="906,220,0,0" Name="DerviceStatusbtn" VerticalAlignment="Top" Width="70" Height="80" Style="{DynamicResource ButtonStyle2}" />-->
+        <Button Content="密码修改" HorizontalAlignment="Left" Margin="906,220,0,0" Name="PasswordChangebtn" VerticalAlignment="Top" Width="70" Height="80" Style="{DynamicResource ButtonStyle4}" Click="PasswordChangebtn_Click" />
+        <StackPanel Margin="0,40,90,-10" Width="900" Height="520">
+            <my:UC_FaultFeedback x:Name="UC_FaultFeedback" Visibility="Collapsed"></my:UC_FaultFeedback>
+            <my:UC_IssuedInfo x:Name="UC_IssuedInfo" Visibility="Collapsed"></my:UC_IssuedInfo>
+        </StackPanel>
+    </Grid>
+</UserControl>

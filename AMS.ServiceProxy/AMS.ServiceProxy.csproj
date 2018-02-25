@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E7CDB80D-0EF6-47E6-954C-579D355A3B26}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AMS.ServiceProxy</RootNamespace>
+    <AssemblyName>AMS.ServiceProxy</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Debug\AMS.ServiceProxy.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;D:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;D:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\AMS.ServiceProxy.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;D:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;D:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdvertisementOperationService.cs" />
+    <Compile Include="App_UserInfoProxy.cs" />
+    <Compile Include="FileSharingWindow.cs" />
+    <Compile Include="FlieOperator\FileOperate.cs" />
+    <Compile Include="FlieOperator\FileTransportBll.cs" />
+    <Compile Include="IAdCustomerService.cs" />
+    <Compile Include="ICallBackInfoService.cs" />
+    <Compile Include="ICommandListService.cs" />
+    <Compile Include="IDevice.cs" />
+    <Compile Include="IEnterOutLogService.cs" />
+    <Compile Include="IHardAdService.cs" />
+    <Compile Include="IPlayListService.cs" />
+    <Compile Include="IPrintTemplateService.cs" />
+    <Compile Include="IProvinceService.cs" />
+    <Compile Include="IRollTitlesService.cs" />
+    <Compile Include="ISlipCustomerService.cs" />
+    <Compile Include="ISlipPrintInfoService.cs" />
+    <Compile Include="IssuedInfoWindow.cs" />
+    <Compile Include="IssuedSchoolSelectWindow.cs" />
+    <Compile Include="IssuredCommandService.cs" />
+    <Compile Include="ITitleAdService.cs" />
+    <Compile Include="IUserInfoService.cs" />
+    <Compile Include="LoginService.cs" />
+    <Compile Include="ProjecVersionWindow.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SchoolMainWindow.cs" />
+    <Compile Include="SeatUsageOperationService.cs" />
+    <Compile Include="WcfProxy\AMS_Feedback.cs" />
+    <Compile Include="WcfProxy\AMS_SchoolProxy.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AMS.BllService\AMS.BllService.csproj">
+      <Project>{110A5FE9-68EA-4416-B7F5-599644F989D5}</Project>
+      <Name>AMS.BllService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AMS.IBllService\AMS.IBllService.csproj">
+      <Project>{B0CF0C3C-DA9A-4BC0-82EB-24277A1AF8C9}</Project>
+      <Name>AMS.IBllService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AMS.Model\AMS.Model.csproj">
+      <Project>{E523D887-004C-41D9-B9A3-6FC088C9CF92}</Project>
+      <Name>AMS.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AMS.ServiceConnectChannel\AMS.ServiceConnectChannel.csproj">
+      <Project>{01550895-8DB9-406F-AB0A-DEF7127C8E53}</Project>
+      <Name>AMS.ServiceConnectChannel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EnumType\EnumType.csproj">
+      <Project>{3E7C2198-F6B3-4FAE-8EBF-2271E752DFF3}</Project>
+      <Name>EnumType</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IWCFService.TransportService\IWCFService.TransportService.csproj">
+      <Project>{19B2BF43-EB86-450B-80C5-9BE4ADFA5420}</Project>
+      <Name>IWCFService.TransportService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SeatManageClassModel\SeatManageClassModel.csproj">
+      <Project>{E90FBBAD-98DA-4A34-B620-26DA9ADDDF85}</Project>
+      <Name>SeatManageClassModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SeatManageComm\SeatManageComm.csproj">
+      <Project>{19063808-3340-4563-8B40-573D8DD0BABA}</Project>
+      <Name>SeatManageComm</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

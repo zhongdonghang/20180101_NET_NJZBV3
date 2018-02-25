@@ -1,0 +1,68 @@
+﻿<UserControl x:Class="AdvertManageClient.FunPage.MainPageInfo.UC_FaultFeedback"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="520" d:DesignWidth="900">
+    <Grid>
+        <TextBlock Height="32" HorizontalAlignment="Left" Name="textBlock1" Text="反馈信息" VerticalAlignment="Top" Width="120" FontSize="18" Foreground="#29A9E6" Margin="16,11,0,0" />
+        <ListBox Height="452" HorizontalAlignment="Left" Margin="16,46,0,0" Name="FeedbackLbox" VerticalAlignment="Top" Width="856" Style="{StaticResource ListBoxStyle}" ItemsSource="{Binding Path=CallBackErrorInfoList}" SelectionMode="Single">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Vertical" >
+                        <WrapPanel>
+                            <Rectangle Fill="#FF29AAE7" Height="2" Margin="0,3,0,5" Width="850" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5"/>
+                        </WrapPanel>
+                        <WrapPanel>
+                            <TextBlock Text="反馈学校：" Height="24" Width="60"/>
+                            <TextBlock Text="{Binding Path=SchoolName}" Width="120" Height="24"  />
+                            <TextBlock Text="反馈人：" Height="24" Width="60"/>
+                            <TextBlock Text="{Binding Path=Markman}" Width="120" Height="24"  />
+                            <TextBlock Text="反馈时间：" Height="24" Width="60"/>
+                            <TextBlock Text="{Binding Path=FbTime}" Width="120" Height="24" />
+                            <TextBlock Text="问题类型：" Height="24" Width="60"/>
+                            <TextBlock Text="{Binding Path=ProblemType}" Width="120" Height="24"  />
+                            <TextBlock Text="解决进度：" Height="24" Width="60"/>
+                            <TextBlock Text="{Binding Path=SolveStatic}" Width="120" Height="24"  />
+                        </WrapPanel>
+                        <WrapPanel>
+                            <Rectangle Fill="#FF29AAE7" Height="0.5" Margin="0,0,0,5" Width="850" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5"/>
+                        </WrapPanel>
+                        <WrapPanel>
+                            <TextBlock Text="反馈描述：" Height="24" Width="60"/>
+                            <TextBlock Text="{Binding Path=FbDescribe}" Width="120" Height="24" />
+                        </WrapPanel>
+                        <WrapPanel>
+                            <Rectangle Fill="#FF29AAE7" Height="0.5" Margin="0,0,0,5" Width="850" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5"/>
+                        </WrapPanel>
+
+                        <WrapPanel>
+                            <TextBlock Text="解决人：" Height="24" Width="60"/>
+                            <TextBlock Text="{Binding Path=SolveMan}" Width="120" Height="24"  />
+                            <TextBlock Text="解决时间：" Height="24" Width="60"/>
+                            <TextBlock Text="{Binding Path=SolveTime}" Width="120" Height="24"  />
+                        </WrapPanel>
+                        <WrapPanel>
+                            <Rectangle Fill="#FF29AAE7" Height="0.5" Margin="0,0,0,5" Width="850" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5"/>
+                        </WrapPanel>
+                        <WrapPanel>
+                            <TextBlock Text="解决方式：" Height="24" Width="60"/>
+                            <TextBlock Text="{Binding Path=SolveWay}" Height="24" />
+                        </WrapPanel>
+                        <ContextMenuService.ContextMenu>
+                            <ContextMenu>
+                                <MenuItem Header="查看详情" Name="watchmenu" Click="watchmenu_Click" Visibility="{Binding WatchMenuVisibility}"></MenuItem>
+                                <MenuItem Header="删除反馈" Name="deletemenu" Click="deletemenu_Click" Visibility="{Binding DeleteMenuVisibility}"></MenuItem>
+                                <MenuItem Header="接手处理" Name="solvemenu" Click="solvemenu_Click" Visibility="{Binding SolveMenuVisibility}"></MenuItem>
+                                <MenuItem Header="完成处理" Name="finishmenu" Click="finishmenu_Click" Visibility="{Binding FinishMenuVisibility}"></MenuItem>
+                            </ContextMenu>
+                        </ContextMenuService.ContextMenu>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Button Content="添加反馈信息" Margin="0,12,28,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="103" Style="{DynamicResource ButtonStyleInPut}" Height="28" Click="Button_Click" />
+        <TextBlock Foreground="#FFFC0A0A" Height="24" HorizontalAlignment="Left" Margin="138,12,0,0" Name="tb_Error" Text="{Binding ErrorMessage}" TextAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Top" Width="617" />
+    </Grid>
+</UserControl>

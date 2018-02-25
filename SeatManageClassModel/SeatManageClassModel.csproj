@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E90FBBAD-98DA-4A34-B620-26DA9ADDDF85}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SeatManage.ClassModel</RootNamespace>
+    <AssemblyName>SeatManageClassModel</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Debug\SeatManageClassModel.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;D:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;D:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\SeatManageClassModel.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;D:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;D:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccessSetting.cs" />
+    <Compile Include="AdPrintTemplate.cs" />
+    <Compile Include="AMS_Advertisement.cs" />
+    <Compile Include="AMS_AdvertUsage.cs" />
+    <Compile Include="AMS_PlayList.cs" />
+    <Compile Include="AMS_PlayListMd5.cs" />
+    <Compile Include="AMS_PrintTemplateModel.cs" />
+    <Compile Include="AMS_SlipCustomer.cs" />
+    <Compile Include="AMS_TitleAdInfo.cs" />
+    <Compile Include="AMS_VideoItem.cs" />
+    <Compile Include="AMS_VideoMd5Item.cs" />
+    <Compile Include="AreaInfo.cs" />
+    <Compile Include="BespeakSeatModel\ScanCodeViewModel.cs" />
+    <Compile Include="BlackListInfo.cs" />
+    <Compile Include="BookLogInfo.cs" />
+    <Compile Include="ClientConfig.cs" />
+    <Compile Include="ClientConfigV2.cs" />
+    <Compile Include="CouponsInfo.cs" />
+    <Compile Include="DimensionalTemplate.cs" />
+    <Compile Include="EnterOutLogInfo.cs" />
+    <Compile Include="EnterOutLogStatistics.cs" />
+    <Compile Include="EnterOutLogViewModel.cs" />
+    <Compile Include="FileSimpleInfo.cs" />
+    <Compile Include="FileSliceInfo.cs" />
+    <Compile Include="FileUpdateInfo.cs" />
+    <Compile Include="HardAdvertInfo.cs" />
+    <Compile Include="LibraryInfo.cs" />
+    <Compile Include="MoveWebAppSetting.cs" />
+    <Compile Include="MsgPostSet.cs" />
+    <Compile Include="Note.cs" />
+    <Compile Include="PecketBookWebSetting.cs" />
+    <Compile Include="PlaylistInfo.cs" />
+    <Compile Include="PopAdvertInfo.cs" />
+    <Compile Include="PrintReceiptInfo.cs" />
+    <Compile Include="PromotionAdvertInfo.cs" />
+    <Compile Include="PushMsgInfo.cs" />
+    <Compile Include="PushMsssageSetting.cs" />
+    <Compile Include="ReaderAdvertInfo.cs" />
+    <Compile Include="ReaderInfo.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReaderLogInfo.cs" />
+    <Compile Include="ReaderNoticeInfo.cs" />
+    <Compile Include="ReadingRoomInfo.cs" />
+    <Compile Include="ReadingRoomOpenCloseLogInfo.cs" />
+    <Compile Include="ReadingRoomSeatUsedState.cs" />
+    <Compile Include="ReadingRoomSetting.cs" />
+    <Compile Include="ReadingRoomUsageStatistics.cs" />
+    <Compile Include="RegistryKey.cs" />
+    <Compile Include="RegulationRulesSetting.cs" />
+    <Compile Include="RollTitlesInfo.cs" />
+    <Compile Include="Room.cs" />
+    <Compile Include="RoomLayoutElement.cs" />
+    <Compile Include="ScanCodeParamModel.cs" />
+    <Compile Include="SchoolInfo.cs" />
+    <Compile Include="SchoolNoteInfo.cs" />
+    <Compile Include="Seat.cs" />
+    <Compile Include="SeatBookUsingInfo.cs" />
+    <Compile Include="SeatLayout.cs" />
+    <Compile Include="SeatNotice.cs" />
+    <Compile Include="ServerIp.cs" />
+    <Compile Include="StudyBookingLog.cs" />
+    <Compile Include="StudyRoomInfo.cs" />
+    <Compile Include="StudyRoomSetting.cs" />
+    <Compile Include="StuLibSyncSetting.cs" />
+    <Compile Include="SysFuncDicInfo.cs" />
+    <Compile Include="SysMenuInfo.cs" />
+    <Compile Include="SysRolesDicInfo.cs" />
+    <Compile Include="SystemAuthorization.cs" />
+    <Compile Include="TerminalInfo.cs" />
+    <Compile Include="ManagerPotency.cs" />
+    <Compile Include="TerminalInfoV2.cs" />
+    <Compile Include="TitleAdvertInfo.cs" />
+    <Compile Include="RoomFlowStatistics.cs" />
+    <Compile Include="RoomUsageStatistics.cs" />
+    <Compile Include="TerminalFlowStatistics.cs" />
+    <Compile Include="TerminalUsageStatistics.cs" />
+    <Compile Include="Universities.cs" />
+    <Compile Include="UserGuideInfo.cs" />
+    <Compile Include="UserInfo.cs" />
+    <Compile Include="ViewStudyBookingLog.cs" />
+    <Compile Include="ViolationRecordsLogInfo.cs" />
+    <Compile Include="WaitSeatLogInfo.cs" />
+    <Compile Include="WeiXinMsg.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EnumType\EnumType.csproj">
+      <Project>{3E7C2198-F6B3-4FAE-8EBF-2271E752DFF3}</Project>
+      <Name>EnumType</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SeatManageComm\SeatManageComm.csproj">
+      <Project>{19063808-3340-4563-8b40-573d8dd0baba}</Project>
+      <Name>SeatManageComm</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="RoomSet.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="说明.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

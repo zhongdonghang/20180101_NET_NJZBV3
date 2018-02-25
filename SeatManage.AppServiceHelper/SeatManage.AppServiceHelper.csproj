@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{69D4FBAC-378A-43CE-A909-A7872E1F4462}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SeatManage.AppServiceHelper</RootNamespace>
+    <AssemblyName>SeatManage.AppServiceHelper</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AppServiceHepler_ISeat.cs" />
+    <Compile Include="AppServiceHelper_IQRCode.cs" />
+    <Compile Include="AppServiceHelper_IReader.cs" />
+    <Compile Include="AppServiceHelper_IReadingRoom.cs" />
+    <Compile Include="AppServiceHelper_IRecords.cs" />
+    <Compile Include="AppServiceHelper_ISeatOperation.cs" />
+    <Compile Include="IQRCode.cs" />
+    <Compile Include="IReader.cs" />
+    <Compile Include="IReadingRoom.cs" />
+    <Compile Include="IRecords.cs" />
+    <Compile Include="ISeat.cs" />
+    <Compile Include="ISeatOperation.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EnumType\EnumType.csproj">
+      <Project>{3e7c2198-f6b3-4fae-8ebf-2271e752dff3}</Project>
+      <Name>EnumType</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IWCFService\IWCFService.csproj">
+      <Project>{f7c44cb4-96bd-4b90-bc1a-a4313d362fe9}</Project>
+      <Name>IWCFService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SeatManage.AppJsonModel\SeatManage.AppJsonModel.csproj">
+      <Project>{f8977c05-3e7e-4b1e-991a-c9761ccde9f4}</Project>
+      <Name>SeatManage.AppJsonModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SeatManageClassModel\SeatManageClassModel.csproj">
+      <Project>{e90fbbad-98da-4a34-b620-26da9adddf85}</Project>
+      <Name>SeatManageClassModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SeatManageComm\SeatManageComm.csproj">
+      <Project>{19063808-3340-4563-8b40-573d8dd0baba}</Project>
+      <Name>SeatManageComm</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WcfServiceForSeatManage\WcfServiceForSeatManage.csproj">
+      <Project>{68ec8640-3db5-47cc-b393-f63e608afcfb}</Project>
+      <Name>WcfServiceForSeatManage</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

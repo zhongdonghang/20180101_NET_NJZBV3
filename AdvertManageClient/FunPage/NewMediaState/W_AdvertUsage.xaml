@@ -1,0 +1,49 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:viewModel="clr-namespace:AMS.ViewModel;assembly=AMS.ViewModel"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="AdvertManageClient.FunPage.NewMediaState.W_AdvertUsage"
+        Title="W_AdvertUsage" Height="365" Width="563" WindowStartupLocation="CenterScreen">
+    <Window.Style>
+        <StaticResource ResourceKey="ChildWindowsStyle_Orange"/>
+    </Window.Style>
+    <Grid>
+        <Image Style="{StaticResource ImageStyleLogo}"/>
+        <Label Content="广告播放情况统计" Style="{StaticResource LabelStyleTitle}"/>
+        <Button Content="关 闭" HorizontalAlignment="Right" Height="40" Margin="0,0,8,8" VerticalAlignment="Bottom" Width="80" Style="{DynamicResource ButtonStyle_SubmitOrange}" Click="Button_Click" />
+        <TextBlock  Margin="8,8,0,0" Text="{Binding AdvertInfo}"  Width="auto" Style="{DynamicResource TextBlockStyle_Orange}" TextAlignment="Left" d:LayoutOverrides="HorizontalAlignment" />
+        <ListBox x:Name="LB_school" HorizontalAlignment="Left" Margin="8,36,0,0" Width="280"  ItemsSource="{Binding Path=SchoolUsageList}" Style="{DynamicResource ListBoxStyle_Orange}" Height="256" VerticalAlignment="Top" SelectionChanged="LB_school_SelectionChanged">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <WrapPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding UsageModel.SchoolName}" Width="120" Foreground="#FFE28B5D" ></TextBlock>
+                            <TextBlock Text="w:" Foreground="#FFE28B5D"  Width="15"></TextBlock>
+                            <TextBlock Text="{Binding UsageModel.WatchCount}" Width="35" Foreground="#FFE28B5D" ></TextBlock>
+                            <TextBlock Text="P:" Foreground="#FFE28B5D" Width="15"></TextBlock>
+                            <TextBlock Text="{Binding UsageModel.PrintCount}" Width="35" Foreground="#FFE28B5D" ></TextBlock>
+                        </WrapPanel>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <ListBox Margin="0,36,23,0" x:Name="LB_Item" ItemsSource="{Binding SelectedUsage.UsageModel.ItemUsage}" Style="{DynamicResource ListBoxStyle_Orange}" Height="194" VerticalAlignment="Top" HorizontalAlignment="Right" Width="229">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <WrapPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding Value.AdvertNum}" Width="170" Foreground="#FFE28B5D" />
+                        </WrapPanel>
+                        <WrapPanel Orientation="Horizontal">
+                            <TextBlock Text="w:" Foreground="#FFE28B5D"  Width="15"/>
+                            <TextBlock Text="{Binding Value.WatchCount}" Width="35" Foreground="#FFE28B5D" />
+                            <TextBlock Text="P:" Foreground="#FFE28B5D" Width="15"/>
+                            <TextBlock Text="{Binding Value.PrintCount}" Width="35" Foreground="#FFE28B5D" />
+                        </WrapPanel>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <TextBlock  Margin="301,8,0,0" Text="{Binding ErrorMessage}" Style="{DynamicResource TextBlockStyle_ERROR}" Height="24" VerticalAlignment="Top" HorizontalAlignment="Left" Width="244" FontSize="10.667" d:LayoutOverrides="VerticalAlignment" />
+    </Grid>
+</Window>

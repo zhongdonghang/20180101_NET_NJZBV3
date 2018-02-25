@@ -1,0 +1,13 @@
+﻿<UserControl x:Class="AdvertManageClient.FunPage.NewMediaState.UC_SchoolMediaState"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+              d:DesignHeight="500" d:DesignWidth="890" Background="#FFFFFFFF">
+    <Grid>
+    	<TextBlock  Text="学校当期广告查询" VerticalAlignment="Top" Style="{DynamicResource TextBlockStyle_Orange}" Margin="12,14.348,0,0"/>
+    	<TextBlock  Margin="493,12.986,0,0" Text="错误列表" Style="{DynamicResource TextBlockStyle_ERROR}" Height="24.757" VerticalAlignment="Top" d:LayoutOverrides="VerticalAlignment" HorizontalAlignment="Left" Width="389" />
+    	<ListBox Margin="8,42.348,8,8" Style="{DynamicResource ListBoxStyle_Orange}"/>    
+    </Grid>
+</UserControl>

@@ -1,0 +1,11 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<Style x:Key="TextBlockStyle_Blue_S" TargetType="{x:Type TextBlock}">
+		<Setter Property="TextWrapping" Value="Wrap"/>
+		<Setter Property="TextTrimming" Value="None"/>
+		<Setter Property="Foreground" Value="#FF7D80A2"/>
+		<Setter Property="FontFamily" Value="微软雅黑"/>
+		<Setter Property="FontSize" Value="22"/>
+		<Setter Property="Height" Value="26"/>
+	</Style>
+</ResourceDictionary>

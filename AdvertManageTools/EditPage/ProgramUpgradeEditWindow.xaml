@@ -1,0 +1,9 @@
+﻿<Window x:Class="AdvertManageTools.EditPage.ProgramUpgradeEditWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:myControl="clr-namespace:AdvertManageTools.UserControl"
+        Title="ProgramUpgradeEditWindow" Height="630" Width="510" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <myControl:ProgramUpgrade  x:Name="program"  ></myControl:ProgramUpgrade>
+    </Grid>
+</Window>

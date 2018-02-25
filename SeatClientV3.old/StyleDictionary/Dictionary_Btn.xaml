@@ -1,0 +1,525 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero" xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing">
+
+    <Style x:Key="ButtonFocusVisual">
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <Rectangle StrokeDashArray="1 2" StrokeThickness="1" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" SnapsToDevicePixels="true" Margin="2"/>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <LinearGradientBrush x:Key="ButtonNormalBackground" EndPoint="0,1" StartPoint="0,0">
+        <GradientStop Color="#F3F3F3" Offset="0"/>
+        <GradientStop Color="#EBEBEB" Offset="0.5"/>
+        <GradientStop Color="#DDDDDD" Offset="0.5"/>
+        <GradientStop Color="#CDCDCD" Offset="1"/>
+    </LinearGradientBrush>
+    <SolidColorBrush x:Key="ButtonNormalBorder" Color="#FF707070"/>
+    <Style x:Key="ButtonStyle_MF_LogSearch" TargetType="{x:Type Button}">
+        <Setter Property="FocusVisualStyle" Value="{StaticResource ButtonFocusVisual}"/>
+        <Setter Property="Background" Value="{StaticResource ButtonNormalBackground}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource ButtonNormalBorder}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Padding" Value="1"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Themes:ButtonChrome x:Name="Chrome" BorderBrush="{TemplateBinding BorderBrush}" Background="{TemplateBinding Background}" RenderMouseOver="{TemplateBinding IsMouseOver}" RenderPressed="{TemplateBinding IsPressed}" RenderDefaulted="{TemplateBinding IsDefaulted}" SnapsToDevicePixels="true">
+                        <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                    </Themes:ButtonChrome>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsKeyboardFocused" Value="true">
+                            <Setter Property="RenderDefaulted" TargetName="Chrome" Value="true"/>
+                        </Trigger>
+                        <Trigger Property="ToggleButton.IsChecked" Value="true">
+                            <Setter Property="RenderPressed" TargetName="Chrome" Value="true"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Foreground" Value="#ADADAD"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <SolidColorBrush x:Key="CheckBoxStroke" Color="#8E8F8F"/>
+    <Style x:Key="CheckRadioFocusVisual">
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <Rectangle Margin="14,0,0,0" SnapsToDevicePixels="true" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" StrokeThickness="1" StrokeDashArray="1 2"/>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="ButtonStyle_FM_LogSearch" TargetType="{x:Type Button}">
+        <Setter Property="Background" Value="#F4F4F4"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Viewbox>
+                        <Canvas x:Name="acv" Height="500" Width="500">
+                            <Rectangle x:Name="nocheckedRec"  Height="500" Canvas.Left="0" Stroke="White" Canvas.Top="0" Width="500" StrokeThickness="5" RadiusX="50" RadiusY="50">
+                                <Rectangle.Fill>
+                                    <SolidColorBrush Color="White" Opacity="0.25"/>
+                                </Rectangle.Fill>
+                                <Rectangle.Effect>
+                                    <DropShadowEffect Color="Black" ShadowDepth="0" BlurRadius="50" Opacity="1"/>
+                                </Rectangle.Effect>
+                            </Rectangle>
+                            <Rectangle Visibility="Hidden" Height="500" x:Name="checkedRec" Canvas.Left="0" Stroke="White" Canvas.Top="0" Width="500" StrokeThickness="5" RadiusX="50" RadiusY="50">
+                                <Rectangle.Fill>
+                                    <SolidColorBrush Color="White" Opacity="0.4"/>
+                                </Rectangle.Fill>
+                                <Rectangle.Effect>
+                                    <DropShadowEffect Color="White" ShadowDepth="0" BlurRadius="100" Opacity="1"/>
+                                </Rectangle.Effect>
+                            </Rectangle>
+                            <Ellipse Fill="{x:Null}" Height="300" Canvas.Left="100" Stroke="White" Canvas.Top="50" Width="300" StrokeThickness="25"/>
+                            <Line X1="0" X2="0" Y1="0" Y2="150" Stroke="White" StrokeThickness="26" Canvas.Left="250" Canvas.Top="60"/>
+                            <Line X1="0" X2="100" Y1="0" Y2="0" Stroke="White" StrokeThickness="26" Canvas.Left="238" Canvas.Top="200"/>
+                            <TextBlock Height="100" Canvas.Left="90" Canvas.Top="360" Width="320" FontSize="80" Foreground="White"><Run Language="zh-cn" Text="记录查询"/></TextBlock>
+                        </Canvas>
+                    </Viewbox>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver"  Value="true">
+                            <Setter TargetName="checkedRec" Property="Visibility" Value="Visible"/>
+                            <Setter TargetName="nocheckedRec" Property="Visibility" Value="Hidden"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="ButtonStyle_ActiveBespeak" TargetType="{x:Type Button}">
+        <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+        <Setter Property="Background" Value="#F4F4F4"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Viewbox>
+                        <Canvas x:Name="acv" Height="500" Width="500">
+                            <Rectangle x:Name="nocheckedRec"  Height="500" Canvas.Left="0" Stroke="White" Canvas.Top="0" Width="500" StrokeThickness="5" RadiusX="50" RadiusY="50">
+                                <Rectangle.Fill>
+                                    <SolidColorBrush Color="White" Opacity="0.25"/>
+                                </Rectangle.Fill>
+                                <Rectangle.Effect>
+                                    <DropShadowEffect Color="Black" ShadowDepth="0" BlurRadius="50" Opacity="1"/>
+                                </Rectangle.Effect>
+                            </Rectangle>
+                            <Rectangle Visibility="Hidden" Height="500" x:Name="checkedRec" Canvas.Left="0" Stroke="White" Canvas.Top="0" Width="500" StrokeThickness="5" RadiusX="50" RadiusY="50">
+                                <Rectangle.Fill>
+                                    <SolidColorBrush Color="White" Opacity="0.4"/>
+                                </Rectangle.Fill>
+                                <Rectangle.Effect>
+                                    <DropShadowEffect Color="White" ShadowDepth="0" BlurRadius="100" Opacity="1"/>
+                                </Rectangle.Effect>
+                            </Rectangle>
+                            <Ellipse Fill="{x:Null}" Height="193.111" Canvas.Left="223.361" Stroke="White" Canvas.Top="35.373" Width="168.971" StrokeThickness="25" RenderTransformOrigin="0.5,0.5">
+                                <Ellipse.RenderTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform/>
+                                        <SkewTransform/>
+                                        <RotateTransform Angle="-45"/>
+                                        <TranslateTransform/>
+                                    </TransformGroup>
+                                </Ellipse.RenderTransform>
+                            </Ellipse>
+                            <Line X1="20" X2="0" Y1="20" Y2="0" Stroke="White" StrokeThickness="30" Canvas.Left="126.719" Canvas.Top="254.609"/>
+                            <Line X1="0" X2="120" Y1="120" Y2="0" Stroke="White" StrokeThickness="30" Canvas.Left="129.512" Canvas.Top="192.375"/>
+                            <TextBlock Height="100" Canvas.Left="90" Canvas.Top="360" Width="320" FontSize="80" Foreground="White"><Run Language="zh-cn" Text="预约激活"/></TextBlock>
+                        </Canvas>
+                    </Viewbox>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter TargetName="checkedRec" Property="Visibility" Value="Visible"/>
+                            <Setter TargetName="nocheckedRec" Property="Visibility" Value="Hidden"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="ButtonStyle_LastSeat" TargetType="{x:Type Button}">
+        <Setter Property="Background" Value="#F4F4F4"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Viewbox>
+                        <Canvas x:Name="acv"  Height="500" Width="500">
+                            <Rectangle x:Name="nocheckedRec" Height="500" Canvas.Left="0" Stroke="White" Canvas.Top="0" Width="500" StrokeThickness="5" RadiusX="50" RadiusY="50">
+                                <Rectangle.Fill>
+                                    <SolidColorBrush Color="White" Opacity="0.25"/>
+                                </Rectangle.Fill>
+                                <Rectangle.Effect>
+                                    <DropShadowEffect Color="Black" ShadowDepth="0" BlurRadius="50" Opacity="1"/>
+                                </Rectangle.Effect>
+                            </Rectangle>
+                            <Rectangle Visibility="Hidden" Height="500" x:Name="checkedRec" Canvas.Left="0" Stroke="White" Canvas.Top="0" Width="500" StrokeThickness="5" RadiusX="50" RadiusY="50">
+                                <Rectangle.Fill>
+                                    <SolidColorBrush Color="White" Opacity="0.4"/>
+                                </Rectangle.Fill>
+                                <Rectangle.Effect>
+                                    <DropShadowEffect Color="White" ShadowDepth="0" BlurRadius="100" Opacity="1"/>
+                                </Rectangle.Effect>
+                            </Rectangle>
+                            <Line X1="0" X2="0" Y1="0" Y2="150" Stroke="White" StrokeThickness="50" Canvas.Left="155" Canvas.Top="40" />
+                            <Line X1="0" X2="150" Y1="0" Y2="0" Stroke="White" StrokeThickness="50" Canvas.Left="200" Canvas.Top="235"/>
+                            <TextBlock Height="100" Canvas.Left="90" Canvas.Top="360" Width="320" FontSize="80" Foreground="White"><Run Language="zh-cn" Text="剩余座位"/></TextBlock>
+                            <ed:Arc ArcThickness="0" ArcThicknessUnit="Pixel" EndAngle="270" Height="150" Canvas.Left="130" Stretch="None" Stroke="White" StrokeThickness="50" StartAngle="180" Canvas.Top="110" Width="150">
+                                <ed:Arc.Fill>
+                                    <SolidColorBrush Color="White" Opacity="0.25"/>
+                                </ed:Arc.Fill>
+                            </ed:Arc>
+                            <Line X1="0" X2="-30" Y1="0" Y2="100" Stroke="White" StrokeThickness="50" Canvas.Left="200" Canvas.Top="250" />
+                            <Line X1="0" X2="30" Y1="0" Y2="100" Stroke="White" StrokeThickness="50" Canvas.Left="310" Canvas.Top="250" />
+                        </Canvas>
+                    </Viewbox>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter TargetName="checkedRec" Property="Visibility" Value="Visible"/>
+                            <Setter TargetName="nocheckedRec" Property="Visibility" Value="Hidden"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <!--<Style x:Key="RadioButtonStyle_SchoolNote" TargetType="{x:Type RadioButton}">
+        <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+        <Setter Property="Background" Value="#F4F4F4"/>
+        <Setter Property="BorderBrush" Value="{StaticResource CheckBoxStroke}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type RadioButton}">
+                    <Viewbox>
+                        <Canvas x:Name="acv"  Height="500" Width="500">
+                            <Rectangle x:Name="nocheckedRec" Height="500" Canvas.Left="0" Stroke="White" Canvas.Top="0" Width="500" StrokeThickness="5" RadiusX="50" RadiusY="50">
+                                <Rectangle.Fill>
+                                    <SolidColorBrush Color="White" Opacity="0.25"/>
+                                </Rectangle.Fill>
+                                <Rectangle.Effect>
+                                    <DropShadowEffect Color="Black" ShadowDepth="0" BlurRadius="50" Opacity="1"/>
+                                </Rectangle.Effect>
+                            </Rectangle>
+                            <Rectangle Visibility="Hidden" Height="500" x:Name="checkedRec" Canvas.Left="0" Stroke="White" Canvas.Top="0" Width="500" StrokeThickness="5" RadiusX="50" RadiusY="50">
+                                <Rectangle.Fill>
+                                    <SolidColorBrush Color="White" Opacity="0.4"/>
+                                </Rectangle.Fill>
+                                <Rectangle.Effect>
+                                    <DropShadowEffect Color="White" ShadowDepth="0" BlurRadius="100" Opacity="1"/>
+                                </Rectangle.Effect>
+                            </Rectangle>
+                            <TextBlock Height="100" Canvas.Left="90" Canvas.Top="360" Width="320" FontSize="80" Foreground="White"><Run Language="zh-cn" Text="校园通知"/></TextBlock>
+                            <ed:Callout AnchorPoint="0.3,1.3" FontSize="14.667" Height="200" Canvas.Left="100" Stroke="White" StrokeThickness="20" Canvas.Top="70" Width="300" StrokeLineJoin="Round" CalloutStyle="RoundedRectangle"/>
+                            <Ellipse Height="35" Canvas.Left="165" Stroke="{x:Null}" StrokeThickness="20" Canvas.Top="155" Width="35" Fill="White"/>
+                            <Ellipse Height="35" Canvas.Left="235" Stroke="{x:Null}" StrokeThickness="20" Canvas.Top="155" Width="35" Fill="White"/>
+                            <Ellipse Height="35" Canvas.Left="305" Stroke="{x:Null}" StrokeThickness="20" Canvas.Top="155" Width="35" Fill="White"/>
+                        </Canvas>
+                    </Viewbox>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter TargetName="checkedRec" Property="Visibility" Value="Visible"/>
+                            <Setter TargetName="nocheckedRec" Property="Visibility" Value="Hidden"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>-->
+    <Style x:Key="ButtonStyle_Left" TargetType="{x:Type Button}">
+        <Setter Property="FocusVisualStyle" Value="{StaticResource ButtonFocusVisual}"/>
+        <Setter Property="Background" Value="{StaticResource ButtonNormalBackground}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource ButtonNormalBorder}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Padding" Value="1"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Viewbox>
+                        <Canvas Height="300" Width="200">
+                            <Canvas.Background>
+                                <SolidColorBrush Color="White" Opacity="0"/>
+                            </Canvas.Background>
+                            <Path Data="M0,100 L200,0 L200,100 L100,150 L200,200 L200,300 L0,200 L0,100" StrokeThickness="20">
+                                <Path.Effect>
+                                    <DropShadowEffect Color="White" ShadowDepth="0" BlurRadius="100" Opacity="1"/>
+                                </Path.Effect>
+                                <Path.Stroke>
+                                    <SolidColorBrush Color="#FF2B6090" Opacity="0.5"/>
+                                </Path.Stroke>
+                                <Path.Fill>
+                                    <SolidColorBrush Color="White" Opacity="0.5"/>
+                                </Path.Fill>
+                            </Path>
+                        </Canvas>
+                    </Viewbox>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="ButtonStyle_Right" TargetType="{x:Type Button}">
+        <Setter Property="FocusVisualStyle" Value="{StaticResource ButtonFocusVisual}"/>
+        <Setter Property="Background" Value="{StaticResource ButtonNormalBackground}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource ButtonNormalBorder}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Padding" Value="1"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Viewbox>
+                        <Canvas Height="300" Width="200" RenderTransformOrigin="0.5,0.5">
+                            <Canvas.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform/>
+                                    <SkewTransform/>
+                                    <RotateTransform Angle="180"/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Canvas.RenderTransform>
+                            <Canvas.Background>
+                                <SolidColorBrush Color="White" Opacity="0"/>
+                            </Canvas.Background>
+                            <Path Data="M0,100 L200,0 L200,100 L100,150 L200,200 L200,300 L0,200 L0,100" StrokeThickness="20">
+                                <Path.Effect>
+                                    <DropShadowEffect Color="White" ShadowDepth="0" BlurRadius="100" Opacity="1"/>
+                                </Path.Effect>
+                                <Path.Stroke>
+                                    <SolidColorBrush Color="#FF2B6090" Opacity="0.5"/>
+                                </Path.Stroke>
+                                <Path.Fill>
+                                    <SolidColorBrush Color="White" Opacity="0.5"/>
+                                </Path.Fill>
+                            </Path>
+
+                        </Canvas>
+                    </Viewbox>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="RadioButtonStyle_RoomArea" TargetType="{x:Type RadioButton}">
+        <Setter Property="Foreground" Value="#FFFFFFFF"/>
+        <Setter Property="FontSize" Value="48"/>
+        <Setter Property="Background" Value="#F4F4F4"/>
+        <Setter Property="BorderBrush" Value="{StaticResource CheckBoxStroke}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type RadioButton}">
+                    <Viewbox>
+                        <Canvas Height="150" Width="300">
+                            <Path Stroke="White" x:Name="path" StrokeThickness="5" Data="M100,0 300,0 300,150 100,150 C100,150 0,75 100,0" StrokeStartLineCap="Round" StrokeEndLineCap="Round">
+                                <Path.Effect>
+                                    <DropShadowEffect BlurRadius="5" ShadowDepth="1" Direction="225" Color="#FF0C5FA0"/>
+                                </Path.Effect>
+                                <Path.Fill>
+                                    <SolidColorBrush Color="White" Opacity="0.2"/>
+                                </Path.Fill>
+                            </Path>
+                            <ContentPresenter x:Name="txt" TextBlock.TextAlignment="Center" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="0" RecognizesAccessKey="True" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Height="64" Canvas.Left="105" Width="190" Canvas.Top="40"/>
+                        </Canvas>
+                    </Viewbox>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked" Value="true">
+                            <Setter Property="Foreground" Value="#FF0C5FA0"/>
+                            <Setter TargetName="path" Property="Data" Value="M50,0 300,0 300,150 50,150 C50,150 -50,75 50,0"/>
+                            <Setter TargetName="path" Property="Fill" Value="#FFA5B2BF"/>
+                            <Setter TargetName="txt" Property="Canvas.Left" Value="55"/>
+                            <Setter TargetName="txt" Property="Width" Value="200"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="ButtonStyle_PopClose" TargetType="{x:Type Button}">
+        <Setter Property="FocusVisualStyle" Value="{StaticResource ButtonFocusVisual}"/>
+        <Setter Property="Background" Value="{StaticResource ButtonNormalBackground}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource ButtonNormalBorder}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Padding" Value="1"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid>
+                        <Viewbox>
+                            <Canvas Height="40" Width="40">
+                                <Ellipse Height="40" Width="40" Stroke="White" StrokeThickness="2">
+                                    <Ellipse.Fill>
+                                        <SolidColorBrush Color="White" Opacity="0.01"/>
+                                    </Ellipse.Fill>
+                                </Ellipse>
+                                <Line X1="10" X2="30" Y1="10" Y2="30" Stroke="White" StrokeThickness="2"/>
+                                <Line X1="30" X2="10" Y1="10" Y2="30" Stroke="White" StrokeThickness="2"/>
+                            </Canvas>
+                        </Viewbox>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="ButtonStyle_Submit" TargetType="{x:Type Button}">
+        <Setter Property="FocusVisualStyle" Value="{StaticResource ButtonFocusVisual}"/>
+        <Setter Property="Background" Value="{StaticResource ButtonNormalBackground}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource ButtonNormalBorder}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Foreground" Value="#FFFFFFFF"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Padding" Value="1"/>
+        <Setter Property="FontSize" Value="36"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Viewbox>
+                        <Grid Width="160" Height="60">
+                            <Rectangle HorizontalAlignment="Left" Height="60" Stroke="White" VerticalAlignment="Top" Width="160" StrokeThickness="2" RadiusX="10" RadiusY="10">
+                                <Rectangle.Fill>
+                                    <SolidColorBrush Color="White" Opacity="0.2"/>
+                                </Rectangle.Fill>
+                            </Rectangle>
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Grid>
+                    </Viewbox>
+                    <ControlTemplate.Triggers>
+
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="ButtonStyle_Submit_Big" TargetType="{x:Type Button}">
+        <Setter Property="FocusVisualStyle" Value="{StaticResource ButtonFocusVisual}"/>
+        <Setter Property="Background" Value="{StaticResource ButtonNormalBackground}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource ButtonNormalBorder}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Foreground" Value="#FFFFFFFF"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Padding" Value="1"/>
+        <Setter Property="FontSize" Value="32"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Viewbox>
+                        <Grid Width="160" Height="60">
+                            <Rectangle HorizontalAlignment="Left" Height="60" Stroke="White" VerticalAlignment="Top" Width="160" StrokeThickness="2" RadiusX="10" RadiusY="10">
+                                <Rectangle.Fill>
+                                    <SolidColorBrush Color="#FF0C5FA0" Opacity="0.4"/>
+                                </Rectangle.Fill>
+                            </Rectangle>
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Grid>
+                    </Viewbox>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+	<!--退格按钮-->
+	<Style x:Key="ButtonStyle_back" TargetType="{x:Type Button}">
+		<Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+		<Setter Property="Background" Value="{x:Null}"/>
+		<Setter Property="BorderBrush" Value="{x:Null}"/>
+		<Setter Property="BorderThickness" Value="0"/>
+		<Setter Property="Foreground" Value="White"/>
+		<Setter Property="HorizontalContentAlignment" Value="Center"/>
+		<Setter Property="VerticalContentAlignment" Value="Center"/>
+		<Setter Property="Height" Value="38"/>
+		<Setter Property="Width" Value="105"/>
+		<Setter Property="Padding" Value="1"/>
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type Button}">
+					<Canvas>
+							<Rectangle Height="38" StrokeThickness="2" Width="105">
+				<Rectangle.Fill>
+					<SolidColorBrush Color="White" Opacity="0.3"/>
+				</Rectangle.Fill>
+			</Rectangle>
+			<Path  Stroke="White" Fill="White" Data="M20,19 L40,5 L40,15 L80,15 L80,23 L40,23 L40,33 L20,19 "/>
+					</Canvas>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+<!--数字字母键-->
+	<Style x:Key="ButtonStyle_key" TargetType="{x:Type Button}">
+		<Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+		<Setter Property="Background" Value="{x:Null}"/>
+		<Setter Property="BorderBrush" Value="{x:Null}"/>
+		<Setter Property="BorderThickness" Value="0"/>
+		<Setter Property="Foreground" Value="White"/>
+		<Setter Property="HorizontalContentAlignment" Value="Center"/>
+		<Setter Property="VerticalContentAlignment" Value="Center"/>
+		<Setter Property="Height" Value="60"/>
+		<Setter Property="Width" Value="60"/>
+		<Setter Property="Padding" Value="1"/>
+		<Setter Property="FontSize" Value="26"/>
+        <Setter Property="FontFamily" Value="微软雅黑"/>
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type Button}">
+					<Canvas>
+						<ContentPresenter RecognizesAccessKey="True" Width="60" TextBlock.TextAlignment="Center" Height="32" Canvas.Top="11" />
+						<Rectangle Height="60" Width="60" Stroke="White" RadiusX="10" RadiusY="10"  StrokeThickness="2"  >
+							<Rectangle.Fill>
+								<SolidColorBrush Color="White" Opacity="0.4"/>
+							</Rectangle.Fill>
+						</Rectangle>
+					</Canvas>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	<!--确认键-->
+	<Style x:Key="ButtonStyle_Enter" TargetType="{x:Type Button}">
+		<Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+		<Setter Property="Background" Value="{x:Null}"/>
+		<Setter Property="BorderBrush" Value="{x:Null}"/>
+		<Setter Property="BorderThickness" Value="0"/>
+		<Setter Property="Foreground" Value="White"/>
+		<Setter Property="HorizontalContentAlignment" Value="Center"/>
+		<Setter Property="VerticalContentAlignment" Value="Center"/>
+		<Setter Property="Height" Value="60"/>
+		<Setter Property="Width" Value="120"/>
+		<Setter Property="Padding" Value="1"/>
+		<Setter Property="FontSize" Value="26"/>
+		<Setter Property="FontFamily" Value="微软雅黑"/>
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type Button}">
+					<Canvas>
+						<ContentPresenter RecognizesAccessKey="True" Width="120" TextBlock.TextAlignment="Center" Height="32" Canvas.Top="11" />
+						<Rectangle Height="60" Width="120" Stroke="White" RadiusX="10" RadiusY="10"  StrokeThickness="2"  >
+							<Rectangle.Fill>
+								<SolidColorBrush Color="White" Opacity="0.4"/>
+							</Rectangle.Fill>
+						</Rectangle>
+					</Canvas>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+</ResourceDictionary>

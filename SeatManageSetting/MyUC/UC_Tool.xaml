@@ -1,0 +1,22 @@
+﻿<UserControl x:Class="SeatManageSetting.MyUC.UC_Tool"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="400" d:DesignWidth="650" Background="White">
+    <Grid>
+    	<GroupBox Header="连接字符加密解密" HorizontalAlignment="Left" Height="132.5" Margin="10,10,0,0" VerticalAlignment="Top" Width="251.333" Style="{DynamicResource GroupBoxStyle_Blue}">
+    		<Grid>
+    			<TextBox HorizontalAlignment="Left" Margin="2.13,18.366,0,0" TextWrapping="Wrap" Text="net.tcp://192.168.1.100:8201/" VerticalAlignment="Top" Width="237.203" Style="{DynamicResource TextBoxStylePutIn_Blue}"/>
+    			<TextBlock HorizontalAlignment="Left" Text="连接字符串：" VerticalAlignment="Top" Style="{DynamicResource TextBlockStyle_com}" Margin="2.13,3.126,0,0"/>
+    			<TextBox HorizontalAlignment="Left" TextAlignment="Left"  Margin="2.13,54.606,0,0" TextWrapping="Wrap" Text="92plv293pGC3zAUR2ANB5j8UIcqclP6Ke36dLnZ0LRQ=" VerticalAlignment="Top" Width="237.203" Style="{DynamicResource TextBoxStylePutIn_Blue}" Height="29.5" VerticalContentAlignment="Top"/>
+    			<TextBlock HorizontalAlignment="Left" Text="加密字符串：" VerticalAlignment="Top" Style="{DynamicResource TextBlockStyle_com}" Margin="2.13,39.366,0,0"/>
+				<Button Content="加密字符串" HorizontalAlignment="Left" Height="20" Margin="164.333,89.106,0,0" VerticalAlignment="Top" Width="75" Style="{DynamicResource ButtonStyle_Submit}"/>
+				<Button Content="解密字符串" HorizontalAlignment="Left" Height="20" Margin="84.333,89.106,0,0" VerticalAlignment="Top" Width="75" Style="{DynamicResource ButtonStyle_Submit}"/>
+
+    		</Grid>
+    	</GroupBox>
+            
+    </Grid>
+</UserControl>

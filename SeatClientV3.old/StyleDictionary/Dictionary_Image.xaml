@@ -1,0 +1,6 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ImageBrush x:Key="MainBackgroundImage" ImageSource="../Resources/Background/MainWindowBackground.jpg"/>
+    <ImageBrush x:Key="BackgroundImage" ImageSource="../Resources/Background/MainWindowBackground.jpg"/>
+    <SolidColorBrush x:Key="MainColor" Color="#FF2B6090"/>
+</ResourceDictionary>

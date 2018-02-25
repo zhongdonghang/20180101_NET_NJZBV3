@@ -1,0 +1,61 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="AdvertManageClient.FunPage.NewMediaEdit.W_PlaylistEdit"
+        Title="W_PlaylistEdit" Height="390" Width="700" WindowStartupLocation="CenterScreen" PreviewMouseLeftButtonDown="Window_PreviewMouseLeftButtonDown" MouseLeftButtonDown="Window_MouseLeftButtonDown" Loaded="Window_Loaded">
+    <Window.Style>
+        <StaticResource ResourceKey="ChildWindowsStyle_Orange"/>
+    </Window.Style>
+    <Grid>
+        <Image Style="{StaticResource ImageStyleLogo}"/>
+        <Label Content="冠名广告编辑" Style="{StaticResource LabelStyleTitle}"/>
+
+
+
+        <Button Content="关 闭" x:Name="btn_Close" HorizontalAlignment="Right" Height="40" Margin="0,0,8,8" VerticalAlignment="Bottom" Width="80" Style="{DynamicResource ButtonStyle_SubmitOrange}" Click="btn_Close_Click" />
+        <Button Content="保 存" x:Name="btn_Save" HorizontalAlignment="Right" Height="40" Margin="0,0,93,8" VerticalAlignment="Bottom" Width="80" Style="{DynamicResource ButtonStyle_SubmitOrange}" Click="btn_Save_Click" />
+        <TextBlock  Margin="0,5,0,0" Text="广告编号："  Width="86" Style="{DynamicResource TextBlockStyle_Orange}"/>
+        <TextBox x:Name="txt_no" Margin="90,5.152,0,0" Text="{Binding Num}"  Width="140" Style="{DynamicResource TextBoxStylePutIn_Orange}"/>
+        <TextBlock  Margin="245.332,5.152,0,0" Text="广告名称："  Width="80" Style="{DynamicResource TextBlockStyle_Orange}"/>
+        <TextBox x:Name="txt_name" Margin="329.332,5,0,0" Text="{Binding Name}"  Width="140" Style="{DynamicResource TextBoxStylePutIn_Orange}"/>
+        <TextBlock  Margin="475.667,5,0,0" Text="编辑人："  Width="65" Style="{DynamicResource TextBlockStyle_Orange}" />
+        <TextBlock  Margin="544.667,5,0,0" Text="{Binding Operator}"  Width="140" Style="{DynamicResource TextBlockStyle_Orange}" TextAlignment="Left" HorizontalAlignment="Left" />
+        <TextBlock  Margin="6,33.385,0,0" Text="开始日期：" Style="{DynamicResource TextBlockStyle_Orange}" HorizontalAlignment="Left" VerticalAlignment="Top" d:LayoutOverrides="VerticalAlignment" />
+        <DatePicker x:Name="dd_start" Margin="90,33.618,0,0" Width="140" Text="{Binding EffectDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  Style="{DynamicResource DatePickerStyleInput_Orange}" VerticalAlignment="Top" d:LayoutOverrides="HorizontalAlignment, VerticalAlignment" />
+        <TextBlock  Margin="245.332,33.618,0,0" Text="结束日期：" Style="{DynamicResource TextBlockStyle_Orange}" HorizontalAlignment="Left" VerticalAlignment="Top" d:LayoutOverrides="HorizontalAlignment, VerticalAlignment"/>
+        <DatePicker x:Name="dd_end" Margin="329.332,33.152,0,0" Width="140" Text="{Binding EndDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  Style="{DynamicResource DatePickerStyleInput_Orange}" VerticalAlignment="Top" Height="24" d:LayoutOverrides="HorizontalAlignment, VerticalAlignment" />
+        <GroupBox Header="播放媒体（1080x920/1080x763/1080x607）" x:Name="gb_item" Margin="8,61.152,0,0" Style="{DynamicResource GroupBoxStyle_Orange}" HorizontalAlignment="Left" Width="676.667" Height="215.667" VerticalAlignment="Top">
+            <Grid>
+                <Button Content="添加+" Style="{DynamicResource ButtonStyle_Orange}" x:Name="btn_VideoItemadd"  HorizontalAlignment="Left" Width="60" Click="btn_VideoItemadd_Click" Height="24" VerticalAlignment="Bottom" Margin="-1.333,0,0,0" />
+                <Button Content="←左移" Style="{DynamicResource ButtonStyle_Orange}" x:Name="btn_VideoItemMoveLift"  HorizontalAlignment="Left" Width="60" Margin="62.667,0,0,0" Click="btn_VideoItemMoveLift_Click" Height="24" VerticalAlignment="Bottom" />
+                <Button Content="右移→" Style="{DynamicResource ButtonStyle_Orange}" x:Name="btn_VideoItemMoveRight"  HorizontalAlignment="Left" Width="60" Margin="126.667,0,0,0" Click="btn_VideoItemMoveRight_Click" Height="24" VerticalAlignment="Bottom" />
+                <Button Content="删除X" Style="{DynamicResource ButtonStyle_Orange}" x:Name="btn_VideoItemDelete" Margin="256.667,0,0,0" HorizontalAlignment="Left" Width="60" Click="btn_VideoItemDelete_Click" Height="24.163" VerticalAlignment="Bottom" />
+                <Button Content="更换↔" HorizontalAlignment="Left" Margin="190.667,0,0,0" x:Name="btn_VideoItemSelectImage" Style="{DynamicResource ButtonStyle_Orange}" Width="60"  Click="btn_VideoItemSelectImage_Click" Height="24" VerticalAlignment="Bottom"/>
+                <ListBox Margin="0,2,0,0" x:Name="LB_VideoItem" Style="{DynamicResource ListBoxStyle_Orange}" ItemsSource="{Binding Path=VideoItems}" ScrollViewer.VerticalScrollBarVisibility="Disabled" ScrollViewer.HorizontalScrollBarVisibility="Visible" Height="162.83" VerticalAlignment="Top">
+                    <ListBox.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel IsItemsHost="True" />
+                        </ItemsPanelTemplate>
+                    </ListBox.ItemsPanel>
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <StackPanel Orientation="Vertical" Height="150" Width="130">
+                                    <WrapPanel Height="130">
+                                        <Image Source="{Binding ShowImage}" Margin="5,5,0,0" Height="120"  Width="120"/>
+                                    </WrapPanel>
+                                    <WrapPanel Height="25">
+                                        <TextBlock  Margin="5,0,0,0" Text="时长："  Width="auto" Height="20" Style="{DynamicResource TextBlockStyle_Orange}" FontSize="14" />
+                                        <TextBox  Margin="0,0,0,0" Text="{Binding PlayTime}" Height="20" FontSize="14"  Width="50" Style="{DynamicResource TextBoxStylePutIn_Orange}"/>
+                                        <TextBlock  Margin="10,0,0,0" Text="秒"  Width="auto" Height="20" Style="{DynamicResource TextBlockStyle_Orange}" FontSize="14" />
+                                    </WrapPanel>
+                                </StackPanel>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </Grid>
+        </GroupBox>
+        <TextBlock Margin="10,280.819,0,0" TextWrapping="Wrap" Text="{Binding ErrorMessage}" Style="{DynamicResource TextBlockStyle_ERROR}" FontSize="12" Height="41.181" VerticalAlignment="Top" HorizontalAlignment="Left" Width="503"/>
+    </Grid>
+</Window>

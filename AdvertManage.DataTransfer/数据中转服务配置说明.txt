@@ -1,0 +1,19 @@
+﻿1.数据访问服务连接：节点添加在：configuration/connectionStrings下
+    <!--juneberry远程服务的终结点-->
+    <add name="AdvertServiceEndpointAddress" connectionString="92plv293pGC3zAUR2ANB5t3NIf+NmW4topYfOlQMZAY="/>
+    <!--学校座位系统服务访问的终结点-->
+    <add name="EndpointAddress" connectionString="92plv293pGC3zAUR2ANB5hvIRUw4e4oSDdi9z1X2m0I=" />
+
+2.配置节点：节点添加在：configuration/appSettings下
+    <!--数据中转服务接口信息 value值： 逗号前为类的命名空间+类名称，后面为程序集名称-->
+    <add key="ServiceAssembly" value="AdvertManage.DataTransfer.DataTransferService,AdvertManage.DataTransfer"/>
+    <!-- 记录上传时间-->
+    <add key="LogUploadTime" value="2:00"/>
+    <!--服务循环间隔时间-->
+    <add key="Interval" value="10000"/>
+    <!--学校编号-->
+    <add key="SchoolNo" value="20111010"/>
+    <!--终端授权：0 本地服务直接授权；1 服务器授权-->
+    <add key="empower" value="1"/>
+    <!--是否在线：Y 在线；N 不在线，如果设置错误，终端授权也会停止。-->
+    <add key="Online" value="Y"/>

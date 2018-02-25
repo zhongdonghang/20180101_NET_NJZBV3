@@ -1,0 +1,70 @@
+﻿<UserControl x:Class="AdvertManageClient.FunPage.SchoolManage.UC_SchoolInfoDetail"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="500" d:DesignWidth="600"  Visibility="{Binding SchoolDetail.Visibility}">
+    <Grid Height="500">
+    	<Grid.Background>
+    		<ImageBrush ImageSource="/AdvertManageClient;component/Image/LoginMiddle.png"/>
+    	</Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="286" />
+            <RowDefinition Height="214" />
+        </Grid.RowDefinitions>
+        <Label Content="编号：" Height="28" Name="label1" Margin="8,7,548,0" VerticalAlignment="Top" />
+        <Label Content="名称：" Height="28" Name="label2" Margin="205,8,353,0" VerticalAlignment="Top" />
+        <Label Content="省份：" Height="28" Name="label3" Margin="416,7,144,0" VerticalAlignment="Top" RenderTransformOrigin="0.542,0.476" />
+        <Label Content="联系人：" Height="28" Name="label8" Margin="8,103,532,0" VerticalAlignment="Top" d:LayoutOverrides="VerticalAlignment" />
+        <Label Content="校区数：" Height="28" Name="label4" Margin="8,39,538,0" VerticalAlignment="Top" />
+        <Label Content="设备数：" Height="28" Name="label5" Margin="205,40,339,0" VerticalAlignment="Top" />
+        <Label Content="安装进度：" Height="28" Name="label6" Margin="416,71,120,0" VerticalAlignment="Top" />
+        <Label Content="安装日期：" Height="28" Name="label7" Margin="8,71,528,0" VerticalAlignment="Top" d:LayoutOverrides="Height" />
+        <Label Content="实施人：" Height="28" Name="label9" Margin="205,73,331,0" VerticalAlignment="Top" d:LayoutOverrides="Height" />
+
+        <Label Content="{Binding SchoolDetail.SchoolDetail.Number}" Height="28" Name="lblNumber" Margin="56,8,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="135" />
+        <Label Content="{Binding SchoolDetail.SchoolDetail.Name}" Height="28" Name="lblName" Margin="251,7,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="150" />
+        <Label Content="{Binding SchoolDetail.SchoolDetail.Province}" Height="28" Name="lblProvince" Margin="462,7,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" />
+        <Label Content="{Binding SchoolDetail.SchoolDetail.LinkMan}" Name="lblLinkMan" Margin="76,103,8,0" Height="75" VerticalAlignment="Top" HorizontalAlignment="Left" />
+        <Label Content="{Binding SchoolDetail.SchoolDetail.CampusCount}" Height="28" Name="lblCampusCount" Margin="66,40,493.667,0" VerticalAlignment="Top" HorizontalAlignment="Left" />
+        <Label Content="{Binding SchoolDetail.SchoolDetail.DeviveCount}" Height="28" Name="lblDeviveCount" Margin="267,40,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="41" />
+        <Label Content="{Binding SchoolDetail.SchoolDetail.ExecuteProgress}" Height="28" Name="lblExecuteProgress" Margin="486,71,0,0" VerticalAlignment="Top"  HorizontalAlignment="Left"/>
+        <Label Content="{Binding SchoolDetail.SchoolDetail.InstallDate}" Name="lblInstallDate" Margin="76,74,421,0" Height="27" VerticalAlignment="Top" HorizontalAlignment="Left" />
+        <Label Content="学校地址：" Height="28" x:Name="label8_Copy" Margin="8,182,528,0" VerticalAlignment="Top" />
+        <Label Content="{Binding SchoolDetail.SchoolDetail.Address}" x:Name="lblLinkadd" Margin="76,182,0,0"  Height="75" VerticalAlignment="Top" HorizontalAlignment="Left" />
+        <Label Content="校区信息：" Height="28" x:Name="label8_Copy1" Margin="8,258,512,0" VerticalAlignment="Top" />
+        <Label Content="{Binding SchoolDetail.SchoolDetail.InstallMan}" Height="28" Name="lblInstallMan" Margin="267,73,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" d:LayoutOverrides="Height" /> 
+        <ListView ItemsSource="{Binding SchoolDetail.CampusList}" x:Name="listView" Grid.Row="1" Margin="5,5,5,12" BorderBrush="#FF29AAE7" BorderThickness="2"> <!--Style="{DynamicResource ListBoxStyle}"-->
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="编号" Width="200" DisplayMemberBinding="{Binding Path=Number}"/>
+                    <GridViewColumn Header="校区名称" Width="200" DisplayMemberBinding="{Binding Path=Name}"/> 
+                    <GridViewColumn Header="设备数量" Width="60" DisplayMemberBinding="{Binding Path=DeviceCount}"/> 
+                </GridView>
+            </ListView.View>
+            <!--<ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Vertical" >
+                        <WrapPanel>
+                            <Rectangle Fill="#FF29AAE7" Height="2" Margin="0,3,0,5" Width="550" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5"/>
+                        </WrapPanel>
+                        <WrapPanel>
+                            <TextBlock Text="{Binding Path=Name}" Width="150" Height="16" />
+                            <TextBlock Text="编号：" Height="16" Width="45"/>
+                            <TextBlock Text="{Binding Path=Number}" Width="150" Height="16" />
+                            <TextBlock Text="终端数：" Height="16" Width="80"/>
+                            <TextBlock Text="{Binding Path=DeviceCount}" Height="16" Width="40" />
+                        </WrapPanel>
+                        <ContextMenuService.ContextMenu>
+                            <ContextMenu>
+                                <MenuItem Header="编辑" Name="campusedit"></MenuItem>
+                            </ContextMenu>
+                        </ContextMenuService.ContextMenu>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>-->
+        </ListView>
+
+    </Grid>
+</UserControl>

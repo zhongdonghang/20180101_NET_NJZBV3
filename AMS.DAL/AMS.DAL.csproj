@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{74834339-F663-4FB5-A4F3-6860FC822B99}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AMS.DAL</RootNamespace>
+    <AssemblyName>AMS.DAL</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Debug\AMS.DAL.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;D:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisRuleDirectories>;D:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\AMS.DAL.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;D:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisRuleDirectories>;D:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AMS_AdCustomer.cs" />
+    <Compile Include="AMS_Advertisement.cs" />
+    <Compile Include="AMS_AdvertisementSchoolCopy.cs" />
+    <Compile Include="AMS_AdvertUsage.cs" />
+    <Compile Include="AMS_AuthorizeSys.cs" />
+    <Compile Include="AMS_CallBackErrorInfo.cs" />
+    <Compile Include="AMS_Campus.cs" />
+    <Compile Include="AMS_CommandList.cs" />
+    <Compile Include="AMS_Device.cs" />
+    <Compile Include="AMS_EnterOutLog.cs" />
+    <Compile Include="AMS_EnterOutLogStatus.cs" />
+    <Compile Include="AMS_ErrorLogs.cs" />
+    <Compile Include="AMS_Feedback.cs" />
+    <Compile Include="AMS_HardAd.cs" />
+    <Compile Include="AMS_IssureList.cs" />
+    <Compile Include="AMS_PlayList.cs" />
+    <Compile Include="AMS_PrintTemplate.cs" />
+    <Compile Include="AMS_Province.cs" />
+    <Compile Include="AMS_ReaderInfo.cs" />
+    <Compile Include="AMS_School.cs" />
+    <Compile Include="AMS_SlipCustomer.cs" />
+    <Compile Include="AMS_SlipPrintInfo.cs" />
+    <Compile Include="AMS_TitleAd.cs" />
+    <Compile Include="AMS_UserInfo.cs" />
+    <Compile Include="App_UserInfo.cs" />
+    <Compile Include="FileSharingInfo.cs" />
+    <Compile Include="ProgramUpgrade.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SlipReleaseCampus.cs" />
+    <Compile Include="SMS_SeatUsage.cs" />
+    <Compile Include="View_Advertisement.cs" />
+    <Compile Include="View_AdvertisementCopy.cs" />
+    <Compile Include="View_AdvertUsage.cs" />
+    <Compile Include="View_AuthorizeSys.cs" />
+    <Compile Include="View_CallBackErrorInfo.cs" />
+    <Compile Include="View_Campus.cs" />
+    <Compile Include="View_CommandList.cs" />
+    <Compile Include="View_Device.cs" />
+    <Compile Include="View_EnterOutLog.cs" />
+    <Compile Include="View_FileSharingInfo.cs" />
+    <Compile Include="View_HardAd.cs" />
+    <Compile Include="View_IssureList.cs" />
+    <Compile Include="View_PlayList.cs" />
+    <Compile Include="View_PrintTemplate.cs" />
+    <Compile Include="View_ReaderInfo.cs" />
+    <Compile Include="AMS_RollTitles.cs" />
+    <Compile Include="View_RollTitles.cs" />
+    <Compile Include="View_School.cs" />
+    <Compile Include="View_SeatUsage.cs" />
+    <Compile Include="View_SlipCustomer.cs" />
+    <Compile Include="View_SlipPrintInfo.cs" />
+    <Compile Include="View_SlipReleaseCampus.cs" />
+    <Compile Include="View_TitleAd.cs" />
+    <Compile Include="WeiXin_Admin.cs" />
+    <Compile Include="WeiXin_Advertise.cs" />
+    <Compile Include="WeiXin_Response.cs" />
+    <Compile Include="WeiXin_Users.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AMS.Model\AMS.Model.csproj">
+      <Project>{E523D887-004C-41D9-B9A3-6FC088C9CF92}</Project>
+      <Name>AMS.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DBUtility\DBUtility.csproj">
+      <Project>{E36B0E11-7FC9-4224-850F-E10CB57FB284}</Project>
+      <Name>DBUtility</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

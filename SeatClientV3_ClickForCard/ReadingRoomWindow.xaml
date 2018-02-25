@@ -1,0 +1,81 @@
+﻿<Window xmlns:MyUserControl="clr-namespace:SeatClientV3.MyUserControl" 
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing" x:Class="SeatClientV3.ReadingRoomWindow"
+        Title="ReadingRoomWindow" Style="{DynamicResource WindowsStyle}"
+    WindowStartupLocation="Manual" Width="{Binding Path=WindowWidth,Mode=TwoWay}" Icon="/SeatClient;component/Logo.ico"  Height="{Binding Path=WindowHeight,Mode=TwoWay}" Top="{Binding Path=WindowTop,Mode=TwoWay}" Left="{Binding Path=WindowLeft,Mode=TwoWay}"  ShowInTaskbar ="False">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Dictionary/ImageDictionary.xaml"/>
+                <ResourceDictionary Source="/Dictionary/ReadingRoomWindowStyleDictionary.xaml"/>
+                <ResourceDictionary Source="/Dictionary/CommStyleDictionary.xaml"/>
+                <ResourceDictionary Source="/Dictionary/UC_ReadingRoomDictionary.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Viewbox >
+        <Grid x:Name="G_bg" Width="1080" Height="1000">
+            <Rectangle Fill="White" Opacity="0.25" Margin="35,152,35,100"/>
+            <Path  Data="M20,0 L240,0 L260,60 L0,60 L20,0 L20,0"   Height="60" Width="240"  Stretch="Uniform"  Margin="45,34.361,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" >
+                <Path.Fill>
+                    <SolidColorBrush Color="White" Opacity="0.5"/>
+                </Path.Fill>
+            </Path>
+            <TextBlock Height="42"  Text="选择阅览室"   Style="{DynamicResource TextBlock_White_L}" Canvas.Top="59" Margin="85,40,0,0" HorizontalAlignment="Left" Width="auto" VerticalAlignment="Top" />
+            <Rectangle StrokeThickness="2" Stroke="White" Margin="35,90,0,0" Height="62" VerticalAlignment="Top" HorizontalAlignment="Left" Width="264">
+                <Rectangle.Fill>
+                    <SolidColorBrush Color="White" Opacity="0.5"/>
+                </Rectangle.Fill>
+            </Rectangle>
+            <Rectangle StrokeThickness="2" Stroke="White" Margin="297,90,35,0" Height="62" VerticalAlignment="Top">
+                <Rectangle.Fill>
+                    <SolidColorBrush Color="White" Opacity="0.5"/>
+                </Rectangle.Fill>
+            </Rectangle>
+            <Rectangle Height="65" Stroke="White" StrokeThickness="2" Margin="35,0,35,35" VerticalAlignment="Bottom">
+                <Rectangle.Fill>
+                    <SolidColorBrush Color="White" Opacity="0.5"/>
+                </Rectangle.Fill>
+            </Rectangle>
+
+            <TextBlock  Text="读者信息"  Width="134" Style="{DynamicResource TextBlock_Orange_L}" Margin="100,100,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            <TextBlock  Text="请选择您要进入的阅览室!"  Width="365" Style="{DynamicResource TextBlock_Orange_L}" Margin="500,100,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+
+            <Rectangle Height="404" Stroke="White" StrokeThickness="2" Width="264" Margin="35,0,0,98"  VerticalAlignment="Bottom" HorizontalAlignment="Left"/>
+            <Image Height="402" Width="260" Source="{Binding ReaderAdOImage}" Margin="37,0,0,100" VerticalAlignment="Bottom" HorizontalAlignment="Left" ></Image>
+
+            <Rectangle  Stroke="White" StrokeThickness="2" Margin="35,150,0,500" HorizontalAlignment="Left" Width="264"/>
+            <StackPanel Margin="37,150,0,502" HorizontalAlignment="Left" Width="260">
+                <TextBlock  Text="{Binding ReaderStatusInfo.CardNo}" Margin="10,10,10,0" TextWrapping="NoWrap"  Style="{DynamicResource TextBlock_White_MS}"/>
+                <TextBlock  Text="{Binding ReaderStatusInfo.ReaderName}" Margin="10,10,10,0"   TextWrapping="NoWrap" Style="{DynamicResource TextBlock_White_MS}"/>
+                <TextBlock Text="{Binding ReaderStatusInfo.EnterOutState}" Margin="10,10,10,0"  TextWrapping="NoWrap" Style="{DynamicResource TextBlock_White_MS}"/>
+                <TextBlock Text="{Binding ReaderStatusInfo.ReadingRoomName}" Margin="10,10,10,0" TextWrapping="NoWrap"  Height="auto"  Style="{DynamicResource TextBlock_White_MS}"/>
+                <TextBlock  Text="{Binding ReaderStatusInfo.SeatNo}" Margin="10,10,10,0"  TextWrapping="NoWrap" Style="{DynamicResource TextBlock_White_MS}"/>
+            </StackPanel>
+            <Button Content="常坐座位" x:Name="usuallySeatBtn" Style="{DynamicResource ButtonStyle_L}" Visibility="{Binding UsuallySeatBtn}" Click="usuallySeatBtn_Click" Margin="0,0,175,45" VerticalAlignment="Bottom" HorizontalAlignment="Right" />
+            <Button Content="退  出" x:Name="closeBtn"  Style="{DynamicResource ButtonStyle_L}" Click="closeBtn_Click" Margin="0,0,45,45" HorizontalAlignment="Right" VerticalAlignment="Bottom" />
+            <Rectangle Height="100" Canvas.Left="295" Stroke="White" Width="100" RadiusX="10" RadiusY="10" Margin="0,15,16,0" VerticalAlignment="Top" HorizontalAlignment="Right">
+                <Rectangle.Fill>
+                    <SolidColorBrush Color="#FF5A6C9A" Opacity="1"/>
+                </Rectangle.Fill>
+            </Rectangle>
+            <Rectangle Height="100" Canvas.Left="295" Stroke="White" Width="100" RadiusX="10" RadiusY="10" Margin="0,15,16,0" HorizontalAlignment="Right" VerticalAlignment="Top">
+                <Rectangle.Fill>
+                    <SolidColorBrush Color="White" Opacity="0.5"/>
+                </Rectangle.Fill>
+            </Rectangle>
+            <Rectangle Fill="#FFF2711D" Margin="300,153,35,0" Stroke="#FFF2711D" StrokeThickness="5" Height="5" VerticalAlignment="Top"/>
+            <Rectangle Fill="#FFF2711D" Margin="300,266,35,0" Stroke="#FFF2711D" StrokeThickness="5" Height="5" VerticalAlignment="Top"/>
+            <TextBlock Height="90" Text="{Binding CloseTime}" TextAlignment="Center"  FontSize="60" Width="100" Style="{DynamicResource TextBlock_Orange_L}" Margin="0,25,16,0" HorizontalAlignment="Right" VerticalAlignment="Top"/>
+            <TabControl Margin="302,157,35,100" Background="{x:Null}" x:Name="TabCont" BorderBrush="{x:Null}">
+            </TabControl>
+            <Grid x:Name="g_loading" Visibility="Hidden">
+                <Grid.Background>
+                    <SolidColorBrush Color="Black" Opacity="0.3"/>
+                </Grid.Background>
+                <MyUserControl:UC_Loading Height="200" Width="200"  VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            </Grid>
+        </Grid>
+    </Viewbox>
+</Window>

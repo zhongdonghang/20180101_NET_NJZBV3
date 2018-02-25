@@ -1,0 +1,32 @@
+﻿<UserControl x:Class="AdvertManageTools.UserControl.PrintTemplateInfo"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="1100">
+    <Grid>
+        <Button Content="发布新的打印模板" Height="23" HorizontalAlignment="Left" Margin="10,10,0,0" Name="AddNewPlayList" VerticalAlignment="Top" Width="123" />
+        <DataGrid AutoGenerateColumns="False" Background="{x:Null}" BorderBrush="#FFD3D3F5" Height="549" HorizontalAlignment="Left" HorizontalGridLinesBrush="Black" Margin="10,39,0,0" Name="TemplateGrid" VerticalAlignment="Top" Width="1078" VerticalGridLinesBrush="{x:Null}" CanUserResizeRows="False" CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserSortColumns="False" CanUserAddRows="False" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="模板名称" MinWidth="250" Binding="{Binding Describe}" />
+                <DataGridTextColumn Header="生效日期" MinWidth="150" Binding="{Binding StartTime,StringFormat={}{0:yyyy-MM-dd}}" />
+                <DataGridTextColumn Header="结束日期" MinWidth="450" Binding="{Binding EndTime,StringFormat={}{0:yyyy-MM-dd}}" />
+                <DataGridTemplateColumn Header="下发" MinWidth="75">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="下发" Name="btnRelease" Click="btnRelease_Click" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="导出离线版" MinWidth="75">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="导出"  Name="btnDownload" Click="btnDownload_Click"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</UserControl>

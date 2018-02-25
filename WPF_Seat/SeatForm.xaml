@@ -1,0 +1,37 @@
+﻿<Window x:Name="mainForm" x:Class="WPF_Seat.SeatForm"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:MyControl="clr-namespace:WPF_Seat.MyControl"
+        xmlns:Microsoft_Windows_Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero"
+    Title="SeatForm" Height="{Binding Path=Window.Height}" Width="{Binding Path=Window.Width}" WindowStyle="None"   AllowsTransparency="True" BorderThickness="0" Top="{Binding Path=Window.Top}" Left="{Binding Path=Window.Left}" Loaded="Window_Loaded" mc:Ignorable="d" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" d:DesignHeight="635" d:DesignWidth="861" SizeToContent="WidthAndHeight">
+    <Window.Background>
+        <ImageBrush  ImageSource="bin/Debug/BackGroundImg/SelectSeatForm.jpg"></ImageBrush>
+    </Window.Background>
+    <Window.Resources>
+         
+    </Window.Resources>
+    <Canvas Height="{Binding Path=MainCanvas.Height}" Width="{Binding Path=MainCanvas.Width}" x:Name="mainCanvas"> 
+            <Canvas x:Name="SeatWindow" Width="{Binding Path=SeatWindow.Width}" Height="{Binding Path=SeatWindow.Height}"  Canvas.Top="{Binding Path=SeatWindow.Top}"  ClipToBounds="True" Canvas.Left="{Binding Path=SeatWindow.Left}">
+            <Canvas x:Name="CanvaseSeat" Width="1080" Height="1000" Canvas.Left="5">
+                
+            </Canvas>
+        </Canvas>
+        <Label Content="{Binding    Path=ViewModel.RoomName}"  Canvas.Left="{Binding Path=LabTitle.Left}" Canvas.Top="{Binding Path=LabTitle.Top}"  Height="{Binding Path=LabTitle.Height}" x:Name="LabTitle" Width="{Binding Path=LabTitle.Width}"  FontSize="20" FontWeight="50" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+            <Label.Background>
+                <ImageBrush ImageSource="bin/Debug/BackGroundImg/readRoomNameLong.png"></ImageBrush>
+            </Label.Background>
+        </Label>
+        <!--<Label DataContext="{Binding Path=Window}" Canvas.Left="443" Canvas.Top="33" Height="65" x:Name="lblCloseTime" Width="85" FontSize="49.333" Foreground="Yellow" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="黑体" FontWeight="Bold"/>-->
+        <Label Canvas.Left="{Binding Path=LblCloseTime.Left}" Content="{Binding   Path=ViewModel.CountDownSeconds}" Canvas.Top="{Binding Path=LblCloseTime.Top}" Height="{Binding Path=LblCloseTime.Height}" x:Name="lblCloseTime" Width="{Binding Path=LblCloseTime.Width}" FontSize="49.333" Foreground="Yellow" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="黑体" FontWeight="Bold"/>
+        <Label Canvas.Left="{Binding Path=LblAllSeatCount.Left}" Content="{Binding   Path=ViewModel.SeatAmcountAll}" Canvas.Top="{Binding Path=LblAllSeatCount.Top}" Height="{Binding Path=LblAllSeatCount.Height}" x:Name="lblAllSeatCount" Width="{Binding Path=LblAllSeatCount.Width}" FontSize="20" FontWeight="50" Foreground="Black"></Label>
+        <Label Canvas.Left="{Binding Path=LblAtSeatCount.Left}" Content="{Binding  Path=ViewModel.SeatAmcountUsed}" Canvas.Top="{Binding Path=LblAtSeatCount.Top}" Height="{Binding Path=LblAtSeatCount.Height}" x:Name="lblAtSeatCount" Width="{Binding Path=LblAtSeatCount.Width}" FontSize="20" FontWeight="50" Foreground="Black"></Label>
+        <Label Canvas.Left="{Binding Path=LblFreeSeatCount.Left}" Content="{Binding  Path=ViewModel.SeatAmcountFree}" Canvas.Top="{Binding Path=LblFreeSeatCount.Top}" Height="{Binding Path=LblFreeSeatCount.Height}" x:Name="lblFreeSeatCount" Width="{Binding Path=LblFreeSeatCount.Width}" FontSize="20" FontWeight="50" Foreground="Black"></Label>
+        <Button Canvas.Left="{Binding Path=BtnBack.Left}" Canvas.Top="{Binding Path=BtnBack.Top}" Height="{Binding Path=BtnBack.Height}" x:Name="btnBack" Width="{Binding Path=BtnBack.Width}" Click="btnBack_Click"></Button>
+        <Canvas x:Name="slt" Canvas.Left="{Binding Path=Slt.Left}" Width="{Binding Path=Slt.Width}" Height="{Binding Path=Slt.Height}" Canvas.Top="{Binding Path=Slt.Top}">
+            <Canvas.Background>
+                <ImageBrush  ImageSource="bin/Debug/BackGroundImg/seatSmall.png"></ImageBrush>
+            </Canvas.Background>
+        </Canvas>
+        <Canvas x:Name="Thumbnail" Canvas.Left="{Binding Path=Thumbnail.Left}" Width="{Binding Path=Thumbnail.Width}" Height="{Binding Path=Thumbnail.Height}" Canvas.Top="{Binding Path=Thumbnail.Top}" MouseDown="Thumbnail_MouseDown" ClipToBounds="True" Panel.ZIndex="1" Background="#00000000"></Canvas>
+    </Canvas>
+</Window>

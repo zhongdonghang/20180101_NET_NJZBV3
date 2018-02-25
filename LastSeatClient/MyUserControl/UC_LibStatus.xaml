@@ -1,0 +1,50 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing" x:Class="LastSeatClient.MyUserControl.UC_LibStatus" 
+             mc:Ignorable="d" 
+             d:DesignHeight="125" d:DesignWidth="330">
+    <Grid>
+        <Viewbox>
+            <Grid  Height="125" Width="330">
+                <ed:Arc ArcThickness="30" ArcThicknessUnit="Pixel" EndAngle="400" HorizontalAlignment="Left" Height="120" Stretch="None" Stroke="White" StartAngle="135" VerticalAlignment="Top" Width="120">
+                    <ed:Arc.Effect>
+                        <DropShadowEffect/>
+                    </ed:Arc.Effect>
+                    <ed:Arc.Fill>
+                        <SolidColorBrush Color="#FFF4F4F5" Opacity="0.7"/>
+                    </ed:Arc.Fill>
+                </ed:Arc>
+                <ed:Arc ArcThickness="30" ArcThicknessUnit="Pixel" EndAngle="{Binding StatusAngle}" HorizontalAlignment="Left" Height="120" Stretch="None" Stroke="White" StartAngle="135" VerticalAlignment="Top" Width="120" Fill="{Binding ArcColor}">
+                    <ed:Arc.Effect>
+                        <DropShadowEffect ShadowDepth="2"/>
+                    </ed:Arc.Effect>
+                </ed:Arc>
+                <Rectangle HorizontalAlignment="Left" Height="50" Margin="96,16,0,0" Stroke="White" VerticalAlignment="Top" Width="182" RadiusY="10" RadiusX="10">
+                    <Rectangle.Fill>
+                        <SolidColorBrush Color="{Binding RoomNameColor}" Opacity="0.8"/>
+                    </Rectangle.Fill>
+                    <Rectangle.Effect>
+                        <DropShadowEffect/>
+                    </Rectangle.Effect>
+                </Rectangle>
+                <Rectangle HorizontalAlignment="Left" Height="26" Margin="110,71,0,0" RadiusY="5" RadiusX="5" Stroke="White" VerticalAlignment="Top" Width="215">
+                    <Rectangle.Fill>
+                        <SolidColorBrush Color="{Binding UsingInfoColor}" Opacity="0.8"/>
+                    </Rectangle.Fill>
+                    <Rectangle.Effect>
+                        <DropShadowEffect/>
+                    </Rectangle.Effect>
+                </Rectangle>
+                <Grid HorizontalAlignment="Left" VerticalAlignment="Top" Margin="96,16,0,0" Height="50" Width="182" >
+                    <TextBlock HorizontalAlignment="Center"  TextWrapping="Wrap" Text="{Binding RoomName}" VerticalAlignment="Center" Width="160" Foreground="White" TextAlignment="Center" FontSize="16"/>
+                </Grid>
+                <Grid HorizontalAlignment="Left" VerticalAlignment="Top" Margin="110,71,0,0" Height="26" Width="215" >
+                    <TextBlock HorizontalAlignment="Center"  TextWrapping="NoWrap" Text="{Binding UsingInfoText}" VerticalAlignment="Center" Width="220" Foreground="White" TextAlignment="Center" FontSize="12"/>
+                </Grid>
+            </Grid>
+        </Viewbox>
+    </Grid>
+</UserControl>

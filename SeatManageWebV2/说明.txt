@@ -1,0 +1,33 @@
+﻿预约记录查询	FunctionPages/ReaderLog/SelectBespeakLog.aspx
+进出记录查询	FunctionPages/ReaderLog/SelectEnterOutLog.aspx
+违规记录查询	FunctionPages/ReaderLog/SelectViolateDiscipline.aspx
+黑名单记录查询	FunctionPages/ReaderLog/SelectBlacklist.aspx
+功能页面管理	FunctionPages/SystemSet/FunctionPagesManage.aspx
+功能菜单管理	FunctionPages/SystemSet/MenuManage.aspx
+用户管理	FunctionPages/UsersManage/UserInfo.aspx
+角色管理	FunctionPages/UsersManage/RoleManage.aspx
+用户授权	FunctionPages/UsersManage/UserAuthorize.aspx
+密码修改	FunctionPages/UsersManage/ChangePassword.aspx
+校区信息管理	FunctionPages/SchoolInfoManage/SchoolInfo.aspx
+图书馆信息管理	FunctionPages/SchoolInfoManage/LibraryInfo.aspx
+阅览室信息管理	FunctionPages/SchoolInfoManage/ReadingRoomInfo.aspx
+终端信息管理	FunctionPages/SchoolInfoManage/DeviceInfo.aspx
+阅览室监控（图形）	FunctionPages/SeatMonitor/MonitorGraphMode.aspx
+阅览室监控（列表）	FunctionPages/SeatMonitor/MonitorListMode.aspx
+进出记录管理	FunctionPages/LogManage/EnterOutLog.aspx
+预约记录管理	FunctionPages/LogManage/BespeakLog.aspx
+违规记录管理	FunctionPages/LogManage/ViolateDiscipline.aspx
+黑名单记录管理	FunctionPages/LogManage/Blacklist.aspx
+阅览室使用情况统计	FunctionPages/Statistical/RoomUseInfo.aspx
+进出读者记录统计	FunctionPages/Statistical/ReaderLogInfo.aspx
+同步设置	FunctionPages/ReaderSync/SyncSet.aspx
+手动同步	FunctionPages/ReaderSync/ManuallySync.aspx
+座位预约	FunctionPages/SeatBespeak/BespeakSeat.aspx
+预约流程	FunctionPages/SeatBespeak/BespeakProcess.aspx
+黑名单设置	FunctionPages/SchoolInfoManage/BlacklistInfo.aspx
+
+统一身份认证配置说明：
+ redirectLoginPage：登录处理的地址，如果采用统一身份认证，则直接映射该地址。否则默认为Default.aspx
+ LogOutUrl:注销处理的地址，如果采用统一身份认证，则直接认证登出的处理地址。否则默认为LogOut.aspx
+    <add key="redirectLoginPage" value="/SHHYIndex.aspx"></add>
+    <add key="LogOutUrl" value="/SHHYLogOut.aspx"></add>

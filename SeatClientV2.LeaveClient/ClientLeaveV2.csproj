@@ -1,0 +1,510 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{72CA8BC5-30A7-4F80-B7BD-B2EB01A92B48}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SeatClientV2.LeaveClient</RootNamespace>
+    <AssemblyName>LeaveClient</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <Utf8Output>true</Utf8Output>
+    <ExpressionBlendVersion>4.0.20901.0</ExpressionBlendVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Logo.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>ClientLeaveV2.Program</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Expression.Controls, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Expression.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="PresentationFramework.Aero" />
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="AppLoadingWindow.xaml.cs">
+      <DependentUpon>AppLoadingWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LeaveWindow.xaml.cs">
+      <DependentUpon>LeaveWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PopupWindow.xaml.cs">
+      <DependentUpon>PopupWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="ViewModel\AppLoadingWindow_ViewModel.cs" />
+    <Compile Include="ViewModel\LeaveWindow_ViewModel.cs" />
+    <Compile Include="ViewModel\LoadingUC_ViewModel.cs" />
+    <Compile Include="ViewModel\MainWindow_ViewModel.cs" />
+    <Compile Include="ViewModel\PopupWindow_ViewModel.cs" />
+    <Compile Include="ViewModel\UC_Tip_ViewModel.cs" />
+    <Page Include="AppLoadingWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Dictionary\AppLoadingDictionary.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Dictionary\CommStyleDictionary.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Dictionary\ImageDictionary.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Dictionary\KeyboardStyleDictionary.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Dictionary\MainWindowStyleDictionary.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Dictionary\PopupDictionary.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Dictionary\ReaderNoteWindowDictionary.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Dictionary\ReadingRoomWindowStyleDictionary.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Dictionary\RecordDicitonary.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Dictionary\ResourceImage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Dictionary\RollDictionary.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Dictionary\SeatRoomStyleDictionary.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Dictionary\UC_ReadingRoomDictionary.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Dictionary\UC_UsuallySeatDictionary.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Dictionary\UserGuideDictionary.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Dictionary\UsuallySeatDictionary.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="LeaveWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Code\BaseWindow.cs" />
+    <Compile Include="Code\BitmapToBitmpImage.cs" />
+    <Compile Include="Code\NowReadingRoomState.cs" />
+    <Compile Include="Code\ReadCardOperator.cs" />
+    <Compile Include="Code\SelectSeatProven.cs" />
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MyUserControl\UC_Loading.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MyUserControl\UC_Tip_ActivationSuccess.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MyUserControl\UC_Tip_BookConfirmWarn.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MyUserControl\UC_Tip_ComeBack.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MyUserControl\UC_Tip_CommFailed.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MyUserControl\UC_Tip_CommQuestion.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MyUserControl\UC_Tip_CommSuccess.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MyUserControl\UC_Tip_CommWarm.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MyUserControl\UC_Tip_ContinueTime.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MyUserControl\UC_Tip_ContinueTimeAuto.xaml.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MyUserControl\UC_Tip_ContinueTimeAutoNoAgain.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MyUserControl\UC_Tip_ContinueTimeNoAgain.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MyUserControl\UC_Tip_ContinueTimeNoNeed.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MyUserControl\UC_Tip_ContinueTimeNoTime.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MyUserControl\UC_Tip_EnterNoType.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MyUserControl\UC_Tip_IsBlacklist.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MyUserControl\UC_Tip_Leave.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MyUserControl\UC_Tip_ReadingRoomNoOpen.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MyUserControl\UC_Tip_SelectSeatConfinmed.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MyUserControl\UC_Tip_SelectSeatResult.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MyUserControl\UC_Tip_SetShortWarning.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MyUserControl\UC_Tip_ShortLeave.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MyUserControl\UC_Tip_WaitSeat.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MyUserControl\UC_Tip_WaitSeatCancel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MyUserControl\UC_Tip_WaitSeatCancelWarn.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MyUserControl\UC_Tip_WaitSeatFrequent.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PopupWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Properties\DesignTimeResources.xaml" Condition="'$(DesignTime)'=='true' OR ('$(SolutionPath)'!='' AND Exists('$(SolutionPath)') AND '$(BuildingInsideVisualStudio)'!='true' AND '$(BuildingInsideExpressionBlend)'!='true')">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <ContainsDesignTimeResources>true</ContainsDesignTimeResources>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MyUserControl\UC_Loading.xaml.cs">
+      <DependentUpon>UC_Loading.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MyUserControl\UC_Tip_ActivationSuccess.xaml.cs">
+      <DependentUpon>UC_Tip_ActivationSuccess.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MyUserControl\UC_Tip_BookConfirmWarn.xaml.cs">
+      <DependentUpon>UC_Tip_BookConfirmWarn.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MyUserControl\UC_Tip_ComeBack.xaml.cs">
+      <DependentUpon>UC_Tip_ComeBack.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MyUserControl\UC_Tip_CommFailed.xaml.cs">
+      <DependentUpon>UC_Tip_CommFailed.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MyUserControl\UC_Tip_CommQuestion.xaml.cs">
+      <DependentUpon>UC_Tip_CommQuestion.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MyUserControl\UC_Tip_CommSuccess.xaml.cs">
+      <DependentUpon>UC_Tip_CommSuccess.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MyUserControl\UC_Tip_CommWarm.xaml.cs">
+      <DependentUpon>UC_Tip_CommWarm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MyUserControl\UC_Tip_ContinueTime.xaml.cs">
+      <DependentUpon>UC_Tip_ContinueTime.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MyUserControl\UC_Tip_ContinueTimeAuto.xaml.xaml.cs">
+      <DependentUpon>UC_Tip_ContinueTimeAuto.xaml.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MyUserControl\UC_Tip_ContinueTimeAutoNoAgain.xaml.cs">
+      <DependentUpon>UC_Tip_ContinueTimeAutoNoAgain.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MyUserControl\UC_Tip_ContinueTimeNoAgain.xaml.cs">
+      <DependentUpon>UC_Tip_ContinueTimeNoAgain.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MyUserControl\UC_Tip_ContinueTimeNoNeed.xaml.cs">
+      <DependentUpon>UC_Tip_ContinueTimeNoNeed.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MyUserControl\UC_Tip_ContinueTimeNoTime.xaml.cs">
+      <DependentUpon>UC_Tip_ContinueTimeNoTime.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MyUserControl\UC_Tip_EnterNoType.xaml.cs">
+      <DependentUpon>UC_Tip_EnterNoType.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MyUserControl\UC_Tip_IsBlacklist.xaml.cs">
+      <DependentUpon>UC_Tip_IsBlacklist.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MyUserControl\UC_Tip_Leave.xaml.cs">
+      <DependentUpon>UC_Tip_Leave.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MyUserControl\UC_Tip_ReadingRoomNoOpen.xaml.cs">
+      <DependentUpon>UC_Tip_ReadingRoomNoOpen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MyUserControl\UC_Tip_SelectSeatConfinmed.xaml.cs">
+      <DependentUpon>UC_Tip_SelectSeatConfinmed.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MyUserControl\UC_Tip_SelectSeatResult.xaml.cs">
+      <DependentUpon>UC_Tip_SelectSeatResult.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MyUserControl\UC_Tip_SetShortWarning.xaml.cs">
+      <DependentUpon>UC_Tip_SetShortWarning.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MyUserControl\UC_Tip_ShortLeave.xaml.cs">
+      <DependentUpon>UC_Tip_ShortLeave.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MyUserControl\UC_Tip_WaitSeat.xaml.cs">
+      <DependentUpon>UC_Tip_WaitSeat.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MyUserControl\UC_Tip_WaitSeatCancel.xaml.cs">
+      <DependentUpon>UC_Tip_WaitSeatCancel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MyUserControl\UC_Tip_WaitSeatCancelWarn.xaml.cs">
+      <DependentUpon>UC_Tip_WaitSeatCancelWarn.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MyUserControl\UC_Tip_WaitSeatFrequent.xaml.cs">
+      <DependentUpon>UC_Tip_WaitSeatFrequent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Logo.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ClientLeave.Operation\ClientLeaveV2.OperateResult.csproj">
+      <Project>{BA24FC7A-2BCC-4BBF-A1C0-C39BC6D29E83}</Project>
+      <Name>ClientLeaveV2.OperateResult</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EnumType\EnumType.csproj">
+      <Project>{3E7C2198-F6B3-4FAE-8EBF-2271E752DFF3}</Project>
+      <Name>EnumType</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SeatClientBll\SeatManage.Bll.csproj">
+      <Project>{D8187F61-BDC9-431F-975F-C58D9C897412}</Project>
+      <Name>SeatManage.Bll</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SeatLayoutTool\SeatLayoutTool.csproj" Condition="'$(DesignTime)'=='true' OR ('$(SolutionPath)'!='' AND Exists('$(SolutionPath)') AND '$(BuildingInsideVisualStudio)'!='true' AND '$(BuildingInsideExpressionBlend)'!='true')">
+      <Project>{46AA23AA-A84B-4FA8-9178-5C9F4E720A79}</Project>
+      <Name>SeatLayoutTool</Name>
+      <ContainsDesignTimeResources>true</ContainsDesignTimeResources>
+    </ProjectReference>
+    <ProjectReference Include="..\SeatManage.ISystemTerminal\SeatManage.ISystemTerminal.csproj">
+      <Project>{A8DC4589-E484-475E-A2BB-B1D264424F05}</Project>
+      <Name>SeatManage.ISystemTerminal</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SeatManageClassModel\SeatManageClassModel.csproj">
+      <Project>{E90FBBAD-98DA-4A34-B620-26DA9ADDDF85}</Project>
+      <Name>SeatManageClassModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SeatManageComm\SeatManageComm.csproj">
+      <Project>{19063808-3340-4563-8B40-573D8DD0BABA}</Project>
+      <Name>SeatManageComm</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\btnImg\bar_center.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\btnImg\BarDown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\btnImg\BarDown_S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\btnImg\BarUp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\btnImg\BarUp_S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\btnImg\cry.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\btnImg\question.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\btnImg\small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\btnImg\warm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Background\ces1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Background\DateTimeBackground.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Background\loading.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Background\Logo.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Background\MainWindowBackground.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Background\ResourceImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="bin\Debug\images\ClientBackImage\ImgBook.png" />
+    <Resource Include="bin\Debug\images\ClientBackImage\ImgPower.png" />
+    <Resource Include="bin\Debug\images\ClientBackImage\ImgReader.png" />
+    <Resource Include="bin\Debug\images\ClientBackImage\ImgSeat.png" />
+    <Resource Include="bin\Debug\images\ClientBackImage\ImgShortLeave.png" />
+    <Resource Include="bin\Debug\images\ClientBackImage\ImgStopUse.png" />
+    <Resource Include="bin\Debug\images\ClientBackImage\note_AirConditioning.png" />
+    <Resource Include="bin\Debug\images\ClientBackImage\note_blank.png" />
+    <Resource Include="bin\Debug\images\ClientBackImage\note_Bookshelf.png" />
+    <Resource Include="bin\Debug\images\ClientBackImage\note_Door.png" />
+    <Resource Include="bin\Debug\images\ClientBackImage\note_Elevator.png" />
+    <Resource Include="bin\Debug\images\ClientBackImage\note_PCTable.png" />
+    <Resource Include="bin\Debug\images\ClientBackImage\note_Pillar.png" />
+    <Resource Include="bin\Debug\images\ClientBackImage\note_Plant.png" />
+    <Resource Include="bin\Debug\images\ClientBackImage\note_Roundtable.png" />
+    <Resource Include="bin\Debug\images\ClientBackImage\note_Stairway.png" />
+    <Resource Include="bin\Debug\images\ClientBackImage\note_Steps.png" />
+    <Resource Include="bin\Debug\images\ClientBackImage\note_Table.png" />
+    <Resource Include="bin\Debug\images\ClientBackImage\note_Wall.png" />
+    <Resource Include="bin\Debug\images\ClientBackImage\note_Window.png" />
+    <Resource Include="bin\Debug\images\ClientBackImage\SchoolLogoImage.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

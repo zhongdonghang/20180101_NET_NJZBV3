@@ -1,0 +1,30 @@
+﻿<UserControl
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:my="clr-namespace:AdvertManageClient.FunPage.NewMediaState"
+	mc:Ignorable="d"
+	x:Class="AdvertManageClient.FunPage.UC_NewProgressWatch"
+	x:Name="UserControl"
+	d:DesignHeight="550" d:DesignWidth="990">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../MyDictionary/UC_AdvertVideoManageFormDictionary.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+	    <Grid Background="White" Height="550" Width="990">
+        <Rectangle Fill="#FFA39797" Height="2" Margin="0,36,0,0" Width="990" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5"/>
+        <StackPanel Margin="0,40,90,0" Width="900" Height="520"></StackPanel>
+        <TextBlock HorizontalAlignment="Left" Height="28" Margin="13,5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="332" Foreground="#E28B5D" FontWeight="Bold" FontSize="18"><Run Language="zh-cn" Text="广告状态查询(适用于V2.3及以上版本)"/></TextBlock>
+        <Rectangle Fill="#FFA39797" HorizontalAlignment="Right" Margin="0,40,90,10" Width="2"/>
+        <Button x:Name="btn_ProgessWatch" Content="下发&#xa;进度" HorizontalAlignment="Right" Height="80" Margin="0,42,6,0" VerticalAlignment="Top" Width="80" Style="{DynamicResource ButtonStyle_Media}" Foreground="#FFE28B5D" Click="btn_ProgessWatch_Click" />
+        <Button x:Name="btn_SchoolMediaState" Content="正在&#xa;播放" HorizontalAlignment="Right" Height="80" Margin="0,126,6,0" VerticalAlignment="Top" Width="80" Style="{DynamicResource ButtonStyle_Media}" Foreground="#FFE28B5D" Click="btn_SchoolMediaState_Click" />
+        <Grid Margin="0,40,90,0" x:Name="ucGrid">
+            <my:UC_ProgessWatch x:Name="uc_ProgessWatch" Visibility="Collapsed"></my:UC_ProgessWatch>
+            <my:UC_SchoolMediaState x:Name="uc_SchoolMediaState"  Visibility="Collapsed"></my:UC_SchoolMediaState>
+        </Grid>
+        </Grid>
+</UserControl>

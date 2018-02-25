@@ -1,0 +1,20 @@
+﻿<UserControl x:Class="SeatClientV2.MyUserControl.UC_Tip_WaitSeatCancelWarn"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+              d:DesignHeight="240" d:DesignWidth="740">
+    <Grid>
+    	<Image HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Height="192" Margin="45,25,0,0" Source="../Resources/btnImg/question.png" Stretch="Fill"/>
+		<Line X1="0" X2="0" Y1="0" Y2="220" StrokeThickness="2" HorizontalAlignment="Left" Width="2" Margin="223,8,0,0" Fill="White" Stroke="White" Height="220" VerticalAlignment="Top" d:LayoutOverrides="HorizontalAlignment" Opacity="0.4"/>
+		<TextBlock Margin="240,5,0,0" TextWrapping="Wrap" Text="取消等待"  Style="{DynamicResource TextBlock_White_XL}" VerticalAlignment="Top" d:LayoutOverrides="VerticalAlignment, Height" HorizontalAlignment="Left" Width="492"/>
+		<TextBlock Margin="258,60,0,0" TextWrapping="Wrap" Text="您确定要取消等待"  Style="{DynamicResource TextBlock_White_M}" VerticalAlignment="Top" HorizontalAlignment="Left" Width="247"/>
+		<TextBlock HorizontalAlignment="Right" Text="维持良好学习环境，请勿恶意操作。" VerticalAlignment="Bottom" Width="320" Style="{DynamicResource TextBlock_White_S}" Margin="0,0,0,8"/>
+		<TextBlock Margin="463,160,0,0" TextWrapping="Wrap" Text="号座位？"  Style="{DynamicResource TextBlock_White_M}" VerticalAlignment="Top" HorizontalAlignment="Left" Width="212"/>
+        <TextBlock Margin="380,163,0,0" TextWrapping="Wrap" Text="{Binding SeatNo}" TextAlignment="Center" Style="{DynamicResource TextBlock_Orange_M}" HorizontalAlignment="Left" Width="79" Height="36" VerticalAlignment="Top"/>
+        <TextBlock Margin="287,113,0,0" TextWrapping="Wrap" Text="{Binding ReadingRoomName}"  Style="{DynamicResource TextBlock_Orange_M}" HorizontalAlignment="Left" Width="445" VerticalAlignment="Top"/>
+        <TextBlock Margin="335,160,0,0" TextWrapping="Wrap" Text="第"  Style="{DynamicResource TextBlock_White_M}" VerticalAlignment="Top" HorizontalAlignment="Left" Width="33" d:LayoutOverrides="HorizontalAlignment"/>
+		
+    </Grid>
+</UserControl>

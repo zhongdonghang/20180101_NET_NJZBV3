@@ -1,0 +1,303 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:Microsoft_Windows_Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero" mc:Ignorable="d">
+    <!--窗体大小样式-->
+    <Style x:Key="MainWindowsStyle" TargetType="{x:Type Window}">
+        <Setter Property="AllowsTransparency" Value="true"/>
+        <Setter Property="Background" Value="{DynamicResource MainBackgroundImage}"/>
+        <Setter Property="ResizeMode" Value="NoResize"/>
+        <Setter Property="WindowStyle" Value="None"/>
+        <Setter Property="BorderThickness" Value="0"/>
+    </Style>
+    <!--时间显示样式-->
+    <Style x:Key="DateTime" TargetType="{x:Type TextBlock}">
+        <Setter Property="TextWrapping" Value="NoWrap"/>
+        <Setter Property="TextTrimming" Value="None"/>
+        <Setter Property="Height" Value="25"/>
+        <Setter Property="VerticalAlignment" Value="Top"/>
+        <Setter Property="Margin" Value="4"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="FontSize" Value="17"/>
+        <Setter Property="TextAlignment" Value="Center"/>
+        <Setter Property="FontFamily" Value="微软雅黑"/>
+    </Style>
+    <!--logo样式-->
+    <Style x:Key="SchoolLogin" TargetType="{x:Type StackPanel}">
+        <Setter Property="Height" Value="178"/>
+        <Setter Property="Width" Value="1080"/>
+        <Setter Property="VerticalAlignment" Value="Top"/>
+        <Setter Property="Margin" Value="0,50,0,0"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+    </Style>
+    <!--按钮样式-->
+    <Style x:Key="MainWindowBtn" TargetType="{x:Type TextBlock}">
+        <Setter Property="TextWrapping" Value="Wrap"/>
+        <Setter Property="Width" Value="110"/>
+        <Setter Property="FontSize" Value="26"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="TextAlignment" Value="Center"/>
+        <Setter Property="TextTrimming" Value="None"/>
+        <Setter Property="TextTrimming" Value="None"/>
+        <Setter Property="Canvas.Left" Value="13"/>
+        <Setter Property="Margin" Value="10,20,10,0"/>
+        <Setter Property="FontFamily" Value="微软雅黑"/>
+    </Style>
+    <!--线条样式-->
+    <Style x:Key="MainCalloutLine" TargetType="{x:Type Line}">
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Top"/>
+        <Setter Property="Stroke" Value="White"/>
+        <Setter Property="Fill" Value="White"/>
+        <Setter Property="StrokeThickness" Value="2"/>
+        <Setter Property="Height" Value="1"/>
+        <Setter Property="X1" Value="0"/>
+        <Setter Property="X2" Value="110"/>
+        <Setter Property="Y1" Value="0"/>
+        <Setter Property="Y2" Value="0"/>
+        <Setter Property="Canvas.Left" Value="13"/>
+        <Setter Property="Margin" Value="10,20,10,0"/>
+    </Style>
+    <!--矩形框SP样式-->
+    <Style x:Key="MainCalloutStackPanel" TargetType="{x:Type StackPanel}">
+        <Setter Property="Width" Value="136"/>
+        <Setter Property="Height" Value="400"/>
+    </Style>
+    <!--矩形框样式-->
+    <Style x:Key="MainBtnCallout" TargetType="{x:Type ed:Callout}">
+        <Setter Property="AnchorPoint" Value="0.3,-0.05"/>
+        <Setter Property="CalloutStyle" Value="RoundedRectangle"/>
+        <Setter Property="HorizontalAlignment" Value="Right"/>
+        <Setter Property="VerticalAlignment" Value="Top"/>
+        <Setter Property="Margin" Value="0,265,14,0"/>
+        <Setter Property="Stroke" Value="White"/>
+        <Setter Property="StrokeThickness" Value="2"/>
+        <Setter Property="Width" Value="136"/>
+        <Setter Property="Height" Value="400"/>
+        <Setter Property="Opacity" Value="0.90"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ed:Callout}">
+                    <Grid>
+                        <Path x:Name="PART_Path" Fill="{TemplateBinding Fill}" HorizontalAlignment="Stretch" StrokeStartLineCap="{TemplateBinding StrokeStartLineCap}" StrokeDashOffset="{TemplateBinding StrokeDashOffset}" Stretch="Fill" StrokeEndLineCap="{TemplateBinding StrokeEndLineCap}" StrokeDashCap="{TemplateBinding StrokeDashCap}" Stroke="{TemplateBinding Stroke}" StrokeThickness="{TemplateBinding StrokeThickness}" StrokeMiterLimit="{TemplateBinding StrokeMiterLimit}" StrokeLineJoin="{TemplateBinding StrokeLineJoin}" StrokeDashArray="{TemplateBinding StrokeDashArray}" UseLayoutRounding="False" VerticalAlignment="Stretch"/>
+                        <ContentPresenter Content="{TemplateBinding InternalContent}" HorizontalAlignment="Center" Margin="{TemplateBinding Padding}" VerticalAlignment="Center"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <!--消息Canvas样式-->
+    <Style x:Key="MainCanvas" TargetType="{x:Type Canvas}">
+        <Setter Property="Margin" Value="14,240,160,60"/>
+    </Style>
+    <!--边线的样式-->
+    <Style x:Key="PathOut" TargetType="{x:Type Path}">
+        <Setter Property="StrokeThickness" Value="0"/>
+        <Setter Property="Stroke" Value="White"/>
+        <Setter Property="Opacity" Value="1"/>
+        <Setter Property="Data" Value="M0,100 L100,0 840,0 840,700 L0,700 L0,100"/>
+    </Style>
+	<Style x:Key="PathIn" TargetType="{x:Type Path}">
+        <Setter Property="StrokeThickness" Value="2"/>
+        <Setter Property="Stroke" Value="White"/>
+        <Setter Property="Opacity" Value="1"/>
+        <Setter Property="Data" Value="M0,100 L100,0 840,0 840,700 L0,700 L0,100 M20,110 L110,20 L820,20 L820,680 L20,680 L20,110"/>
+        <Setter Property="Fill">
+        	<Setter.Value>
+        		<SolidColorBrush Color="White" Opacity="0.6"/>
+        	</Setter.Value>
+        </Setter>
+    </Style>
+    <!--选项卡样式-->
+    <Style x:Key="MainTabItemStyle_Main" TargetType="{x:Type TabItem}">
+        <Setter Property="Foreground" Value="Black"/>
+        <Setter Property="BorderBrush" Value="{x:Null}"/>
+        <Setter Property="Background" Value="{x:Null}"/>
+        <Setter Property="HorizontalAlignment" Value="Stretch"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="Height" Value="100"/>
+        <Setter Property="Width" Value="70"/>
+        <Setter Property="FontFamily" Value="微软雅黑"/>
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="Foreground" Value="#FF3A3E67"/>
+        <Setter Property="Margin" Value="0,0,0,-100"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TabItem}">
+                    <Canvas>
+                        <Path Stroke="White" Fill="White"  Opacity="0.4" Height="100" Width="70" Data="M0,0 L0,0 L50,0 L70,20 L70,80 L50,100 L0,100 L0,0"/>
+                        <Line x:Name="lbg1" Fill="White" Stroke="{x:Null}" X1="50" Y1="40" X2="60" Y2="50" StrokeThickness="2"/>
+                        <Line x:Name="lbg2"  Fill="White" Stroke="{x:Null}" X1="50" Y1="60" X2="60" Y2="50" StrokeThickness="2"/>
+                        <ContentPresenter x:Name="Content" ContentSource="Header" HorizontalAlignment="center" VerticalAlignment="center" Height="86" Width="18" Canvas.Top="7" Canvas.Left="26"/>
+                    </Canvas>
+					<ControlTemplate.Triggers>
+    					<Trigger Property="IsSelected" Value="true">
+    						<Setter Property="Panel.ZIndex" Value="1"/>
+    						<Setter Property="Foreground" Value="White"/>
+							<Setter Property="Fill" TargetName="lbg1" Value="White"/>
+							<Setter Property="Fill" TargetName="lbg2" Value="White"/>
+							<Setter Property="Stroke" TargetName="lbg1" Value="White"/>
+							<Setter Property="Stroke" TargetName="lbg2" Value="White"/>
+    					</Trigger>
+						</ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <!--选项卡控件-->
+	 <Style x:Key="TabControl_Main" TargetType="{x:Type TabControl}">
+	 	<Setter Property="Foreground" Value="{x:Null}"/>
+        <Setter Property="BorderBrush" Value="{x:Null}"/>
+        <Setter Property="Background" Value="{x:Null}"/>
+        <Setter Property="Height" Value="640"/>
+        <Setter Property="Width" Value="860"/>
+		<Setter Property="Canvas.Left" Value="19"/>
+        <Setter Property="Canvas.Top" Value="40"/>
+		<Setter Property="TabStripPlacement" Value="Left"/>
+	 	</Style>
+	<Style x:Key="ButtonStyle_ReCardReader" TargetType="{x:Type Button}">
+		<Setter Property="BorderThickness" Value="1"/>
+		<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+		<Setter Property="HorizontalContentAlignment" Value="Center"/>
+		<Setter Property="VerticalContentAlignment" Value="Center"/>
+		<Setter Property="Padding" Value="1"/>
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type Button}">
+					<Canvas>
+					<Rectangle Canvas.Left="0" Canvas.Top="0" Height="100" Width="100" Stroke="White" RadiusX="10" RadiusY="10" StrokeThickness="2">
+						<Rectangle.Fill>
+							<SolidColorBrush Color="#FFF4F4F5" Opacity="0"/>
+						</Rectangle.Fill>
+					</Rectangle>
+					<ed:LineArrow Height="50" Canvas.Left="30" Stroke="White" Canvas.Top="20" Width="50" BendAmount="2" StrokeThickness="3" ArrowSize="10">
+						<ed:LineArrow.Fill>
+							<SolidColorBrush Color="#FFF4F4F5" Opacity="0"/>
+						</ed:LineArrow.Fill>
+					</ed:LineArrow>
+					<ed:LineArrow Height="50" Canvas.Left="20" Stroke="White" Canvas.Top="30" Width="50" RenderTransformOrigin="0.5,0.5" BendAmount="2" StartCorner="BottomRight" ArrowSize="10" StrokeThickness="3">
+						<ed:LineArrow.Fill>
+							<SolidColorBrush Color="#FFF4F4F5" Opacity="0"/>
+						</ed:LineArrow.Fill>
+					</ed:LineArrow>
+					<Rectangle Height="40" Canvas.Left="37"  Stroke="White" Canvas.Top="29.5" Width="30" RenderTransformOrigin="0.5,0.5">
+						<Rectangle.RenderTransform>
+							<TransformGroup>
+								<ScaleTransform/>
+								<SkewTransform/>
+								<RotateTransform Angle="30"/>
+								<TranslateTransform/>
+							</TransformGroup>
+						</Rectangle.RenderTransform>
+						<Rectangle.Fill>
+							<SolidColorBrush Color="#FFF4F4F5" Opacity="0"/>
+						</Rectangle.Fill>
+					</Rectangle>
+					<TextBlock Canvas.Left="39" TextWrapping="Wrap" Canvas.Top="42" RenderTransformOrigin="0.5,0.5" Foreground="White">
+						<TextBlock.RenderTransform>
+							<TransformGroup>
+								<ScaleTransform/>
+								<SkewTransform/>
+								<RotateTransform Angle="-60"/>
+								<TranslateTransform/>
+							</TransformGroup>
+						</TextBlock.RenderTransform><Run Language="zh-cn" Text="Card"/></TextBlock>
+					</Canvas>
+
+					
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	<SolidColorBrush x:Key="CheckBoxStroke" Color="#8E8F8F"/>
+	<Style x:Key="CheckRadioFocusVisual">
+		<Setter Property="Control.Template">
+			<Setter.Value>
+				<ControlTemplate>
+					<Rectangle Margin="14,0,0,0" SnapsToDevicePixels="true" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" StrokeThickness="1" StrokeDashArray="1 2"/>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	<Style x:Key="RadioButton_Main" TargetType="{x:Type RadioButton}">
+		<Setter Property="Foreground" Value="#FF3A3E67"/>
+		<Setter Property="BorderBrush" Value="#00000000"/>
+		<Setter Property="BorderThickness" Value="0"/>
+		<Setter Property="FontSize" Value="16"/>
+		<Setter Property="FontFamily" Value="微软雅黑"/>
+		<Setter Property="Height" Value="100"/>
+		<Setter Property="Width" Value="60"/>
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type RadioButton}">
+					<Canvas>
+						<Path Name="p" Data="M20,20 L30,0 L60,0 L60,100 L30,100 L20,80 L20,20" StrokeThickness="0" Stroke="White">
+							<Path.Fill>
+								<SolidColorBrush Color="White" Opacity="0.5"/>
+							</Path.Fill></Path>
+							<ContentPresenter Name="c" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="0" RecognizesAccessKey="True" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Height="85" Width="16" Canvas.Left="35" Canvas.Top="8"/>
+					</Canvas>
+					
+					<ControlTemplate.Triggers>
+						<Trigger Property="IsChecked" Value="true">
+							<Setter Property="Foreground" Value="#FFFFFFFF"/>
+							<Setter TargetName="p" Property="Data" Value="M0,20 L10,0 L60,0 L60,100 L10,100 L0,80 L0,20"/>
+							<Setter TargetName="c" Property="Canvas.Left" Value="25"/>
+							</Trigger>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+		
+	</Style>
+	
+	<Style x:Key="ButtonStyle_MoveLeft" TargetType="{x:Type Button}">
+		<Setter Property="BorderThickness" Value="1"/>
+		<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+		<Setter Property="HorizontalContentAlignment" Value="Center"/>
+		<Setter Property="VerticalContentAlignment" Value="Center"/>
+		<Setter Property="Padding" Value="1"/>
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type Button}">
+					<Canvas>
+						<Ellipse Height="80" Width="80" Stroke="White" StrokeThickness="3">
+							<Ellipse.Fill>
+								<SolidColorBrush Color="White" Opacity="0.1"/>
+							</Ellipse.Fill>
+						</Ellipse>
+						<ed:BlockArrow Height="40" Canvas.Left="20" Orientation="Left" Stroke="#FF9394B0" StrokeThickness="0" Canvas.Top="20" Width="40">
+							<ed:BlockArrow.Fill>
+								<SolidColorBrush Color="White"/>
+							</ed:BlockArrow.Fill>
+						</ed:BlockArrow>
+					</Canvas>
+				
+					
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	<Style x:Key="ButtonStyle_MoveRight" TargetType="{x:Type Button}">
+		<Setter Property="BorderThickness" Value="1"/>
+		<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+		<Setter Property="HorizontalContentAlignment" Value="Center"/>
+		<Setter Property="VerticalContentAlignment" Value="Center"/>
+		<Setter Property="Padding" Value="1"/>
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type Button}">
+					<Canvas>
+						<Ellipse Height="80" Width="80" Stroke="White" StrokeThickness="3">
+							<Ellipse.Fill>
+								<SolidColorBrush Color="White" Opacity="0.1"/>
+							</Ellipse.Fill>
+						</Ellipse>
+						<ed:BlockArrow Height="40" Canvas.Left="20" Orientation="Right" Stroke="#FF9394B0" StrokeThickness="0" Canvas.Top="20" Width="40" Fill="White"/>
+					</Canvas>
+				
+					
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+</ResourceDictionary>

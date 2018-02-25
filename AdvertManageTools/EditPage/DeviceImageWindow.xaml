@@ -1,0 +1,9 @@
+﻿<Window x:Class="AdvertManageTools.EditPage.DeviceImageWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="终端截图" Height="567" Width="307" WindowStartupLocation="CenterScreen"  Loaded="Window_Loaded">
+    <Grid>
+        <Image Height="533" HorizontalAlignment="Left" Name="deviceimage" Stretch="Fill" VerticalAlignment="Top" Width="300" />
+        <Label Content="暂无截图" Margin="107,251,0,0" Name="label" HorizontalAlignment="Left" Height="28" VerticalAlignment="Top" />
+    </Grid>
+</Window>

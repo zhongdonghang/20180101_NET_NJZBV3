@@ -1,0 +1,28 @@
+﻿<Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="AdvertManageClient.FunPage.MediaEdit.RoolTitlesEdit"
+        Title="滚动广告" Height="280" Width="500" WindowStartupLocation="CenterScreen" MouseLeftButtonDown="Window_MouseLeftButtonDown">
+    <Window.Style>
+        <StaticResource ResourceKey="ChildWindowsStyle"/>
+    </Window.Style>
+    <Grid>
+        <Label Content="滚动广告管理" Style="{StaticResource LabelStyleTitle}"/>
+        <Image Style="{StaticResource ImageStyleLogo}"/>
+        <Label Content="生效日期:" Height="28" HorizontalAlignment="Left" Margin="7,73,0,0" x:Name="label2" VerticalAlignment="Top" />
+        <DatePicker Height="25" HorizontalAlignment="Left" Margin="77,74,0,0" x:Name="datePicker1" VerticalAlignment="Top" Width="154"  SelectedDate="{Binding EffectDate}" Style="{DynamicResource DatePickerStyleInput}"/>
+        <Label Content="失效日期:" Margin="242,75,0,0" x:Name="label3" Height="28" VerticalAlignment="Top" d:LayoutOverrides="VerticalAlignment" HorizontalAlignment="Left" />
+        <DatePicker Height="25" HorizontalAlignment="Left" Margin="312,77,0,0" x:Name="datePicker2" VerticalAlignment="Top" Width="154"  SelectedDate="{Binding EndDate}" Style="{DynamicResource DatePickerStyleInput}" d:LayoutOverrides="VerticalAlignment"/>
+        <Label Content="内容:" Height="28" Margin="242,105,208,0" x:Name="label4" VerticalAlignment="Top" d:LayoutOverrides="VerticalAlignment, Width" />
+        <TextBox Height="50"  VerticalContentAlignment="Top"  TextAlignment="Left" HorizontalAlignment="Left" Margin="288,107,0,0" x:Name="textBox2" VerticalAlignment="Top" Width="178" TextWrapping="Wrap" Text="{Binding Type}" Style="{StaticResource TextBoxStylePutIn}" />
+        <Button Content="发布" Height="30" HorizontalAlignment="Right" Margin="0,0,72,8" x:Name="btnSave" VerticalAlignment="Bottom" Width="60" Style="{StaticResource ButtonStyleSubmit}" Click="btnSave_Click" />
+        <Button Content="关闭" Height="30" HorizontalAlignment="Right" Margin="0,0,8,8" x:Name="button1" VerticalAlignment="Bottom" Width="60" Style="{StaticResource ButtonStyleSubmit}" Click="button1_Click" />
+        <Label Content="名称:" Height="28" HorizontalAlignment="Left" Margin="32,43,0,0" x:Name="label1" VerticalAlignment="Top" Width="49" />
+        <Label Content="编号:" Height="28" HorizontalAlignment="Left" Margin="32,10,0,0" x:Name="Num" VerticalAlignment="Top" Width="49" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="78,42,0,0" x:Name="textBox1" VerticalAlignment="Top" Width="154" Style="{StaticResource TextBoxStylePutIn}" Text="{Binding Name}" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="77,11,0,0" x:Name="TxtNum" VerticalAlignment="Top" Width="154" Style="{StaticResource TextBoxStylePutIn}" Text="{Binding Num}" />
+        <Label Content="{Binding Operator}" Height="32"  VerticalAlignment="Top" FontWeight="Normal" FontSize="13.333" RenderTransformOrigin="0.5,-0.158" HorizontalAlignment="Right" Width="216" Margin="0,23,24,0" d:LayoutOverrides="VerticalAlignment" />
+        <TextBlock HorizontalAlignment="Left" Margin="14,141,0,0" x:Name="tb_Error" Text="{Binding ErrorMessage}" Foreground="#FFFC0A0A" Height="16" VerticalAlignment="Top" Width="268" />
+        <ComboBox Height="24" Margin="78,107,0,0" VerticalAlignment="Top" Style="{DynamicResource ComboBoxStyleSelect}" x:Name="ccb" ItemsSource="{Binding CustomerList.CustomerInfoList}"  DisplayMemberPath="CompanyName" SelectionChanged="ComboBox_SelectionChanged" HorizontalAlignment="Left" Width="154" />
+        <Label Content="选择客户:" HorizontalAlignment="Left" Height="24" Margin="8,107,0,0" VerticalAlignment="Top" Width="67" d:LayoutOverrides="HorizontalAlignment"/>
+    </Grid>
+</Window>

@@ -1,0 +1,31 @@
+﻿<Window x:Class="AdvertManageTools.EditPage.IssueSlip"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="IssueSlip" Height="400" Width="300" Loaded="Window_Loaded">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="10"></RowDefinition>
+        </Grid.RowDefinitions>
+        <TreeView Height="293" HorizontalAlignment="Left" Margin="27,12,0,0" Name="campustreeView" SelectedItemChanged="treeView1_SelectedItemChanged" VerticalAlignment="Top" Width="227" >
+            <TreeView.ItemContainerStyle>
+                <Style TargetType="{x:Type TreeViewItem}">
+                    <Setter Property="IsExpanded" Value="{Binding IsExpanded}"></Setter>
+                </Style>
+            </TreeView.ItemContainerStyle>
+            <TreeView.ItemTemplate>
+                <HierarchicalDataTemplate  ItemsSource="{Binding Path=ChildNode}">
+                    <StackPanel Orientation="Horizontal">
+                        <CheckBox Focusable="False" VerticalAlignment="Center" Content="{Binding Name}"  IsChecked="{Binding IsChecked, Mode=TwoWay}"  ></CheckBox>
+                        <StackPanel.ToolTip>
+                            <TextBlock VerticalAlignment="Center" Text="{Binding Number}" TextWrapping="Wrap" MaxWidth="200" ></TextBlock>
+                        </StackPanel.ToolTip>
+                    </StackPanel>
+                </HierarchicalDataTemplate>
+            </TreeView.ItemTemplate>
+        </TreeView>
+        <Button Content="确认" Grid.Row="1" Height="23" HorizontalAlignment="Left" Margin="79,5,0,0" Name="btnOK" VerticalAlignment="Top" Width="52" Click="btnOK_Click" />
+        <Button Content="关闭" Height="23" HorizontalAlignment="Left" Margin="146,5,0,0" Name="btnClose" VerticalAlignment="Top" Width="52" Grid.Row="1" Click="btnClose_Click" />
+    </Grid>
+</Window>

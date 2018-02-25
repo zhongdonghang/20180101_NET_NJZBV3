@@ -1,0 +1,37 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="AdvertManageClient.FunPage.NewMediaEdit.W_ReaderAdvertEdit"
+        Title="W_ReaderAdvertEdit" Height="380" Width="510" WindowStartupLocation="CenterScreen" MouseLeftButtonDown="Window_MouseLeftButtonDown" Loaded="Window_Loaded">
+	<Window.Style>
+		<StaticResource ResourceKey="ChildWindowsStyle_Orange"/>
+	</Window.Style>
+    <Grid>
+        <Image Style="{StaticResource ImageStyleLogo}"/>
+        <Label Content="读者推广编辑" Style="{StaticResource LabelStyleTitle}"/>
+		
+		
+		
+        <Button Content="关 闭" x:Name="btn_Close" HorizontalAlignment="Right" Height="40" Margin="0,0,8,8" VerticalAlignment="Bottom" Width="80" Style="{DynamicResource ButtonStyle_SubmitOrange}" Click="btn_Close_Click" />
+        <Button Content="保 存" x:Name="btn_Save" HorizontalAlignment="Right" Height="40" Margin="0,0,93,8" VerticalAlignment="Bottom" Width="80" Style="{DynamicResource ButtonStyle_SubmitOrange}" Click="btn_Save_Click" />
+        <TextBlock  Margin="12.999,10.514,0,0" Text="广告编号："  Width="auto" Style="{DynamicResource TextBlockStyle_Orange}"/>
+        <TextBox x:Name="txt_no" Margin="97,10.818,0,0" Text="{Binding Num}"  Width="140" Style="{DynamicResource TextBoxStylePutIn_Orange}"/>
+        <TextBlock  Margin="12.999,38.433,0,0" Text="广告名称："  Width="auto" Style="{DynamicResource TextBlockStyle_Orange}"/>
+        <TextBox x:Name="txt_name" Margin="97,38.818,0,0" Text="{Binding Name}"  Width="140" Style="{DynamicResource TextBoxStylePutIn_Orange}"/>
+    	<TextBlock  Margin="241,10.818,0,0" Text="选择客户："  Width="100" Style="{DynamicResource TextBlockStyle_Orange}" d:LayoutOverrides="HorizontalAlignment" />
+    	<ComboBox   x:Name="cb_Cutomer" Height="24" Margin="341,10.666,0,0" VerticalAlignment="Top"  Style="{DynamicResource ComboBoxStyleSelect_Orange}"  ItemsSource="{Binding CustomerList.CustomerInfoList}" DisplayMemberPath="CompanyName" SelectionChanged="cb_Cutomer_SelectionChanged" HorizontalAlignment="Left" Width="144" />
+    	<TextBlock  Margin="276,38.666,0,0" Text="编辑人："  Width="65" Style="{DynamicResource TextBlockStyle_Orange}" d:LayoutOverrides="HorizontalAlignment" />
+    	<TextBlock  Margin="345,38.666,0,0" Text="{Binding Operator}" Style="{DynamicResource TextBlockStyle_Orange}" TextAlignment="Left" HorizontalAlignment="Left" Width="136" />
+    	<GroupBox Header="读者推广图片图片(260x400)" Margin="12.999,94.433,0,0" Style="{DynamicResource GroupBoxStyle_Orange}" HorizontalAlignment="Left" Width="193.001" Height="211" VerticalAlignment="Top" d:LayoutOverrides="HorizontalAlignment">
+    		<Grid Margin="0,0,0,0">
+                <Image Margin="0,0,0,0" Source="{Binding AdImageInfo}" VerticalAlignment="Top" Height="130"/>
+    			<Button Height="24" VerticalAlignment="Bottom" Content="选择图片" Style="{DynamicResource ButtonStyle_Orange}" x:Name="btnlogoimage" Click="btnlogoimage_Click" />
+    		</Grid>
+    	</GroupBox>
+    	<TextBlock  Margin="12.999,66.433,0,0" Text="开始日期：" Style="{DynamicResource TextBlockStyle_Orange}" HorizontalAlignment="Left" VerticalAlignment="Top" d:LayoutOverrides="VerticalAlignment" />
+    	<DatePicker x:Name="dd_start" Margin="97,66.899,0,0" Width="140" Text="{Binding EffectDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  Style="{DynamicResource DatePickerStyleInput_Orange}" VerticalAlignment="Top" d:LayoutOverrides="HorizontalAlignment, VerticalAlignment" />
+    	<TextBlock  Margin="260.999,66.666,0,0" Text="结束日期：" Style="{DynamicResource TextBlockStyle_Orange}" HorizontalAlignment="Left" VerticalAlignment="Top" d:LayoutOverrides="HorizontalAlignment, VerticalAlignment"/>
+    	<DatePicker x:Name="dd_end" Margin="345,66.666,0,0" Width="140" Text="{Binding EndDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  Style="{DynamicResource DatePickerStyleInput_Orange}" VerticalAlignment="Top" Height="24" d:LayoutOverrides="VerticalAlignment" />
+    	<TextBlock Margin="215,106,0,0" TextWrapping="Wrap" Text="{Binding ErrorMessage}" Style="{DynamicResource TextBlockStyle_ERROR}" FontSize="12" HorizontalAlignment="Left" Width="275" Height="162" VerticalAlignment="Top"/>
+    </Grid>
+</Window>

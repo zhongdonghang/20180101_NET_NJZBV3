@@ -1,0 +1,18 @@
+﻿<UserControl x:Class="ClientLeaveV2.MyUserControl.UC_Tip_ReadingRoomNoOpen"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="240" d:DesignWidth="740">
+    <Grid>
+    	<Image HorizontalAlignment="Left" VerticalAlignment="Top" Width="165" Height="192" Margin="25,25,0,0" Source="../Resources/btnImg/cry.png" Stretch="Fill"/>
+		<Line X1="0" X2="0" Y1="0" Y2="220" StrokeThickness="2" HorizontalAlignment="Left" Width="2" Margin="223,8,0,0" Fill="White" Stroke="White" Height="220" VerticalAlignment="Top" d:LayoutOverrides="HorizontalAlignment" Opacity="0.4"/>
+		<TextBlock Margin="240,5,0,0" TextWrapping="Wrap" Text="阅览室未开放"  Style="{DynamicResource TextBlock_White_XL}" VerticalAlignment="Top" d:LayoutOverrides="VerticalAlignment, Height" HorizontalAlignment="Left" Width="492"/>
+        <TextBlock Margin="229,153,0,0" TextWrapping="Wrap" Text="{Binding SingleTime}"  TextAlignment="Center"  Style="{DynamicResource TextBlock_Orange_M}" HorizontalAlignment="Left" Width="503" VerticalAlignment="Top"/>
+		<TextBlock HorizontalAlignment="Right" Text="如有疑问，请联系管理员。" VerticalAlignment="Bottom" Width="240" Style="{DynamicResource TextBlock_White_S}" Margin="0,0,0,8"/>
+        <TextBlock Margin="281,62,0,0" TextWrapping="Wrap" Text="{Binding ReadingRoomName}"  Style="{DynamicResource TextBlock_Orange_M}" HorizontalAlignment="Left" Width="451" VerticalAlignment="Top" d:LayoutOverrides="VerticalAlignment"/>
+		<TextBlock Margin="269,108,0,0" TextWrapping="Wrap" Text="未开放，今日阅览室开放时段为"  Style="{DynamicResource TextBlock_White_M}" VerticalAlignment="Top" HorizontalAlignment="Left" Width="424"/>
+		
+    </Grid>
+</UserControl>

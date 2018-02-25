@@ -1,0 +1,93 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing" x:Class="SeatClientV3.RoomSeatWindow"
+        Title="RoomSeatWindow" Style="{DynamicResource WindowsStyle}" Icon="/SeatClient;component/Logo.ico" WindowStartupLocation="Manual" Width="{Binding WindowWidth, Mode=TwoWay}"  Height="{Binding WindowHeight, Mode=TwoWay}" Top="{Binding WindowTop, Mode=TwoWay}" Left="{Binding WindowLeft, Mode=TwoWay}"  ShowInTaskbar ="False">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Dictionary/ImageDictionary.xaml"/>
+                <ResourceDictionary Source="/Dictionary/SeatRoomStyleDictionary.xaml"/>
+                <ResourceDictionary Source="/Dictionary/CommStyleDictionary.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Viewbox>
+        <Grid x:Name="G_bg" Width="1080" Height="1000">
+
+            <Path  Data="M20,0 L440,0 L460,60 L0,60 L20,0 L20,0"   Height="60" Width="440"  Stretch="Uniform"  Margin="55,34.361,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" >
+                <Path.Fill>
+                    <SolidColorBrush Color="White" Opacity="0.5"/>
+                </Path.Fill>
+            </Path>
+            <Rectangle StrokeThickness="2" Stroke="White" Margin="35,90,0,0" Height="62" VerticalAlignment="Top" HorizontalAlignment="Left" Width="300">
+                <Rectangle.Fill>
+                    <SolidColorBrush Color="White" Opacity="0.5"/>
+                </Rectangle.Fill>
+            </Rectangle>
+            <Rectangle StrokeThickness="2" Stroke="White" Margin="333,90,365,0" Height="62" VerticalAlignment="Top">
+                <Rectangle.Fill>
+                    <SolidColorBrush Color="White" Opacity="0.5"/>
+                </Rectangle.Fill>
+            </Rectangle>
+            <Rectangle StrokeThickness="0" Stroke="White" Margin="0,65,25,0" Height="345" VerticalAlignment="Top" HorizontalAlignment="Right" Width="340" RadiusX="5" RadiusY="5">
+                <Rectangle.Fill>
+                    <SolidColorBrush Color="White" Opacity="0.5"/>
+                </Rectangle.Fill>
+            </Rectangle>
+            <TextBlock Height="42" Text="{Binding ReadingRoomName}" Width="390" Style="{DynamicResource TextBlock_White_L}" TextAlignment="Center" Margin="80,42,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            <TextBlock Text="座位总数:" Width="126" Style="{DynamicResource TextBlock_Orange_M}" Margin="45,100,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            <TextBlock Text="{Binding AllSeatCount}" Style="{DynamicResource TextBlock_Orange_M}" Margin="170,100,0,0" HorizontalAlignment="Left" Width="auto" VerticalAlignment="Top" />
+            <TextBlock Text="剩余座位:" Width="auto" Style="{DynamicResource TextBlock_Orange_M}" Margin="340,100,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <TextBlock Text="{Binding LastSeatCount}" Width="auto" Style="{DynamicResource TextBlock_Orange_M}" Margin="465,100,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Rectangle x:Name="seatREC" Fill="White" Opacity="0.4" Margin="35,150,35,100" />
+            <Canvas x:Name="SeatWindow" Margin="35,150,35,100" ClipToBounds="True">
+                <Canvas x:Name="canvas_Seat"  Height="700" Canvas.Left="0"  Canvas.Top="0" Width="1010" ClipToBounds="True"/>
+            </Canvas>
+
+
+            <Rectangle Fill="#FF9293B4" Height="330"  StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeThickness="0" StrokeLineJoin="Round"  Width="330" RadiusX="5" RadiusY="5" Margin="0,75,30,0" VerticalAlignment="Top" HorizontalAlignment="Right"/>
+            <Canvas x:Name="canvas_Thumbnail"  ClipToBounds="True" Background="#FF9293B4" Height="300" Width="330" MouseLeftButtonDown="Thumbnail_MouseDown" Margin="0,105,30,0" VerticalAlignment="Top" HorizontalAlignment="Right">
+
+
+            </Canvas>
+            <Rectangle Fill="#FFF4F4F5" Canvas.Left="778" Stroke="White" Canvas.Top="42" Margin="0,48,105,0" RadiusX="20" RadiusY="20" HorizontalAlignment="Right" Width="170" Height="40" VerticalAlignment="Top"/>
+
+            <TextBlock  Canvas.Left="854" Text="缩略图" Canvas.Top="62" Width="66" Style="{DynamicResource TextBlockStyle_Blue_S}" RenderTransformOrigin="0.439,-0.154" Margin="0,53,158,0" VerticalAlignment="Top" HorizontalAlignment="Right" />
+
+            <ed:BlockArrow Fill="#FFF4F4F5" Height="26" Canvas.Left="1008.64" Orientation="Up" Stroke="White" Canvas.Top="340.037" Width="15" StrokeThickness="0" ArrowBodySize="0.25" Margin="0,354,51,0" HorizontalAlignment="Right" VerticalAlignment="Top"/>
+            <ed:BlockArrow Fill="#FFF4F4F5" Height="26" Canvas.Left="1008.64" Orientation="Down" Stroke="White" Canvas.Top="366.206" Width="15" StrokeThickness="0" ArrowBodySize="0.25" Margin="0,377,51,0" HorizontalAlignment="Right" VerticalAlignment="Top"/>
+            <ed:BlockArrow Fill="#FFF4F4F5" Height="15" Canvas.Left="990.249" Orientation="Left" Stroke="White" StrokeThickness="0" Canvas.Top="358.729" Width="26" ArrowBodySize="0.25" Margin="0,371,57,0" VerticalAlignment="Top" HorizontalAlignment="Right"/>
+            <ed:BlockArrow Fill="#FFF4F4F5" Canvas.Left="1016.249" Stroke="White" StrokeThickness="0" Canvas.Top="358.729" Width="26" ArrowBodySize="0.25" Margin="0,371,34,0" HorizontalAlignment="Right" Height="15" VerticalAlignment="Top"/>
+            <TextBlock Canvas.Left="991.503" TextWrapping="Wrap" Text="{Binding Position}" Canvas.Top="336.037" Style="{DynamicResource TextBlock_White_XS}" Width="17" Height="18.692" Margin="0,352,33,0" HorizontalAlignment="Right" VerticalAlignment="Top"/>
+
+
+            <Rectangle Height="65" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeThickness="2" StrokeLineJoin="Round" Margin="35,0,35,35" VerticalAlignment="Bottom" Stroke="White">
+                <Rectangle.Fill>
+                    <SolidColorBrush Color="White" Opacity="0.5"/>
+                </Rectangle.Fill>
+            </Rectangle>
+            <StackPanel Height="65"  Margin="0,0,35,35" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="auto" Orientation="Horizontal">
+                <Button x:Name="btn_MaxWindow"  Content="全屏显示"  Style="{DynamicResource ButtonStyle_L}" Click="btn_MaxWindow_Click" Margin="0,0,10,0" HorizontalAlignment="Right" />
+                <Button x:Name="btn_NormnlWindow"  Content="正常显示" Visibility="Collapsed"    Style="{DynamicResource ButtonStyle_L}"  Click="btn_NormnlWindow_Click" Margin="0,0,10,0" HorizontalAlignment="Right" />
+                <Button x:Name="btn_random" Visibility="{Binding RandomBtn}" Content="随机选择"   Style="{DynamicResource ButtonStyle_L}" Click="btn_random_Click" Margin="0,0,10,0" HorizontalAlignment="Right"/>
+                <Button Content="输号选座" x:Name="btn_keyboard" Visibility="{Binding KeybroadBtn}"   Style="{DynamicResource ButtonStyle_L}" Click="btn_keyboard_Click"  Margin="0,0,10,0" HorizontalAlignment="Right"/>
+
+                <Button Content="退  出" Style="{DynamicResource ButtonStyle_L}" Click="closeBtn_Click" Margin="0,0,10,0" HorizontalAlignment="Right"/>
+            </StackPanel>
+
+            <Button Content="返回上级"  Canvas.Left="50" Canvas.Bottom="60"  Style="{DynamicResource ButtonStyle_L}" Click="backBtn_Click" Margin="45,0,0,45" HorizontalAlignment="Left" VerticalAlignment="Bottom" />
+            <Rectangle Height="100" Canvas.Left="295" Stroke="White" Width="100" RadiusX="10" RadiusY="10" Margin="0,15,380,0" VerticalAlignment="Top" HorizontalAlignment="Right">
+                <Rectangle.Fill>
+                    <SolidColorBrush Color="#FF5A6C9A" Opacity="1"/>
+                </Rectangle.Fill>
+            </Rectangle>
+            <Rectangle Height="100" Canvas.Left="295" Stroke="White" Width="100" RadiusX="10" RadiusY="10" Margin="0,15,380,0" HorizontalAlignment="Right" VerticalAlignment="Top">
+                <Rectangle.Fill>
+                    <SolidColorBrush Color="White" Opacity="0.5"/>
+                </Rectangle.Fill>
+            </Rectangle>
+            <TextBlock Height="90" Text="{Binding CloseTime}" TextAlignment="Center"  FontSize="60" Width="100" Style="{DynamicResource TextBlock_Orange_L}" Margin="0,25,380,0" HorizontalAlignment="Right" VerticalAlignment="Top"/>
+        </Grid>
+    </Viewbox>
+</Window>

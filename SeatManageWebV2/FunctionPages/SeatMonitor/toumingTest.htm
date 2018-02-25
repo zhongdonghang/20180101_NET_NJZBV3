@@ -1,0 +1,60 @@
+<html>
+ <style>
+  .allCoverDivClass{display: none;position:absolute;width:100%;height:100%;top:0px;left:0px;background-color:#E51271;filter:Alpha(Opacity=20,Style= 0);opacity: 0.2;z-index: 1000;}
+
+
+  .addDeviceDiv{
+   position:absolute;
+   z-index: 1004;
+   display:none;
+   padding: 5px;
+   width:300px;
+   height:250px;
+  }
+ </style>
+ <script language="javascript">
+
+     function showWindow() {
+
+     }
+     function show() {
+         var tag = 'addQuestionDiv';
+         showCoverDiv();
+         showCenterTag(tag, 248, 250);
+
+     }
+     //ÏÔÊ¾×î¶¥²ãdiv
+     function showCoverDiv() {
+         document.getElementById("allCoverDiv").style.width = document.body.clientWidth;
+         document.getElementById("allCoverDiv").style.height = document.body.scrollHeight;
+         document.getElementById("allCoverDiv").style.display = "block";
+     }
+
+
+     function showCenterTag(tag, l, t) {
+         l = l > 0 ? l : 0;
+         t = t > 0 ? t : 300;
+         var lwidth = 300;
+         lwidth = (document.body.scrollWidth - l) / 2;
+         lwidth = lwidth > 300 ? lwidth : 300;
+         document.getElementById(tag).style.top = t + document.body.scrollTop + 'px';
+         document.getElementById(tag).style.left = lwidth + 'px';
+
+         document.getElementById(tag).style.display = "block";
+
+     }
+ </script>
+ <body >
+  <input type="button" value="µã»÷" onclick="show()" /> <br/>
+  <a href="www.baidu.com">asdfadf</a>
+  <div id="allCoverDiv" class="allCoverDivClass"></div>
+  <div style="clear:both"></div>
+  <div id="addQuestionDiv" class="addDeviceDiv"> 
+   ÄÚÈÝ°¡°¡°¡°¡°¡°¡°¡°¡°¡°¡°¡
+    ÄÚÈÝ°¡°¡°¡°¡°¡°¡°¡°¡°¡°¡°¡
+     ÄÚÈÝ°¡°¡°¡°¡°¡°¡°¡°¡°¡°¡°¡
+  </div>
+  
+ </div>
+ </body>
+</html>

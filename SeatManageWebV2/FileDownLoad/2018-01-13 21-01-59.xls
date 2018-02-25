@@ -1,0 +1,11 @@
+SelectType	Count	
+管理员分配	0	
+预约座位	0	
+刷卡选座	0	
+重新选座	0	
+等待入座	0	
+LeaveType	Count	
+管理员释放	0	
+手动释放	0	
+被系统释放	0	
+SeatTime	Count

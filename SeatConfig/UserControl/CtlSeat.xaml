@@ -1,0 +1,31 @@
+﻿<UserControl x:Class="SeatConfig.UserCtl.CtlSeat"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="48" d:DesignWidth="48" >
+    <UserControl.Resources>
+        <!--<Style x:Key="hidden" TargetType="Grid">
+            <Style.Triggers>
+                <Trigger Value="True" Property="IsMouseOver"  >
+                    <Setter TargetName="close" Property="Visibility" Value="Collapsed"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>-->
+    </UserControl.Resources>
+        
+        <Grid x:Name="grid">
+            <Grid.Background>
+                <ImageBrush ImageSource="../Resources/zuowei21.jpg"></ImageBrush>
+            </Grid.Background>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="14"/>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="14"/>
+            </Grid.RowDefinitions>
+            <Rectangle Height="10" Width="10" Margin="35,2,3,2"  Fill="Red" x:Name="close" MouseDown="close_MouseDown"></Rectangle>
+        <TextBox x:Name="txtSeatNo"  Margin="2,0,2,0" Height="20" Text="{Binding ShortSeatNo,Mode=TwoWay}" Grid.Row="1" Visibility="Collapsed"  LostFocus="TextBox_LostFocus"></TextBox>
+        <TextBlock x:Name="tbkSeatNo" Margin="2,0,2,0" Height="20" Text="{Binding Path=Text,Mode=OneWay,ElementName=txtSeatNo}" Grid.Row="1" MouseLeftButtonUp="TextBlock_MouseLeftButtonUp"></TextBlock>
+        </Grid>
+</UserControl>

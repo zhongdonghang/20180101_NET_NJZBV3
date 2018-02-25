@@ -1,0 +1,32 @@
+﻿<Window x:Class="AdvertManageTools.EditPage.IssueCommand"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="选择下发学校" Height="400" Width="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="10"></RowDefinition>
+        </Grid.RowDefinitions>
+        <TreeView Height="293" HorizontalAlignment="Left" Margin="27,12,0,0" Name="treeView1" ItemsSource="{Binding Path=SchoolInfo}" SelectedItemChanged="treeView1_SelectedItemChanged" VerticalAlignment="Top" Width="218" >
+            <TreeView.ItemContainerStyle>
+                <Style TargetType="{x:Type TreeViewItem}">
+                    <Setter Property="IsExpanded" Value="{Binding IsExpanded}"></Setter>
+                </Style>
+            </TreeView.ItemContainerStyle>
+            <TreeView.ItemTemplate>
+                <HierarchicalDataTemplate  ItemsSource="{Binding Path=SchoolInfo}">
+                    <StackPanel Orientation="Horizontal">
+                        <CheckBox Focusable="False" VerticalAlignment="Center"   IsChecked="{Binding IsChecked, Mode=TwoWay}"  ></CheckBox>
+                        <TextBlock VerticalAlignment="Center" Name="nodeName" Text="{Binding SchoolName}"  Margin="5,0,0,0" ></TextBlock>
+                        <StackPanel.ToolTip>
+                            <TextBlock VerticalAlignment="Center" Text="{Binding SchoolNumber}" TextWrapping="Wrap" MaxWidth="200" ></TextBlock>
+                        </StackPanel.ToolTip>
+                    </StackPanel>
+                </HierarchicalDataTemplate>
+            </TreeView.ItemTemplate>
+        </TreeView>
+        <Button Content="下发" Grid.Row="1" Height="23" HorizontalAlignment="Left" Margin="63,5,0,0" Name="button1" VerticalAlignment="Top" Width="52" Click="button1_Click" />
+        <Button Content="关闭" Height="23" HorizontalAlignment="Left" Margin="131,4,0,0" Name="button2" VerticalAlignment="Top" Width="52" Grid.Row="1" Click="button2_Click" />
+    </Grid>
+</Window>

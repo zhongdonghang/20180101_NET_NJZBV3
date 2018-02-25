@@ -1,0 +1,556 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{39807A93-048B-48D0-A546-5E6A1097C0EC}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SchoolNoteEditer</RootNamespace>
+    <AssemblyName>SchoolNoteEditer</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <Utf8Output>true</Utf8Output>
+    <ExpressionBlendVersion>4.0.20901.0</ExpressionBlendVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Logo.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>SchoolNoteEditer.App</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Expression.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Expression.Effects, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Expression.Interactions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="PresentationFramework.Aero" />
+    <Reference Include="PresentationFramework.Classic" />
+    <Reference Include="PresentationFramework.Luna" />
+    <Reference Include="PresentationFramework.Royale" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="CheckPasswordWindow.xaml.cs">
+      <DependentUpon>CheckPasswordWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CodeTemplateViewModel\VM_MainWindow.cs" />
+    <Compile Include="CodeTemplateViewModel\VM_UC_Element.cs" />
+    <Compile Include="Code\DimensionalCode.cs" />
+    <Compile Include="Code\MessageBoxType.cs" />
+    <Compile Include="Code\ReadingRoomEdit.cs" />
+    <Compile Include="Code\ToImage.cs" />
+    <Compile Include="Code\ToSQLScript.cs" />
+    <Compile Include="FunPage\CodeTemplateWindow.xaml.cs">
+      <DependentUpon>CodeTemplateWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FunPage\DimensionalCode_All.xaml.cs">
+      <DependentUpon>DimensionalCode_All.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FunPage\DimensionalCode_WeChar.xaml.cs">
+      <DependentUpon>DimensionalCode_WeChar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FunPage\DimensionalCode.xaml.cs">
+      <DependentUpon>DimensionalCode.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FunPage\Library.xaml.cs">
+      <DependentUpon>Library.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FunPage\MediaPlayerEdit.xaml.cs">
+      <DependentUpon>MediaPlayerEdit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FunPage\PopImageEdit.xaml.cs">
+      <DependentUpon>PopImageEdit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FunPage\PrommotionEdit.xaml.cs">
+      <DependentUpon>PrommotionEdit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FunPage\ReaderImageEdit.xaml.cs">
+      <DependentUpon>ReaderImageEdit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FunPage\ReadingRoom.xaml.cs">
+      <DependentUpon>ReadingRoom.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FunPage\ReadingRoomInfoEdit.xaml.cs">
+      <DependentUpon>ReadingRoomInfoEdit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FunPage\ReceiptEdit.xaml.cs">
+      <DependentUpon>ReceiptEdit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FunPage\School.xaml.cs">
+      <DependentUpon>School.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FunPage\SchoolNoteEdit.xaml.cs">
+      <DependentUpon>SchoolNoteEdit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FunPage\TitleAdEdit.xaml.cs">
+      <DependentUpon>TitleAdEdit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FunPage\WordToImageWindow.xaml.cs">
+      <DependentUpon>WordToImageWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MediaWindow.xaml.cs">
+      <DependentUpon>MediaWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MessageBoxWindow.xaml.cs">
+      <DependentUpon>MessageBoxWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CodeTemplateUC\UC_Element.xaml.cs">
+      <DependentUpon>UC_Element.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CodeTemplateUC\UC_TextElement.xaml.cs">
+      <DependentUpon>UC_TextElement.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UC_MediaPlayer.xaml.cs">
+      <DependentUpon>UC_MediaPlayer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UC_Node.xaml.cs">
+      <DependentUpon>UC_Node.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UC_PopImage.xaml.cs">
+      <DependentUpon>UC_PopImage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UC_Promotion.xaml.cs">
+      <DependentUpon>UC_Promotion.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UC_ReaderAd.xaml.cs">
+      <DependentUpon>UC_ReaderAd.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UC_Receipt.xaml.cs">
+      <DependentUpon>UC_Receipt.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UC_SchoolNote.xaml.cs">
+      <DependentUpon>UC_SchoolNote.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UC_Seat.xaml.cs">
+      <DependentUpon>UC_Seat.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UC_TitleAd.xaml.cs">
+      <DependentUpon>UC_TitleAd.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UC_UserGuide.xaml.cs">
+      <DependentUpon>UC_UserGuide.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\ViewModel_DimensionalCode_WeChar.cs" />
+    <Compile Include="ViewModel\ViewModel_DimensionalTemplate_All.cs" />
+    <Compile Include="ViewModel\ViewModel_DimensionalTemplate_WeChar.cs" />
+    <Compile Include="ViewModel\ViewModel_WordToImage.cs" />
+    <Compile Include="ViewModel\ViewModel_CheckPassword.cs" />
+    <Compile Include="ViewModel\ViewModel_DimensionalCode.cs" />
+    <Compile Include="ViewModel\ViewModel_DimensionalTemplate.cs" />
+    <Compile Include="ViewModel\ViewModel_Library.cs" />
+    <Compile Include="ViewModel\ViewModel_MainWindow.cs" />
+    <Compile Include="ViewModel\ViewModel_MediaPlayer.cs" />
+    <Compile Include="ViewModel\ViewModel_MediaPlayerList.cs" />
+    <Compile Include="ViewModel\ViewModel_Message.cs" />
+    <Compile Include="ViewModel\ViewModel_Note.cs" />
+    <Compile Include="ViewModel\ViewModel_PopImage.cs" />
+    <Compile Include="ViewModel\ViewModel_PopImageList.cs" />
+    <Compile Include="ViewModel\ViewModel_Prommotion.cs" />
+    <Compile Include="ViewModel\ViewModel_PrommotionList.cs" />
+    <Compile Include="ViewModel\ViewModel_ReaderAd.cs" />
+    <Compile Include="ViewModel\ViewModel_ReaderAdList.cs" />
+    <Compile Include="ViewModel\ViewModel_ReadingRoom.cs" />
+    <Compile Include="ViewModel\ViewModel_ReadingRoomInfoEdit.cs" />
+    <Compile Include="ViewModel\ViewModel_Receipt.cs" />
+    <Compile Include="ViewModel\ViewModel_ReceiptList.cs" />
+    <Compile Include="ViewModel\ViewModel_School.cs" />
+    <Compile Include="ViewModel\ViewModel_SchoolNoteEdit.cs" />
+    <Compile Include="ViewModel\ViewModel_SchoolNoteList.cs" />
+    <Compile Include="ViewModel\ViewModel_Seat.cs" />
+    <Compile Include="ViewModel\ViewModel_TitleAd.cs" />
+    <Compile Include="ViewModel\ViewModel_TitleAdList.cs" />
+    <Compile Include="ViewModel\ViewModel_UserGuide.cs" />
+    <Page Include="CheckPasswordWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FunPage\CodeTemplateWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="FunPage\DimensionalCode_All.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="FunPage\DimensionalCode_WeChar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="FunPage\DimensionalCode.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FunPage\Library.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="FunPage\MediaPlayerEdit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FunPage\PopImageEdit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FunPage\PrommotionEdit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FunPage\ReaderImageEdit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FunPage\ReadingRoom.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="FunPage\ReadingRoomInfoEdit.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="FunPage\ReceiptEdit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FunPage\School.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="FunPage\SchoolNoteEdit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FunPage\TitleAdEdit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FunPage\WordToImageWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MediaWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MessageBoxWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MyDictionary\RadioButtonDictionary.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CodeTemplateUC\UC_Element.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CodeTemplateUC\UC_TextElement.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Properties\DesignTimeResources.xaml" Condition="'$(DesignTime)'=='true' OR ('$(SolutionPath)'!='' AND Exists('$(SolutionPath)') AND '$(BuildingInsideVisualStudio)'!='true' AND '$(BuildingInsideExpressionBlend)'!='true')">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <ContainsDesignTimeResources>true</ContainsDesignTimeResources>
+    </Page>
+    <Page Include="SeatWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SeatWindow.xaml.cs">
+      <DependentUpon>SeatWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="MyDictionary\CommDictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MyDictionary\StyleDictionary.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UC\UC_MediaPlayer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UC\UC_Node.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UC\UC_PopImage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UC\UC_Promotion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UC\UC_ReaderAd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UC\UC_Receipt.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UC\UC_SchoolNote.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UC\UC_Seat.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UC\UC_TitleAd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UC\UC_UserGuide.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <Resource Include="bin\Debug\方正综艺简体.TTF" />
+    <Resource Include="bin\Debug\汉仪超粗宋简.ttf" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EnumType\EnumType.csproj">
+      <Project>{3E7C2198-F6B3-4FAE-8EBF-2271E752DFF3}</Project>
+      <Name>EnumType</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SeatClientBll\SeatManage.Bll.csproj">
+      <Project>{d8187f61-bdc9-431f-975f-c58d9c897412}</Project>
+      <Name>SeatManage.Bll</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SeatManageClassModel\SeatManageClassModel.csproj">
+      <Project>{E90FBBAD-98DA-4A34-B620-26DA9ADDDF85}</Project>
+      <Name>SeatManageClassModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SeatManageComm\SeatManageComm.csproj">
+      <Project>{19063808-3340-4563-8B40-573D8DD0BABA}</Project>
+      <Name>SeatManageComm</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\juneberry.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\AirConditioning.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\autobtn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\blank.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Bookshelf.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\btn_free.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\btn_free_p.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Clockwise.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Counterclockwise.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Door.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\EightSeat.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\FourSeat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Mouse.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\movebtn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\nopower.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\PCSeat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\PCTable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Pillar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Plant.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\power.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\removebtn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Roundtable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Seat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SixSeat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\startuse.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Steps.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Suspended.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Table.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ToNewVer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\TwoSeat.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Wall.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Window.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\temp1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\MB_WarningICO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\MB_problemICO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\MB_okICO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\MB_messageICO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\MB_erroeIOC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Logo.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Elevator.png" />
+    <Resource Include="Resources\Stairway.png" />
+    <Resource Include="bin\Debug\CodeImage.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Content Include="bin\Debug\ffmpeg.exe" />
+    <Resource Include="Resources\ResourceImage.png" />
+    <Resource Include="Resources\CodeImage.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

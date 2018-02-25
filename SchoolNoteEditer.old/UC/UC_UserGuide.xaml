@@ -1,0 +1,41 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:Microsoft_Windows_Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Luna" x:Class="SchoolNoteEditer.UC.UC_UserGuide" 
+             mc:Ignorable="d" 
+             d:DesignHeight="380" d:DesignWidth="790" Background="White">
+    <Grid >
+    	<TextBlock HorizontalAlignment="Left" Text="用户手册" VerticalAlignment="Top" Style="{DynamicResource TextBlockStyle_UCTitle}" Margin="8,8,0,0"/>
+    	<Button Content="保存" x:Name="btn_save" HorizontalAlignment="Right" Margin="0,8,8,0" VerticalAlignment="Top" Width="80" Style="{DynamicResource ButtonStyle_SubmitBlue}" Height="28" Click="btn_save_Click" />
+    	<Rectangle Fill="#FF1181E9" Height="2" Margin="8,40,8,0"  VerticalAlignment="Top"/>
+            
+    	<GroupBox Header="使用手册图片（900x900）" x:Name="gb_item" Margin="8,59,0,0" Style="{DynamicResource GroupBoxStyle_Blue}" HorizontalAlignment="Left" Width="774" Height="274" VerticalAlignment="Top">
+    		<Grid>
+    			<Button Content="添加+" Style="{DynamicResource ButtonStyle_Submit}" x:Name="btn_add"  HorizontalAlignment="Left" Width="60" Height="24" VerticalAlignment="Bottom" Click="btn_add_Click" />
+    			<Button Content="←左移" Style="{DynamicResource ButtonStyle_Submit}" x:Name="btn_MoveLift"  HorizontalAlignment="Left" Width="60" Margin="64,0,0,0"  Height="24" VerticalAlignment="Bottom" Click="btn_MoveLift_Click" />
+    			<Button Content="右移→" Style="{DynamicResource ButtonStyle_Submit}" x:Name="btn_MoveRight"  HorizontalAlignment="Left" Width="60" Margin="128,0,0,0" Height="24" VerticalAlignment="Bottom" Click="btn_MoveRight_Click" />
+    			<Button Content="删除X" Style="{DynamicResource ButtonStyle_Submit}" x:Name="btn_Delete" Margin="258,0,0,0" HorizontalAlignment="Left" Width="60" Height="24.163" VerticalAlignment="Bottom" Click="btn_Delete_Click" />
+    			<Button Content="更换图片" HorizontalAlignment="Left" Margin="192,0,0,0" x:Name="btn_SelectImage" Style="{DynamicResource ButtonStyle_Submit}" Width="60"  Height="24" VerticalAlignment="Bottom" Click="btn_SelectImage_Click" />
+                <ScrollViewer HorizontalContentAlignment="Left" HorizontalScrollBarVisibility="Visible" VerticalContentAlignment="Top" VerticalScrollBarVisibility="Disabled" Height="203" Width="760" Margin="0,8,2,0" VerticalAlignment="Top">
+                    <ListBox Margin="0,2,0,0" x:Name="LB_Image" Style="{DynamicResource ListBoxStyle_Blue}" ItemsSource="{Binding GuideImages}" Height="203" VerticalAlignment="Top" HorizontalAlignment="Left" MinWidth="760" Width="auto">
+                        <ListBox.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <WrapPanel IsItemsHost="True" />
+                            </ItemsPanelTemplate>
+                        </ListBox.ItemsPanel>
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal" Height="180" Width="180">
+                                    <Image Source="{Binding ImageInfo}" Margin="5,5,0,0" Height="170"  Width="170"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </ScrollViewer>
+            </Grid>
+    	</GroupBox>
+            
+    </Grid>
+</UserControl>

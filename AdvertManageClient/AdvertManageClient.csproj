@@ -1,0 +1,868 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{79BBC01A-60C5-4FE3-81C7-44C75397C486}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AdvertManageClient</RootNamespace>
+    <AssemblyName>AdvertManageClient</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <Utf8Output>true</Utf8Output>
+    <ExpressionBlendVersion>4.0.20901.0</ExpressionBlendVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Logo.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AxInterop.WMPLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>COM\AxInterop.WMPLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.WMPLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>COM\Interop.WMPLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Build.Conversion.v3.5" />
+    <Reference Include="Microsoft.Expression.Drawing" />
+    <Reference Include="Microsoft.Expression.Effects, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>COM\Microsoft.Expression.Effects.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Expression.Interactions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>COM\Microsoft.Expression.Interactions.dll</HintPath>
+    </Reference>
+    <Reference Include="MyMediaPlayer, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <ExecutableExtension>.exe</ExecutableExtension>
+      <HintPath>COM\MyMediaPlayer.exe</HintPath>
+    </Reference>
+    <Reference Include="PresentationFramework.Aero" />
+    <Reference Include="PresentationFramework.Luna" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Code\ListViewHelper.cs" />
+    <Compile Include="Code\VideoOperation.cs" />
+    <Compile Include="FunPage\MediaEdit\CouponsEditWindow.xaml.cs">
+      <DependentUpon>CouponsEditWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FunPage\MediaEdit\PreviewHardAdWindow.xaml.cs">
+      <DependentUpon>PreviewHardAdWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FunPage\MediaEdit\PrintTemplateEditWindow.xaml.cs">
+      <DependentUpon>PrintTemplateEditWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FunPage\MediaEdit\RoolTitlesEdit.xaml.cs">
+      <DependentUpon>RoolTitlesEdit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FunPage\MediaEdit\SlipCustomerEditWindow.xaml.cs">
+      <DependentUpon>SlipCustomerEditWindow.xaml</DependentUpon>
+    </Compile>
+    <Page Include="FunPage\MainPageInfo\ErrorCallBackWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="FunPage\MainPageInfo\PassChangeWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FunPage\MainPageInfo\UC_FaultFeedback.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FunPage\MediaEdit\AddCustomerWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FunPage\MediaEdit\AddHardWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FunPage\MediaEdit\AddTitleAdWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FunPage\MediaEdit\CouponsEditWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="FunPage\MediaEdit\MediaPlayListEditWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FunPage\MediaEdit\PlayListPartEdit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FunPage\MediaEdit\PreviewHardAdWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FunPage\MediaEdit\PrintTemplateEditWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FunPage\MediaEdit\RoolTitlesEdit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FunPage\MediaEdit\UC_Customer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FunPage\MediaEdit\UC_HardAd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FunPage\MediaEdit\UC_MediaItemTimeProgress.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FunPage\MediaEdit\UC_PlaylistInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FunPage\MediaEdit\UC_PrintTemplateList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FunPage\MediaEdit\UC_RollTitlesList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FunPage\MediaEdit\UC_SlipCustomerList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FunPage\MediaEdit\UC_TitleAd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FunPage\MediaEdit\UC_VideoItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FunPage\MediaEdit\MediaPlayerTest.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FunPage\NewMediaEdit\UC_CouponsList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FunPage\NewMediaEdit\UC_Playlist.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FunPage\NewMediaEdit\UC_PopAdvert.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FunPage\NewMediaEdit\UC_PrintReceipt.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FunPage\NewMediaEdit\UC_Promotion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FunPage\NewMediaEdit\UC_ReaderAdvert.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FunPage\NewMediaEdit\UC_TitleAdvert.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FunPage\NewMediaEdit\W_CouponsEdit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FunPage\NewMediaEdit\W_PlaylistEdit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FunPage\NewMediaEdit\W_PopAdvert.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FunPage\NewMediaEdit\W_PrintReceiptEdit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FunPage\NewMediaEdit\W_PromotionEdit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FunPage\NewMediaEdit\W_ReaderAdvertEdit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FunPage\NewMediaEdit\W_TitleAdvertEdit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FunPage\NewMediaState\UC_ProgessWatch.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FunPage\NewMediaState\UC_SchoolMediaState.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FunPage\NewMediaState\W_AdvertUsage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FunPage\NewMediaState\W_IssuedSchoolList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FunPage\NewMediaState\W_SchoolNowMediaInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FunPage\SchoolManage\AddProvinceWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FunPage\SchoolManage\CampusInfoWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FunPage\SchoolManage\DeviceImageWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FunPage\SchoolManage\DeviceInfoWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FunPage\SchoolManage\ProvinceListWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FunPage\SchoolManage\AddSchoolInfoWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FunPage\SchoolManage\UC_CampusInfoDetail.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FunPage\SchoolManage\UC_DeviceInfoDetail.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FunPage\SchoolManage\UC_SchoolInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FunPage\SchoolManage\UC_SchoolInfoDetail.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FunPage\Statistical\UC_SchoolSeatUsage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FunPage\SyatemManage\FileSharingUploadWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FunPage\SyatemManage\IssuedSchoolSelectWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FunPage\SyatemManage\ProjectVersionEditWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FunPage\MainPageInfo\UC_IssuedInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FunPage\SyatemManage\UC_FileSharing.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FunPage\SyatemManage\UC_ProjectVersion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FunPage\UC_AdvertVideoManageForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FunPage\UC_DataStatisticsForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FunPage\UC_MainForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FunPage\UC_NewAdvertManage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="FunPage\UC_SchoolInfoManageForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FunPage\UC_SystemManageForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FunPage\UC_UserInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FunPage\UserManage\AddUserWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FunPage\MediaEdit\MediaItemMixWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FunPage\UC_NewProgressWatch.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="FunPage\UC_SeatUsageStatistics.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MessageBoxWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MyDictionary\ImageDictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LoginWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Code\ControlValidationRule.cs" />
+    <Compile Include="Code\PasswordBoxAssistant.cs" />
+    <Compile Include="FunPage\MainPageInfo\ErrorCallBackWindow.xaml.cs">
+      <DependentUpon>ErrorCallBackWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FunPage\MainPageInfo\PassChangeWindow.xaml.cs">
+      <DependentUpon>PassChangeWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FunPage\MainPageInfo\UC_FaultFeedback.xaml.cs">
+      <DependentUpon>UC_FaultFeedback.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FunPage\MediaEdit\AddCustomerWindow.xaml.cs">
+      <DependentUpon>AddCustomerWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FunPage\MediaEdit\AddHardWindow.xaml.cs">
+      <DependentUpon>AddHardWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FunPage\MediaEdit\AddTitleAdWindow.xaml.cs">
+      <DependentUpon>AddTitleAdWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FunPage\MediaEdit\MediaPlayListEditWindow.xaml.cs">
+      <DependentUpon>MediaPlayListEditWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FunPage\MediaEdit\PlayListPartEdit.xaml.cs">
+      <DependentUpon>PlayListPartEdit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FunPage\MediaEdit\UC_Customer.xaml.cs">
+      <DependentUpon>UC_Customer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FunPage\MediaEdit\UC_HardAd.xaml.cs">
+      <DependentUpon>UC_HardAd.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FunPage\MediaEdit\UC_MediaItemTimeProgress.xaml.cs">
+      <DependentUpon>UC_MediaItemTimeProgress.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FunPage\MediaEdit\UC_PlaylistInfo.xaml.cs">
+      <DependentUpon>UC_PlaylistInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FunPage\MediaEdit\UC_PrintTemplateList.xaml.cs">
+      <DependentUpon>UC_PrintTemplateList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FunPage\MediaEdit\UC_RollTitlesList.xaml.cs">
+      <DependentUpon>UC_RollTitlesList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FunPage\MediaEdit\UC_SlipCustomerList.xaml.cs">
+      <DependentUpon>UC_SlipCustomerList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FunPage\MediaEdit\UC_TitleAd.xaml.cs">
+      <DependentUpon>UC_TitleAd.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FunPage\MediaEdit\UC_VideoItem.xaml.cs">
+      <DependentUpon>UC_VideoItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FunPage\MediaEdit\MediaPlayerTest.xaml.cs">
+      <DependentUpon>MediaPlayerTest.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FunPage\NewMediaEdit\UC_CouponsList.xaml.cs">
+      <DependentUpon>UC_CouponsList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FunPage\NewMediaEdit\UC_Playlist.xaml.cs">
+      <DependentUpon>UC_Playlist.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FunPage\NewMediaEdit\UC_PopAdvert.xaml.cs">
+      <DependentUpon>UC_PopAdvert.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FunPage\NewMediaEdit\UC_PrintReceipt.xaml.cs">
+      <DependentUpon>UC_PrintReceipt.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FunPage\NewMediaEdit\UC_Promotion.xaml.cs">
+      <DependentUpon>UC_Promotion.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FunPage\NewMediaEdit\UC_ReaderAdvert.xaml.cs">
+      <DependentUpon>UC_ReaderAdvert.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FunPage\NewMediaEdit\UC_TitleAdvert.xaml.cs">
+      <DependentUpon>UC_TitleAdvert.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FunPage\NewMediaEdit\W_CouponsEdit.xaml.cs">
+      <DependentUpon>W_CouponsEdit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FunPage\NewMediaEdit\W_PlaylistEdit.xaml.cs">
+      <DependentUpon>W_PlaylistEdit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FunPage\NewMediaEdit\W_PopAdvert.xaml.cs">
+      <DependentUpon>W_PopAdvert.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FunPage\NewMediaEdit\W_PrintReceiptEdit.xaml.cs">
+      <DependentUpon>W_PrintReceiptEdit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FunPage\NewMediaEdit\W_PromotionEdit.xaml.cs">
+      <DependentUpon>W_PromotionEdit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FunPage\NewMediaEdit\W_ReaderAdvertEdit.xaml.cs">
+      <DependentUpon>W_ReaderAdvertEdit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FunPage\NewMediaEdit\W_TitleAdvertEdit.xaml.cs">
+      <DependentUpon>W_TitleAdvertEdit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FunPage\NewMediaState\UC_ProgessWatch.xaml.cs">
+      <DependentUpon>UC_ProgessWatch.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FunPage\NewMediaState\UC_SchoolMediaState.xaml.cs">
+      <DependentUpon>UC_SchoolMediaState.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FunPage\NewMediaState\W_AdvertUsage.xaml.cs">
+      <DependentUpon>W_AdvertUsage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FunPage\NewMediaState\W_IssuedSchoolList.xaml.cs">
+      <DependentUpon>W_IssuedSchoolList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FunPage\NewMediaState\W_SchoolNowMediaInfo.xaml.cs">
+      <DependentUpon>W_SchoolNowMediaInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FunPage\SchoolManage\AddProvinceWindow.xaml.cs">
+      <DependentUpon>AddProvinceWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FunPage\SchoolManage\CampusInfoWindow.xaml.cs">
+      <DependentUpon>CampusInfoWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FunPage\SchoolManage\DeviceImageWindow.xaml.cs">
+      <DependentUpon>DeviceImageWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FunPage\SchoolManage\DeviceInfoWindow.xaml.cs">
+      <DependentUpon>DeviceInfoWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FunPage\SchoolManage\ProvinceListWindow.xaml.cs">
+      <DependentUpon>ProvinceListWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FunPage\SchoolManage\AddSchoolInfoWindow.xaml.cs">
+      <DependentUpon>AddSchoolInfoWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FunPage\SchoolManage\UC_CampusInfoDetail.xaml.cs">
+      <DependentUpon>UC_CampusInfoDetail.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FunPage\SchoolManage\UC_DeviceInfoDetail.xaml.cs">
+      <DependentUpon>UC_DeviceInfoDetail.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FunPage\SchoolManage\UC_SchoolInfo.xaml.cs">
+      <DependentUpon>UC_SchoolInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FunPage\SchoolManage\UC_SchoolInfoDetail.xaml.cs">
+      <DependentUpon>UC_SchoolInfoDetail.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FunPage\Statistical\UC_SchoolSeatUsage.xaml.cs">
+      <DependentUpon>UC_SchoolSeatUsage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FunPage\SyatemManage\FileSharingUploadWindow.xaml.cs">
+      <DependentUpon>FileSharingUploadWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FunPage\SyatemManage\IssuedSchoolSelectWindow.xaml.cs">
+      <DependentUpon>IssuedSchoolSelectWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FunPage\SyatemManage\ProjectVersionEditWindow.xaml.cs">
+      <DependentUpon>ProjectVersionEditWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FunPage\MainPageInfo\UC_IssuedInfo.xaml.cs">
+      <DependentUpon>UC_IssuedInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FunPage\SyatemManage\UC_FileSharing.xaml.cs">
+      <DependentUpon>UC_FileSharing.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FunPage\SyatemManage\UC_ProjectVersion.xaml.cs">
+      <DependentUpon>UC_ProjectVersion.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FunPage\UC_AdvertVideoManageForm.xaml.cs">
+      <DependentUpon>UC_AdvertVideoManageForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FunPage\UC_DataStatisticsForm.xaml.cs">
+      <DependentUpon>UC_DataStatisticsForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FunPage\UC_MainForm.xaml.cs">
+      <DependentUpon>UC_MainForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FunPage\UC_NewAdvertManage.xaml.cs">
+      <DependentUpon>UC_NewAdvertManage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FunPage\UC_SchoolInfoManageForm.xaml.cs">
+      <DependentUpon>UC_SchoolInfoManageForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FunPage\UC_SystemManageForm.xaml.cs">
+      <DependentUpon>UC_SystemManageForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FunPage\UC_UserInfo.xaml.cs">
+      <DependentUpon>UC_UserInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FunPage\UserManage\AddUserWindow.xaml.cs">
+      <DependentUpon>AddUserWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FunPage\UC_NewProgressWatch.xaml.cs">
+      <DependentUpon>UC_NewProgressWatch.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FunPage\UC_SeatUsageStatistics.xaml.cs">
+      <DependentUpon>UC_SeatUsageStatistics.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LoginWindow.xaml.cs">
+      <DependentUpon>LoginWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="MyDictionary\ControlStyleDictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MyDictionary\LoginWindowDictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MyDictionary\MainWindowDictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MyDictionary\UC_AdvertVideoManageFormDictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MyDictionary\UC_DataStatisticsFormDictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MyDictionary\UC_MainFormDictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MyDictionary\UC_SchoolInfoManageFormDictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MyDictionary\UC_SystemManageFormDictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MyDictionary\UC_UserInfoDictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="NewMainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ProgressBarWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Properties\DesignTimeResources.xaml" Condition="'$(DesignTime)'=='true' OR ('$(SolutionPath)'!='' AND Exists('$(SolutionPath)') AND '$(BuildingInsideVisualStudio)'!='true' AND '$(BuildingInsideExpressionBlend)'!='true')">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <ContainsDesignTimeResources>true</ContainsDesignTimeResources>
+    </Page>
+    <Page Include="FunPage\MediaEdit\SlipCustomerEditWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FunPage\MediaEdit\MediaItemMixWindow.xaml.cs">
+      <DependentUpon>MediaItemMixWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MessageBoxWindow.xaml.cs">
+      <DependentUpon>MessageBoxWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NewMainWindow.xaml.cs">
+      <DependentUpon>NewMainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ProgressBarWindow.xaml.cs">
+      <DependentUpon>ProgressBarWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\26.png" />
+    <Resource Include="Image\27.png" />
+    <Resource Include="Image\btnLoginU.png" />
+    <Resource Include="Image\btnMouseDown.png" />
+    <Resource Include="Image\btnMouseOver.png" />
+    <Resource Include="Image\btnSecondChoose.png" />
+    <Resource Include="Image\btnSecondUnChoose.png" />
+    <Resource Include="Image\btnUnChoose.png" />
+    <Resource Include="Image\CloseD.png" />
+    <Resource Include="Image\CloseM.png" />
+    <Resource Include="Image\CloseUnChoose.png" />
+    <Resource Include="Image\PwdGotFocus.png" />
+    <Resource Include="Image\PwdMouseOver.png" />
+    <Resource Include="Image\PwdText.png" />
+    <Resource Include="Image\UserLogin.png" />
+    <Resource Include="Image\UserNameGotFocus.png" />
+    <Resource Include="Image\UserNameMouseOver.png" />
+    <Resource Include="Image\UserNameText.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\loginTop.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\LoginMiddle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\juneberry.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\SchoolInfobtn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\AdverMediabtn.png" />
+    <Resource Include="Image\StatisticsBtn.png" />
+    <Resource Include="Image\UsersManagebtn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\ZBWXLOGO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\AdverMediabtnM.png" />
+    <Resource Include="Image\HardAdbtn.png" />
+    <Resource Include="Image\HardAdbtnM.png" />
+    <Resource Include="Image\Indexbtn.png" />
+    <Resource Include="Image\IndexbtnM.png" />
+    <Resource Include="Image\MainSecondManue.png" />
+    <Resource Include="Image\PlayListbtn.png" />
+    <Resource Include="Image\PlayListbtnM.png" />
+    <Resource Include="Image\Ptintbtn.png" />
+    <Resource Include="Image\PtintbtnM.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Image\SchoolInfobtnM.png" />
+    <Resource Include="Image\SlipBtn.png" />
+    <Resource Include="Image\SlipBtnM.png" />
+    <Resource Include="Image\StatisticsBtnM.png" />
+    <Resource Include="Image\TitleAd.png" />
+    <Resource Include="Image\TitleAdM.png" />
+    <Resource Include="Image\UsersManagebtnM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\AddSchoolInfobtn.png" />
+    <Resource Include="Image\AddSchoolInfobtnM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Systembtn.png" />
+    <Resource Include="Image\SystembtnM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\AddProvincebtn.png" />
+    <Resource Include="Image\AddProvincebtnM.png" />
+    <Resource Include="Image\CustomerManagebtn.png" />
+    <Resource Include="Image\CustomerManagebtnM.png" />
+    <Resource Include="Image\DerviceStatusbtn.png" />
+    <Resource Include="Image\DerviceStatusbtnM.png" />
+    <Resource Include="Image\ErrorCallbackbtn.png" />
+    <Resource Include="Image\ErrorCallbackbtnM.png" />
+    <Resource Include="Image\FilesSharebtn.png" />
+    <Resource Include="Image\FilesSharebtnM.png" />
+    <Resource Include="Image\Issuedprogressbtn.png" />
+    <Resource Include="Image\IssuedprogressbtnM.png" />
+    <Resource Include="Image\PasswordChangebtn.png" />
+    <Resource Include="Image\PasswordChangebtnM.png" />
+    <Resource Include="Image\PrintSlipbtn.png" />
+    <Resource Include="Image\PrintSlipbtnM.png" />
+    <Resource Include="Image\Slipcustomerbtn.png" />
+    <Resource Include="Image\SlipcustomerbtnM.png" />
+    <Resource Include="Image\TiliteADbtn.png" />
+    <Resource Include="Image\TiliteADbtnM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\AddUserbtn.png" />
+    <Resource Include="Image\AddUserbtnM.png" />
+    <Resource Include="Image\VerManagebtn.png" />
+    <Resource Include="Image\VerManagebtnM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\MB_erroeIOC.png" />
+    <Resource Include="Image\MB_messageICO.png" />
+    <Resource Include="Image\MB_okICO.png" />
+    <Resource Include="Image\MB_problemICO.png" />
+    <Resource Include="Image\MB_WarningICO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AMS.Model\AMS.Model.csproj">
+      <Project>{E523D887-004C-41D9-B9A3-6FC088C9CF92}</Project>
+      <Name>AMS.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AMS.ServiceProxy\AMS.ServiceProxy.csproj">
+      <Project>{E7CDB80D-0EF6-47E6-954C-579D355A3B26}</Project>
+      <Name>AMS.ServiceProxy</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AMS.ViewModel\AMS.ViewModel.csproj">
+      <Project>{9B81ED90-5AFC-41CC-86B5-B8A133D1552F}</Project>
+      <Name>AMS.ViewModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EnumType\EnumType.csproj">
+      <Project>{3E7C2198-F6B3-4FAE-8EBF-2271E752DFF3}</Project>
+      <Name>EnumType</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SeatClientBll\SeatManage.Bll.csproj">
+      <Project>{D8187F61-BDC9-431F-975F-C58D9C897412}</Project>
+      <Name>SeatManage.Bll</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SeatManageClassModel\SeatManageClassModel.csproj">
+      <Project>{E90FBBAD-98DA-4A34-B620-26DA9ADDDF85}</Project>
+      <Name>SeatManageClassModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SeatManageComm\SeatManageComm.csproj">
+      <Project>{19063808-3340-4563-8B40-573D8DD0BABA}</Project>
+      <Name>SeatManageComm</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\CampusTreeImage.png" />
+    <Resource Include="Image\DeviceTreeImage.png" />
+    <Resource Include="Image\ProvinceTreeImage.png" />
+    <Resource Include="Image\SchoolTreeImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\AxInterop.WMPLib.dll" />
+    <Content Include="bin\Debug\Interop.WMPLib.dll" />
+    <Resource Include="Logo.ico" />
+    <Resource Include="Image\gdgg1.png" />
+    <Resource Include="Image\gdgg2.png" />
+    <Resource Include="bin\Debug\校园GO购logo.png" />
+    <Content Include="COM\AxInterop.WMPLib.dll" />
+    <Content Include="bin\Debug\ffmpeg.exe" />
+    <Content Include="COM\Interop.WMPLib.dll" />
+    <Content Include="COM\Microsoft.Expression.Effects.dll" />
+    <Content Include="COM\Microsoft.Expression.Interactions.dll" />
+    <Content Include="COM\MyMediaPlayer.exe" />
+    <Resource Include="Image\默认图片.png" />
+    <Resource Include="Image\BGb.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

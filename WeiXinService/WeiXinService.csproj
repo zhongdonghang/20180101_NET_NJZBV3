@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E69ABCE7-CC88-4EC3-A6C9-B0EA51A86A1D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WeiXinService</RootNamespace>
+    <AssemblyName>WeiXinService</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="IRecords.cs" />
+    <Compile Include="WeiXinServiceHepler_IQRCode.cs" />
+    <Compile Include="IQRCode.cs" />
+    <Compile Include="WeiXinServiceHepler_IRecords.cs" />
+    <Compile Include="WeiXinServiceHepler_IRoomInfo.cs" />
+    <Compile Include="IRoomInfo.cs" />
+    <Compile Include="WeiXinServiceHepler_ISeatInfo.cs" />
+    <Compile Include="ISeatInfo.cs" />
+    <Compile Include="WeiXinServiceHepler_ISeatOperation.cs" />
+    <Compile Include="ISeatOperation.cs" />
+    <Compile Include="WeiXinServiceHepler_IUserInfo.cs" />
+    <Compile Include="IUserInfo.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AMS.IBllService\AMS.IBllService.csproj">
+      <Project>{b0cf0c3c-da9a-4bc0-82eb-24277a1af8c9}</Project>
+      <Name>AMS.IBllService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AMS.Model\AMS.Model.csproj">
+      <Project>{e523d887-004c-41d9-b9a3-6fc088c9cf92}</Project>
+      <Name>AMS.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AMS.ServiceProxy\AMS.ServiceProxy.csproj">
+      <Project>{e7cdb80d-0ef6-47e6-954c-579d355a3b26}</Project>
+      <Name>AMS.ServiceProxy</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EnumType\EnumType.csproj">
+      <Project>{3e7c2198-f6b3-4fae-8ebf-2271e752dff3}</Project>
+      <Name>EnumType</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SeatManage.AppJsonModel\SeatManage.AppJsonModel.csproj">
+      <Project>{f8977c05-3e7e-4b1e-991a-c9761ccde9f4}</Project>
+      <Name>SeatManage.AppJsonModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SeatManage.MobileAppDataObtainProxyV2\SeatManage.MobileAppDataObtainProxyV2.csproj">
+      <Project>{927a06ac-7de9-4615-9c83-9c553f0c1f45}</Project>
+      <Name>SeatManage.MobileAppDataObtainProxyV2</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SeatManageClassModel\SeatManageClassModel.csproj">
+      <Project>{e90fbbad-98da-4a34-b620-26da9adddf85}</Project>
+      <Name>SeatManageClassModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SeatManageComm\SeatManageComm.csproj">
+      <Project>{19063808-3340-4563-8b40-573d8dd0baba}</Project>
+      <Name>SeatManageComm</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

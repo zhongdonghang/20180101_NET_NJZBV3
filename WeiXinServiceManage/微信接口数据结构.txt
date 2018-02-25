@@ -1,0 +1,484 @@
+普通消息：
+----文本消息
+	<xml>
+	 <ToUserName><![CDATA[toUser]]></ToUserName>
+	 <FromUserName><![CDATA[fromUser]]></FromUserName> 
+	 <CreateTime>1348831860</CreateTime>
+	 <MsgType><![CDATA[text]]></MsgType>
+	 <Content><![CDATA[this is a test]]></Content>
+	 <MsgId>1234567890123456</MsgId>
+	 </xml>
+
+	ToUserName	开发者微信号
+	FromUserName	 发送方帐号（一个OpenID）
+	CreateTime	 消息创建时间 （整型）
+	MsgType	 text
+	Content	 文本消息内容
+	MsgId	 消息id，64位整型
+
+----图片消息
+	 <xml>
+	 <ToUserName><![CDATA[toUser]]></ToUserName>
+	 <FromUserName><![CDATA[fromUser]]></FromUserName>
+	 <CreateTime>1348831860</CreateTime>
+	 <MsgType><![CDATA[image]]></MsgType>
+	 <PicUrl><![CDATA[this is a url]]></PicUrl>
+	 <MediaId><![CDATA[media_id]]></MediaId>
+	 <MsgId>1234567890123456</MsgId>
+	 </xml>
+
+	ToUserName	开发者微信号
+	FromUserName	 发送方帐号（一个OpenID）
+	CreateTime	 消息创建时间 （整型）
+	MsgType	 image
+	PicUrl	 图片链接
+	MediaId	 图片消息媒体id，可以调用多媒体文件下载接口拉取数据。
+	MsgId	 消息id，64位整型
+
+----语音消息
+	<xml>
+	<ToUserName><![CDATA[toUser]]></ToUserName>
+	<FromUserName><![CDATA[fromUser]]></FromUserName>
+	<CreateTime>1357290913</CreateTime>
+	<MsgType><![CDATA[voice]]></MsgType>
+	<MediaId><![CDATA[media_id]]></MediaId>
+	<Format><![CDATA[Format]]></Format>
+	<MsgId>1234567890123456</MsgId>
+	</xml>
+
+	ToUserName	开发者微信号
+	FromUserName	 发送方帐号（一个OpenID）
+	CreateTime	 消息创建时间 （整型）
+	MsgType	 语音为voice
+	MediaId	 语音消息媒体id，可以调用多媒体文件下载接口拉取数据。
+	Format	 语音格式，如amr，speex等
+	MsgID	 消息id，64位整型
+
+----视频消息
+	<xml>
+	<ToUserName><![CDATA[toUser]]></ToUserName>
+	<FromUserName><![CDATA[fromUser]]></FromUserName>
+	<CreateTime>1357290913</CreateTime>
+	<MsgType><![CDATA[video]]></MsgType>
+	<MediaId><![CDATA[media_id]]></MediaId>
+	<ThumbMediaId><![CDATA[thumb_media_id]]></ThumbMediaId>
+	<MsgId>1234567890123456</MsgId>
+	</xml>
+
+	ToUserName	开发者微信号
+	FromUserName	 发送方帐号（一个OpenID）
+	CreateTime	 消息创建时间 （整型）
+	MsgType	 视频为video
+	MediaId	 视频消息媒体id，可以调用多媒体文件下载接口拉取数据。
+	ThumbMediaId	 视频消息缩略图的媒体id，可以调用多媒体文件下载接口拉取数据。
+	MsgId	 消息id，64位整型
+
+
+----地理位置消息
+	<xml>
+	<ToUserName><![CDATA[toUser]]></ToUserName>
+	<FromUserName><![CDATA[fromUser]]></FromUserName>
+	<CreateTime>1351776360</CreateTime>
+	<MsgType><![CDATA[location]]></MsgType>
+	<Location_X>23.134521</Location_X>
+	<Location_Y>113.358803</Location_Y>
+	<Scale>20</Scale>
+	<Label><![CDATA[位置信息]]></Label>
+	<MsgId>1234567890123456</MsgId>
+	</xml> 
+
+	ToUserName	开发者微信号
+	FromUserName	 发送方帐号（一个OpenID）
+	CreateTime	 消息创建时间 （整型）
+	MsgType	 location
+	Location_X	 地理位置维度
+	Location_Y	 地理位置经度
+	Scale	 地图缩放大小
+	Label	 地理位置信息
+	MsgId	 消息id，64位整型
+
+
+----链接消息
+	<xml>
+	<ToUserName><![CDATA[toUser]]></ToUserName>
+	<FromUserName><![CDATA[fromUser]]></FromUserName>
+	<CreateTime>1351776360</CreateTime>
+	<MsgType><![CDATA[link]]></MsgType>
+	<Title><![CDATA[公众平台官网链接]]></Title>
+	<Description><![CDATA[公众平台官网链接]]></Description>
+	<Url><![CDATA[url]]></Url>
+	<MsgId>1234567890123456</MsgId>
+	</xml> 
+
+	ToUserName	 接收方微信号
+	FromUserName	 发送方微信号，若为普通用户，则是一个OpenID
+	CreateTime	 消息创建时间
+	MsgType	 消息类型，link
+	Title	 消息标题
+	Description	 消息描述
+	Url	 消息链接
+	MsgId	 消息id，64位整型
+
+关注/取消关注事件：
+用户在关注与取消关注公众号时，微信会把这个事件推送到开发者填写的URL。方便开发者给用户下发欢迎消息或者做帐号的解绑。微信服务器在五秒内收不到响应会断掉连接，
+并且重新发起请求，总共重试三次，关于重试的消息排重，推荐使用FromUserName + CreateTime 排重。假如服务器无法保证在五秒内处理并回复，可以直接回复空串，微信服
+务器不会对此作任何处理，并且不会发起重试。
+
+	<xml>
+	<ToUserName><![CDATA[toUser]]></ToUserName>
+	<FromUserName><![CDATA[FromUser]]></FromUserName>
+	<CreateTime>123456789</CreateTime>
+	<MsgType><![CDATA[event]]></MsgType>
+	<Event><![CDATA[subscribe]]></Event>
+	</xml>
+
+	ToUserName	开发者微信号
+	FromUserName	 发送方帐号（一个OpenID）
+	CreateTime	 消息创建时间 （整型）
+	MsgType	 消息类型，event
+	Event	 事件类型，subscribe(订阅)、unsubscribe(取消订阅)
+
+扫描带参数二维码事件：
+	用户扫描带场景值二维码时，可能推送以下两种事件： 
+	 1.如果用户还未关注公众号，则用户可以关注公众号，关注后微信会将带场景值关注事件推送给开发者。
+	 2.如果用户已经关注公众号，则微信会将带场景值扫描事件推送给开发者。
+
+  1. 用户未关注时，进行关注后的事件推送
+	XML数据包示例： 
+	<xml><ToUserName><![CDATA[toUser]]></ToUserName>
+	<FromUserName><![CDATA[FromUser]]></FromUserName>
+	<CreateTime>123456789</CreateTime>
+	<MsgType><![CDATA[event]]></MsgType>
+	<Event><![CDATA[subscribe]]></Event>
+	<EventKey><![CDATA[qrscene_123123]]></EventKey>
+	<Ticket><![CDATA[TICKET]]></Ticket>
+	</xml>
+
+	ToUserName	开发者微信号
+	FromUserName	 发送方帐号（一个OpenID）
+	CreateTime	 消息创建时间 （整型）
+	MsgType	 消息类型，event
+	Event	 事件类型，subscribe
+	EventKey	 事件KEY值，qrscene_为前缀，后面为二维码的参数值
+	Ticket	 二维码的ticket，可用来换取二维码图片
+
+  2.用户已关注时的事件推送
+	  XML数据包示例： 
+		<xml>
+		<ToUserName><![CDATA[toUser]]></ToUserName>
+		<FromUserName><![CDATA[FromUser]]></FromUserName>
+		<CreateTime>123456789</CreateTime>
+		<MsgType><![CDATA[event]]></MsgType>
+		<Event><![CDATA[SCAN]]></Event>
+		<EventKey><![CDATA[SCENE_VALUE]]></EventKey>
+		<Ticket><![CDATA[TICKET]]></Ticket>
+		</xml>
+		<xml>
+
+		ToUserName	开发者微信号
+		FromUserName	 发送方帐号（一个OpenID）
+		CreateTime	 消息创建时间 （整型）
+		MsgType	 消息类型，event
+		Event	 事件类型，LOCATION
+		Latitude	 地理位置纬度
+		Longitude	 地理位置经度
+		Precision	 地理位置精度
+
+自定义菜单事件
+	 用户点击自定义菜单后，微信会把点击事件推送给开发者，请注意，点击菜单弹出子菜单，不会产生上报。
+	 1.点击菜单拉取消息时的事件推送
+	  XML数据包示例： 
+		<xml>
+		<ToUserName><![CDATA[toUser]]></ToUserName>
+		<FromUserName><![CDATA[FromUser]]></FromUserName>
+		<CreateTime>123456789</CreateTime>
+		<MsgType><![CDATA[event]]></MsgType>
+		<Event><![CDATA[CLICK]]></Event>
+		<EventKey><![CDATA[EVENTKEY]]></EventKey>
+		</xml>
+
+		ToUserName	开发者微信号
+		FromUserName	 发送方帐号（一个OpenID）
+		CreateTime	 消息创建时间 （整型）
+		MsgType	 消息类型，event
+		Event	 事件类型，CLICK
+		EventKey	 事件KEY值，与自定义菜单接口中KEY值对应
+
+	 2.点击菜单跳转链接时的事件推送
+		  XML数据包示例： 
+			<xml>
+			<ToUserName><![CDATA[toUser]]></ToUserName>
+			<FromUserName><![CDATA[FromUser]]></FromUserName>
+			<CreateTime>123456789</CreateTime>
+			<MsgType><![CDATA[event]]></MsgType>
+			<Event><![CDATA[VIEW]]></Event>
+			<EventKey><![CDATA[www.qq.com]]></EventKey>
+			</xml>
+
+			ToUserName	开发者微信号
+			FromUserName	 发送方帐号（一个OpenID）
+			CreateTime	 消息创建时间 （整型）
+			MsgType	 消息类型，event
+			Event	 事件类型，VIEW
+			EventKey	 事件KEY值，设置的跳转URL
+
+
+发送被动响应消息
+	对于每一个POST请求，开发者在响应包（Get）中返回特定XML结构，对该消息进行响应（现支持回复文本、图片、图文、语音、视频、音乐）。请注意，回复图片等多媒体消息时需要预先上传多媒体文件到微信服务器，只支持认证服务号。
+	微信服务器在五秒内收不到响应会断掉连接，并且重新发起请求，总共重试三次，如果在调试中，发现用户无法收到响应的消息，可以检查是否消息处理超时。
+	关于重试的消息排重，有msgid的消息推荐使用msgid排重。事件类型消息推荐使用FromUserName + CreateTime 排重。
+	假如服务器无法保证在五秒内处理并回复，可以直接回复空串，微信服务器不会对此作任何处理，并且不会发起重试。 这种情况下，可以使用客服消息接口进行异步回复。
+
+	回复文本消息 
+		<xml>
+		<ToUserName><![CDATA[toUser]]></ToUserName>
+		<FromUserName><![CDATA[fromUser]]></FromUserName>
+		<CreateTime>12345678</CreateTime>
+		<MsgType><![CDATA[text]]></MsgType>
+		<Content><![CDATA[你好]]></Content>
+		</xml>
+
+		ToUserName	 是	 接收方帐号（收到的OpenID）
+		FromUserName	 是	开发者微信号
+		CreateTime	 是	 消息创建时间 （整型）
+		MsgType	 是	 text
+		Content	 是	 回复的消息内容（换行：在content中能够换行，微信客户端就支持换行显示）
+
+	回复图片消息 
+		<xml>
+		<ToUserName><![CDATA[toUser]]></ToUserName>
+		<FromUserName><![CDATA[fromUser]]></FromUserName>
+		<CreateTime>12345678</CreateTime>
+		<MsgType><![CDATA[image]]></MsgType>
+		<Image>
+		<MediaId><![CDATA[media_id]]></MediaId>
+		</Image>
+		</xml>
+
+		ToUserName	 是	 接收方帐号（收到的OpenID）
+		FromUserName	 是	开发者微信号
+		CreateTime	 是	 消息创建时间 （整型）
+		MsgType	 是	 image
+		MediaId	 是	 通过上传多媒体文件，得到的id。
+
+	回复语音消息
+		<xml>
+		<ToUserName><![CDATA[toUser]]></ToUserName>
+		<FromUserName><![CDATA[fromUser]]></FromUserName>
+		<CreateTime>12345678</CreateTime>
+		<MsgType><![CDATA[voice]]></MsgType>
+		<Voice>
+		<MediaId><![CDATA[media_id]]></MediaId>
+		</Voice>
+		</xml>
+
+		ToUserName	 是	 接收方帐号（收到的OpenID）
+		FromUserName	 是	开发者微信号
+		CreateTime	 是	 消息创建时间戳 （整型）
+		MsgType	 是	 语音，voice
+		MediaId	 是	 通过上传多媒体文件，得到的id
+
+	回复视频消息
+		<xml>
+		<ToUserName><![CDATA[toUser]]></ToUserName>
+		<FromUserName><![CDATA[fromUser]]></FromUserName>
+		<CreateTime>12345678</CreateTime>
+		<MsgType><![CDATA[video]]></MsgType>
+		<Video>
+		<MediaId><![CDATA[media_id]]></MediaId>
+		<Title><![CDATA[title]]></Title>
+		<Description><![CDATA[description]]></Description>
+		</Video> 
+		</xml>
+
+		ToUserName	 是	 接收方帐号（收到的OpenID）
+		FromUserName	 是	开发者微信号
+		CreateTime	 是	 消息创建时间 （整型）
+		MsgType	 是	 video
+		MediaId	 是	 通过上传多媒体文件，得到的id
+		Title	 否	 视频消息的标题
+		Description	 否	 视频消息的描述
+
+	回复音乐消息
+		<xml>
+		<ToUserName><![CDATA[toUser]]></ToUserName>
+		<FromUserName><![CDATA[fromUser]]></FromUserName>
+		<CreateTime>12345678</CreateTime>
+		<MsgType><![CDATA[music]]></MsgType>
+		<Music>
+		<Title><![CDATA[TITLE]]></Title>
+		<Description><![CDATA[DESCRIPTION]]></Description>
+		<MusicUrl><![CDATA[MUSIC_Url]]></MusicUrl>
+		<HQMusicUrl><![CDATA[HQ_MUSIC_Url]]></HQMusicUrl>
+		<ThumbMediaId><![CDATA[media_id]]></ThumbMediaId>
+		</Music>
+		</xml>
+
+		ToUserName	 是	 接收方帐号（收到的OpenID）
+		FromUserName	 是	开发者微信号
+		CreateTime	 是	 消息创建时间 （整型）
+		MsgType	 是	 music
+		Title	 否	 音乐标题
+		Description	 否	 音乐描述
+		MusicURL	 否	 音乐链接
+		HQMusicUrl	 否	 高质量音乐链接，WIFI环境优先使用该链接播放音乐
+		ThumbMediaId	 是	 缩略图的媒体id，通过上传多媒体文件，得到的id
+
+	回复图文消息
+		<xml>
+		<ToUserName><![CDATA[toUser]]></ToUserName>
+		<FromUserName><![CDATA[fromUser]]></FromUserName>
+		<CreateTime>12345678</CreateTime>
+		<MsgType><![CDATA[news]]></MsgType>
+		<ArticleCount>2</ArticleCount>
+		<Articles>
+		<item>
+		<Title><![CDATA[title1]]></Title> 
+		<Description><![CDATA[description1]]></Description>
+		<PicUrl><![CDATA[picurl]]></PicUrl>
+		<Url><![CDATA[url]]></Url>
+		</item>
+		<item>
+		<Title><![CDATA[title]]></Title>
+		<Description><![CDATA[description]]></Description>
+		<PicUrl><![CDATA[picurl]]></PicUrl>
+		<Url><![CDATA[url]]></Url>
+		</item>
+		</Articles>
+		</xml> 
+
+		ToUserName	 是	 接收方帐号（收到的OpenID）
+		FromUserName	 是	开发者微信号
+		CreateTime	 是	 消息创建时间 （整型）
+		MsgType	 是	 news
+		ArticleCount	 是	 图文消息个数，限制为10条以内
+		Articles	 是	 多条图文消息信息，默认第一个item为大图,注意，如果图文数超过10，则将会无响应
+		Title	 否	 图文消息标题
+		Description	 否	 图文消息描述
+		PicUrl	 否	 图片链接，支持JPG、PNG格式，较好的效果为大图360*200，小图200*200
+		Url	 否	 点击图文消息跳转链接
+
+
+发送客服消息
+	当用户主动发消息给公众号的时候（包括发送信息、点击自定义菜单、订阅事件、扫描二维码事件、支付成功事件、用户维权），微信将会把消息数据推送给开发者，
+	开发者在一段时间内（目前修改为48小时）可以调用客服消息接口，通过POST一个JSON数据包来发送消息给普通用户，在48小时内不限制发送次数。此接口主要用于客服
+	等有人工消息处理环节的功能，方便开发者为用户提供更加优质的服务。
+
+	接口调用请求说明 
+		http请求方式: POST
+		https://api.weixin.qq.com/cgi-bin/message/custom/send?access_token=ACCESS_TOKEN
+
+		发送文本消息 
+		{
+			"touser":"OPENID",
+			"msgtype":"text",
+			"text":
+			{
+				 "content":"Hello World"
+			}
+		}
+		access_token	 是	 调用接口凭证
+		touser	 是	 普通用户openid
+		msgtype	 是	 消息类型，text
+		content	 是	 文本消息内容
+
+		发送图片消息 
+		{
+			"touser":"OPENID",
+			"msgtype":"image",
+			"image":
+			{
+			  "media_id":"MEDIA_ID"
+			}
+		}
+		access_token	 是	 调用接口凭证
+		touser	 是	 普通用户openid
+		msgtype	 是	 消息类型，image
+		media_id	 是	 发送的图片的媒体ID
+
+		发送语音消息 
+		{
+			"touser":"OPENID",
+			"msgtype":"voice",
+			"voice":
+			{
+			  "media_id":"MEDIA_ID"
+			}
+		}
+
+		access_token	 是	 调用接口凭证
+		touser	 是	 普通用户openid
+		msgtype	 是	 消息类型，voice
+		media_id	 是	 发送的语音的媒体ID
+
+		发送视频消息 
+		{
+			"touser":"OPENID",
+			"msgtype":"video",
+			"video":
+			{
+			  "media_id":"MEDIA_ID",
+			  "title":"TITLE",
+			  "description":"DESCRIPTION"
+			}
+		}
+
+		access_token	 是	 调用接口凭证
+		touser	 是	 普通用户openid
+		msgtype	 是	 消息类型，video
+		media_id	 是	 发送的视频的媒体ID
+		title	 否	 视频消息的标题
+		description	 否	 视频消息的描述
+
+		发送音乐消息 
+		{
+			"touser":"OPENID",
+			"msgtype":"music",
+			"music":
+			{
+			  "title":"MUSIC_TITLE",
+			  "description":"MUSIC_DESCRIPTION",
+			  "musicurl":"MUSIC_URL",
+			  "hqmusicurl":"HQ_MUSIC_URL",
+			  "thumb_media_id":"THUMB_MEDIA_ID" 
+			}
+		}
+		access_token	 是	 调用接口凭证
+		touser	 是	 普通用户openid
+		msgtype	 是	 消息类型，music
+		title	 否	 音乐标题
+		description	 否	 音乐描述
+		musicurl	 是	 音乐链接
+		hqmusicurl	 是	 高品质音乐链接，wifi环境优先使用该链接播放音乐
+		thumb_media_id	 是	 缩略图的媒体ID
+
+		发送图文消息 
+		图文消息条数限制在10条以内，注意，如果图文数超过10，则将会无响应。 
+		{
+			"touser":"OPENID",
+			"msgtype":"news",
+			"news":{
+				"articles": [
+				 {
+					 "title":"Happy Day",
+					 "description":"Is Really A Happy Day",
+					 "url":"URL",
+					 "picurl":"PIC_URL"
+				 },
+				 {
+					 "title":"Happy Day",
+					 "description":"Is Really A Happy Day",
+					 "url":"URL",
+					 "picurl":"PIC_URL"
+				 }
+				 ]
+			}
+		} 
+		 
+		access_token	 是	 调用接口凭证
+		touser	 是	 普通用户openid
+		msgtype	 是	 消息类型，news
+		title	 否	 标题
+		description	 否	 描述
+		url	 否	 点击后跳转的链接
+		picurl	 否	 图文消息的图片链接，支持JPG、PNG格式，较好的效果为大图640*320，小图80*80

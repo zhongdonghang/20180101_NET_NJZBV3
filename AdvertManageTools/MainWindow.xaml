@@ -1,0 +1,69 @@
+﻿<Window x:Class="AdvertManageTools.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="图书馆综合信息发布平台" Height="700" Width="1200"  WindowStartupLocation="CenterScreen"  Icon="pack://application:,,,/Resources/temp1.ico"  xmlns:my="clr-namespace:AdvertManageTools.UserControl">
+    <Grid>
+        <TabControl Height="637" HorizontalAlignment="Left" Name="tabControlmain" SelectionChanged="tabControlmain_SelectionChanged" VerticalAlignment="Top" Width="1154" Margin="12,12,0,0">
+            <TabItem Header="学校信息管理" Name="schoolinfotab">
+                <Grid>
+                    <TabControl Height="600" HorizontalAlignment="Left" Margin="6,6,0,0" Name="tabControlschoolinfo" VerticalAlignment="Top" Width="1140" TabStripPlacement="Left" SelectionChanged="tabControlschoolinfo_SelectionChanged">
+                        <TabItem Header="学校信息管理" Name="schooltab">
+                            <Grid>
+                                <my:SchoolInfo HorizontalAlignment="Left" Margin="6,6,0,0" x:Name="schoolInfo" VerticalAlignment="Top" Height="577" Width="1017" />
+                            </Grid>
+                        </TabItem>
+                        <TabItem Header="校区信息管理" Name="campustab">
+                            <Grid>
+                                <my:CampusInfo HorizontalAlignment="Left" Margin="6,6,0,0" x:Name="campusInfo" VerticalAlignment="Top" Width="1017" Height="577" />
+                            </Grid>
+                        </TabItem>
+                        <TabItem Header="终端信息管理" Name="devicetab">
+                            <Grid>
+                                <my:DeviceInfo HorizontalAlignment="Left" Margin="6,6,0,0" x:Name="deviceInfo" VerticalAlignment="Top" Width="1023" Height="583" />
+                            </Grid>
+                        </TabItem>
+                    </TabControl>
+                </Grid>
+            </TabItem>
+            <TabItem Header="视频广告管理" Name="playerlisttap">
+                <Grid>
+                    <my:PlaylistInfo HorizontalAlignment="Left" Margin="6,6,0,0" x:Name="playlistInfo" VerticalAlignment="Top" Width="1143" Height="605" />
+                </Grid>
+            </TabItem>
+            <TabItem Header="优惠劵管理" Name="SCtap">
+                <Grid>
+                    <my:SlipCustomerInfo HorizontalAlignment="Left" Margin="6,6,0,0" x:Name="slipCustomerInfo" VerticalAlignment="Top" Height="605" Width="1143" />
+                </Grid>
+            </TabItem>
+            <TabItem Header="硬广管理" Name="hardAdtap">
+                <Grid>
+                    <my:HardAdInfo HorizontalAlignment="Left" Margin="6,6,0,0" x:Name="hardAdInfo" VerticalAlignment="Top" Height="605" Width="1143" />
+                </Grid>
+            </TabItem>
+            <TabItem Header="冠名广告管理" Name="TitleAdtap">
+                <Grid>
+                    <my:TitleAdInfo HorizontalAlignment="Left" Margin="6,6,0,0" x:Name="titleAdInfo" VerticalAlignment="Top" Height="605" Width="1143" />
+                </Grid>
+            </TabItem>
+            <TabItem Header="打印模板管理" Name="printtap">
+                <Grid>
+                    <my:PrintTemplateInfo HorizontalAlignment="Left" Margin="6,6,0,0" x:Name="printTemplateInfo" VerticalAlignment="Top" Height="605" Width="1143" />
+                </Grid>
+            </TabItem>
+            <TabItem Header="系统版本管理" Name="systemtap">
+                <Grid>
+                    <my:SystemVerInfo HorizontalAlignment="Left" Margin="6,6,0,0" x:Name="systemVerInfo" VerticalAlignment="Top" Height="605" Width="1143" />
+                </Grid>
+            </TabItem>
+            <TabItem Header="下发记录查询" Name="logtap">
+                <Grid>
+                    <my:ReleaseLog HorizontalAlignment="Left" Margin="6,6,0,0" x:Name="releaseLog" VerticalAlignment="Top" Width="1143" Height="605" />
+                </Grid>
+            </TabItem>
+            <TabItem Header="优惠券使用统计" Name="tabItem12">
+                <Grid />
+            </TabItem>
+        </TabControl>
+        
+    </Grid>
+</Window>

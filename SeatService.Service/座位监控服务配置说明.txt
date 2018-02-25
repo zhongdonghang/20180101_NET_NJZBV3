@@ -1,0 +1,24 @@
+﻿一、功能说明：
+	SeatWatch    监控服务主程序
+	TimeLoop     时间循环控件
+	WatchOperate 监控服务操作
+	方法
+	OpenCloseReadingRoom() 执行阅览室开闭馆处理
+	OverTimeOperate()      处理暂离和在座超时
+	LockOverTime()         处理锁定超时
+	BlacklistOverTime()    清除黑名单
+	MediaOverDate()        清除过期的媒体文件
+
+二、配置
+	1.远程服务访问地址：节点添加在：configuration/connectionStrings下
+	<!--服务宿主配置文件的文件名-->
+	<add key="configFileName" value="WcfHost.exe.config"/>
+	<!--程序集信息-->
+		<add key="ServiceAssembly" value="SeatService.Service.SeatWatch,SeatService.Service"/>
+		<!--学校座位系统服务访问的终结点-->
+		<add name="EndpointAddress" connectionString="0Fcuk3rdMItJkTUtPoqxv97jRxXfylETWgyYHnE48nQ="/>
+		<!--读者库同步接口，根据实际情况进行配置-->
+		 <add key="IStuLibSync" value="SeatManage.StudentSync.StudentSync,SeatManage.StudentSync"></add>
+		 <!--源读者库中读取信息的接口，根据实际配置-->
+    <add key="IReaderSource" value="SeatManage.StudentSource.ReaderSource,SeatManage.StudentSource"/>
+ 

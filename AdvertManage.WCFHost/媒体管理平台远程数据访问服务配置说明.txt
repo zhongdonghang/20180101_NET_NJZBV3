@@ -1,0 +1,82 @@
+﻿1.如果宿主需要启动多个WCF服务，则需要修改WCFHost的代码，以启动多个服务。
+2.远程数据访问节点和WCF数据库访问地址：
+	<!--数据库访问地址-->
+	<add name="ConnectionString" connectionString="Data Source=192.168.1.38;Initial Catalog=AdvertManageSystem;Persist Security Info=True;User ID=sa;Password=njzbwx"/>
+3.程序配置：
+	<!--程序集信息-->
+	<add key="ServiceAssembly" value="AdvertManage.WCFHost.AM_WcfHost,AdvertManage.WCFHost"/>
+	<!--文件上传保存地址-->
+	<add key="SaveFilePath" value="E:\FileTransport\Juneberry\"/>
+    <!--文件下载缓冲大小-->
+	<add key="BufferSize" value="200"/> 
+
+4.WCF绑定配置：
+<system.serviceModel>
+    <behaviors>
+      <serviceBehaviors>
+        <behavior name="AdvertManage.AdvertManageServiceBehavior">
+          <serviceMetadata httpGetEnabled="false" />
+          <serviceDebug includeExceptionDetailInFaults="true" />
+          <dataContractSerializer maxItemsInObjectGraph="2147483647" />
+          <!--true则会将服务器端的错误返货到客户端-->
+        </behavior>
+      </serviceBehaviors>
+    </behaviors>
+    <services>
+      <service behaviorConfiguration="AdvertManage.AdvertManageServiceBehavior"
+          name="AdvertManage.WCFService.AdvertManageService">
+        <endpoint address="" binding="netTcpBinding" bindingConfiguration="netTcpBindingConfiguration" contract="AdvertManage.IWCFService.IAdvertManageService">
+          <identity>
+            <dns value="localhost" />
+          </identity>
+        </endpoint>
+        <endpoint address="mex" binding="mexTcpBinding" contract="IMetadataExchange" />
+        <host>
+          <baseAddresses>
+            <add baseAddress="net.tcp://localhost:8110/AdvertManageService/" />
+          </baseAddresses>
+        </host>
+      </service>
+      <service behaviorConfiguration="AdvertManage.AdvertManageServiceBehavior"
+          name="WcfServiceForTransportService.TransportService">
+        <endpoint address="" binding="netTcpBinding" bindingConfiguration="netTcpBindingConfiguration" contract="IWCFService.TransportService.IFileTransportService">
+          <identity>
+            <dns value="localhost" />
+          </identity>
+        </endpoint>
+        <endpoint address="mex" binding="mexTcpBinding" contract="IMetadataExchange" />
+        <host>
+          <baseAddresses>
+            <add baseAddress="net.tcp://localhost:8110/TransportService/" />
+          </baseAddresses>
+        </host>
+      </service>
+    </services>
+
+    <bindings>
+      <netTcpBinding>
+        <binding name="netTcpBindingConfiguration"
+                 closeTimeout="00:01:00"
+                 openTimeout="00:01:00"
+                 receiveTimeout="00:10:00"
+                 sendTimeout="00:10:00"
+                 transactionFlow="false"
+                 transferMode="Buffered"
+                 transactionProtocol="OleTransactions"
+                 hostNameComparisonMode="StrongWildcard"
+                 listenBacklog="10"
+                 maxBufferPoolSize="2147483647 "
+                 maxBufferSize="2147483647 "
+                 maxConnections="10"
+                 
+                 maxReceivedMessageSize="2147483647 ">
+          <!--<readerQuotas maxDepth="64" maxStringContentLength="2147483647" maxArrayLength="2147483647" maxBytesPerRead="4096" maxNameTableCharCount="16384" />-->
+          <readerQuotas maxDepth="2147483647" maxStringContentLength="2147483647" maxArrayLength="2147483647" maxBytesPerRead="2147483647" maxNameTableCharCount="2147483647"/>
+          <reliableSession ordered="true" inactivityTimeout="00:10:00" enabled="false" />
+          <security mode="None">
+            <transport clientCredentialType="Windows" protectionLevel="EncryptAndSign" />
+          </security>
+        </binding>
+      </netTcpBinding>
+    </bindings>
+  </system.serviceModel> 

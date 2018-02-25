@@ -1,0 +1,42 @@
+﻿<UserControl
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:my="clr-namespace:AdvertManageClient.FunPage.NewMediaEdit"
+	mc:Ignorable="d"
+	x:Class="AdvertManageClient.FunPage.UC_NewAdvertManage"
+	x:Name="UserControl"
+    d:DesignHeight="550" d:DesignWidth="990">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../MyDictionary/UC_AdvertVideoManageFormDictionary.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid Background="White" Height="550" Width="990">
+        <Rectangle Fill="#FFA39797" Height="2" Margin="0,36,0,0" Width="990" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5"/>
+        <TextBlock HorizontalAlignment="Left" Height="28" Margin="13,5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="332" Foreground="#E28B5D" FontWeight="Bold" FontSize="18"><Run Language="zh-cn" Text="广告发布与管理(适用于V2.3及以上版本)"/></TextBlock>
+        <Rectangle Fill="#FFA39797" HorizontalAlignment="Right" Margin="0,40,180,10" Width="2"/>
+        <StackPanel Margin="0,40,190,0" Width="800" Height="520"></StackPanel>
+        <Button x:Name="btn_PopAdvertList" Content="弹窗&#13;广告" Foreground="#FFE28B5D" Height="80" HorizontalAlignment="Right" Margin="0,126,8,0" Style="{DynamicResource ButtonStyle_Media}" VerticalAlignment="Top" Width="80" Click="btn_PopAdvertList_Click" />
+        <Button x:Name="btn_CouponsList" Content="优惠券" Foreground="#FFE28B5D" Height="80" HorizontalAlignment="Right" Margin="0,40,8,0" Style="{DynamicResource ButtonStyle_Media}" VerticalAlignment="Top" Width="80" Click="btn_CouponsList_Click" />
+        <Button x:Name="btn_ReaderAdvertList" Content="读者&#13;推广" Foreground="#FFE28B5D" Height="80" Style="{DynamicResource ButtonStyle_Media}" Width="80" Margin="902,212,8,258" Click="btn_ReaderAdvertList_Click" />
+        <Button x:Name="btn_PlaylistList" Content="视频&#13;广告" HorizontalAlignment="Right" Height="80" Margin="0,40,92,0" VerticalAlignment="Top" Width="80" Style="{DynamicResource ButtonStyle_Media}" Foreground="#FFE28B5D" Click="btn_PlaylistList_Click" />
+        <Button x:Name="btn_TitleAdvertList" Content="冠名&#13;广告" HorizontalAlignment="Right" Height="80" Margin="0,126,92,0" VerticalAlignment="Top" Width="80" Style="{DynamicResource ButtonStyle_Media}" Foreground="#FFE28B5D" Click="btn_TitleAdvertList_Click" />
+        <Button x:Name="btn_PrintReceiptList" Content="座位&#13;凭条" HorizontalAlignment="Right" Margin="0,212,92,258" Width="80" Style="{DynamicResource ButtonStyle_Media}" Foreground="#FFE28B5D" Click="btn_PrintReceiptList_Click" />
+        <Button x:Name="btn_PromotionList" Content="校园&#13;推广" HorizontalAlignment="Right" Height="80" Margin="0,0,92,172" VerticalAlignment="Bottom" Width="80" Style="{DynamicResource ButtonStyle_Media}" Foreground="#FFE28B5D" Click="btn_PromotionList_Click" />
+        <Button x:Name="btn_ComtomerList" Content="客户&#13;管理" HorizontalAlignment="Right" Height="80" Margin="0,0,8,8" VerticalAlignment="Bottom" Width="80" Style="{DynamicResource ButtonStyle_Media}" Foreground="#FFE28B5D"/>
+        <Grid Margin="0,40,180,0" x:Name="ucGrid">
+            <my:UC_CouponsList x:Name="uc_CouponsList" Visibility="Collapsed"></my:UC_CouponsList>
+            <my:UC_Playlist x:Name="uc_Playlist"  Visibility="Collapsed"></my:UC_Playlist>
+            <my:UC_PopAdvert x:Name="uc_PopAdvert"  Visibility="Collapsed"></my:UC_PopAdvert>
+            <my:UC_PrintReceipt x:Name="uc_PrintReceipt" Visibility="Collapsed"></my:UC_PrintReceipt>
+            <my:UC_Promotion x:Name="uc_Promotion" Visibility="Collapsed"></my:UC_Promotion>
+            <my:UC_ReaderAdvert x:Name="uc_ReaderAdvert" Visibility="Collapsed"></my:UC_ReaderAdvert>
+            <my:UC_TitleAdvert x:Name="uc_TitleAdvert" Visibility="Collapsed"></my:UC_TitleAdvert>
+        </Grid>
+    </Grid>
+
+</UserControl>

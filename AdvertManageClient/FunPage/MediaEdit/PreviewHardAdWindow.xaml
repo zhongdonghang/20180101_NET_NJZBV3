@@ -1,0 +1,14 @@
+﻿<Window x:Class="AdvertManageClient.FunPage.MediaEdit.PreviewHardAdWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="PreviewHardAdWindow" Height="400" Width="500" WindowStartupLocation="CenterScreen" MouseLeftButtonDown="Window_MouseLeftButtonDown">
+    <Window.Style>
+        <StaticResource ResourceKey="ChildWindowsStyle"></StaticResource>
+    </Window.Style>
+    <Grid>
+        <Button Content="" RenderTransformOrigin="3.3,0.8" Height="20" Width="20"  Panel.ZIndex="5" Style="{DynamicResource ButtonCloseStyle}" Click="Button_Click" Margin="453,-61,-5,342" />
+        <Label Content="硬广图片预览" Style="{StaticResource LabelStyleTitle}"/>
+        <Image Style="{StaticResource ImageStyleLogo}"/>
+        <Image  HorizontalAlignment="Left" Margin="10,6,0,0" Name="image1" Stretch="Fill" VerticalAlignment="Top"/>
+    </Grid>
+</Window>

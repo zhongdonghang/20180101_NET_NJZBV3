@@ -1,0 +1,20 @@
+﻿<UserControl x:Class="SeatConfig.UserCtl.CtlNode"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" Height="48" Width="48">
+    <Grid>
+        <Grid x:Name="grid">
+            
+            <Grid.RowDefinitions>
+                <RowDefinition Height="14"/>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="14"/>
+            </Grid.RowDefinitions>
+            <Rectangle Height="10" Width="10" Margin="35,2,3,2"  Fill="Red" x:Name="close" MouseDown="close_MouseDown"></Rectangle>
+            <TextBox x:Name="txtNote" Margin="2,0,2,0"  Height="20" Text="{Binding Remark,Mode=TwoWay}" Grid.Row="1" Visibility="Collapsed"  LostFocus="TextBox_LostFocus"></TextBox>
+            <TextBlock Margin="2,0,2,0" x:Name="tbkNote" Height="20" Text="{Binding Path=Text,Mode=OneWay,ElementName=txtNote}" Grid.Row="1" MouseLeftButtonUp="TextBlock_MouseLeftButtonUp"></TextBlock>
+        </Grid>
+    </Grid>
+</UserControl>

@@ -1,0 +1,20 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="AdvertManageClient.MessageBoxWindow"
+        Title="MessageBoxWindow" Style="{StaticResource MainWindowsStyle}" WindowStartupLocation="CenterOwner" MaxHeight="{Binding vm_MessageBoxWindow.FormHeight}" MaxWidth="{Binding vm_MessageBoxWindow.FormWidth}" Top="300" Left="500">
+    <Grid>
+        <StackPanel Height="40"  Style="{DynamicResource StackPanelStyleTopDown}" MouseLeftButtonDown="StackPanel_MouseLeftButtonDown" Width="{Binding vm_MessageBoxWindow.FormWidth}" VerticalAlignment="Top">
+        	<Image Height="40" Width="112" Source="Image/juneberry.png" Stretch="Fill" HorizontalAlignment="Left"/>
+        </StackPanel>
+        <StackPanel Margin="0,40,0,10" Style="{DynamicResource StackPanelStyleMiddle}" Width="{Binding vm_MessageBoxWindow.FormWidth}">
+        	
+        </StackPanel>
+        <StackPanel Height="10" Style="{DynamicResource StackPanelStyleTopDown}" VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="{Binding vm_MessageBoxWindow.FormWidth}" />
+        <Button Content="确认" HorizontalAlignment="Center" Height="32" Margin="0,0,80,24" Width="68" VerticalAlignment="Bottom" Style="{DynamicResource ButtonStyleSubmit}" RenderTransformOrigin="0.533,-0.25" Visibility="{Binding vm_MessageBoxWindow.OKButtonVisibility}" Click="Button_Click" />
+        <Button Content="取消" Height="32" Margin="80,0,0,24" HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="68" Style="{DynamicResource ButtonStyleSubmit}" RenderTransformOrigin="0.533,-0.25" Visibility="{Binding vm_MessageBoxWindow.CancelButtonVisibility}" Click="Button_Click_1" />
+        <Button Content="关闭" Height="32" Margin="0,0,0,24" VerticalAlignment="Bottom" Style="{DynamicResource ButtonStyleSubmit}" RenderTransformOrigin="0.533,-0.25" Name="btn_close" Click="btn_close_Click" Visibility="{Binding vm_MessageBoxWindow.CloseButtonVisibility}" HorizontalAlignment="Center" Width="68" />
+        <Image HorizontalAlignment="Left" VerticalAlignment="Center" Height="50"  Margin="20,0,0,0" Source="{Binding vm_MessageBoxWindow.ImageSource}" Stretch="Fill" Width="50"/>
+        <TextBlock TextAlignment="Left" VerticalAlignment="Center"  TextWrapping="Wrap" Text="{Binding vm_MessageBoxWindow.Message}" Margin="90,0,0,0" FontFamily="微软雅黑" FontWeight="Bold" FontSize="{Binding vm_MessageBoxWindow.FontSize}"  HorizontalAlignment="Left"/>
+    </Grid>
+</Window>

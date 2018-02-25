@@ -1,0 +1,99 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="AdvertManageClient.FunPage.NewMediaEdit.W_CouponsEdit"
+        Title="W_CouponsEdit"  Height="440" Width="1170" WindowStartupLocation="CenterScreen" Style="{StaticResource ChildWindowsStyle_Orange}" MouseLeftButtonDown="Window_MouseLeftButtonDown" Loaded="Window_Loaded">
+    <Grid>
+        <Image Style="{StaticResource ImageStyleLogo}"/>
+        <Label Content="优惠券编辑" Style="{StaticResource LabelStyleTitle}"/>
+        <TextBlock  Margin="30,16,0,0" Text="编号："  Width="65" Style="{DynamicResource TextBlockStyle_Orange}"/>
+        <TextBox x:Name="txt_no" Margin="99,16.152,0,0" Text="{Binding CouponsNo}"  Width="140" Style="{DynamicResource TextBoxStylePutIn_Orange}"/>
+        <TextBlock  Margin="30,44.152,0,0" Text="名称："  Width="65" Style="{DynamicResource TextBlockStyle_Orange}"/>
+        <TextBox x:Name="txt_name" Margin="99,44.152,0,0" Text="{Binding CouponsName}"  Width="140" Style="{DynamicResource TextBoxStylePutIn_Orange}"/>
+        <TextBlock  Margin="243,16.152,0,0" Text="选择客户："  Width="100" Style="{DynamicResource TextBlockStyle_Orange}" d:LayoutOverrides="HorizontalAlignment" />
+        <ComboBox   x:Name="cb_Cutomer" Height="24" Margin="343,16,0,0" VerticalAlignment="Top"  Style="{DynamicResource ComboBoxStyleSelect_Orange}"  ItemsSource="{Binding CustomerList.CustomerInfoList}" DisplayMemberPath="CompanyName" HorizontalAlignment="Left" Width="144" SelectionChanged="cb_Cutomer_SelectionChanged" />
+        <TextBlock  Margin="278,44,0,0" Text="编辑人："  Width="65" Style="{DynamicResource TextBlockStyle_Orange}" d:LayoutOverrides="HorizontalAlignment" />
+        <TextBlock  Margin="347,44,0,0" Text="{Binding Operator}"  Width="140" Style="{DynamicResource TextBlockStyle_Orange}" TextAlignment="Left" HorizontalAlignment="Left" />
+        <GroupBox Header="Logo图片(130x130)" HorizontalAlignment="Left" Margin="15,104.618,0,0" Width="140" Style="{DynamicResource GroupBoxStyle_Orange}" Height="180" VerticalAlignment="Top" d:LayoutOverrides="VerticalAlignment">
+            <Grid Margin="0,0,0,0">
+                <Image Margin="0,0,0,0" Source="{Binding LogoImageInfo}" VerticalAlignment="Top" Height="130"/>
+                <Button Height="24" VerticalAlignment="Bottom" Content="添加LOGO图片" Style="{DynamicResource ButtonStyle_Orange}" x:Name="btnlogoimage" Click="btnlogoimage_Click" />
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="选择广告位" Margin="491,7.848,0,0" Style="{DynamicResource GroupBoxStyle_Orange}" HorizontalAlignment="Left" Width="332" Height="88.77" VerticalAlignment="Top">
+            <Grid>
+                <RadioButton Content="1号位" x:Name="rb_s1" HorizontalAlignment="Left"  VerticalAlignment="Top" Style="{DynamicResource RadioButtonStyle_Orange}" Width="40" Height="25" Margin="8,4.667,0,0" Checked="RadioButton_Checked"/>
+                <RadioButton Content="2号位" x:Name="rb_s2" HorizontalAlignment="Left"  VerticalAlignment="Top" Style="{DynamicResource RadioButtonStyle_Orange}" Width="40" Height="25" Margin="52,4.667,0,0" Checked="RadioButton_Checked"/>
+                <RadioButton Content="3号位" x:Name="rb_s3" HorizontalAlignment="Left"  VerticalAlignment="Top" Style="{DynamicResource RadioButtonStyle_Orange}" Width="40" Height="25" Margin="96,4.667,0,0" Checked="RadioButton_Checked"/>
+                <RadioButton Content="4号位" x:Name="rb_s4" HorizontalAlignment="Left"  VerticalAlignment="Top" Style="{DynamicResource RadioButtonStyle_Orange}" Width="40" Height="25" Margin="140,4.667,0,0" Checked="RadioButton_Checked"/>
+                <RadioButton Content="5号位" x:Name="rb_s5" HorizontalAlignment="Left"  VerticalAlignment="Top" Style="{DynamicResource RadioButtonStyle_Orange}" Width="40" Height="25" Margin="184,4.667,0,0" Checked="RadioButton_Checked"/>
+                <RadioButton Content="6号位" x:Name="rb_s6" HorizontalAlignment="Left"  VerticalAlignment="Top" Style="{DynamicResource RadioButtonStyle_Orange}" Width="40" Height="25" Margin="228,4.667,0,0" Checked="RadioButton_Checked"/>
+                <RadioButton Content="7号位" x:Name="rb_s7" HorizontalAlignment="Left"  VerticalAlignment="Top" Style="{DynamicResource RadioButtonStyle_Orange}" Width="40" Height="25" Margin="272,4.667,0,0" Checked="RadioButton_Checked"/>
+                <RadioButton Content="8号位" x:Name="rb_s8" HorizontalAlignment="Left"  VerticalAlignment="Top" Style="{DynamicResource RadioButtonStyle_Orange}" Width="304" Height="25" Margin="8,33.667,0,0" Checked="RadioButton_Checked"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="弹出优惠信息窗口图片（900x900）" x:Name="gb_item" Margin="168,104.618,0,0" Style="{DynamicResource GroupBoxStyle_Orange}" HorizontalAlignment="Left" Width="645" Height="234" VerticalAlignment="Top">
+            <Grid>
+                <Button Content="添加+" Style="{DynamicResource ButtonStyle_Orange}" x:Name="btn_CouponsItemadd"  HorizontalAlignment="Left" Width="60" Click="btn_CouponsItemadd_Click" Height="24" VerticalAlignment="Bottom" />
+                <Button Content="←左移" Style="{DynamicResource ButtonStyle_Orange}" x:Name="btn_CouponsItemMoveLift"  HorizontalAlignment="Left" Width="60" Margin="64,0,0,0" Click="btn_CouponsItemMoveLift_Click" Height="24" VerticalAlignment="Bottom" />
+                <Button Content="右移→" Style="{DynamicResource ButtonStyle_Orange}" x:Name="btn_CouponsItemMoveRight"  HorizontalAlignment="Left" Width="60" Margin="128,0,0,0" Click="btn_CouponsItemMoveRight_Click" Height="24" VerticalAlignment="Bottom" />
+                <Button Content="删除X" Style="{DynamicResource ButtonStyle_Orange}" x:Name="btn_CouponsItemDelete" Margin="258,0,0,0" HorizontalAlignment="Left" Width="60" Click="btn_CouponsItemDelete_Click" Height="24.163" VerticalAlignment="Bottom" />
+                <Button Content="更换图片" HorizontalAlignment="Left" Margin="192,0,0,0" Name="btn_CouponsItemSelectImage" Style="{DynamicResource ButtonStyle_Orange}" Width="60"  Click="btn_CouponsItemSelectImage_Click" Height="24" VerticalAlignment="Bottom"/>
+                <CheckBox Content="CheckBox" HorizontalAlignment="Right" Height="24" Margin="0,143.773,4.666,0" VerticalAlignment="Top" Width="50" Style="{DynamicResource CheckBoxStyle_Orange}" IsChecked="{Binding NowEdiretItem.IsPrint}"/>
+                <TextBlock  Margin="0,143.93,58.666,0" Text="启用打印" Style="{DynamicResource TextBlockStyle_Orange}" VerticalAlignment="Top" HorizontalAlignment="Right" Width="65" />
+                <ListBox Margin="0,2,0,0" x:Name="LB_CouponsItem" Style="{DynamicResource ListBoxStyle_Orange}" ItemsSource="{Binding Path=CouponsItemList}" ScrollViewer.VerticalScrollBarVisibility="Disabled" ScrollViewer.HorizontalScrollBarVisibility="Visible" SelectionChanged="LB_CouponsItem_SelectionChanged" Height="127.163" VerticalAlignment="Top">
+                    <ListBox.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel IsItemsHost="True" />
+                        </ItemsPanelTemplate>
+                    </ListBox.ItemsPanel>
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal" Height="130" Width="130">
+                                    <Image Source="{Binding PopImageInfo}" Margin="5,5,0,0" Height="120"  Width="120"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+                <TextBlock  Margin="2,144.163,0,0" Text="开始日期：" Style="{DynamicResource TextBlockStyle_Orange}" HorizontalAlignment="Left" VerticalAlignment="Top" />
+                <DatePicker Margin="86,144.163,0,0" Width="140" Text="{Binding NowEdiretItem.EffectDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  Style="{DynamicResource DatePickerStyleInput_Orange}" VerticalAlignment="Top" d:LayoutOverrides="HorizontalAlignment" />
+                <TextBlock  Margin="230,144.163,0,0" Text="结束日期：" Style="{DynamicResource TextBlockStyle_Orange}" HorizontalAlignment="Left" VerticalAlignment="Top" d:LayoutOverrides="HorizontalAlignment"/>
+                <DatePicker Margin="314,144.163,0,0" Width="140" Text="{Binding NowEdiretItem.EndDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  Style="{DynamicResource DatePickerStyleInput_Orange}" VerticalAlignment="Top" />
+
+            </Grid>
+        </GroupBox>
+        <GroupBox x:Name="gb_print" Header="打印优惠券内容编辑（预览）" Margin="823,8,0,0" Style="{DynamicResource GroupBoxStyle_Orange}" Visibility="{Binding NowEdiretItem.Visibility}" HorizontalAlignment="Left" Width="322" Height="280" VerticalAlignment="Top" >
+            <Grid>
+                <ListBox x:Name="LB_PrintTemplate" Margin="3,3.497,0,0" Style="{DynamicResource ListBoxStyle_Orange}" HorizontalAlignment="Left" Width="240" Height="248" VerticalAlignment="Top" ItemsSource="{Binding NowEdiretItem.TemplateItem.PrintIiemList}">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal" >
+                                <TextBlock Text="{Binding TextInfo,Mode=OneWay}" TextWrapping="Wrap" Width="130" FontSize="{Binding FontSize,Mode=OneWay}" FontWeight="{Binding IsBold,Mode=OneWay}" FontStyle="{Binding IsItalic,Mode=OneWay}" Visibility="{Binding TextControlVisible}" />
+                                <TextBlock Text="  "></TextBlock>
+                                <TextBox TextAlignment="Left" Width="130" VerticalContentAlignment="Top" Height="Auto" Margin="0,0,69,0"  FontSize="{Binding FontSize,Mode=OneWay}" Text="{Binding TextInfo,Mode=TwoWay}" TextWrapping="Wrap" Style="{DynamicResource TextBoxStylePutIn}" FontWeight="{Binding IsBold,Mode=OneWay}" FontStyle="{Binding IsItalic,Mode=OneWay}" Visibility="{Binding TextControlVisible}" />
+                                <Image Height="auto" Width="130" Source="{Binding ImageInfo}"></Image>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+                <Button Height="24" VerticalAlignment="Top" Content="文本+" Style="{DynamicResource ButtonStyle_Orange}" x:Name="btn_PrintItemAddText"  HorizontalAlignment="Left" Width="60" Margin="247,3.497,0,0" d:LayoutOverrides="VerticalAlignment" Click="btn_PrintItemAddText_Click" />
+                <Button Height="24" VerticalAlignment="Top" Content="图片+" Style="{DynamicResource ButtonStyle_Orange}" x:Name="btn_PrintItemAddImage"  HorizontalAlignment="Left" Width="60" Margin="247,31.497,0,0" d:LayoutOverrides="VerticalAlignment" Click="btn_PrintItemAddImage_Click" />
+                <Button Height="24" VerticalAlignment="Top" Content="上移↑" Style="{DynamicResource ButtonStyle_Orange}" x:Name="btn_PrintItemMoveUp"  HorizontalAlignment="Left" Width="60" Margin="247,59.497,0,0" d:LayoutOverrides="VerticalAlignment" Click="btn_PrintItemMoveUp_Click" />
+                <Button Height="24" VerticalAlignment="Top" Content="下移↓" Style="{DynamicResource ButtonStyle_Orange}" x:Name="btn_PrintItemMoveDown"  HorizontalAlignment="Left" Width="60" Margin="247,87.497,0,0" Click="btn_PrintItemMoveDown_Click" />
+                <Button Height="24" VerticalAlignment="Top" Content="删除" Style="{DynamicResource ButtonStyle_Orange}" x:Name="btn_PrintItemDelete"  HorizontalAlignment="Left" Width="60" Margin="247,115.497,0,0" Click="btn_PrintItemDelete_Click" />
+                <Button Height="24" VerticalAlignment="Top" Content="加粗B" Style="{DynamicResource ButtonStyle_Orange}" x:Name="btn_PrintItemBlod"  HorizontalAlignment="Left" Width="60" Margin="247,143.497,0,0" d:LayoutOverrides="VerticalAlignment" FontWeight="Bold" Click="btn_PrintItemBlod_Click" />
+                <Button Height="24" VerticalAlignment="Top" Content="倾斜I" Style="{DynamicResource ButtonStyle_Orange}" x:Name="btn_PrintItemItalic"  HorizontalAlignment="Left" Width="60" Margin="247,171.497,0,0" FontStyle="Italic" Click="btn_PrintItemItalic_Click" />
+                <Button Height="24" VerticalAlignment="Top" Content="字号+" Style="{DynamicResource ButtonStyle_Orange}" x:Name="btn_PrintItemSizePlue"  HorizontalAlignment="Left" Width="60" Margin="247,199.497,0,0" Click="btn_PrintItemSizePlue_Click" />
+                <Button Height="24" VerticalAlignment="Top" Content="字号-" Style="{DynamicResource ButtonStyle_Orange}" x:Name="btn_PrintItemSizeMinus"  HorizontalAlignment="Left" Width="60" Margin="247,227.497,0,0" Click="btn_PrintItemSizeMinus_Click" />
+
+            </Grid>
+        </GroupBox>
+        <Button Content="关 闭" x:Name="btn_Close" HorizontalAlignment="Right" Height="40" Margin="0,0,8,8" VerticalAlignment="Bottom" Width="80" Style="{DynamicResource ButtonStyle_SubmitOrange}" Click="btn_Close_Click" />
+        <Button Content="保 存" x:Name="btn_Save" HorizontalAlignment="Right" Height="40" Margin="0,0,93,8" VerticalAlignment="Bottom" Width="80" Style="{DynamicResource ButtonStyle_SubmitOrange}" Click="btn_Save_Click" />
+        <TextBlock Margin="30,342.618,0,0" TextWrapping="Wrap" Text="{Binding ErrorMessage}" Style="{DynamicResource TextBlockStyle_ERROR}" FontSize="12" Height="31" VerticalAlignment="Top" HorizontalAlignment="Left" Width="953"/>
+        <TextBlock  Margin="15,71.767,0,0" Text="开始日期：" Style="{DynamicResource TextBlockStyle_Orange}" HorizontalAlignment="Left" VerticalAlignment="Top" d:LayoutOverrides="VerticalAlignment" />
+        <DatePicker x:Name="dd_start" Margin="99,72.233,0,0" Width="140" Text="{Binding EffectDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  Style="{DynamicResource DatePickerStyleInput_Orange}" VerticalAlignment="Top" d:LayoutOverrides="HorizontalAlignment, VerticalAlignment" />
+        <TextBlock  Margin="263,72,0,0" Text="结束日期：" Style="{DynamicResource TextBlockStyle_Orange}" HorizontalAlignment="Left" VerticalAlignment="Top" d:LayoutOverrides="HorizontalAlignment, VerticalAlignment"/>
+        <DatePicker x:Name="dd_end" Margin="347,72,0,0" Width="140" Text="{Binding EndDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  Style="{DynamicResource DatePickerStyleInput_Orange}" VerticalAlignment="Top" Height="24" d:LayoutOverrides="HorizontalAlignment, VerticalAlignment" />
+    </Grid>
+</Window>

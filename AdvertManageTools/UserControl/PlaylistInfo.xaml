@@ -1,0 +1,40 @@
+﻿<UserControl x:Class="AdvertManageTools.UserControl.PlaylistInfo"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="1100">
+    <Grid>
+        <Button Content="发布新的播放列表" Height="23" HorizontalAlignment="Left" Margin="10,10,0,0" Name="AddNewPlayList" VerticalAlignment="Top" Width="123" Click="AddNewPlayList_Click" />
+        <DataGrid AutoGenerateColumns="False" Background="{x:Null}" BorderBrush="#FFD3D3F5" Height="549" HorizontalAlignment="Left" HorizontalGridLinesBrush="Black" Margin="10,39,0,0" Name="playlistdataGrid" VerticalAlignment="Top" Width="1078" CanUserResizeRows="False" CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserSortColumns="False" VerticalGridLinesBrush="{x:Null}" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="播放列表编号" Binding="{Binding Number}" MinWidth="150" />
+                <DataGridTextColumn Header="发布日期" Binding="{Binding SubmitDate,StringFormat={}{0:yyyy-MM-dd}}" MinWidth="150" />
+                <DataGridTextColumn Header="生效日期" Binding="{Binding BeginDate,StringFormat={}{0:yyyy-MM-dd}}" MinWidth="150" />
+                <DataGridTextColumn Header="结束日期" Binding="{Binding EndDate,StringFormat={}{0:yyyy-MM-dd}}" MinWidth="380" />
+                <DataGridTemplateColumn Header="编辑" MinWidth="75">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="编辑" Name="btnPlayEdit" Click="btnPlayEdit_Click" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="下发" MinWidth="75">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="下发"  Name="btnRelease" Click="btnRelease_Click"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="导出离线版" MinWidth="75">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="导出" Name="btnDownload" Click="btnDownload_Click" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</UserControl>

@@ -1,0 +1,3 @@
+﻿EnterOutLogInfo.cs类
+EnumType.EnterOutLogType EnterOutState和EnumType.LogStatus EnterOutType
+名字和类型不对应

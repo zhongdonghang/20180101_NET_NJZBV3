@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Interface Name="SeatManage.IWCFService.ISeatManageService">
+    <Position X="6" Y="0.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AEEQAAAAAAAAIIAIBBAAACAAAAgAIAgACACAABEAACQ=</HashCode>
+      <FileName>ISeatManageService.cs</FileName>
+      <NewMemberFileName>AMS_Terminal.cs</NewMemberFileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="SeatManage.IWCFService.IExceptionService">
+    <Position X="3.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAAIAAAAAAAAAAAAAAAAAAAAAAAACAAAA=</HashCode>
+      <FileName>IExceptionService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Microsoft YaHei UI" Size="9" />
+</ClassDiagram>

@@ -1,0 +1,21 @@
+﻿<Application x:Class="AdvertManageClient.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             StartupUri="LoginWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="MyDictionary/ImageDictionary.xaml"/>
+                <ResourceDictionary Source="MyDictionary/ControlStyleDictionary.xaml"/>
+
+                <!--<ResourceDictionary Source="MyDictionary/UC_MainFormDictionary.xaml"/>
+                <ResourceDictionary Source="MyDictionary/UC_AdvertVideoManageFormDictionary.xaml"/>
+                <ResourceDictionary Source="MyDictionary/UC_DataStatisticsFormDictionary.xaml"/>
+                <ResourceDictionary Source="MyDictionary/UC_SystemManageFormDictionary.xaml"/>-->
+
+                <!--<ResourceDictionary Source="MyDictionary/LoginWindowDictionary.xaml"/>-->
+                <!--<ResourceDictionary Source="MyDictionary/MainWindowDictionary.xaml"/>-->
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

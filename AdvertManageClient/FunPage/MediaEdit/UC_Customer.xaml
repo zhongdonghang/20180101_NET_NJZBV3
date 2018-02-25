@@ -1,0 +1,45 @@
+﻿<UserControl x:Class="AdvertManageClient.FunPage.MediaEdit.UC_Customer"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"  
+             mc:Ignorable="d" 
+             d:DesignHeight="520" d:DesignWidth="900">
+    <Grid>
+        <TextBlock Height="23" HorizontalAlignment="Left" Name="textBlock1" Text="客户信息" VerticalAlignment="Top" Width="120" FontSize="18" Margin="16,11,0,0"  Foreground="#29A9E6"/>
+        <ListBox Height="452" HorizontalAlignment="Left" Margin="16,46,0,0" Name="CustomerLbox" VerticalAlignment="Top" Width="856" Style="{StaticResource ListBoxStyle}" ItemsSource="{Binding Path=CustomerInfoList}" SelectionMode="Single">
+            <ListBox.ItemTemplate>
+                <DataTemplate> 
+                    <StackPanel Orientation="Vertical" >
+                        <WrapPanel>
+                            <Rectangle Fill="#FF29AAE7" Height="2" Margin="0,3,0,5" Width="850" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5"/>
+                        </WrapPanel>
+                        <WrapPanel>
+                            <TextBlock Text="{Binding Path=ID}" Height="24" Width="0" />
+                            <TextBlock Text="客户编号：" Height="24" Width="60"/>
+                            <TextBlock Text="{Binding Path=CustomerNo}" Width="120" Height="24"  FontWeight="Bold" Foreground="Blue" />
+                            <TextBlock Text="客户名称：" Height="24" Width="60"/>
+                            <TextBlock Text="{Binding Path=CompanyName}" Width="120" Height="24" FontWeight="Bold" Foreground="Blue" />
+                            <TextBlock Text="联系方式：" Height="24" Width="60"/>
+                            <TextBlock Text="{Binding Path=LinkWay}" Width="120" Height="24" />
+                        </WrapPanel>
+                        <WrapPanel>
+                            <Rectangle Fill="#FF29AAE7" Height="0.5" Margin="0,0,0,5" Width="850" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5"/>
+                        </WrapPanel>
+                        <WrapPanel>
+                            <TextBlock Text="备注：" Height="24" Width="45"/>
+                            <TextBlock Text="{Binding Path=Describe}" Height="24"   />
+                        </WrapPanel>
+                        <ContextMenuService.ContextMenu>
+                            <ContextMenu>
+                                <MenuItem Header="编辑" Name="editmenu" Click="editmenu_Click"></MenuItem>
+                                <MenuItem Header="删除" Name="deletemenu" Click="deletemenu_Click"></MenuItem>
+                            </ContextMenu>
+                        </ContextMenuService.ContextMenu>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Button Content="添加客户" Margin="0,12,28,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="86" Style="{DynamicResource ButtonStyleInPut}" Height="28" Click="Button_Click" />
+    </Grid>
+</UserControl>

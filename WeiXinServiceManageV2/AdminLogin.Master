@@ -1,0 +1,128 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="AdminLogin.master.cs" Inherits="WeiXinServiceManage.AdminLogin" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <script src="Scripts/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <title></title>
+    <style type="text/css">
+    body,div
+    {
+        margin:0px auto;
+        padding:0px auto;
+        width:100%;
+        font-family:@微软雅黑;
+        font-size:13px;
+        font-weight:bolder;
+        background:#245EDC;
+        color:#FFFFFF;
+    }
+    #dvMAX
+    {
+        width:98%;
+    }
+    #dvleft
+    {
+        float:left;
+        width:20%;
+    }
+    #dvright
+    {
+        float:right;
+        width:79.3%;
+        height:555px;
+        border-left:4px solid #FFFFFF;
+    }
+    #lefttop
+    {
+        height:150px;
+        border-bottom:4px solid #FFFFFF;
+    }
+    #leftbtm
+    {
+        height:320px;
+    }
+    .dvuser
+    {
+        margin-top:25px;
+        margin-left:5px;
+    }
+    .btnUrl
+    {
+      list-style-type:none;
+      border:2px solid #FFFFFF;
+      margin:20px auto;
+      float:left;
+      width:80%;
+      height:30px;
+      border-radius:25px;
+      box-shadow: 5px 5px -150px #888888;
+      text-align:center;
+      background:#245EDC;
+      color:#FFFFFF;
+      display:none;
+      }
+    .btnUrl:hover
+    {
+        border:2px solid #FFFFFF;
+        margin-left:22px;
+        background:#245EDC;
+    }
+    #btnPWd
+    {
+        display:block;
+    }
+    </style>
+    <script type="text/javascript">
+        setInterval(function () {
+            var times = new Date().toLocaleString();
+            $("#Times").text(times);
+        }, 100);
+
+
+        $(function () {
+            $.ajax({
+                type: "GET",
+                url: "AJAX/AjaxType.ashx",
+                data: {},
+                dataType: "text",
+                success: function (data) {
+                    if (data == "广告管理员") {
+                        $("#btnaddResponse").css("display", "block");
+                        return;
+                    }
+                    if (data == "回复管理员") {
+                        $("#btnaddText").css("display", "block");
+                        return;
+                    }
+                }
+            });
+        });
+    </script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div id="dvMAX">
+        <div id="dvleft">
+        <div id="lefttop">
+        <div class="dvuser" id="dvtime">当前时间：<asp:Label  ID="Times" Text="" runat="server" /></div>
+        <div class="dvuser">登陆用户：<asp:Label ID="lblName" runat="server" Text="Label"></asp:Label></div>
+
+        <div class="dvuser">角色信息：<asp:Label ID="lblReaske" runat="server" Text="Label"></asp:Label></div>
+        </div>
+        <div id="leftbtm">
+            <asp:Button ID="btnaddText" runat="server" Text="配置消息" CssClass="btnUrl" PostBackUrl="~/TextsConfig.aspx" />
+            <asp:Button ID="btnaddResponse" runat="server" Text="配置广告" CssClass="btnUrl" PostBackUrl="~/AdvertiseFrom.aspx" />
+        </div>
+        </div>
+        <div id="dvright">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">        
+        </asp:ContentPlaceHolder>
+        </div>
+    </div>
+    </form>
+</body>
+</html>

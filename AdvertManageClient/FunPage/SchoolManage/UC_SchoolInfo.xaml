@@ -1,0 +1,23 @@
+﻿<UserControl x:Class="AdvertManageClient.FunPage.SchoolManage.UC_SchoolInfo"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:code="clr-namespace:AdvertManageClient.Code"
+             mc:Ignorable="d" 
+             d:DesignHeight="400" d:DesignWidth="600" Visibility="{Binding SchoolsInfo.Visibility}">
+    <Grid>
+        <ListView ItemsSource="{Binding SchoolsInfo.SchoolInfoList}" x:Name="listView" code:ListViewHelper.SortEnabled="True" BorderBrush="#FF29AAE7" BorderThickness="2">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="编号" Width="100" DisplayMemberBinding="{Binding Path=Number}" code:ListViewHelper.SortProperty="Number"/>
+                    <GridViewColumn Header="学校名称" Width="150" DisplayMemberBinding="{Binding Path=Name}" code:ListViewHelper.SortProperty="Name"/>
+                    <GridViewColumn Header="省份" Width="45" DisplayMemberBinding="{Binding Path=Province}" code:ListViewHelper.SortProperty="Province"/>
+                    <GridViewColumn Header="校区数量" Width="55" DisplayMemberBinding="{Binding Path=CampusCount}" code:ListViewHelper.SortProperty="CampusCount"/>
+                    <GridViewColumn Header="设备数量" Width="55" DisplayMemberBinding="{Binding Path=DeviceCount}" code:ListViewHelper.SortProperty="DeviceCount"/>
+                    <GridViewColumn Header="安装日期" Width="160" DisplayMemberBinding="{Binding Path=InstallDate}" code:ListViewHelper.SortProperty="InstallDate"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</UserControl>

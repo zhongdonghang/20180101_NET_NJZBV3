@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RootNote>
+  <ClientNo libType="0"></ClientNo>
+  <ChooseSeatMothed>-1</ChooseSeatMothed>
+  <Nokeyboard>1</Nokeyboard>
+  <OftenSeat LengthTime="10" SeatCount="12">1</OftenSeat>
+  <isPrint>1</isPrint>
+  <IsShowClosedRoom>1</IsShowClosedRoom>
+  <Activation>1</Activation>
+  <IsShowInitPOS>0</IsShowInitPOS>
+  <POSRestrict Minutes="10" Times="3" />
+  <AddReadingRoom>
+    <ReadRoomID>101001</ReadRoomID>
+    <ReadRoomID>101002</ReadRoomID>
+    <ReadRoomID>101003</ReadRoomID>
+  </AddReadingRoom>
+  <img>
+    <backgroundimg id="BookActivation">images\ClientBackImage\BookActivation.png</backgroundimg>
+    <backgroundimg id="btn_violate">images\ClientBackImage\btn_violate.png</backgroundimg>
+    <backgroundimg id="btnAutoChooseSeat">images\ClientBackImage\btnAutoChooseSeat.png</backgroundimg>
+    <backgroundimg id="btnKeyboard">images\ClientBackImage\btnKeyboard.png</backgroundimg>
+    <backgroundimg id="btnOftenSeat">images\ClientBackImage\btnOftenSeat.png</backgroundimg>
+    <backgroundimg id="btnQureyLog">images\ClientBackImage\btnQureyLog.png</backgroundimg>
+    <backgroundimg id="Exit">images\ClientBackImage\Exit.png</backgroundimg>
+    <backgroundimg id="ChooseReadingRoom">images\ClientBackImage\ChooseReadingRoom.png</backgroundimg>
+    <backgroundimg id="ChooseSeatState">images\ClientBackImage\ChooseSeatState.png</backgroundimg>
+    <backgroundimg id="EnterOutForm">images\ClientBackImage\EnterOutForm.png</backgroundimg>
+    <backgroundimg id="FrmShowEnterOutLog">images\ClientBackImage\FrmShowEnterOutLog.png</backgroundimg>
+    <backgroundimg id="readRoomNameLong">images\ClientBackImage\readRoomNameLong.png</backgroundimg>
+    <backgroundimg id="readRoomNameShort">images\ClientBackImage\readRoomNameShort.png</backgroundimg>
+    <backgroundimg id="seatSmall">images\ClientBackImage\seatSmall.png</backgroundimg>
+    <backgroundimg id="SelectSeatForm">images\ClientBackImage\SelectSeatForm.png</backgroundimg>
+    <backgroundimg id="btnSelfChooseSeat">images\ClientBackImage\btnSelfChooseSeat.png</backgroundimg>
+    <backgroundimg id="btn_leave">images\ClientBackImage\btn_leave.png</backgroundimg>
+    <backgroundimg id="btn_leave_p">images\ClientBackImage\btn_leave_p.png</backgroundimg>
+    <backgroundimg id="btn_busy">images\ClientBackImage\btn_busy.png</backgroundimg>
+    <backgroundimg id="btn_busy_p">images\ClientBackImage\btn_busy_p.png</backgroundimg>
+    <backgroundimg id="btn_free">images\ClientBackImage\btn_free.png</backgroundimg>
+    <backgroundimg id="btn_free_p">images\ClientBackImage\btn_free_p.png</backgroundimg>
+  </img>
+  <Resolution>
+    <FormSet>
+      <size x="1024" y="768" />
+      <location x="0" y="0" />
+    </FormSet>
+    <TooltipSet>
+      <size x="490" y="288" />
+      <location x="214" y="202" />
+    </TooltipSet>
+  </Resolution>
+</RootNote>

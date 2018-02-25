@@ -1,0 +1,59 @@
+﻿<UserControl x:Class="SeatManageSetting.MyUC.UC_WebConfig"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="400" d:DesignWidth="650" Background="White">
+    <Grid>
+    	<GroupBox Header="服务连接配置" HorizontalAlignment="Left" Height="46.667" Margin="10,10,0,0" VerticalAlignment="Top" Width="373" Style="{DynamicResource GroupBoxStyle_Blue}">
+    		<Grid>
+    		    <TextBox HorizontalAlignment="Left" Margin="96,5.38,0,0" TextWrapping="Wrap" Text="net.tcp://192.168.1.100:8201/" VerticalAlignment="Top" Width="265" Style="{DynamicResource TextBoxStylePutIn_Blue}"/>
+    	    	<TextBlock HorizontalAlignment="Left" Text="服务连接字符串：" VerticalAlignment="Top" Style="{DynamicResource TextBlockStyle_com}" Margin="0,6.14,0,0"/>
+			</Grid>
+		</GroupBox>
+    	<GroupBox Header="统一认证连接配置" HorizontalAlignment="Left" Height="131.333" Margin="10,76.334,0,0" VerticalAlignment="Top" Width="373" Style="{DynamicResource GroupBoxStyle_Blue}">
+    		<Grid>
+    			<TextBox HorizontalAlignment="Left" Margin="65,5.38,0,0" TextWrapping="NoWrap" Text="http://uis.shou.edu.cn/cas/login" VerticalAlignment="Top" Width="296" Style="{DynamicResource TextBoxStylePutIn_Blue}"/>
+    			<TextBlock Text="登录地址：" VerticalAlignment="Top" Style="{DynamicResource TextBlockStyle_com}" Margin="0,5,296,0" HorizontalAlignment="Right" Width="60"/>
+    			<TextBox HorizontalAlignment="Left" Margin="65,26.76,0,0" TextWrapping="NoWrap" Text="http://uis.shou.edu.cn/cas/serviceValidate" VerticalAlignment="Top" Width="296" Style="{DynamicResource TextBoxStylePutIn_Blue}"/>
+    			<TextBlock HorizontalAlignment="Right" Text="认证地址：" VerticalAlignment="Top" Style="{DynamicResource TextBlockStyle_com}" Margin="0,26.38,296,0"/>
+    			<TextBox HorizontalAlignment="Left" Margin="65,47.76,0,0" TextWrapping="NoWrap" Text="http://uis.shou.edu.cn/cas/logout" VerticalAlignment="Top" Width="296" Style="{DynamicResource TextBoxStylePutIn_Blue}"/>
+    			<TextBlock HorizontalAlignment="Right" Text="注销地址：" VerticalAlignment="Top" Style="{DynamicResource TextBlockStyle_com}" Margin="0,47.38,296,0"/>
+    			<TextBox HorizontalAlignment="Left" Margin="65,68.76,0,0" TextWrapping="NoWrap" Text="http://localhost:2521/Florms/FormSYS.aspx" VerticalAlignment="Top" Width="296" Style="{DynamicResource TextBoxStylePutIn_Blue}"/>
+    			<TextBlock HorizontalAlignment="Right" Text="目标页：" VerticalAlignment="Top" Style="{DynamicResource TextBlockStyle_com}" Margin="0,68.38,296,0"/>
+    			<TextBox HorizontalAlignment="Left" Margin="65,89.76,0,0" TextWrapping="NoWrap" Text="http://localhost:2521/SHHYIndex.aspx" VerticalAlignment="Top" Width="296" Style="{DynamicResource TextBoxStylePutIn_Blue}"/>
+    			<TextBlock HorizontalAlignment="Right" Text="处理页：" VerticalAlignment="Top" Style="{DynamicResource TextBlockStyle_com}" Margin="0,89.38,296,0"/>
+
+    		</Grid>
+    	</GroupBox>
+    	<Button Content="保存" HorizontalAlignment="Right" Height="35" Margin="0,355,10,0" VerticalAlignment="Top" Width="80" Style="{DynamicResource ButtonStyle_SubmitBlue}" Grid.RowSpan="2"/>
+    	<GroupBox Header="密码修改设置" HorizontalAlignment="Left" Height="109.334" Margin="388,104.333,0,0" VerticalAlignment="Top" Width="252" Style="{DynamicResource GroupBoxStyle_Blue}">
+    		<Grid>
+    			<TextBlock HorizontalAlignment="Left" Text="允许修改：" VerticalAlignment="Top" Style="{DynamicResource TextBlockStyle_com}" Margin="10,4.76,0,0"/>
+    			<CheckBox Content="CheckBox" HorizontalAlignment="Left" Height="15" Margin="75,5,0,0" VerticalAlignment="Top"  Style="{DynamicResource CheckBoxStyle}"/>
+
+    		</Grid>
+    	</GroupBox>
+    	<TextBlock HorizontalAlignment="Left" Margin="10,355,0,0" TextWrapping="Wrap" Text="错误信息" VerticalAlignment="Top" Style="{DynamicResource TextBlockStyle_ERROR}" Width="545" Height="35"/>
+    	<GroupBox Header="网站登录设置" HorizontalAlignment="Left" Height="68.666" Margin="388,10,0,0" VerticalAlignment="Top" Width="252" Style="{DynamicResource GroupBoxStyle_Blue}">
+    		<Grid>
+    			<TextBox HorizontalAlignment="Left" Margin="104,5.38,0,0" TextWrapping="NoWrap" Text="/Default.aspx" VerticalAlignment="Top" Width="136" Style="{DynamicResource TextBoxStylePutIn_Blue}"/>
+    			<TextBlock Text="超时重登录地址：" VerticalAlignment="Top" Style="{DynamicResource TextBlockStyle_com}" Margin="5,5,0,0" HorizontalAlignment="Left" Width="94"/>
+    			<TextBox HorizontalAlignment="Left" Margin="104,26.76,0,0" TextWrapping="NoWrap" Text="/LogOut.aspx" VerticalAlignment="Top" Width="136" Style="{DynamicResource TextBoxStylePutIn_Blue}"/>
+    			<TextBlock HorizontalAlignment="Left" Text="用户注销地址：" VerticalAlignment="Top" Style="{DynamicResource TextBlockStyle_com}" Margin="17,26.38,0,0" Width="82"/>
+
+    		</Grid>
+    	</GroupBox>
+    	<GroupBox Header="接口配置" HorizontalAlignment="Left" Height="124.167" Margin="10,218.667,0,0" VerticalAlignment="Top" Width="630" Style="{DynamicResource GroupBoxStyle_Blue}">
+    		<Grid>
+    			<TextBox HorizontalAlignment="Left" Margin="0,18.479,0,0" TextWrapping="NoWrap" Text="SeatManage.StudentSource.ReaderSource,SeatManage.StudentSource" VerticalAlignment="Top" Width="608" Style="{DynamicResource TextBoxStylePutIn_Blue}"/>
+    			<TextBlock HorizontalAlignment="Left" Text="读者信息获取接口：" VerticalAlignment="Top" Style="{DynamicResource TextBlockStyle_com}" Margin="0,3.238,0,0"/>
+    			<TextBox HorizontalAlignment="Left" Margin="0,56.387,0,0" TextWrapping="NoWrap" Text="SeatManage.StudentSync.StudentSync,SeatManage.StudentSync" VerticalAlignment="Top" Width="608" Style="{DynamicResource TextBoxStylePutIn_Blue}"/>
+    			<TextBlock HorizontalAlignment="Left" Text="读者信息同步接口：" VerticalAlignment="Top" Style="{DynamicResource TextBlockStyle_com}" Margin="0,41.14,0,0"/>
+    			<Button Content="验证接口文件是否存在" Height="20" Margin="0,77.387,10,0" VerticalAlignment="Top" Style="{DynamicResource ButtonStyle_Submit}" HorizontalAlignment="Right" Width="140"/>
+    		</Grid>
+    	</GroupBox>
+            
+    </Grid>
+</UserControl>

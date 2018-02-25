@@ -1,0 +1,192 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{68EC8640-3DB5-47CC-B393-F63E608AFCFB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WcfServiceForSeatManage</RootNamespace>
+    <AssemblyName>WcfServiceForSeatManage</AssemblyName>
+    <ProjectTypeGuids>{3D9AD99F-2412-4246-B90B-4EAA41C64699};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <StartArguments>/client:"WcfTestClient.exe"</StartArguments>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Debug\WcfServiceForSeatManage.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;D:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;D:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\WcfServiceForSeatManage.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;D:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;D:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdvertisementOperation.cs" />
+    <Compile Include="AMS_HardAd.cs" />
+    <Compile Include="AMS_PlayList.cs" />
+    <Compile Include="AMS_RollTitles.cs" />
+    <Compile Include="AMS_SlipCustomer.cs" />
+    <Compile Include="AMS_Terminal.cs" />
+    <Compile Include="AMS_TitleAd.cs" />
+    <Compile Include="AuthorizeInfoOperation.cs" />
+    <Compile Include="LogStatistical.cs" />
+    <Compile Include="MsgPush.cs" />
+    <Compile Include="MsgPushHandler.cs" />
+    <Compile Include="Registry.cs" />
+    <Compile Include="SeatOperation.cs" />
+    <Compile Include="SeatUsageDataOperating.cs" />
+    <Compile Include="ServiceDateTime.cs" />
+    <Compile Include="ExceptionService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SycnReaders.cs" />
+    <Compile Include="SysFuncDic.cs" />
+    <Compile Include="SysMenu.cs" />
+    <Compile Include="SysRolesDic.cs" />
+    <Compile Include="SystemAuthorizationOperation.cs" />
+    <Compile Include="SystemUpdate\SystemUpdateService.cs" />
+    <Compile Include="TerminalOperation.cs" />
+    <Compile Include="T_SM_Blacklist.cs" />
+    <Compile Include="T_SM_EnterOutLog.cs" />
+    <Compile Include="T_SM_EnterOutLogStatistics.cs" />
+    <Compile Include="T_SM_EnterOutLog_Bak.cs" />
+    <Compile Include="T_SM_Library.cs" />
+    <Compile Include="T_SM_ManagerPotency.cs" />
+    <Compile Include="T_SM_PrintTemplate.cs" />
+    <Compile Include="T_SM_Reader.cs" />
+    <Compile Include="T_SM_ReaderNotice.cs" />
+    <Compile Include="T_SM_ReadingRoom.cs" />
+    <Compile Include="T_SM_RROpenCloseLog.cs" />
+    <Compile Include="T_SM_School.cs" />
+    <Compile Include="T_SM_Seat.cs" />
+    <Compile Include="T_SM_SeatBespeak.cs" />
+    <Compile Include="T_SM_SeatWaiting.cs" />
+    <Compile Include="T_SM_StudyBookingLog.cs" />
+    <Compile Include="T_SM_StudyRoom.cs" />
+    <Compile Include="T_SM_SystemSet.cs" />
+    <Compile Include="T_SM_ViolateDiscipline.cs" />
+    <Compile Include="Users_ALL.cs" />
+    <Compile Include="WeiXinMessageSender.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AuthorizeVerify\AuthorizeVerify.csproj">
+      <Project>{7cee58ec-8892-40d3-8dc3-4231054851d3}</Project>
+      <Name>AuthorizeVerify</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EnumType\EnumType.csproj">
+      <Project>{3E7C2198-F6B3-4FAE-8EBF-2271E752DFF3}</Project>
+      <Name>EnumType</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\InterfaceFactory\SeatManage.InterfaceFactory.csproj">
+      <Project>{FAF7C3DC-E2A6-482B-989E-735BE18517BA}</Project>
+      <Name>SeatManage.InterfaceFactory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IWCFService\IWCFService.csproj">
+      <Project>{F7C44CB4-96BD-4B90-BC1A-A4313D362FE9}</Project>
+      <Name>IWCFService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SeatManage.DAL\SeatManage.DAL.csproj">
+      <Project>{BFCC0DB7-FAB5-4313-88B9-1C91EA09770B}</Project>
+      <Name>SeatManage.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SeatManage.ISystemTerminal\SeatManage.ISystemTerminal.csproj">
+      <Project>{A8DC4589-E484-475E-A2BB-B1D264424F05}</Project>
+      <Name>SeatManage.ISystemTerminal</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SeatManageClassModel\SeatManageClassModel.csproj">
+      <Project>{E90FBBAD-98DA-4A34-B620-26DA9ADDDF85}</Project>
+      <Name>SeatManageClassModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SeatManageComm\SeatManageComm.csproj">
+      <Project>{19063808-3340-4563-8B40-573D8DD0BABA}</Project>
+      <Name>SeatManageComm</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SocketLib\SocketLib.csproj">
+      <Project>{B931780F-450B-4A94-AFA7-3D71292D8734}</Project>
+      <Name>SocketLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SocketMsgData\SocketMsgData.csproj">
+      <Project>{36DF0AE9-6B7C-4B88-8B93-77F87C8D880D}</Project>
+      <Name>SocketMsgData</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{3D9AD99F-2412-4246-B90B-4EAA41C64699}">
+        <WcfProjectProperties>
+          <AutoStart>True</AutoStart>
+        </WcfProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

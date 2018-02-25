@@ -1,0 +1,270 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F531F553-3C20-4827-88C9-22A61551F86C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SeatManage</RootNamespace>
+    <AssemblyName>SeatManage.MyUserControl</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Debug\SeatManage.MyUserControl.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;D:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;D:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\SeatManage.MyUserControl.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;D:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisRuleDirectories>;D:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="OftenUsedSeatButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="OftenUsedSeatButton.Designer.cs">
+      <DependentUpon>OftenUsedSeatButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ReadingRoomButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ReadingRoomButton.Designer.cs">
+      <DependentUpon>ReadingRoomButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tip_ReadingRoomClosing.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tip_ReadingRoomClosing.Designer.cs">
+      <DependentUpon>Tip_ReadingRoomClosing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tip_Failed.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tip_Failed.Designer.cs">
+      <DependentUpon>Tip_Failed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tip_IsBlacklist.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tip_IsBlacklist.Designer.cs">
+      <DependentUpon>Tip_IsBlacklist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tip_Leave.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tip_Leave.Designer.cs">
+      <DependentUpon>Tip_Leave.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tip_ComeBack.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tip_ComeBack.Designer.cs">
+      <DependentUpon>Tip_ComeBack.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tip_SeatIsLocking.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tip_SeatIsLocking.Designer.cs">
+      <DependentUpon>Tip_SeatIsLocking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tip_SeatNotExists.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tip_SeatNotExists.Designer.cs">
+      <DependentUpon>Tip_SeatNotExists.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tip_SelectSeatFrequent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tip_SelectSeatFrequent.Designer.cs">
+      <DependentUpon>Tip_SelectSeatFrequent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tip_SelectSeatResult.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tip_SelectSeatResult.Designer.cs">
+      <DependentUpon>Tip_SelectSeatResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tip_ShortLeave.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tip_ShortLeave.Designer.cs">
+      <DependentUpon>Tip_ShortLeave.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tip_SimpleTip.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tip_SimpleTip.Designer.cs">
+      <DependentUpon>Tip_SimpleTip.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tip_WaitSeat.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tip_WaitSeat.Designer.cs">
+      <DependentUpon>Tip_WaitSeat.cs</DependentUpon>
+    </Compile>
+    <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="OftenUsedSeatButton.resx">
+      <DependentUpon>OftenUsedSeatButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReadingRoomButton.resx">
+      <DependentUpon>ReadingRoomButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tip_ComeBack.resx">
+      <DependentUpon>Tip_ComeBack.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tip_Failed.resx">
+      <DependentUpon>Tip_Failed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tip_IsBlacklist.resx">
+      <DependentUpon>Tip_IsBlacklist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tip_Leave.resx">
+      <DependentUpon>Tip_Leave.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tip_ReadingRoomClosing.resx">
+      <DependentUpon>Tip_ReadingRoomClosing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tip_SeatIsLocking.resx">
+      <DependentUpon>Tip_SeatIsLocking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tip_SeatNotExists.resx">
+      <DependentUpon>Tip_SeatNotExists.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tip_SelectSeatFrequent.resx">
+      <DependentUpon>Tip_SelectSeatFrequent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tip_SelectSeatResult.resx">
+      <DependentUpon>Tip_SelectSeatResult.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tip_ShortLeave.resx">
+      <DependentUpon>Tip_ShortLeave.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tip_SimpleTip.resx">
+      <DependentUpon>Tip_SimpleTip.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tip_WaitSeat.resx">
+      <DependentUpon>Tip_WaitSeat.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_red.png" />
+    <None Include="Resources\btn_blue.png" />
+    <None Include="Resources\btn_yellow.png" />
+    <None Include="Resources\gray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EnumType\EnumType.csproj">
+      <Project>{3E7C2198-F6B3-4FAE-8EBF-2271E752DFF3}</Project>
+      <Name>EnumType</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SeatClientBll\SeatManage.Bll.csproj">
+      <Project>{D8187F61-BDC9-431F-975F-C58D9C897412}</Project>
+      <Name>SeatManage.Bll</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SeatClientOperateResult\SeatClient.OperateResult.csproj">
+      <Project>{6B9D4E41-D942-4025-AB21-BB4F69BDB332}</Project>
+      <Name>SeatClient.OperateResult</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SeatManageClassModel\SeatManageClassModel.csproj">
+      <Project>{E90FBBAD-98DA-4A34-B620-26DA9ADDDF85}</Project>
+      <Name>SeatManageClassModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SeatManageComm\SeatManageComm.csproj">
+      <Project>{19063808-3340-4563-8B40-573D8DD0BABA}</Project>
+      <Name>SeatManageComm</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\btnClose1.png" />
+    <Content Include="Resources\btn_close2.png" />
+    <Content Include="Resources\cry.png" />
+    <Content Include="Resources\img_bg.png" />
+    <Content Include="Resources\question.png" />
+    <Content Include="Resources\small.png" />
+    <Content Include="Resources\warm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

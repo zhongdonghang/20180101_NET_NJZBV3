@@ -1,0 +1,69 @@
+{
+    "button": [
+        {
+            "name": "我的信息",
+            "sub_button": [
+                 {
+                    "type": "click",
+                    "name": "我的资料",
+                    "key": "0"
+                },
+                {
+                    "type": "view",
+                    "name": "互动社区",
+                    "url": "http://wsq.qq.com/reflow/263198253"
+                } 
+            ]
+        },
+        {
+            "name": "自助服务",
+             "sub_button": [
+                {
+                    "type": "click", 
+                    "name": "我的座位", 
+                    "key": "7"
+                }, 
+                {
+                    "type": "click", 
+                    "name": "预约座位", 
+                    "key": "10"
+                }, 
+                {
+                    "type": "click", 
+                    "name": "暂离", 
+                    "key": "3"
+                }, 
+                {
+                    "type": "click", 
+                    "name": "释放", 
+                    "key": "4"
+                }, 
+                {
+                    "type": "click", 
+                    "name": "剩余座位", 
+                    "key": "2"
+                }
+            ]
+        },
+        {
+            "name": "关于我们",
+            "sub_button": [
+                {
+                    "type": "click",
+                    "name": "校园资讯",
+                    "key": "13"
+                },
+                {
+                    "type": "click",
+                    "name": "在线客服",
+                    "key": "14"
+                },
+                {
+                    "type": "click",
+                    "name": "更多内容",
+                    "key": "15"
+                }
+            ]
+        }
+    ]
+}

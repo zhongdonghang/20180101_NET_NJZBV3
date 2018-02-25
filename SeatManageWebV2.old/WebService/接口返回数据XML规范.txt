@@ -1,0 +1,119 @@
+﻿接口说明：
+//查询阅览室状态
+  参数：ReadingRoomNo：阅览室编号（阅览室编号为九位座位号去掉后三位）
+public string ReadingRoomState(string ReadingRoomNo)  
+返回值：
+<ReadingRoomState>
+	<RoomName No="" SchoolName="" LibraryName=""></RoomName>
+	<Status></Status>
+</ReadingRoomState>
+
+//座位使用状态
+  参数：ReadingRoomNo：阅览室编号（阅览室编号为九位座位号去掉后三位）
+public string SeatUsedInfo(string ReadingRoomNo)
+返回值：
+<SeatUsedInfo>
+    <!--区域名称 No 编号；-->
+    <RoomName No=""></RoomName>
+    <!--UsedSum 使用数；AllSum 总数；LeaveSum 暂时离开数-->
+	<Seat UsedSum="" AllSum="" LeaveSum=""/>
+</SeatUsedInfo>
+
+
+//读者当前状态
+  参数：StuNo 学生卡号
+public string StuState(string StuNo)
+返回值：
+<StuState>
+	<!--Name 姓名；CardNo 学号；RoomName 阅览室名称；SeatNo 座位号；Status 当前状态。如果节点值为空说明读者没有座位或者读者不存在-->
+	<Student Name="" CardNo="" RoomName=""  SeatNo="" Status=""></Student>
+</StuState>
+
+//读者进出记录
+  参数：StuNo 学号；
+       StartDate 开始日期；
+       EndDate   结束日期；
+public string StuInOutLog(string StuNo, string StartDate, string EndDate)
+返回值：
+<StuInOutLog>
+	<!-- SeatNo 座位号；RoomName 阅览室名称；DateTime 进出时间；Describe 进出描述-->
+	<Log SeatNo="" RoomName="" DateTime="" Describe=" " />
+</StuInOutLog>
+
+//违规记录
+ 参数：StuNo 学号；
+       startDate 开始日期；
+       EndDate   结束日期；
+ public string StuViolateDiscipline(string stuNo, string startDate, string EndDate)
+ 返回值：
+<StuViolateDiscipline>
+	<!--SeatNo 座位号； RoomName 阅览室名称；Describe 违规描述；DateTime 时间；HandleResult 处理状态-->
+	<Log SeatNo=""  RoomName="" DateTime="" Describe="" HandleResult="" />
+</StuViolateDiscipline>
+
+//黑名单记录
+  参数：StuNo 学号；
+       StartDate 开始日期；
+       EndDate   结束日期；
+返回值：
+public string StuBlacklistLog(string stuNo, string startDate, string EndDate)
+<BlacklistLog>
+	<!--ReadingRoomName 阅览室名称；AddTime 添加时间；OtuTime 离开时间；BalcklistState 有效状态-->
+	<Log ReadingRoomName="" AddTime="" OutTime="" BlacklistState="" >
+</BlacklistLog>
+
+SM_AccessInterface.asmx
+门禁接口
+方法：
+//入馆处理
+  参数：CardNo：读者的学号
+public string EnterLib(string CardNo)
+返回值：
+<ReaderInfo>
+    <ReaderNo>{0}</ReaderNo>  --读者学号
+    <ReaderName>{1}</ReaderName> --读者姓名
+    <NowStatus>{2}</NowStatus>  --处理后（当前）的读者状态（详见最后附录）
+    <BeforeStatus>{3}</BeforeStatus> --处理前的状态（详见最后附录）
+    <Error>{4}</Error> --错误信息（正常为空值）
+</ReaderInfo>
+
+//出馆处理
+  参数：CardNo：读者的学号
+public string OutLib(string CardNo)
+返回值：
+<ReaderInfo>
+    <ReaderNo>{0}</ReaderNo>  --读者学号
+    <ReaderName>{1}</ReaderName> --读者姓名
+    <NowStatus>{2}</NowStatus>  --处理后（当前）的读者状态（详见最后附录）
+    <BeforeStatus>{3}</BeforeStatus> --处理前的状态（详见最后附录）
+    <Error>{4}</Error> --错误信息（正常为空值）
+</ReaderInfo>
+
+//查询黑名单
+  参数：CardNo：读者的学号
+public string GetBlacklist(string CardNo)
+返回值：
+<ReaderInfo>
+    <ReaderNo>{0}</ReaderNo>  --读者学号
+    <ReaderName>{1}</ReaderName> --读者姓名
+    <Error>{2}</Error> --错误信息（正常为空值）
+	<BlistlistInfo> --黑名单信息
+         <ReadingRoomNo>{3}</ReadingRoomNo> --记录黑名单的阅览室（全局黑名单为空值）
+         <ReadingRoomName>{4}</ReadingRoomName> --阅览室名称（全局黑名单为空值）
+         <AddTime>{5}</AddTime> --进入黑名单时间
+         <OutTime>{6}</OutTime> --离开黑名单时间
+         <Remark>{7}</Remark> -备注
+    </BlistlistInfo>
+</ReaderInfo>
+
+//附录
+读者状态对应值：
+-1 状态出错
+0 离开或没有座位（无座状态）
+1 选座（在座状态）
+4 预约选座（在座状态）
+5 暂离回来（在座状态）
+6 续时（在座状态）
+7 重新选座（在座状态）
+8 暂离（暂离状态）
+10 等待成功（在座状态）

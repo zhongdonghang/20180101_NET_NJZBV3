@@ -1,0 +1,497 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D1A1EC37-046D-41C7-840C-13016998D650}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SeatClient</RootNamespace>
+    <AssemblyName>SeatClient</AssemblyName>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <ManifestCertificateThumbprint>85A5E42284F4D7502C47257EEE5CEA55FDC49C7D</ManifestCertificateThumbprint>
+    <ManifestKeyFile>SeatClient_TemporaryKey.pfx</ManifestKeyFile>
+    <GenerateManifests>true</GenerateManifests>
+    <SignManifests>false</SignManifests>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <ApplicationIcon>标1.ico</ApplicationIcon>
+    <StartupObject>
+    </StartupObject>
+    <SignAssembly>false</SignAssembly>
+    <TargetZone>LocalIntranet</TargetZone>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <ExpressionBlendVersion>4.0.20621.0</ExpressionBlendVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+    <PublishUrl>C:\Users\BlackSnow\Desktop\seatclient\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ProductName>座位管理系统</ProductName>
+    <PublisherName>江苏高信科技有限公司</PublisherName>
+    <WebPage>seatclient.htm</WebPage>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <BootstrapperComponentsUrl>D:\fbweb\dll</BootstrapperComponentsUrl>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Debug\SeatClient.exe.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;D:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;D:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\SeatClient.exe.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;D:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;D:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Common.Logging, Version=1.2.0.0, Culture=neutral, PublicKeyToken=af08829b84f0328e" />
+    <Reference Include="Microsoft.VisualStudio.QualityTools.LoadTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Printing" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ActivationClose.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ActivationClose.Designer.cs">
+      <DependentUpon>ActivationClose.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ActivationSuccess.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ActivationSuccess.Designer.cs">
+      <DependentUpon>ActivationSuccess.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BookActivation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BookActivation.Designer.cs">
+      <DependentUpon>BookActivation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BookConfirmWarn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BookConfirmWarn.Designer.cs">
+      <DependentUpon>BookConfirmWarn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChooseSeatState.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChooseSeatState.Designer.cs">
+      <DependentUpon>ChooseSeatState.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Class\ApplicationInitialize.cs" />
+    <Compile Include="Class\BaseWindow.cs" />
+    <Compile Include="Class\MyRand.cs" />
+    <Compile Include="Class\PrintSlip.cs" />
+    <Compile Include="Class\PrintStatus.cs" />
+    <Compile Include="Class\ReaderQueryLog.cs" />
+    <Compile Include="Class\RouteResultHandle.cs" />
+    <Compile Include="Class\SelectSeatProven.cs" />
+    <Compile Include="Class\ShowDateTime.cs" />
+    <Compile Include="EnterOutForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EnterOutForm.Designer.cs">
+      <DependentUpon>EnterOutForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppSkin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppSkin.Designer.cs">
+      <DependentUpon>AppSkin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmOftenSeat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmOftenSeat.Designer.cs">
+      <DependentUpon>FrmOftenSeat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmShowEnterOutLog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmShowEnterOutLog.Designer.cs">
+      <DependentUpon>FrmShowEnterOutLog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmViolate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmViolate.Designer.cs">
+      <DependentUpon>FrmViolate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LeaveSeatForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LeaveSeatForm.Designer.cs">
+      <DependentUpon>LeaveSeatForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReaderInfoWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReaderInfoWindow.Designer.cs">
+      <DependentUpon>ReaderInfoWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WaitSeatCancel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WaitSeatCancel.Designer.cs">
+      <DependentUpon>WaitSeatCancel.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ActivationClose.resx">
+      <DependentUpon>ActivationClose.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ActivationSuccess.resx">
+      <DependentUpon>ActivationSuccess.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BookActivation.resx">
+      <DependentUpon>BookActivation.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BookConfirmWarn.resx">
+      <DependentUpon>BookConfirmWarn.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChooseSeatState.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ChooseSeatState.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EnterOutForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>EnterOutForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppSkin.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>AppSkin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmOftenSeat.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FrmOftenSeat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmShowEnterOutLog.resx">
+      <DependentUpon>FrmShowEnterOutLog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmViolate.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FrmViolate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LeaveSeatForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>LeaveSeatForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReaderInfoWindow.resx">
+      <DependentUpon>ReaderInfoWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReadingRoom.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ReadingRoom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WaitSeatCancel.resx">
+      <DependentUpon>WaitSeatCancel.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="ReadingRoom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReadingRoom.Designer.cs">
+      <DependentUpon>ReadingRoom.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\x86\Debug\CardReaderObject.dll" />
+    <Content Include="bin\x86\Debug\CardReaderObject_HOOK.dll" />
+    <Content Include="bin\x86\Debug\CardReaderObject_XZX.dll" />
+    <Content Include="bin\x86\Debug\Images\ClientBackImage\BookActivation.png" />
+    <Content Include="bin\x86\Debug\Images\ClientBackImage\btnAutoChooseSeat.png" />
+    <Content Include="bin\x86\Debug\Images\ClientBackImage\btnKeyboard.png" />
+    <Content Include="bin\x86\Debug\Images\ClientBackImage\btnOftenSeat.png" />
+    <Content Include="bin\x86\Debug\Images\ClientBackImage\btnQureyLog.png" />
+    <Content Include="bin\x86\Debug\Images\ClientBackImage\btnSelfChooseSeat.png" />
+    <Content Include="bin\x86\Debug\Images\ClientBackImage\ChooseReadingRoom.png" />
+    <Content Include="bin\x86\Debug\Images\ClientBackImage\ChooseSeatState.png" />
+    <Content Include="bin\x86\Debug\Images\ClientBackImage\EnterOutForm.png" />
+    <Content Include="bin\x86\Debug\Images\ClientBackImage\Exit.png" />
+    <Content Include="bin\x86\Debug\Images\ClientBackImage\FrmShowEnterOutLog.png" />
+    <Content Include="bin\x86\Debug\Images\ClientBackImage\ImgBook.png" />
+    <Content Include="bin\x86\Debug\Images\ClientBackImage\ImgPower.png" />
+    <Content Include="bin\x86\Debug\Images\ClientBackImage\ImgReader.png" />
+    <Content Include="bin\x86\Debug\Images\ClientBackImage\ImgSeat.png" />
+    <Content Include="bin\x86\Debug\Images\ClientBackImage\ImgShortLeave.png" />
+    <Content Include="bin\x86\Debug\Images\ClientBackImage\ImgStopUse.png" />
+    <Content Include="bin\x86\Debug\Images\ClientBackImage\note_AirConditioning.png" />
+    <Content Include="bin\x86\Debug\Images\ClientBackImage\note_blank.png" />
+    <Content Include="bin\x86\Debug\Images\ClientBackImage\note_Bookshelf.png" />
+    <Content Include="bin\x86\Debug\Images\ClientBackImage\note_Door.png" />
+    <Content Include="bin\x86\Debug\Images\ClientBackImage\note_Elevator.png" />
+    <Content Include="bin\x86\Debug\Images\ClientBackImage\note_PCTable.png" />
+    <Content Include="bin\x86\Debug\Images\ClientBackImage\note_Pillar.png" />
+    <Content Include="bin\x86\Debug\Images\ClientBackImage\note_Plant.png" />
+    <Content Include="bin\x86\Debug\Images\ClientBackImage\note_Roundtable.png" />
+    <Content Include="bin\x86\Debug\Images\ClientBackImage\note_Stairway.png" />
+    <Content Include="bin\x86\Debug\Images\ClientBackImage\note_Steps.png" />
+    <Content Include="bin\x86\Debug\Images\ClientBackImage\note_Table.png" />
+    <Content Include="bin\x86\Debug\Images\ClientBackImage\note_Wall.png" />
+    <Content Include="bin\x86\Debug\Images\ClientBackImage\note_Window.png" />
+    <Content Include="bin\x86\Debug\Images\ClientBackImage\readRoomNameLong.png" />
+    <Content Include="bin\x86\Debug\Images\ClientBackImage\readRoomNameShort.png" />
+    <Content Include="bin\x86\Debug\Images\ClientBackImage\seatSmall.png" />
+    <Content Include="bin\x86\Debug\Images\ClientBackImage\SelectSeatForm.png" />
+    <Content Include="bin\x86\Debug\mwrf32.dll" />
+    <Content Include="bin\x86\Debug\PosObject.dll" />
+    <Content Include="bin\x86\Debug\PosObject_HOOK.dll" />
+    <Content Include="bin\x86\Debug\PosObject_XZX.dll" />
+    <Content Include="LIB\AIO_API.dll" />
+    <Content Include="LIB\CardInterfaceDll.dll" />
+    <Content Include="LIB\CCardLib.dll" />
+    <Content Include="LIB\CCardLibEx.dll" />
+    <Content Include="LIB\Common.Logging.dll" />
+    <Content Include="LIB\Net.dll" />
+    <Content Include="LIB\ReadCardCom.dll" />
+    <Content Include="LIB\ReadCardUSB.dll" />
+    <Content Include="LIB\Spring.Core.dll" />
+    <Content Include="LIB\Spring.Data.dll" />
+    <Content Include="LIB\UIEx.dll" />
+    <Content Include="LIB\UpdateAPI.dll" />
+    <Content Include="LIB\USB_DEV.dll" />
+    <Content Include="LIB\WINSCARD.DLL" />
+    <None Include="Resources\BG7.png" />
+    <None Include="Resources\bottom2.jpg" />
+    <None Include="Resources\BookActivation.png" />
+    <None Include="Resources\btnClose1.png" />
+    <None Include="Resources\btnKeyboard.png" />
+    <None Include="Resources\btn_close2.png" />
+    <None Include="Resources\btn_cancle.png" />
+    <None Include="Resources\btnQureyLog.png" />
+    <None Include="Resources\btn_leave.png" />
+    <None Include="Resources\btn_ok.png" />
+    <None Include="Resources\btn_sdxz.png" />
+    <None Include="Resources\btn_reset.png" />
+    <None Include="Resources\btn_select.png" />
+    <None Include="Resources\btn_xs.png" />
+    <None Include="Resources\btn_zdxz.png" />
+    <None Include="Resources\img_main_zwxzfs.png" />
+    <None Include="Resources\img_bg.png" />
+    <Content Include="Resources\keyBoard2.png" />
+    <None Include="Resources\small.png" />
+    <None Include="Resources\question.png" />
+    <None Include="Resources\loading.gif" />
+    <Content Include="Resources\warm.png" />
+    <None Include="Resources\系统故障提示.jpg" />
+    <Content Include="ScreenConfig.xml" />
+    <Content Include="问题跟踪.txt" />
+    <Content Include="标1.ico" />
+    <None Include="Resources\ico_arrow.png" />
+    <None Include="Resources\img_BG_OftenSeat.png" />
+    <None Include="Resources\btn_keybord_r11_c6.png" />
+    <None Include="Resources\btn_keybord_r11_c3.png" />
+    <None Include="Resources\btn_keybord_r11_c1.png" />
+    <None Include="Resources\btn_keybord_r8_c6.png" />
+    <None Include="Resources\btn_keybord_r8_c3.png" />
+    <None Include="Resources\btn_keybord_r8_c1.png" />
+    <None Include="Resources\btn_keybord_r5_c6.png" />
+    <None Include="Resources\btn_keybord_r5_c3.png" />
+    <None Include="Resources\btn_keybord_r5_c1.png" />
+    <None Include="Resources\btn_keybord_r3_c6.png" />
+    <None Include="Resources\btn_keybord_r3_c3.png" />
+    <None Include="Resources\btn_keybord_r3_c1.png" />
+    <None Include="Resources\btn_keybord_r1_c7.png" />
+    <None Include="Resources\img_bg5.png" />
+    <None Include="Resources\btn_down.png" />
+    <None Include="Resources\标3%2816%29.ico" />
+    <None Include="Resources\标3%2832%29.ico" />
+    <BaseApplicationManifest Include="Properties\app.manifest" />
+    <None Include="Resources\back1.png" />
+    <None Include="Resources\back.png" />
+    <None Include="Resources\zi_back3.png" />
+    <None Include="Resources\zi_back2.png" />
+    <None Include="Resources\zi_back.png" />
+    <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EnumType\EnumType.csproj">
+      <Project>{3E7C2198-F6B3-4FAE-8EBF-2271E752DFF3}</Project>
+      <Name>EnumType</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\InterfaceFactory\SeatManage.InterfaceFactory.csproj">
+      <Project>{FAF7C3DC-E2A6-482B-989E-735BE18517BA}</Project>
+      <Name>SeatManage.InterfaceFactory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SeatClientBll\SeatManage.Bll.csproj">
+      <Project>{D8187F61-BDC9-431F-975F-C58D9C897412}</Project>
+      <Name>SeatManage.Bll</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SeatClientOperateResult\SeatClient.OperateResult.csproj">
+      <Project>{6B9D4E41-D942-4025-AB21-BB4F69BDB332}</Project>
+      <Name>SeatClient.OperateResult</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SeatManage.ISystemTerminal\SeatManage.ISystemTerminal.csproj">
+      <Project>{A8DC4589-E484-475E-A2BB-B1D264424F05}</Project>
+      <Name>SeatManage.ISystemTerminal</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SeatManage.SeatClient.Tip\SeatManage.SeatClient.Tip.csproj">
+      <Project>{0BB940F3-FD87-48AA-8560-4CFE6AC5289B}</Project>
+      <Name>SeatManage.SeatClient.Tip</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SeatManage.UserControl\SeatManage.UserControl.csproj">
+      <Project>{F531F553-3C20-4827-88C9-22A61551F86C}</Project>
+      <Name>SeatManage.UserControl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SeatManageClassModel\SeatManageClassModel.csproj">
+      <Project>{E90FBBAD-98DA-4A34-B620-26DA9ADDDF85}</Project>
+      <Name>SeatManageClassModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SeatManageComm\SeatManageComm.csproj">
+      <Project>{19063808-3340-4563-8B40-573D8DD0BABA}</Project>
+      <Name>SeatManageComm</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WPF_ReaderInfo\WPF_ReaderInfo.csproj">
+      <Project>{6F4C6221-F0D9-4452-8410-E09B6842845D}</Project>
+      <Name>WPF_ReaderInfo</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WPF_Seat\WPF_Seat.csproj">
+      <Project>{B40A44E1-25C5-433B-AD76-C0EAC74E9127}</Project>
+      <Name>WPF_Seat</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\x86\Debug\Images\SeatImg\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,221 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{81D95EE9-4E5C-4C85-A61D-CB9E17283946}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SeatClientLeave</RootNamespace>
+    <AssemblyName>SeatClientLeave</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>标1.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AppSkin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppSkin.Designer.cs">
+      <DependentUpon>AppSkin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Code\ApplicationInitialize.cs" />
+    <Compile Include="Code\EnumSimpleTipFormIco.cs" />
+    <Compile Include="Code\LeaveClientObject.cs" />
+    <Compile Include="Code\LeaveClientSetting.cs" />
+    <Compile Include="Code\RouteResultHandle.cs" />
+    <Compile Include="Code\ShowDateTime.cs" />
+    <Compile Include="LeaveSeatForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LeaveSeatForm.Designer.cs">
+      <DependentUpon>LeaveSeatForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tip_SimpleTip.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tip_SimpleTip.Designer.cs">
+      <DependentUpon>Tip_SimpleTip.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AppSkin.resx">
+      <DependentUpon>AppSkin.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LeaveSeatForm.resx">
+      <DependentUpon>LeaveSeatForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Tip_SimpleTip.resx">
+      <DependentUpon>Tip_SimpleTip.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EnterOutForm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EnumType\EnumType.csproj">
+      <Project>{3E7C2198-F6B3-4FAE-8EBF-2271E752DFF3}</Project>
+      <Name>EnumType</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\InterfaceFactory\SeatManage.InterfaceFactory.csproj">
+      <Project>{FAF7C3DC-E2A6-482B-989E-735BE18517BA}</Project>
+      <Name>SeatManage.InterfaceFactory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SeatClientBll\SeatManage.Bll.csproj">
+      <Project>{D8187F61-BDC9-431F-975F-C58D9C897412}</Project>
+      <Name>SeatManage.Bll</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SeatClientOperateResult\SeatClient.OperateResult.csproj">
+      <Project>{6B9D4E41-D942-4025-AB21-BB4F69BDB332}</Project>
+      <Name>SeatClient.OperateResult</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SeatManage.ISystemTerminal\SeatManage.ISystemTerminal.csproj">
+      <Project>{A8DC4589-E484-475E-A2BB-B1D264424F05}</Project>
+      <Name>SeatManage.ISystemTerminal</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SeatManage.SeatClient.Tip\SeatManage.SeatClient.Tip.csproj">
+      <Project>{0BB940F3-FD87-48AA-8560-4CFE6AC5289B}</Project>
+      <Name>SeatManage.SeatClient.Tip</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SeatManageClassModel\SeatManageClassModel.csproj">
+      <Project>{E90FBBAD-98DA-4A34-B620-26DA9ADDDF85}</Project>
+      <Name>SeatManageClassModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SeatManageComm\SeatManageComm.csproj">
+      <Project>{19063808-3340-4563-8B40-573D8DD0BABA}</Project>
+      <Name>SeatManageComm</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loading.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_close2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnclose1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\img_bg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\CardReaderObject.dll" />
+    <Content Include="bin\Debug\Images\ClientBackImage\BookActivation.png" />
+    <Content Include="bin\Debug\Images\ClientBackImage\btnAutoChooseSeat.png" />
+    <Content Include="bin\Debug\Images\ClientBackImage\btnKeyboard.png" />
+    <Content Include="bin\Debug\Images\ClientBackImage\btnOftenSeat.png" />
+    <Content Include="bin\Debug\Images\ClientBackImage\btnQureyLog.png" />
+    <Content Include="bin\Debug\Images\ClientBackImage\btnSelfChooseSeat.png" />
+    <Content Include="bin\Debug\Images\ClientBackImage\btn_busy.png" />
+    <Content Include="bin\Debug\Images\ClientBackImage\btn_busy_p.png" />
+    <Content Include="bin\Debug\Images\ClientBackImage\btn_free.png" />
+    <Content Include="bin\Debug\Images\ClientBackImage\btn_free_p.png" />
+    <Content Include="bin\Debug\Images\ClientBackImage\btn_leave.png" />
+    <Content Include="bin\Debug\Images\ClientBackImage\btn_leave_p.png" />
+    <Content Include="bin\Debug\Images\ClientBackImage\btn_violate.png" />
+    <Content Include="bin\Debug\Images\ClientBackImage\ChooseReadingRoom.png" />
+    <Content Include="bin\Debug\Images\ClientBackImage\ChooseSeatState.png" />
+    <Content Include="bin\Debug\Images\ClientBackImage\EnterOutForm.png" />
+    <Content Include="bin\Debug\Images\ClientBackImage\Exit.png" />
+    <Content Include="bin\Debug\Images\ClientBackImage\FrmShowEnterOutLog.png" />
+    <Content Include="bin\Debug\Images\ClientBackImage\readRoomNameLong.png" />
+    <Content Include="bin\Debug\Images\ClientBackImage\readRoomNameShort.png" />
+    <Content Include="bin\Debug\Images\ClientBackImage\seatSmall.png" />
+    <Content Include="bin\Debug\Images\ClientBackImage\SelectSeatForm.png" />
+    <None Include="Resources\btn_leave.png" />
+    <None Include="Resources\btn_reset.png" />
+    <None Include="Resources\btn_xs.png" />
+    <Content Include="bin\Debug\mwrf32.dll" />
+    <Content Include="bin\Debug\PosObject.dll" />
+    <Content Include="标1.ico" />
+    <None Include="Resources\cry.png" />
+    <None Include="Resources\gray.png" />
+    <None Include="Resources\warm.png" />
+    <None Include="Resources\small.png" />
+    <None Include="Resources\question.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Debug\Images\SeatImg\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

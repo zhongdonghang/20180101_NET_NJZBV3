@@ -1,0 +1,36 @@
+﻿<UserControl x:Class="SeatClientV3.TipUC.UC_Tip_ContinueWhenNotSpan"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+            d:DesignHeight="240" d:DesignWidth="580">
+    <Canvas>
+
+        <Line X1="0" X2="0" Y1="0" Y2="240" Canvas.Left="160" Canvas.Top="0" >
+            <Line.Stroke>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White" Offset="0"/>
+                    <GradientStop Color="#FF000E23" Offset="0.87"/>
+                </LinearGradientBrush>
+            </Line.Stroke>
+        </Line>
+        <Image Height="240" Canvas.Left="0" Source="/SeatClient;component/Resources/Image/Face_F.png" Width="150" Stretch="Fill" Canvas.Top="-30"/>
+        <Button Content="关闭" Height="40" Canvas.Right="0" Canvas.Bottom="0" Width="100" Style="{DynamicResource ButtonStyle_Submit}" Click="CloseButton_Click"/>
+        <TextBlock Canvas.Left="170" Text="续时失败" Canvas.Top="5" Style="{DynamicResource TextBlockStyle_Tip_Title}"/>
+        <Grid Height="130" Width="420" Canvas.Left="160" Canvas.Top="40">
+            <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="20,0,0,0" >
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="50,0,0,0">
+                    <TextBlock Canvas.Left="170" Text="您的可续时时段未到" Canvas.Top="70" Style="{DynamicResource TextBlockStyle_W}"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="0,25,0,0">
+                    <TextBlock Canvas.Left="170" Text="可续时时间段：" Canvas.Top="120" Style="{DynamicResource TextBlockStyle_W}"/>
+                    <TextBlock Canvas.Left="350" Text="{Binding StartTime}" Margin="10,0,10,0"  Canvas.Top="120" Style="{DynamicResource TextBlockStyle_O}"/>
+                    <TextBlock Canvas.Left="420" Text="至" Canvas.Top="120" Style="{DynamicResource TextBlockStyle_W}"/>
+                    <TextBlock Canvas.Left="460" Text="{Binding EndTime}"  Margin="10,0,10,0" Canvas.Top="120" Style="{DynamicResource TextBlockStyle_O}"/>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+        <TextBlock Canvas.Right="0"  Text="如想继续使用座位，请在规定时间内及时续时。" Canvas.Bottom="50" Style="{DynamicResource TextBlockStyle_Info}"/>
+    </Canvas>
+</UserControl>

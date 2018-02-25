@@ -1,0 +1,59 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:Microsoft_Windows_Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero">
+    <!--窗体大小样式-->
+    <Style x:Key="ReadingRoomWindowsStyle" TargetType="{x:Type Window}">
+        <Setter Property="AllowsTransparency" Value="true"/>
+        <Setter Property="Background" Value="{DynamicResource BackgroundImage}"/>
+        <Setter Property="ResizeMode" Value="NoResize"/>
+        <Setter Property="WindowStyle" Value="None"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Height" Value="1000"/>
+        <Setter Property="Width" Value="1080"/>
+        <Setter Property="Top" Value="0"/>
+        <Setter Property="Left" Value="0"/>
+    </Style>
+    <!--选项卡样式-->
+    <Style x:Key="TabItem_ReadingRoom" TargetType="{x:Type TabItem}">
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="BorderBrush" Value="{x:Null}"/>
+        <Setter Property="Background" Value="{x:Null}"/>
+        <Setter Property="HorizontalAlignment" Value="Stretch"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Height" Value="105"/>
+        <Setter Property="Width" Value="140"/>
+        <Setter Property="FontFamily" Value="微软雅黑"/>
+        <Setter Property="FontSize" Value="24"/>
+        <Setter Property="Foreground" Value="#FFF1955B"/>
+        <Setter Property="Margin" Value="0,0,0,0"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TabItem}">
+                    <Canvas x:Name="lbg" TextBlock.TextAlignment="Center" Margin="5,5,5,0">
+                        <Canvas.Background >
+                            <LinearGradientBrush  Opacity="0.3">
+                                <GradientStop Color="White" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Canvas.Background>
+                        <ContentPresenter x:Name="Content" ContentSource="Header" Canvas.Top="26" Width="130" />
+                        <Line x:Name="lbg1" Fill="White" Stroke="#FFF1792D" X1="50" Y1="75" X2="65" Y2="80" StrokeThickness="2" Visibility="Hidden"></Line>
+                        <Line x:Name="lbg2"  Fill="White" Stroke="#FFF1792D" X1="80" Y1="75" X2="65" Y2="80" StrokeThickness="2" Visibility="Hidden"></Line>
+                    </Canvas>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsSelected" Value="true">
+                            <Setter Property="Panel.ZIndex" Value="1"/>
+                            <Setter Property="Foreground" Value="White"/>
+                            <Setter Property="Fill" TargetName="lbg1" Value="White"/>
+                            <Setter Property="Fill" TargetName="lbg2" Value="White"/>
+                            <Setter Property="Stroke" TargetName="lbg1" Value="White"/>
+                            <Setter Property="Stroke" TargetName="lbg2" Value="White"/>
+                            <Setter Property="Visibility" TargetName="lbg1" Value="Visible"/>
+                            <Setter Property="Visibility" TargetName="lbg2" Value="Visible"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

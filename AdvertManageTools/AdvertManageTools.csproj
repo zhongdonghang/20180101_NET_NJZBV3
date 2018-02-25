@@ -1,0 +1,351 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{533E223E-AC9E-498C-A89C-AA500C91FE1A}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AdvertManageTools</RootNamespace>
+    <AssemblyName>AdvertManageTools</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <TargetFrameworkProfile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\temp1.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup />
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Code\CampusInfoListViewModel.cs" />
+    <Compile Include="Code\DeviceInfoListViewModel.cs" />
+    <Compile Include="Code\HardAdListViewModel.cs" />
+    <Compile Include="Code\IssueCommandViewModel.cs" />
+    <Compile Include="Code\IssueSlipViewModel.cs" />
+    <Compile Include="Code\PlaylistInfoListViewModel.cs" />
+    <Compile Include="Code\PrintTemplateListViewModel.cs" />
+    <Compile Include="Code\ProgramUpgradeViewModel.cs" />
+    <Compile Include="Code\ReleaseLogViewModel.cs" />
+    <Compile Include="Code\SchoolInfoListViewModel.cs" />
+    <Compile Include="Code\SlipCustomerInfoListViewModel.cs" />
+    <Compile Include="Code\SystemVerInfoViewModel.cs" />
+    <Compile Include="Code\TitleAdListViewModel.cs" />
+    <Compile Include="EditPage\CampusEditWindow.xaml.cs">
+      <DependentUpon>CampusEditWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EditPage\DeviceEditWindow.xaml.cs">
+      <DependentUpon>DeviceEditWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EditPage\DeviceImageWindow.xaml.cs">
+      <DependentUpon>DeviceImageWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EditPage\IssueCommand.xaml.cs">
+      <DependentUpon>IssueCommand.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EditPage\IssueSlip.xaml.cs">
+      <DependentUpon>IssueSlip.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EditPage\ProgramUpgradeEditWindow.xaml.cs">
+      <DependentUpon>ProgramUpgradeEditWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EditPage\MediaEditWindow.xaml.cs">
+      <DependentUpon>MediaEditWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\ProgramUpgrade.xaml.cs">
+      <DependentUpon>ProgramUpgrade.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EditPage\HardAdEditWindow.xaml.cs">
+      <DependentUpon>HardAdEditWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EditPage\PlaylistEditWindow.xaml.cs">
+      <DependentUpon>PlaylistEditWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EditPage\PrintTemplateEditWindow.xaml.cs">
+      <DependentUpon>PrintTemplateEditWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EditPage\SchoolEditWindow.xaml.cs">
+      <DependentUpon>SchoolEditWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EditPage\SlipCustomerEditWindow.xaml.cs">
+      <DependentUpon>SlipCustomerEditWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EditPage\TitleAdEditWindow.xaml.cs">
+      <DependentUpon>TitleAdEditWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\HardAdInfo.xaml.cs">
+      <DependentUpon>HardAdInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\PlaylistInfo.xaml.cs">
+      <DependentUpon>PlaylistInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\PlayListItem.xaml.cs">
+      <DependentUpon>PlayListItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\PrintTemplateInfo.xaml.cs">
+      <DependentUpon>PrintTemplateInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\ReleaseLog.xaml.cs">
+      <DependentUpon>ReleaseLog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\SchoolInfo.xaml.cs">
+      <DependentUpon>SchoolInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\SlipCustomerInfo.xaml.cs">
+      <DependentUpon>SlipCustomerInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\CampusInfo.xaml.cs">
+      <DependentUpon>CampusInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\DeviceInfo.xaml.cs">
+      <DependentUpon>DeviceInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\SystemVerInfo.xaml.cs">
+      <DependentUpon>SystemVerInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\TitleAdInfo.xaml.cs">
+      <DependentUpon>TitleAdInfo.xaml</DependentUpon>
+    </Compile>
+    <Page Include="EditPage\CampusEditWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EditPage\DeviceEditWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EditPage\DeviceImageWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EditPage\HardAdEditWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EditPage\IssueCommand.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EditPage\IssueSlip.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EditPage\PlaylistEditWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EditPage\PrintTemplateEditWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EditPage\ProgramUpgradeEditWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EditPage\MediaEditWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControl\ProgramUpgrade.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EditPage\SchoolEditWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EditPage\SlipCustomerEditWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EditPage\TitleAdEditWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="UserControl\HardAdInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControl\PlaylistInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControl\PlayListItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControl\PrintTemplateInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControl\ReleaseLog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControl\SchoolInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControl\SlipCustomerInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControl\CampusInfo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControl\DeviceInfo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControl\SystemVerInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControl\TitleAdInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AdvertManage.BLL\AdvertManage.BLL.csproj">
+      <Project>{3B24B299-D5B5-4A15-B0CA-A7491EEF3A50}</Project>
+      <Name>AdvertManage.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AdvertManage.Model\AdvertManage.Model.csproj">
+      <Project>{3993B973-90C4-4367-AEDD-F7BA35A11DAB}</Project>
+      <Name>AdvertManage.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EnumType\EnumType.csproj">
+      <Project>{3E7C2198-F6B3-4FAE-8EBF-2271E752DFF3}</Project>
+      <Name>EnumType</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SeatManageClassModel\SeatManageClassModel.csproj">
+      <Project>{E90FBBAD-98DA-4A34-B620-26DA9ADDDF85}</Project>
+      <Name>SeatManageClassModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SeatManageComm\SeatManageComm.csproj">
+      <Project>{19063808-3340-4563-8B40-573D8DD0BABA}</Project>
+      <Name>SeatManageComm</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\temp1.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="bin\Debug\南京智佰闻欣logo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Shell32">
+      <Guid>{50A7E9B0-70EF-11D1-B75A-00A0C90564FE}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

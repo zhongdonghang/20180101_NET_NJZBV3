@@ -1,0 +1,20 @@
+﻿<Window x:Class="AMS.MediaPlayer.CouponsShowWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="CouponsShowWindow" Left="0" Top="0" AllowsTransparency="True" ResizeMode="NoResize"  WindowStyle="None"  mc:Ignorable="d" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		 Height="920" Width="1080"  SizeToContent="WidthAndHeight" BorderThickness="0" Closing="Window_Closing" Loaded="Window_Loaded" Icon="/MediaPlayerClient;component/Logo.ico"   ShowInTaskbar ="False">
+	<Window.Background>
+		<RadialGradientBrush Opacity="0.8">
+			<GradientStop Color="#FF55679A" Offset="1"/>
+			<GradientStop Color="White"/>
+		</RadialGradientBrush>
+	</Window.Background>
+    <Grid Height="920" Width="1080" >
+        <Image Name="image1" Source="{Binding NowItem.ShowImage,Mode=TwoWay}" Stretch="Fill" MaxHeight="850" MaxWidth="1080" Height="850" VerticalAlignment="Top" HorizontalAlignment="Left" Width="1080"/>
+        <Button Content="Button" HorizontalAlignment="Left" x:Name="btn_right" Margin="644,862,0,0" Width="100" Height="50" VerticalAlignment="Top" Style="{DynamicResource ButtonStyle_Right}" Click="btn_right_Click" BorderBrush="#FF55679A"/>
+        <Button Content="Button" HorizontalAlignment="Left" x:Name="btn_left" Margin="336,862,0,0" Width="100" Height="50" VerticalAlignment="Top" Style="{DynamicResource ButtonStyle_Leftt}" d:LayoutOverrides="HorizontalAlignment" Click="btn_left_Click" BorderBrush="#FF55679A"/>
+        <Button Content="打印优惠券" HorizontalAlignment="Left" x:Name="btn_print" Height="50" Margin="768,862,0,0" VerticalAlignment="Top" Width="150" Style="{DynamicResource ButtonStyle_CouponsWindow}"  Visibility="{Binding NowItem.IsPrint}" Click="btn_print_Click" BorderBrush="#FF55679A"/>
+        <Button Content="关    闭" HorizontalAlignment="Left" Height="50" x:Name="btn_close" Margin="922,862,0,0" VerticalAlignment="Top" Width="150" Style="{DynamicResource ButtonStyle_CouponsWindow}" Click="btn_close_Click" BorderBrush="#FF55679A"/>
+        <TextBlock Height="50" Margin="440,862,0,0" Text="{Binding NowNum}" VerticalAlignment="Top" HorizontalAlignment="Left" TextAlignment="Center" Width="200" Foreground="White" FontSize="34.667"/>
+    </Grid>
+</Window>

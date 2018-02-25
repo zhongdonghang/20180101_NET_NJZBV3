@@ -1,0 +1,38 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="AdvertManageClient.FunPage.MainPageInfo.ErrorCallBackWindow"
+        Title="FaultFeedbackWindow" MaxHeight="{Binding WindowHeight}" Width="650"
+    Style="{StaticResource ChildWindowsStyle}" WindowStartupLocation="CenterScreen" MouseLeftButtonDown="Window_MouseLeftButtonDown" >
+    <Grid  Margin="0,0,0,0">
+        <Image Style="{StaticResource ImageStyleLogo}"/>
+        <Label Content="故障反馈" Style="{StaticResource LabelStyleTitle}"/>
+        <GroupBox Header="问题描述" Name="progb" Margin="{Binding FbGBMargin}" Visibility="{Binding FbVisibility}" Height="186.687" VerticalAlignment="Top" FontFamily="黑体" FontSize="13.333" FontWeight="Bold"  Style="{DynamicResource GroupBoxStyleSpace}">
+            <Grid>
+                <Label Content="问题描述：" Height="28" HorizontalAlignment="Left" Margin="8,67.834,0,0" x:Name="label4" VerticalAlignment="Top" FontFamily="黑体" FontSize="13.333" FontWeight="Normal"  />
+                <TextBox Height="96.001" VerticalContentAlignment="Top"  TextAlignment="Left" HorizontalAlignment="Left" Margin="88.667,67.834,0,0" Style="{DynamicResource TextBoxStylePutIn}" TextWrapping="Wrap" Width="513.333" VerticalAlignment="Top" Text="{Binding FbDescribe}" IsEnabled="{Binding FbEnable}" />
+                <Label Content="学校名称：" Height="24" HorizontalAlignment="Left" Margin="8,8,0,0" x:Name="label1" VerticalAlignment="Top" FontFamily="黑体" FontSize="13.333" FontWeight="Normal" Width="76.667" />
+                <Label Content="问题类型：" Height="28" HorizontalAlignment="Left" Margin="287.333,8,0,0" x:Name="label2" VerticalAlignment="Top" FontFamily="黑体" FontSize="13.333" FontWeight="Normal" Width="72.667"  />
+                <ComboBox Name="cbt" SelectionChanged="cbt_SelectionChanged" Height="23" HorizontalAlignment="Right" Margin="0,9,81,0" ItemsSource="{Binding TypeList}" VerticalAlignment="Top" Width="165" Style="{DynamicResource ComboBoxStyleSelect}" DisplayMemberPath="TypeName" SelectedIndex="0" Visibility="{Binding CBVisibility}">
+                </ComboBox>
+                <ComboBox Name="cbs" SelectionChanged="cbs_SelectionChanged" Height="23" Margin="88.667,9,0,0" Style="{DynamicResource ComboBoxStyleSelect}" VerticalAlignment="Top" HorizontalAlignment="Left" Width="165" ItemsSource="{Binding SchoolList}"  DisplayMemberPath="Name" Visibility="{Binding CBVisibility}" >
+                </ComboBox>
+                <Label Content="{Binding FbPerson}" VerticalAlignment="Top" Margin="21.333,36,0,0" FontWeight="Normal" HorizontalAlignment="Left" Width="232.334"/>
+                <Label Content="{Binding FbTime}" VerticalAlignment="Top" Margin="287.333,36,81,0" FontWeight="Normal"/>
+                <Label Content="{Binding SchoolName}" Height="24" HorizontalAlignment="Left" Margin="88.667,8,0,0" x:Name="label1_Copy" VerticalAlignment="Top" FontFamily="黑体" FontSize="13.333" FontWeight="Normal" Width="165" Visibility="{Binding LbVisibility}" />
+                <Label Content="{Binding ProblemType}" Height="24" HorizontalAlignment="Right" Margin="0,8,81,0" x:Name="label1_Copy1" VerticalAlignment="Top" FontFamily="黑体" FontSize="13.333" FontWeight="Normal" Width="165"  Visibility="{Binding LbVisibility}"/>
+            </Grid>
+        </GroupBox>
+        <Button Content="{Binding BtnText}" Height="30" HorizontalAlignment="Right" Margin="0,0,72,8" x:Name="BtnSave_Copy" VerticalAlignment="Bottom" Width="60" Style="{DynamicResource ButtonStyleSubmit}" Click="BtnSave_Click" Visibility="{Binding BtnVisibility}" />
+        <Button Content="关闭" Height="30" HorizontalAlignment="Right" Margin="0,0,8,8" x:Name="button5_Copy" VerticalAlignment="Bottom" Width="60" Style="{DynamicResource ButtonStyleSubmit}"  Click="BtnClose_Click"/>
+        <GroupBox x:Name="Solvegb_Copy" Header="解决方案" Margin="{Binding FinishGBMargin}" FontWeight="Bold" FontFamily="黑体" FontSize="13.333" Height="195" VerticalAlignment="Top" Visibility="{Binding FbVisibility}" Style="{DynamicResource GroupBoxStyleSpace}">
+        	<Grid>
+        		<Label Content="解决方法：" Height="28" HorizontalAlignment="Left" Margin="8,37.207,0,0" x:Name="label4_Copy1" VerticalAlignment="Top" FontFamily="黑体" FontSize="13.333" FontWeight="Normal" d:LayoutOverrides="VerticalAlignment"  />
+                <TextBox Height="128.586" VerticalContentAlignment="Top"  IsEnabled="{Binding FinishEnable}" Text="{Binding SolveWay}"  HorizontalAlignment="Left" Margin="88.667,37.207,0,0" Style="{DynamicResource TextBoxStylePutIn}" TextAlignment="Left" TextWrapping="Wrap" Width="513.333" VerticalAlignment="Top"/>
+                <Label Content="{Binding SolveMan}" VerticalAlignment="Top" Margin="21.333,8,0,0" FontWeight="Normal" HorizontalAlignment="Left" Width="236.667"/>
+                <Label Content="{Binding SolveTime}" VerticalAlignment="Top" Margin="298,8,59.333,0" FontWeight="Normal"/>
+        	</Grid>
+        </GroupBox>
+        <TextBlock Foreground="#FFFC0A0A" Height="16" Margin="10,4,0,0" x:Name="tb_Error" Text="{Binding ErrorMessage}" VerticalAlignment="Top" HorizontalAlignment="Left" Width="620" />
+    </Grid>
+</Window>

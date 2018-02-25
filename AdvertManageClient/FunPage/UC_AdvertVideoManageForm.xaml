@@ -1,0 +1,46 @@
+﻿<UserControl x:Class="AdvertManageClient.FunPage.UC_AdvertVideoManageForm"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"  
+             xmlns:my="clr-namespace:AdvertManageClient.FunPage.MediaEdit"
+             mc:Ignorable="d" 
+             d:DesignHeight="550" d:DesignWidth="990">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../MyDictionary/UC_AdvertVideoManageFormDictionary.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid Background="White" Height="550" Width="990">
+        <Rectangle Fill="#FFA39797" Height="2" Margin="0,36,0,0" Width="990" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="-1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <TextBlock HorizontalAlignment="Left" Height="28" Margin="13,5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="250" Foreground="#E28B5D" FontWeight="Bold" FontSize="18"><Run Language="zh-cn" Text="广告发布与管理"/></TextBlock>
+        <Rectangle Fill="#FFA39797" HorizontalAlignment="Right" Margin="0,40,95,11.5" Width="2"/>
+        <Button Content="" HorizontalAlignment="Left" Margin="906,42,0,0" Name="Playlistbtn" VerticalAlignment="Top" Width="50" Height="60" Style="{DynamicResource ButtonStyle5}" Click="Playlistbtn_Click_4" />
+        <Button Content="" HorizontalAlignment="Left" Margin="906,120,0,0" Name="Slipcustomerbtn" VerticalAlignment="Top" Width="50" Height="60" Style="{DynamicResource ButtonStyle6}" Click="Slipcustomerbtn_Click" />
+        <Button Content="" HorizontalAlignment="Left" Margin="906,200,0,0" Name="PrintSlipbtn" VerticalAlignment="Top" Width="50" Height="60" Style="{DynamicResource ButtonStyle7}" Click="PrintSlipbtn_Click" />
+        <Button Content="" HorizontalAlignment="Left" Margin="906,274,0,0" Name="Hardadbtn" VerticalAlignment="Top" Width="50" Height="60" Style="{DynamicResource ButtonStyle8}" Click="Hardadbtn_Click" />
+        <Button Content="" HorizontalAlignment="Left" Margin="906,338,0,0" Name="TiliteADbtn" VerticalAlignment="Top" Width="50" Height="60" Style="{DynamicResource ButtonStyle9}" Click="TiliteADbtn_Click" />
+        <Button Content="" HorizontalAlignment="Left" Margin="906,402,0,0" Name="CustomerManagebtn" VerticalAlignment="Top" Width="50" Height="60" Style="{DynamicResource ButtonStyle10}" Click="CustomerManagebtn_Click" />
+        <Button Content="" HorizontalAlignment="Left" Margin="906,472,0,0" Name="RollTitles" VerticalAlignment="Top" Width="50" Height="60" Style="{DynamicResource ButtonStyle11}" Click="RollTitles_Click" />
+        <StackPanel Margin="0,40,90,-10" Width="900" Height="520">
+            <my:UC_Customer x:Name="UC_Customer" Visibility="Collapsed"></my:UC_Customer>
+            <my:UC_HardAd x:Name="UC_HardAd" Visibility="Collapsed"></my:UC_HardAd>
+            <my:UC_TitleAd x:Name="UC_TitleAd" Visibility="Collapsed"></my:UC_TitleAd>
+            <my:UC_PlaylistInfo x:Name="UC_PlaylistInfo" Visibility="Collapsed"></my:UC_PlaylistInfo>
+            <my:UC_SlipCustomerList x:Name="UC_SlipCustomerList" Visibility="Collapsed"></my:UC_SlipCustomerList>
+            <my:UC_PrintTemplateList x:Name="UC_PrintTemplateList" Visibility="Collapsed"></my:UC_PrintTemplateList>
+            <my:UC_RollTitlesList x:Name="UC_RollTitlesList" Visibility="Collapsed"></my:UC_RollTitlesList>
+        </StackPanel>
+    </Grid>
+</UserControl>

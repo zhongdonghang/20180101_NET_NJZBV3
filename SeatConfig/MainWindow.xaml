@@ -1,0 +1,41 @@
+﻿<Window x:Class="SeatConfig.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="700" Width="1000"  Loaded="Window_Loaded" Closed="Window_Closed">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition/>
+            <RowDefinition Height="10"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition />
+            <ColumnDefinition Width="10"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Column="1" Grid.Row="1" Height="23" HorizontalAlignment="Left" Margin="183,8,0,0" Name="textBlock1" Text="高" VerticalAlignment="Top" Grid.RowSpan="2" />
+        <TextBox Text="{Binding Path=Room.SeatList.SeatRow, UpdateSourceTrigger=PropertyChanged  }" Grid.Column="1" Grid.Row="1" Height="20" HorizontalAlignment="Left" Margin="199,5,0,0" Name="textBox1" VerticalAlignment="Top" Width="37" />
+        <TextBox Text="{Binding Path=Room.SeatList.SeatCol,UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.Row="1" Height="20" HorizontalAlignment="Left" Margin="264,5,0,0" Name="textBox2" VerticalAlignment="Top" Width="37" />
+        <TextBlock Grid.Column="1" Grid.Row="1" Grid.RowSpan="2" Height="27" HorizontalAlignment="Left" Margin="248,8,0,0" Name="textBlock2" Text="宽" VerticalAlignment="Top" />
+        <Button Content="生成" Grid.Column="1" Grid.Row="1" Height="23" HorizontalAlignment="Left" Margin="315,4,0,0" Name="button1" Click="button1_Click" VerticalAlignment="Top" Width="49" />
+        <Button Content="提交" Click="button2_Click" Grid.Column="1" Grid.Row="1" Height="23" Margin="845,3,0,0" Name="button2" VerticalAlignment="Top" HorizontalAlignment="Left" Width="48" />
+        <TextBlock Grid.Column="1" Grid.Row="1" Height="23" HorizontalAlignment="Left" Margin="689,7,0,0" Name="textBlock3" Text="阅览室编号：" VerticalAlignment="Top" />
+        <TextBox Text="{Binding Path=Room.No}" IsEnabled="False" Grid.Column="1" Grid.Row="1" Height="20" HorizontalAlignment="Left" Margin="760,5,0,0" Name="textBox3" VerticalAlignment="Top" Width="72" />
+        <ScrollViewer  MouseRightButtonUp="seatGrid_MouseDown"   Grid.Row="2" Grid.Column="1"  VerticalContentAlignment="Top" HorizontalContentAlignment="Left" VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Visible">
+
+            <!--<Canvas  MouseDown="seatGrid_MouseDown"   >-->
+            <Grid x:Name="seatGrid" Width="0" Height="0"   ShowGridLines="True" MouseDown="seatGrid_MouseDown"   >
+                    
+             </Grid>
+            <!--</Canvas>-->
+        </ScrollViewer>
+        <RadioButton Content="座位" Grid.Column="1" IsChecked="True" GroupName="SeatElement" Grid.Row="1" Height="16" Margin="370,7,0,0" Name="rdbSeat" VerticalAlignment="Top" HorizontalAlignment="Left" Width="39" />
+        <RadioButton Content="备注" Grid.Column="1" GroupName="SeatElement" Grid.Row="1" Height="16" Margin="415,7,0,0" Name="rdbNote" VerticalAlignment="Top" HorizontalAlignment="Left" Width="39" />
+        <Label Content="阅览室" Grid.Column="1" Grid.Row="1" Height="28" HorizontalAlignment="Left" Margin="1,2,0,0" Name="label1" VerticalAlignment="Top" />
+        <ComboBox  SelectedIndex="0" ItemsSource="{Binding ReadingRoom}" DisplayMemberPath="Name" SelectedValuePath="nO"  SelectionChanged="comboBox1_SelectionChanged" Grid.Column="1" Grid.Row="1" Height="19" HorizontalAlignment="Left" Margin="51,6,0,0" Name="comboBox1" VerticalAlignment="Top" Width="120" />
+        <Button Content="导出图片" Grid.Column="1" Grid.Row="1" Height="23" HorizontalAlignment="Left" Name="button4" VerticalAlignment="Top" Width="60" Margin="899,3,0,0" Click="button4_Click" />
+        <TextBlock Grid.Column="1" Grid.Row="1" Height="23" HorizontalAlignment="Left" Margin="615,7,0,0" x:Name="textBlock3_Copy" Text="方位：" VerticalAlignment="Top" />
+        <ComboBox  SelectedIndex="0" ItemsSource="{Binding ReadingRoomPostion}" DisplayMemberPath="PositionName" SelectedValuePath="PositionValue"  SelectionChanged="comboBox_Position_SelectionChanged" Grid.Column="1" Grid.Row="1" Height="19" HorizontalAlignment="Right" Margin="0,6,280,0" x:Name="comboBox_Position" VerticalAlignment="Top" Width="33" />
+    </Grid>
+</Window>

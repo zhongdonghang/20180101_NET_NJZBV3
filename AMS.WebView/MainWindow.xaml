@@ -1,0 +1,23 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="AMS.WebView.MainWindow" Loaded="Window_Loaded"  Closing="Window_Closing"
+        Title="WebViewWindow" Height="920" Width="1080" WindowStyle="None"  BorderThickness="0"  ResizeMode="NoResize" Top="0" Left="0"  ShowInTaskbar ="False">
+    <Grid>
+        <Grid x:Name="wbHost" Height="870" Width="1080"  HorizontalAlignment="Left" d:LayoutOverrides="Width" VerticalAlignment="Top">
+        </Grid>
+        <Button Content="Button" x:Name="btn_WindowMax" HorizontalAlignment="Right" Height="40" Margin="0,0,3,5" VerticalAlignment="Bottom" Width="40" Style="{DynamicResource ButtonStyle_MaxWindow}" Click="btn_WindowMax_Click"/>
+        <Button Content="Button" x:Name="btn_WindowNormal" Visibility="Hidden" HorizontalAlignment="Right" Height="40" Margin="0,0,8,5" VerticalAlignment="Bottom" Width="40" Style="{DynamicResource ButtonStyle_Normal}" Click="btn_WindowNormal_Click"/>
+        <Button Content="Button" x:Name="btn_Home" HorizontalAlignment="Right" Height="40" Margin="0,0,89,5" VerticalAlignment="Bottom" Width="40" Style="{DynamicResource ButtonStyle_Home}"  Click="btn_Home_Click"/>
+        <Button Content="Button" x:Name="btn_next" HorizontalAlignment="Right" Height="40" Margin="0,0,132,5" VerticalAlignment="Bottom" Width="40" Style="{DynamicResource ButtonStyle_Next}" Click="btn_next_Click"/>
+        <Button Content="Button" x:Name="btn_back" HorizontalAlignment="Right" Height="40" Margin="0,0,175,5" VerticalAlignment="Bottom" Width="40" Style="{DynamicResource ButtonStyle_Back}" Click="btn_back_Click"/>
+        <Button Content="Button" x:Name="btn_close" HorizontalAlignment="Right" Height="40" Margin="0,0,46,5" VerticalAlignment="Bottom" Width="40" Style="{DynamicResource ButtonStyle_WindowClose}" Click="btn_close_Click"/>
+        <Button Content="Button" x:Name="btn_keybroad" HorizontalAlignment="Right" Height="40" Margin="0,0,218,5" VerticalAlignment="Bottom" Width="40" Style="{DynamicResource ButtonStyle_Keybroad}" Click="btn_keybroad_Click" Visibility="Collapsed"/>
+        <Canvas Height="40" x:Name="sp_cav" VerticalAlignment="Bottom" Margin="32,0,0,11" ClipToBounds="True" HorizontalAlignment="Left" Width="756">
+            <StackPanel Orientation="Horizontal" x:Name="sp_RB" Canvas.Left="0">
+            </StackPanel>
+        </Canvas>
+        <Button Content="Button" x:Name="btn_pageDown" HorizontalAlignment="Right" Height="40" Margin="0,0,267,5" VerticalAlignment="Bottom" Width="20" Style="{DynamicResource ButtonStyle_PageUp}" Click="btn_pageDown_Click"/>
+        <Button Content="Button" x:Name="btn_pageUp" HorizontalAlignment="Left" Height="40" Margin="8,0,0,5" VerticalAlignment="Bottom" Width="20" Style="{DynamicResource ButtonStyle_PageDown}" Click="btn_pageUp_Click"/>
+    </Grid>
+</Window>

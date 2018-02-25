@@ -1,0 +1,20 @@
+﻿<UserControl x:Class="ClientLeaveV2.MyUserControl.UC_Tip_ContinueTimeAutoNoAgain"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+  d:DesignHeight="240" d:DesignWidth="740">
+    <Grid>
+    	<Image HorizontalAlignment="Left" VerticalAlignment="Top" Width="165" Height="192" Margin="25,25,0,0" Source="../Resources/btnImg/small.png" Stretch="Fill"/>
+		<Line X1="0" X2="0" Y1="0" Y2="220" StrokeThickness="2" HorizontalAlignment="Left" Width="2" Margin="223,8,0,0" Fill="White" Stroke="White" Height="220" VerticalAlignment="Top" d:LayoutOverrides="HorizontalAlignment" Opacity="0.4"/>
+		
+		<TextBlock Margin="240,5,0,0" TextWrapping="Wrap" Text="自动续时成功"  Style="{DynamicResource TextBlock_White_XL}" VerticalAlignment="Top" d:LayoutOverrides="VerticalAlignment, Height" HorizontalAlignment="Left" Width="492"/>
+		<TextBlock HorizontalAlignment="Right" Text="请在规定时间内及时续时。" VerticalAlignment="Bottom" Width="240" Style="{DynamicResource TextBlock_White_S}" Margin="0,0,0,8"/>
+		<TextBlock Margin="272,70,0,0" TextWrapping="Wrap" Text="您在暂离期间座位使用超时，系统自动"  Style="{DynamicResource TextBlock_White_MS}" VerticalAlignment="Top" HorizontalAlignment="Left" Width="447"/>
+        <TextBlock Margin="272,147,0,0" TextWrapping="Wrap" Text="{Binding SingleTime}" TextAlignment="Center" Style="{DynamicResource TextBlock_Orange_MS}" HorizontalAlignment="Left" Width="90" VerticalAlignment="Top" d:LayoutOverrides="HorizontalAlignment"/>
+		<TextBlock Margin="240,107,0,92" TextWrapping="Wrap" Text="帮您对座位自动进行续时至阅览室关闭时"  Style="{DynamicResource TextBlock_White_MS}" HorizontalAlignment="Left" Width="479" Height="Auto"/>
+		<TextBlock Margin="240,144,0,0" TextWrapping="Wrap" Text="间"  Style="{DynamicResource TextBlock_White_MS}" VerticalAlignment="Top" HorizontalAlignment="Left" Width="27" RenderTransformOrigin="0.167,0.056" d:LayoutOverrides="HorizontalAlignment"/>
+		<TextBlock Margin="366,144,0,0" TextWrapping="Wrap" Text="您无需再次续时"  Style="{DynamicResource TextBlock_White_MS}" HorizontalAlignment="Left" Width="214" Height="36" VerticalAlignment="Top"/>
+    </Grid>
+</UserControl>

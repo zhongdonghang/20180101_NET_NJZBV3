@@ -1,0 +1,18 @@
+﻿<Window x:Class="AdvertManageTools.EditPage.CampusEditWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="校区信息编辑" Height="240" Width="350" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
+    <Grid>
+        <Label Content="学校选择：" Height="28" HorizontalAlignment="Left" Margin="12,12,0,0" Name="label1" VerticalAlignment="Top" />
+        <ComboBox Height="23" HorizontalAlignment="Left" Margin="116,12,0,0" Name="cbschool" VerticalAlignment="Top" Width="200" SelectionChanged="cbschool_SelectionChanged" SelectedIndex="0" DisplayMemberPath="Text"/>
+        <Label Content="校区编号：" Height="28" HorizontalAlignment="Left" Margin="12,46,0,0" Name="label2" VerticalAlignment="Top" />
+        <Label Content="{Binding Campus.Schoolnum}" Height="28" HorizontalAlignment="Left" Margin="116,46,0,0" Name="lbNo" VerticalAlignment="Top" />
+        <TextBox Height="23" HorizontalAlignment="Left" Text="{Binding Campus.ShortNumber}"  Margin="196,46,0,0" Name="txtNo" VerticalAlignment="Top" Width="30" />
+        <Label Content="校区名称：" Height="28" HorizontalAlignment="Left" Margin="12,80,0,0" Name="label4" VerticalAlignment="Top" />
+        <TextBox Height="23" HorizontalAlignment="Left" Text="{Binding Campus.Name}" Margin="116,80,0,0" Name="txtName" VerticalAlignment="Top" Width="200" />
+        <Label Content="备注：" Height="28" HorizontalAlignment="Left" Margin="12,114,0,0" Name="label5" VerticalAlignment="Top" />
+        <TextBox Height="23" HorizontalAlignment="Left" Text="{Binding Campus.Describe}" Margin="116,114,0,0" Name="txtRemark" VerticalAlignment="Top" Width="200" />
+        <Button Content="保存" Height="23" HorizontalAlignment="Left" Margin="75,158,0,0" Name="btnSave" VerticalAlignment="Top" Width="75" Click="btnSave_Click" />
+        <Button Content="取消" Height="23" Margin="174,158,0,0" Name="btnClose" VerticalAlignment="Top" HorizontalAlignment="Left" Width="75" Click="btnClose_Click" />
+    </Grid>
+</Window>

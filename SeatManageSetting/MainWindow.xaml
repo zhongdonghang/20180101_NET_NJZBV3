@@ -1,0 +1,19 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:MyUC="clr-namespace:SeatManageSetting.MyUC" x:Class="SeatManageSetting.MainWindow"
+        Title="MainWindow"  Height="490" Width="660" WindowStyle="None"  WindowStartupLocation="CenterScreen" Icon="Logo.ico"  Style="{StaticResource MainWindowsStyle}"  >
+    <Grid>
+        <Button Content="Button" x:Name="btn_close" HorizontalAlignment="Right" Margin="0,-65,5,0" Width="20" Height="20" VerticalAlignment="Top" Style="{DynamicResource ButtonStyle_Close}" />
+        <Image Style="{DynamicResource ImageStyleLogo}" Height="60" Width="180" Margin="0,-65,30,0" HorizontalAlignment="Right" VerticalAlignment="Top"/>
+        <Label Content="座位管理系统配置工具" Style="{StaticResource LabelStyleTitle}" Margin="4,-68,0,0" Height="29.5" />
+        <StackPanel  Height="30" Margin="5,-38,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Orientation="Horizontal">
+            <Button Content="终端配置" Height="30" Margin="5,0,0,0" VerticalAlignment="Top" Style="{DynamicResource ButtonStyle_Blue_Write}" HorizontalAlignment="Left" Width="90"  />
+            <Button Content="服务配置" Height="30" Margin="5,0,0,0" VerticalAlignment="Top" Style="{DynamicResource ButtonStyle_Blue_Write}" HorizontalAlignment="Left" Width="90"  />
+            <Button Content="网站配置" Height="30" Margin="5,0,0,0" VerticalAlignment="Top" Style="{DynamicResource ButtonStyle_Blue_Write}" HorizontalAlignment="Left" Width="90" />
+            <Button Content="小工具" Height="30" Margin="5,0,0,0" VerticalAlignment="Top" Style="{DynamicResource ButtonStyle_Blue_Write}" HorizontalAlignment="Left" Width="90" />
+        </StackPanel>
+        <MyUC:UC_ClientConfig HorizontalAlignment="Left" VerticalAlignment="Top" Height="400" Width="650"/>
+        <MyUC:UC_ServiceConfig HorizontalAlignment="Left" VerticalAlignment="Top" Height="400" Width="650"/>
+    </Grid>
+</Window>

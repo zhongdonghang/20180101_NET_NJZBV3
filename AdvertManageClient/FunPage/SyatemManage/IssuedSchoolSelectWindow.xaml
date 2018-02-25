@@ -1,0 +1,41 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:viewModel="clr-namespace:AMS.ViewModel;assembly=AMS.ViewModel"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="AdvertManageClient.FunPage.SyatemManage.IssuedSchoolSelectWindow"
+        Title="IssuedSchoolSelectWindow" Height="500" Width="400" WindowStartupLocation="CenterScreen" Style="{StaticResource ChildWindowsStyle}" MouseLeftButtonDown="Window_MouseLeftButtonDown">
+    <Grid>
+        <Label Content="选择下发学校"  Style="{DynamicResource LabelStyleTitle}"/>
+        <Image Style="{StaticResource ImageStyleLogo}"/>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.51*"/>
+                <ColumnDefinition Width="0.49*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.095*"/>
+                <RowDefinition Height="0.789*"/>
+                <RowDefinition Height="0.116*"/>
+            </Grid.RowDefinitions>
+            <Button Name="btnRelease" Content="下发" Margin="19,10.203,0,7" Grid.Row="2" HorizontalAlignment="Left" Width="75" Style="{DynamicResource ButtonStyleSubmit}" Grid.Column="1" Click="btnRelease_Click" />
+            <Button Name="btnClose" Content="关闭" HorizontalAlignment="Right" Margin="0,10.203,8,7" Grid.Row="2" Width="75" Style="{DynamicResource ButtonStyleSubmit}" Grid.Column="1" Click="btnClose_Click" />
+            <TreeView Name="treeSchool" Margin="18,8" Grid.Row="1" Grid.ColumnSpan="2" ItemsSource="{Binding SchoolNodeList}" VerticalAlignment="Top" HorizontalAlignment="Left" Width="355" Height="330">
+                <TreeView.ItemContainerStyle>
+                    <Style TargetType="{x:Type TreeViewItem}">
+                        <Setter Property="IsExpanded" Value="{Binding IsExpanded}"></Setter>
+                    </Style>
+                </TreeView.ItemContainerStyle>
+                <TreeView.ItemTemplate>
+                    <HierarchicalDataTemplate DataType="{x:Type viewModel:NodeIssued}" ItemsSource="{Binding Path=ChildNodes}">
+                        <StackPanel Orientation="Horizontal">
+                            <CheckBox VerticalAlignment="Center" Content="{Binding Name}"  IsChecked="{Binding IsChecked,UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"></CheckBox>
+                            <StackPanel.ToolTip>
+                                <TextBlock VerticalAlignment="Center" Text="{Binding ID}" TextWrapping="Wrap" MaxWidth="200" ></TextBlock>
+                            </StackPanel.ToolTip>
+                        </StackPanel>
+                    </HierarchicalDataTemplate>
+                </TreeView.ItemTemplate>
+            </TreeView>
+        </Grid>
+    </Grid>
+</Window>

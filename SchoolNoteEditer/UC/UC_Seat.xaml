@@ -1,0 +1,29 @@
+﻿<UserControl x:Class="SchoolNoteEditer.UC.UC_Seat"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="40" d:DesignWidth="40">
+    <UserControl.Resources>
+        <!--<Style x:Key="hidden" TargetType="Grid">
+            <Style.Triggers>
+                <Trigger Value="True" Property="IsMouseOver"  >
+                    <Setter TargetName="close" Property="Visibility" Value="Collapsed"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>-->
+    </UserControl.Resources>
+    <Grid x:Name="grid">
+        <Image x:Name="bgimg" Source="../Resources/Seat.png" Stretch="Fill" Opacity="1" Grid.RowSpan="4" Margin="0,0,0,0"></Image>
+        <Image x:Name="Suspendedimg"  Stretch="Fill" Opacity="1" Height="15" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="15"></Image>
+        <Image x:Name="powerimg"  Stretch="Fill" Opacity="1" Height="15" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="15"></Image>
+        <TextBox TextAlignment="Center" x:Name="txtSeatNo"  Margin="2,0,2,0" Height="20" Text="{Binding ShortSeatNo,Mode=TwoWay}" Grid.Row="1" Visibility="Collapsed"  LostFocus="TextBox_LostFocus" Foreground="Black" FontSize="10"></TextBox>
+        <TextBlock TextAlignment="Center" x:Name="tbkSeatNo" Margin="2,13,2,13" Text="{Binding Path=Text,Mode=OneWay,ElementName=txtSeatNo}" MouseLeftButtonDown="TextBlock_MouseLeftButtonDown" Foreground="White" FontSize="10"></TextBlock>
+        <Rectangle Height="10" Width="10" x:Name="close" MouseDown="close_MouseDown" VerticalAlignment="Top" HorizontalAlignment="Right">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="/Resources/delete.png" />
+            </Rectangle.Fill>
+        </Rectangle>
+    </Grid>
+</UserControl>

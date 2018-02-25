@@ -1,0 +1,35 @@
+﻿<Window x:Class="AdvertManageClient.FunPage.MediaEdit.MediaPlayerTest"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:wf ="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
+        xmlns:wfi="clr-namespace:System.Windows.Forms.Integration;assembly=WindowsFormsIntegration"
+        xmlns:myMP="clr-namespace:MyMediaPlayer;assembly=MyMediaPlayer"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        Title="MediaPlayerTest"  WindowStyle="None" Closing="Window_Closing"   BorderThickness="0" mc:Ignorable="d" BorderBrush="Transparent" MaxHeight="920" WindowStartupLocation="Manual" ResizeMode="NoResize" MaxWidth="1080" Height="920" Width="1080" Background="Black">
+    <Canvas Margin="0,0,0,0" Height="920" Width="1080">
+        <wfi:WindowsFormsHost x:Name="mediaPlayHost" Width="1080" Height="895" Canvas.Left="0" Canvas.Top="25">
+            <myMP:MediaPlayer Width="1080" Height="895" x:Name="myMediaPlayer" ></myMP:MediaPlayer>
+        </wfi:WindowsFormsHost>
+        <Image x:Name="imgCanv" Width="1080" Height="895" Canvas.Left="0" Canvas.Top="25" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBlock MouseLeftButtonDown="txtWarning_MouseLeftButtonDown" Canvas.Top="3" Height="22" x:Name="txtWarning"   Width="1080" Foreground="#EAEBEB" FontSize="17" Text="{Binding ErrorMessage}" Panel.ZIndex="100" />
+        <StackPanel  Width="1080"   Canvas.Top="607" Canvas.Left="0"   Height="156" Orientation="Horizontal" x:Name="imgPanel1" Background="Black" Visibility="{Binding SlipShow}" >
+        	<Image Height="156" Source="/AdvertManageClient;component/Image/BGb.jpg" Stretch="Fill" VerticalAlignment="Top" Width="150" Margin="2,0,0,0" HorizontalAlignment="Left"/>
+        	<Image Height="156" Source="/AdvertManageClient;component/Image/BGb.jpg" Stretch="Fill" VerticalAlignment="Top" Width="150" Margin="4,0,0,0" HorizontalAlignment="Left"/>
+			<Image Height="156" Source="/AdvertManageClient;component/Image/BGb.jpg" Stretch="Fill" VerticalAlignment="Top" Width="150" Margin="4,0,0,0" HorizontalAlignment="Left"/>
+			<Image Height="156" Source="/AdvertManageClient;component/Image/BGb.jpg" Stretch="Fill" VerticalAlignment="Top" Width="150" Margin="4,0,0,0" HorizontalAlignment="Left"/>
+			<Image Height="156" Source="/AdvertManageClient;component/Image/BGb.jpg" Stretch="Fill" VerticalAlignment="Top" Width="150" Margin="4,0,0,0" HorizontalAlignment="Left"/>
+			<Image Height="156" Source="/AdvertManageClient;component/Image/BGb.jpg" Stretch="Fill" VerticalAlignment="Top" Width="150" Margin="4,0,0,0" HorizontalAlignment="Left"/>
+			<Image Height="156" Source="/AdvertManageClient;component/Image/BGb.jpg" Stretch="Fill" VerticalAlignment="Top" Width="150" Margin="4,0,0,0" HorizontalAlignment="Left"/>
+        </StackPanel>
+        <StackPanel Width="1080"   Canvas.Top="763" Canvas.Left="0"   Height="156" Orientation="Horizontal" x:Name="imgPanel2" Background="Black" Visibility="{Binding SlipShow}" >
+        	<Image Height="156" Source="/AdvertManageClient;component/Image/BGb.jpg" Stretch="Fill" VerticalAlignment="Top" Width="150" Margin="2,0,0,0" HorizontalAlignment="Left"/>
+        	<Image Height="156" Source="/AdvertManageClient;component/Image/BGb.jpg" Stretch="Fill" VerticalAlignment="Top" Width="150" Margin="4,0,0,0" HorizontalAlignment="Left"/>
+			<Image Height="156" Source="/AdvertManageClient;component/Image/BGb.jpg" Stretch="Fill" VerticalAlignment="Top" Width="150" Margin="4,0,0,0" HorizontalAlignment="Left"/>
+			<Image Height="156" Source="/AdvertManageClient;component/Image/BGb.jpg" Stretch="Fill" VerticalAlignment="Top" Width="150" Margin="4,0,0,0" HorizontalAlignment="Left"/>
+			<Image Height="156" Source="/AdvertManageClient;component/Image/BGb.jpg" Stretch="Fill" VerticalAlignment="Top" Width="150" Margin="4,0,0,0" HorizontalAlignment="Left"/>
+			<Image Height="156" Source="/AdvertManageClient;component/Image/BGb.jpg" Stretch="Fill" VerticalAlignment="Top" Width="150" Margin="4,0,0,0" HorizontalAlignment="Left"/>
+			<Image Height="156" Source="/AdvertManageClient;component/Image/BGb.jpg" Stretch="Fill" VerticalAlignment="Top" Width="150" Margin="4,0,0,0" HorizontalAlignment="Left"/>
+        </StackPanel>
+		</Canvas>
+</Window>

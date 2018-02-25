@@ -1,0 +1,44 @@
+﻿<Window x:Class="SeatClientV2.LeaveWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="LeaveWindow" WindowStartupLocation="Manual" Style="{DynamicResource ResourceWindowsStyle_1080}"  Icon="/SeatClient;component/Logo.ico" Width="590"  Height="470" Top="{Binding Path=WindowTop,Mode=TwoWay}" Left="{Binding Path=WindowLeft,Mode=TwoWay}" Loaded="Window_Loaded">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Dictionary/ImageDictionary.xaml"/>
+                <ResourceDictionary Source="/Dictionary/PopupDictionary.xaml"/>
+                <ResourceDictionary Source="/Dictionary/CommStyleDictionary.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <Grid>
+        <Canvas Margin="0,0,0,0">
+           <Rectangle Height="60" Stroke="White" VerticalAlignment="Top" StrokeThickness="2" Width="580">
+        	<Rectangle.Fill>
+        		<SolidColorBrush Color="#FFADACC0"/>
+        	</Rectangle.Fill>
+        </Rectangle>
+            <TextBlock  Text="{Binding TiteleAd}"  Style="{DynamicResource TextBlock_White_MS}" Canvas.Top="12" Canvas.Left="13"/>
+            <Button Content="Button" Height="40" x:Name="btn_close" Canvas.Left="530" Canvas.Top="9" Width="40" Style="{DynamicResource ButtonStyle_CloseRount}" Click="btn_close_Click" />
+            <TextBlock  Text="请您选择操作："  Style="{DynamicResource TextBlock_White_L}"   Canvas.Top="78.673" Canvas.Left="196.666" Height="45" Foreground="White" />
+            <Line X1="290" X2="670" Y1="170" Y2="170" OpacityMask="{x:Null}" Stroke="White" Opacity="1" StrokeThickness="5" Canvas.Left="-103.334" Canvas.Top="-22.207"></Line>
+            <Rectangle Height="256" Canvas.Left="0"  Canvas.Top="60" Width="175"  >
+                <Rectangle.Fill>
+                    <ImageBrush ImageSource="/Resources/Background/ces1.jpg"/>
+                </Rectangle.Fill>
+            </Rectangle>
+            <Rectangle Height="145" Stroke="White" Canvas.Top="315" Width="580" Fill="#FFADACC0"  x:Name="rec_down"/>
+            <Rectangle Height="125" Canvas.Left="0" Stroke="White" Canvas.Top="325" Width="580"  x:Name="image_down">
+                <Rectangle.Fill>
+                    <ImageBrush ImageSource="{Binding PopImg}"/>
+                </Rectangle.Fill>
+            </Rectangle>
+            <Button Canvas.Left="299" Canvas.Top="253" x:Name="btn_continueTime" Content="续时"  Style="{DynamicResource LeaveButtonStyle}" Visibility="{Binding ContinueBtnVisibility}" Click="btn_continueTime_Click" />
+            <Button Canvas.Left="441.666" Canvas.Top="186" x:Name="btn_reselect" Content="重新选座"  Style="{DynamicResource LeaveButtonStyle}" Click="btn_reselect_Click" />
+            <Button Canvas.Left="299" Canvas.Top="186" x:Name="btn_shortleave" Content="暂离"  Style="{DynamicResource LeaveButtonStyle}" Click="btn_shortleave_Click" />
+            <Button Canvas.Left="441.666" Canvas.Top="253" x:Name="btn_leave" Content="释放座位"  Style="{DynamicResource LeaveButtonStyle}" Click="btn_leave_Click" />
+            <Rectangle Height="10" Stroke="White" Canvas.Top="315" Width="580" Fill="#FFADACC0" Visibility="Collapsed"  x:Name="rec_down_co"/>
+        </Canvas>
+    </Grid>
+</Window>

@@ -1,0 +1,27 @@
+﻿<UserControl
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	mc:Ignorable="d"
+	x:Class="SeatClientV3.MyUserControl.UC_SchoolNotice"
+	x:Name="UserControl"
+	d:DesignWidth="1080" d:DesignHeight="500">
+    <Viewbox>
+        <Grid x:Name="LayoutRoot">
+            <Rectangle HorizontalAlignment="Center" Height="500" VerticalAlignment="Top" Width="820" StrokeThickness="5" RadiusX="30" RadiusY="30">
+                <Rectangle.Stroke>
+                    <SolidColorBrush Color="#FF09224E" Opacity="0.5"/>
+                </Rectangle.Stroke>
+                <Rectangle.Fill>
+                    <SolidColorBrush Color="White" Opacity="0.3"/>
+                </Rectangle.Fill>
+            </Rectangle>
+            <Canvas x:Name="image_Canvas"  Height="450" Canvas.Left="75" Width="770" Canvas.Top="15" ClipToBounds="True">
+                <Path Height="450" Data="M0,0 770,0 770,450 0,450 0,0" Canvas.Left="0" Width="770" Canvas.Top="0" Fill="AliceBlue"/>
+            </Canvas>
+            <Button Content="Button" HorizontalAlignment="Left" Height="60" Margin="-75,230,0,0" VerticalAlignment="Top" Width="40" Style="{DynamicResource ButtonStyle_Left}" Visibility="{Binding LeftBtn}" Click="btnlLeft_Click"/>
+            <Button Content="Button" HorizontalAlignment="Right" Height="60" Margin="0,230,-75,0" VerticalAlignment="Top" Width="40" Style="{DynamicResource ButtonStyle_Right}" Visibility="{Binding RightBtn}" Click="btnRight_Click"/>
+        </Grid>
+    </Viewbox>
+</UserControl>

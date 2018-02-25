@@ -1,0 +1,506 @@
+﻿
+body
+{
+    font-size: 12px;
+}
+.mainDiv
+{
+    text-align: center;
+}
+
+.SeatGraphMain
+{
+    position: absolute;
+    margin: 0px;
+    width: 1185px;
+    height: 540px;
+}
+
+.SeatLayoutFrom
+{
+    position: absolute;
+    /*background: #5074A7;*/
+    background: #95adce;
+    width: 1245px;
+    height: 685px;
+    top: 0px;
+    left: 0px;
+    float: right;
+    overflow: hidden;
+    font-weight: bold; 
+}
+
+.SeatLayout
+{
+    position: absolute;
+    background: #95adce;
+    float: right;
+    overflow: hidden;
+}
+
+.Thumbnail
+{
+    position: fixed; /*  position: absolute;*/
+    background: #E8EDF5;
+    margin-top: 0px;
+    top: 20px;
+    left: 880px;
+    width: 300px;
+    height: 300px;
+    float: right;
+    overflow: hidden;
+    margin-left: 5px;
+}
+
+
+.Transparent
+{
+    display: block;
+    position: absolute;
+    background: #E51271;
+    -moz-opacity: 0.5;
+    filter: Alpha(Opacity=20,Style= 0);
+    opacity: 0.5;
+    z-index: 1000;
+    float: left;
+}
+
+.ThumbnailSeatUsing
+{
+    position: absolute;
+    background: Red;
+    overflow: hidden;
+}
+.ThumbnailSeatFree
+{
+    position: absolute;
+    background: gray;
+    overflow: hidden;
+}
+.ThumbnailNote
+{
+    position: absolute;
+    background: #F5BF36;
+    overflow: hidden;
+}
+
+.RealSeatFree
+{
+    background-image: url('../Images/SeatImage/btn_free.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 42px;
+    height: 42px;
+    overflow: hidden;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+    float: left;
+}
+.RealSeatFree_p
+{
+    background-image: url('../Images/SeatImage/btn_free_p.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 42px;
+    height: 42px;
+    overflow: hidden;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+    float: left;
+}
+.RealSeatBusy
+{
+    background-image: url('../Images/SeatImage/btn_busy.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 42px;
+    height: 42px;
+    overflow: hidden;
+    text-align: center;
+    line-height: 40px;
+    float: left;
+    cursor: pointer;
+}
+.RealSeatBusy_p
+{
+    background-image: url('../Images/SeatImage/btn_busy_p.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 42px;
+    height: 42px;
+    overflow: hidden;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+    float: left;
+}
+
+.RealSeatLeave_p
+{
+    background-image: url('../Images/SeatImage/btn_leave_p.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 42px;
+    height: 42px;
+    overflow: hidden;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+    float: left;
+}
+
+.RealSeatLeave
+{
+    background-image: url('../Images/SeatImage/btn_leave.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 42px;
+    height: 42px;
+    overflow: hidden;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+    float: left;
+}
+
+.RealSeatNode
+{
+    background-position: center;
+    position: absolute;
+    width: 42px;
+    height: 42px;
+    overflow: hidden;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+    float: left;
+}
+/*可预约没有电源*/
+.CanBespeakSeat
+{
+    background-image: url('../Images/SeatImage/chair_kyy.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 42px;
+    height: 42px;
+    overflow: hidden;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+    float: left;
+}
+/*可预约有电源*/
+.CanBespeakSeat_p
+{
+    background-image: url('../Images/SeatImage/chair_kyyd.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 42px;
+    height: 42px;
+    overflow: hidden;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+    float: left;
+}
+/*不可预约无电源*/
+.NotBespeakSeat
+{
+    background-image: url('../Images/SeatImage/chair_ysz.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 42px;
+    height: 42px;
+    overflow: hidden;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+    float: left;
+}
+/*不可预约有电源*/
+.NotBespeakSeat_p
+{
+    background-image: url('../Images/SeatImage/chair_yszd.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 42px;
+    height: 42px;
+    overflow: hidden;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+    float: left;
+}
+.StopSeat
+{
+    background-image: url('../Images/SeatImage/chair_zt.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 42px;
+    height: 42px;
+    overflow: hidden;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+    float: left;
+}
+/*不可预约有电源*/
+.StopSeat_p
+{
+    background-image: url('../Images/SeatImage/chair_ztp.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 42px;
+    height: 42px;
+    overflow: hidden;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+    float: left;
+}
+/*已被预约的座位*/
+.BespeakedSeat
+{
+    background-image: url('../Images/SeatImage/chair_yyy.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 42px;
+    height: 42px;
+    overflow: hidden;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+    float: left;
+}
+/*已被预约有电源*/
+.BespeakedSeat_p
+{
+    background-image: url('../Images/SeatImage/chair_yyyd.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 42px;
+    height: 42px;
+    overflow: hidden;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+    float: left;
+}
+.SeatBackground
+{
+
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 34px;
+    height: 34px;
+    overflow: hidden;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+    float: left;
+}
+.divOperate
+{
+    padding-top: 0px;
+    padding-left: auto;
+    padding-right: auto;
+    height: 50px;
+    background: #DFE8F6;
+    vertical-align: middle;
+}
+
+.operateButton
+{
+    margin-left: auto;
+    margin-right: auto;
+    height: 20px;
+}
+
+
+.note_AirConditioning
+{
+    background-image: url('../Images/Node/note_AirConditioning.png');
+    background-position: center;
+    background-repeat:no-repeat;
+    position: absolute;
+    overflow: hidden;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+    float: left;
+}
+
+.note_blank
+{
+    background-image: url('../Images/Node/note_blank.png');
+    background-position: center;
+    background-repeat:no-repeat;
+    position: absolute;
+    overflow: hidden;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+    float: left;
+}
+
+.note_Bookshelf
+{
+    background-image: url('../Images/Node/note_Bookshelf.png');
+    background-position: center;
+    background-repeat:no-repeat;
+    position: absolute;
+    overflow: hidden;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+    float: left;
+}
+.note_Door
+{
+    background-image: url('../Images/Node/note_Door.png');
+    background-position: center;
+    background-repeat:no-repeat;
+    position: absolute;
+    overflow: hidden;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+    float: left;
+}
+.note_Elevator
+{
+    background-image: url('../Images/Node/note_Elevator.png');
+    background-position: center;
+    background-repeat:no-repeat;
+    position: absolute;
+    overflow: hidden;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+    float: left;
+}
+.note_PCTable
+{
+    background-image: url('../Images/Node/note_PCTable.png');
+    background-position: center;
+    background-repeat:no-repeat;
+    position: absolute;
+    overflow: hidden;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+    float: left;
+}
+.note_Pillar
+{
+    background-image: url('../Images/Node/note_Pillar.png');
+    background-position: center;
+    background-repeat:no-repeat;
+    position: absolute;
+    overflow: hidden;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+    float: left;
+}
+.note_Plant
+{
+    background-image: url('../Images/note_Plant.png');
+    background-position: center;
+    background-repeat:no-repeat;
+    position: absolute;
+    overflow: hidden;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+    float: left;
+}
+.note_Roundtable
+{
+    background-image: url('../Images/Node/note_Roundtable.png');
+    background-position: center;
+    background-repeat:no-repeat;
+    position: absolute;
+    overflow: hidden;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+    float: left;
+}
+.note_Stairway
+{
+    background-image: url('../Images/Node/note_Stairway.png');
+    background-position: center;
+    background-repeat:no-repeat;
+    position: absolute;
+    overflow: hidden;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+    float: left;
+}
+.note_Steps
+{
+    background-image: url('../Images/Node/note_Steps.png');
+    background-position: center;
+    background-repeat:no-repeat;
+    position: absolute;
+    overflow: hidden;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+    float: left;
+}
+.note_Table
+{
+    background-image: url('../Images/Node/note_Table.png');
+    background-position: center;
+    background-repeat:no-repeat;
+    position: absolute;
+    overflow: hidden;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+    float: left;
+}
+.note_Wall
+{
+    background-image: url('../Images/Node/note_Wall.png');
+    background-position: center;
+    background-repeat:no-repeat;
+    position: absolute;
+    overflow: hidden;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+    float: left;
+}
+.note_Window
+{
+    background-image: url('../Images/Node/note_Window.png');
+    background-position: center;
+    background-repeat:no-repeat;
+    position: absolute;
+    overflow: hidden;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+    float: left;
+}

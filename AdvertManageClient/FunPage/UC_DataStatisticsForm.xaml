@@ -1,0 +1,31 @@
+﻿<UserControl x:Class="AdvertManageClient.FunPage.UC_DataStatisticsForm"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="550" d:DesignWidth="990">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../MyDictionary/UC_DataStatisticsFormDictionary.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid Background="White" Height="550" Width="990">
+        <Rectangle Fill="#FFA39797" Height="2" Margin="0,36,0,0" Width="990" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="-1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <TextBlock HorizontalAlignment="Left" Height="28" Margin="13,5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Foreground="#E28B5D" FontWeight="Bold" FontSize="18"><Run Language="zh-cn" Text="数据统计"/></TextBlock>
+        <Rectangle Fill="#FFA39797" HorizontalAlignment="Right" Margin="0,40,95,11.5" Width="2"/>
+        <Button Content="进出记录统计" HorizontalAlignment="Left" Margin="906,48,0,0" Name="enteroutlogbtn" VerticalAlignment="Top" Width="70" Height="80" />
+        <Button Content="优惠券统计" HorizontalAlignment="Left" Margin="906,134,0,0" Name="slipbtn" VerticalAlignment="Top" Width="70" Height="80" />
+    </Grid>
+</UserControl>

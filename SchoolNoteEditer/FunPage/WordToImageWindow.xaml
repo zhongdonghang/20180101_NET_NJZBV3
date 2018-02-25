@@ -1,0 +1,46 @@
+﻿<Window x:Class="SchoolNoteEditer.FunPage.WordToImageWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="WordToImageWindow" Height="600" Width="1000"  WindowStyle="None" MouseLeftButtonDown="Window_MouseLeftButtonDown"  WindowStartupLocation="CenterScreen" Icon="/SchoolNoteEditer;component/Logo.ico" >
+    <Window.Style>
+        <StaticResource ResourceKey="ChildWindowsStyle"/>
+    </Window.Style>
+    <Grid>
+        <Image Style="{StaticResource ImageStyleLogo}" Margin="0,-40,75,0"/>
+        <Label Content="文字转换校园通知图片" Style="{StaticResource LabelStyleTitle}" FontSize="16" Height="35"/>
+        <Button Content="Button" x:Name="btn_close" ToolTip="关闭" HorizontalAlignment="Right" Margin="0,-35,3,0" Width="20" Height="20" VerticalAlignment="Top" Style="{DynamicResource ButtonStyle_Close}" Click="btn_close_Click" />
+        <GroupBox Header="预览" HorizontalAlignment="Left" Margin="265,10,0,0" VerticalAlignment="Top" Style="{DynamicResource GroupBoxStyle_Blue}" Height="390" Width="450">
+            <Grid>
+                <Grid.Background>
+                    <ImageBrush ImageSource="/SchoolNoteEditer;component/Resources/ResourceImage.png"/>
+                </Grid.Background>
+                <Viewbox Height="350" Width="420">
+                    <Grid  Height="700" Width="840">
+                        <Path Style="{DynamicResource PathOut}" x:Name="image_Path" Height="700" Width="840"/>
+                        <Path Style="{DynamicResource PathIn}" Height="702" Width="842"  Stretch="Fill"/>
+                    </Grid>
+                </Viewbox>
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="内容" HorizontalAlignment="Left" Margin="22,82,0,0" VerticalAlignment="Top" Height="318" Width="238" Style="{DynamicResource GroupBoxStyle_Blue}">
+            <Grid>
+                <TextBox TextWrapping="Wrap" Text="{Binding Text}"  HorizontalAlignment="Left" Height="271" VerticalAlignment="Top" Width="226" BorderBrush="#FF3399FF"/>
+                <TextBlock Margin="106,276,0,0" Text="字号：" Style="{DynamicResource TextBlockStyle_Blue}"/>
+                <TextBox Margin="146,276,0,0" Text="{Binding TextFontSize}" Width="28" Style="{DynamicResource TextBoxStyle_Blue}" />
+                <Button Content="∧" x:Name="btn_TextFontSizePluse" Margin="204,274,0,0" HorizontalAlignment="Left" Style="{DynamicResource ButtonStyle_Blue}" Width="20" Height="20" Click="btn_TextFontSizePluse_Click"/>
+                <Button Content="∨" x:Name="btn_TextFontSizeLower"  Margin="178,274,0,0" HorizontalAlignment="Left" Style="{DynamicResource ButtonStyle_Blue}" Width="20" Height="20" Click="btn_TextFontSizeLower_Click"/>
+            </Grid>
+        </GroupBox>
+        <Button Content="预览" x:Name="btn_Watch" HorizontalAlignment="Left" Margin="560,405,0,0" VerticalAlignment="Top" Width="75" Style="{DynamicResource ButtonStyle_Blue}" Click="btn_Watch_Click"/>
+        <GroupBox Header="标题" HorizontalAlignment="Left" Margin="22,10,0,0" VerticalAlignment="Top" Height="72" Width="238" Style="{DynamicResource GroupBoxStyle_Blue}">
+            <Grid>
+                <TextBox TextWrapping="Wrap" Text="{Binding Title}"  HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="226" BorderBrush="#FF3399FF"/>
+                <TextBlock Margin="98,29,0,0" Text="字号：" Style="{DynamicResource TextBlockStyle_Blue}"/>
+                <TextBox Margin="138,29,0,0" Text="{Binding TitleFontSize}" Width="28" Style="{DynamicResource TextBoxStyle_Blue}" />
+                <Button Content="∧" x:Name="btn_TitleFontSizePluse1" Margin="196,27,0,0" HorizontalAlignment="Left" Style="{DynamicResource ButtonStyle_Blue}" Width="20" Height="20" Click="btn_TitleFontSizePluse1_Click"/>
+                <Button Content="∨" x:Name="btn_TitleFontSizeLower1"  Margin="170,27,0,0" HorizontalAlignment="Left" Style="{DynamicResource ButtonStyle_Blue}" Width="20" Height="20" Click="btn_TitleFontSizeLower1_Click"/>
+            </Grid>
+        </GroupBox>
+        <Button Content="保存" x:Name="btn_Save" HorizontalAlignment="Left" Margin="640,405,0,0" VerticalAlignment="Top" Width="75" Style="{DynamicResource ButtonStyle_Blue}" Click="btn_Save_Click"/>
+    </Grid>
+</Window>

@@ -1,0 +1,52 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing" x:Class="SeatClientV2.ReadingRoomWindow"
+        Title="ReadingRoomWindow" Style="{DynamicResource WindowsStyle}" xmlns:my="clr-namespace:SeatClientV2.MyUserControl" 
+   WindowStartupLocation="Manual" Width="{Binding Path=WindowWidth,Mode=TwoWay}" Icon="/SeatClient;component/Logo.ico"  Height="{Binding Path=WindowHeight,Mode=TwoWay}" Top="{Binding Path=WindowTop,Mode=TwoWay}" Left="{Binding Path=WindowLeft,Mode=TwoWay}" Closing="Window_Closing">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Dictionary/ImageDictionary.xaml"/>
+                <ResourceDictionary Source="/Dictionary/ReadingRoomWindowStyleDictionary.xaml"/>
+                <ResourceDictionary Source="/Dictionary/CommStyleDictionary.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Viewbox >
+        <Grid Width="1080" Height="1000">
+            <Canvas Margin="0,0,0,0">
+                <Path  Stroke="White" Fill="White"  Opacity="0.5"  UseLayoutRounding="False" Data="M120,55 L80,55 L260,55 L280,115 L1040,115 L1040,180 L40,180 L40,115 L60,115 L80,55"  StrokeThickness="10" StrokeLineJoin="Round" StrokeStartLineCap="Round" StrokeEndLineCap="Round" />
+                <TextBlock Height="42" Canvas.Left="88" Text="选择阅览室"   Style="{DynamicResource TextBlock_White_L}" Canvas.Top="59" />
+                <Rectangle Height="65" Canvas.Left="35" Stroke="White" StrokeThickness="2" Canvas.Top="119" Width="264"/>
+                <Rectangle Height="65" Canvas.Left="298" Stroke="White" StrokeThickness="2" Canvas.Top="119" Width="747"/>
+                <Rectangle Height="698" Canvas.Left="36"  Canvas.Top="186" Width="1009" Fill="White" Opacity="0.25"/>
+                <TextBlock  Canvas.Left="100" Text="读者信息" Canvas.Top="127" Width="130" Style="{DynamicResource TextBlock_Orange_L}" />
+                <TextBlock  Canvas.Left="475"  Text="请选择您要进入的阅览室!" Canvas.Top="127" Width="365" Style="{DynamicResource TextBlock_Orange_L}"/>
+                <Line X1="0" Y1="0" X2="750" Y2="0" Fill="#FFF2711D" Height="5" Stroke="#FFF2711D" StrokeThickness="5" Canvas.Left="298" Canvas.Top="187" Width="747" ></Line>
+                <Line X1="0" Y1="0" X2="750" Y2="0" Fill="#FFF2711D" Height="5" Stroke="#FFF2711D" StrokeThickness="5" Canvas.Left="298" Canvas.Top="300" Width="747" />
+                <Rectangle Height="300" Canvas.Left="35" Stroke="White" StrokeThickness="2" Canvas.Top="184" Width="264"/>
+                <Rectangle Height="402" Canvas.Left="35" Stroke="White" StrokeThickness="2" Canvas.Top="483" Width="264"/>
+                <Image Height="400" Canvas.Left="37" Canvas.Top="485" Width="260" Source="{Binding ReaderAdOImage}" ></Image>
+                <Rectangle Fill="White" Height="67" Canvas.Left="35" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeThickness="10" StrokeLineJoin="Round" Canvas.Top="884" Width="1010" Opacity="0.5"/>
+                <StackPanel Height="300" Canvas.Left="35"  Canvas.Top="184" Width="264">
+                    <TextBlock  Text="{Binding ReaderStatusInfo.CardNo}" Margin="0,10,0,0" Width="245"   Style="{DynamicResource TextBlock_White_MS}"/>
+                    <TextBlock  Text="{Binding ReaderStatusInfo.ReaderName}" Margin="0,10,0,0"  Width="245"   Style="{DynamicResource TextBlock_White_MS}"/>
+                    <TextBlock Text="{Binding ReaderStatusInfo.EnterOutState}" Margin="0,10,0,0"  Width="245"   Style="{DynamicResource TextBlock_White_MS}"/>
+                    <TextBlock Text="{Binding ReaderStatusInfo.ReadingRoomName}" Margin="0,10,0,0"  Width="245" Height="auto"  Style="{DynamicResource TextBlock_White_MS}"/>
+                    <TextBlock  Text="{Binding ReaderStatusInfo.SeatNo}" Margin="0,10,0,0"  Width="245"   Style="{DynamicResource TextBlock_White_MS}"/>
+                </StackPanel>
+                <Button Content="常坐座位" x:Name="usuallySeatBtn"  Canvas.Left="775" Canvas.Top="895"  Style="{DynamicResource ButtonStyle_L}" Visibility="{Binding UsuallySeatBtn}" Click="usuallySeatBtn_Click" />
+                <Button Content="退  出" x:Name="closeBtn" Canvas.Left="910" Canvas.Top="895"  Style="{DynamicResource ButtonStyle_L}" Click="closeBtn_Click" />
+                <Rectangle Height="100" Canvas.Left="295" Stroke="White" Canvas.Top="5" Width="100" RadiusX="10" RadiusY="10">
+                    <Rectangle.Fill>
+                        <SolidColorBrush Color="#FFF4F4F5" Opacity="0.48"/>
+                    </Rectangle.Fill>
+                </Rectangle>
+                <TextBlock Height="90" Canvas.Left="295" TextWrapping="Wrap" Text="{Binding CloseTime}" Canvas.Top="13" TextAlignment="Center"  FontSize="60" Width="100" Style="{DynamicResource TextBlock_Orange_L}"/>
+            </Canvas>
+            <TabControl Margin="295,190,35,117" Background="{x:Null}" x:Name="TabCont" BorderBrush="{x:Null}">
+            </TabControl>
+        </Grid>
+    </Viewbox>
+</Window>

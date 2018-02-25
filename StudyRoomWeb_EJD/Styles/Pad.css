@@ -1,0 +1,50 @@
+﻿.RealSeatFree
+{
+    width: 75px;
+    height: 70px;
+    margin-left: 0px;
+    margin-top: 0px;
+    text-align: center;
+    font-size: 90%;
+    background-image: url('../Images/Pad/gray.png');
+    background-repeat: no-repeat;
+    vertical-align: middle;
+    float: left;
+}
+.RealSeatBusy
+{
+    /*background: #f6c5c8;*/
+    width: 75px;
+    height: 70px;
+    margin-left: 0px;
+    margin-top: 0px;
+    text-align: center;
+    background-image: url('../Images/Pad/pink.png');
+    background-repeat: no-repeat;
+    vertical-align: middle;
+    float: left;
+}
+.RealSeatLeave
+{
+    /*background: #83bedd;*/
+    width: 75px;
+    height: 70px;
+    margin-left: 0px;
+    margin-top: 0px;
+    text-align: center;
+    background-image: url('../Images/Pad/blue.png');
+    background-repeat: no-repeat;
+    vertical-align: middle;
+    float: left;
+}
+.RealSeatOnTime
+{
+    /*background: #f6c5c8 url(../Images/Pad/SeatOnTime.png) 0 0 no-repeat;*/
+    width: 75px;
+    height: 70px;
+    margin-left: 0px;
+    margin-top: 0px;
+    text-align: center;
+    vertical-align: middle;background-image: url('../Images/Pad/onTime.png');background-repeat: no-repeat;
+    float: left;
+}

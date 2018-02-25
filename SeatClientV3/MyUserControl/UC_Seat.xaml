@@ -1,0 +1,15 @@
+﻿<UserControl x:Class="SeatClientV3.MyUserControl.UC_Seat"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+            d:DesignHeight="48" d:DesignWidth="48" Background="{Binding SeatStateImage}" PreviewMouseLeftButtonUp="SeatElement_PreviewMouseLeftButtonUp">
+    <Canvas x:Name="SeatElement"  ClipToBounds="True" >
+        <Rectangle x:Name="ReaderImg" Height="32" Width="32" Canvas.Left="8" Canvas.Top="6"  Fill="{Binding ReaderStateImage }" />
+        <Rectangle x:Name="PowerImg"  Height="16" Width="16" Canvas.Left="0" Canvas.Bottom="0" Fill="{Binding PowerImage}"/>
+        <Rectangle x:Name="ShortleaveImg" Height="16" Width="16" Canvas.Right="0" Canvas.Top="0" Fill="{Binding ShortLeaveImage}" />
+        <Rectangle x:Name="BespeakImg" Height="16" Width="16" Canvas.Right="0" Canvas.Bottom="0" Fill="{Binding BespeakImage}" />
+        <TextBlock x:Name="LblSeatNo" Canvas.Top="16" Height="20" Width="48" FontFamily="微软雅黑" Text="{Binding ShortSeatNo}"  TextAlignment="Center"  FontSize="14" Canvas.Left="0" Foreground="White" Visibility="{ Binding SeatNoVisibility}" ></TextBlock>
+    </Canvas>
+</UserControl>

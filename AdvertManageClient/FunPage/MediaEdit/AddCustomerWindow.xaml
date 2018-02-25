@@ -1,0 +1,21 @@
+﻿<Window x:Class="AdvertManageClient.FunPage.MediaEdit.AddCustomerWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d"
+        Title="AddCustomerWindow" MaxHeight="{Binding FormHight}" Height="355" Width="355" Style="{StaticResource ChildWindowsStyle}" WindowStartupLocation="CenterScreen"  MouseLeftButtonDown="Window_MouseLeftButtonDown" >
+    <Grid Margin="0,0,0,0">
+    	<Label Content="广告客户管理" Style="{StaticResource LabelStyleTitle}"/> 
+        <Button Content="保存" Margin="0,0,72,8" x:Name="btnSave" Style="{DynamicResource ButtonStyleSubmit}" d:LayoutOverrides="GridBox" Click="btnSave_Click" Height="30" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="60"/>
+        <Button Content="关闭" Margin="0,0,8,8" x:Name="button2" Style="{DynamicResource ButtonStyleSubmit}" RenderTransformOrigin="-0.017,1.4" d:LayoutOverrides="GridBox" HorizontalAlignment="Right" Width="60" Click="btnClose_Click" Height="30" VerticalAlignment="Bottom" />
+        <Image Style="{DynamicResource ImageStyleLogo}" />
+        <Label Content="联系方式：" x:Name="label1_Copy" HorizontalAlignment="Left" Width="72" Height="28" VerticalAlignment="Top" FontSize="13.333" FontFamily="黑体" Margin="8,96,0,0" />
+        <Label Content="详细说明："  x:Name="label1_Copy1" Height="23.009" VerticalAlignment="Top" HorizontalAlignment="Left" Width="72" FontSize="13.333" FontFamily="黑体" Margin="8,160,0,0" />
+        <Label Content="客户编号：" x:Name="label1_Copy2" Height="28" VerticalAlignment="Top" HorizontalAlignment="Left" Width="72" FontSize="13.333" FontFamily="黑体" Visibility="{Binding TextBoxVisibility}" Margin="8,17,0,0" />
+        <TextBox Height="24" TextWrapping="Wrap"  VerticalAlignment="Top" Style="{DynamicResource TextBoxStylePutIn}" Text="{Binding CustomerNo}" Visibility="{Binding TextBoxVisibility}" Margin="84,17,0,0" HorizontalAlignment="Left" Width="253" />
+        <TextBox  Height="70" VerticalContentAlignment="Top"  TextAlignment="Left" TextWrapping="Wrap"  Style="{DynamicResource TextBoxStylePutIn}" Text="{Binding Remark}" Margin="84,160,0,0" HorizontalAlignment="Left" Width="252" VerticalAlignment="Top" d:LayoutOverrides="Height" />
+        <TextBox Height="48"  VerticalContentAlignment="Top"  TextAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Style="{DynamicResource TextBoxStylePutIn}" Text="{Binding LinkWay}" Margin="84,96,0,0" HorizontalAlignment="Left" Width="252" />
+        <Label  Height="24" Content="客户名称：" FontFamily="黑体" FontSize="13.333" HorizontalAlignment="Left"  Name="label1" Width="72" Margin="8,54,0,0" VerticalAlignment="Top" d:LayoutOverrides="Height" />
+        <TextBox Height="24" Style="{DynamicResource TextBoxStylePutIn}" Text="{Binding CustomerName}" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left" Width="253" Margin="84,54,0,0" />
+        <TextBlock Margin="84,234,0,0" x:Name="tb_Error" Text="{Binding ErrorMessage}" Foreground="#FFFC0A0A" Height="16" VerticalAlignment="Top" HorizontalAlignment="Left" Width="252" />
+    </Grid>
+</Window>

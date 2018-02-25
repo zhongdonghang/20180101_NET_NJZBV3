@@ -1,0 +1,405 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:uc="clr-namespace:SchoolNoteEditer.UC"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    WindowStartupLocation="CenterScreen" mc:Ignorable="d" x:Class="SchoolNoteEditer.SeatWindow" MouseLeftButtonDown="Window_MouseLeftButtonDown"
+        Title="座位图编辑器" Height="800" Width="1200" Icon="/SchoolNoteEditer;component/Logo.ico">
+    <Window.Style>
+        <StaticResource ResourceKey="ChildWindowsStyle"/>
+    </Window.Style>
+    <Grid>
+        <Image Style="{StaticResource ImageStyleLogo}" Margin="0,-40,75,0"/>
+        <Label Content="座位编辑器" Style="{StaticResource LabelStyleTitle}" FontSize="16" Height="35"/>
+        <GroupBox Header="工具箱" x:Name="toolBox" HorizontalAlignment="Left" Margin="8,104,0,8" Width="232.167" Foreground="#FF1181E9" BorderBrush="#FF1181E9">
+            <Grid>
+                <ScrollViewer HorizontalContentAlignment="Left" VerticalContentAlignment="Top" VerticalScrollBarVisibility="Visible">
+                    <Grid Height="1000">
+                        <RadioButton x:Name="mouseRB" HorizontalAlignment="Left" Margin="8,30.333,0,0" VerticalAlignment="Top" Style="{DynamicResource RDOButton}" Height="60" Width="60" Checked="RadioButton_Checked">
+                            <StackPanel HorizontalAlignment="Center">
+                                <Image Width="40" Height="40" Source="Resources/Mouse.png"/>
+                                <TextBlock HorizontalAlignment="Center"><Run Text="鼠标"/></TextBlock>
+                            </StackPanel>
+                        </RadioButton>
+                        <RadioButton x:Name="Seat" Margin="8,117.666,0,0" VerticalAlignment="Top" Style="{DynamicResource RDOButton}" Height="60" Width="60" HorizontalAlignment="Left" Checked="RadioButton_Checked">
+                            <StackPanel HorizontalAlignment="Center">
+                                <Image Width="40" Height="40" Source="Resources/Seat.png"/>
+                                <TextBlock HorizontalAlignment="Center"><Run Text="座位"/></TextBlock>
+                            </StackPanel>
+                        </RadioButton>
+                        <RadioButton x:Name="None" Margin="72,30.333,0,0" VerticalAlignment="Top" Style="{DynamicResource RDOButton}" Height="60" HorizontalAlignment="Left" Width="60" Checked="RadioButton_Checked">
+                            <StackPanel HorizontalAlignment="Center">
+                                <Image Width="40" Height="40"/>
+                                <TextBlock HorizontalAlignment="Center"><Run Text="备注"/></TextBlock>
+                            </StackPanel>
+                        </RadioButton>
+                        <RadioButton x:Name="Table" Margin="8,181.666,0,0" VerticalAlignment="Top" Style="{DynamicResource RDOButton}" Height="60" Width="60" HorizontalAlignment="Left" d:LayoutOverrides="HorizontalAlignment" Checked="RadioButton_Checked">
+                            <StackPanel HorizontalAlignment="Center">
+                                <Image Width="40" Height="40" Source="Resources/Table.png"/>
+                                <TextBlock HorizontalAlignment="Center"><Run Text="桌子"/></TextBlock>
+                            </StackPanel>
+                        </RadioButton>
+                        <RadioButton x:Name="Roundtable" Margin="72,181.666,0,0" VerticalAlignment="Top" Style="{DynamicResource RDOButton}" Height="60" d:LayoutOverrides="VerticalAlignment" HorizontalAlignment="Left" Width="60" Checked="RadioButton_Checked">
+                            <StackPanel HorizontalAlignment="Center">
+                                <Image Width="40" Height="40" Source="Resources/Roundtable.png"/>
+                                <TextBlock HorizontalAlignment="Center"><Run Text="圆桌"/></TextBlock>
+                            </StackPanel>
+                        </RadioButton>
+                        <RadioButton x:Name="PCTable" Margin="136,181.666,0,0" VerticalAlignment="Top" Style="{DynamicResource RDOButton}" Height="60" d:LayoutOverrides="VerticalAlignment" HorizontalAlignment="Left" Width="60" Checked="RadioButton_Checked">
+                            <StackPanel HorizontalAlignment="Center">
+                                <Image Width="40" Height="40" Source="Resources/PCTable.png"/>
+                                <TextBlock HorizontalAlignment="Center"><Run Text="电脑桌"/></TextBlock>
+                            </StackPanel>
+                        </RadioButton>
+                        <RadioButton x:Name="Plant" HorizontalAlignment="Left" Margin="8,479.833,0,0" VerticalAlignment="Top" Style="{DynamicResource RDOButton}" Height="60" Width="60" Checked="RadioButton_Checked">
+                            <StackPanel HorizontalAlignment="Center">
+                                <Image Width="40" Height="40" Source="Resources/Plant.png"/>
+                                <TextBlock HorizontalAlignment="Center"><Run Text="盆景"/></TextBlock>
+                            </StackPanel>
+                        </RadioButton>
+                        <RadioButton x:Name="Door" Margin="8,328.5,0,0" VerticalAlignment="Top" Style="{DynamicResource RDOButton}" Height="60" HorizontalAlignment="Left" Width="60" Checked="RadioButton_Checked">
+                            <StackPanel HorizontalAlignment="Center">
+                                <Image Width="40" Height="40" Source="Resources/Door.png"/>
+                                <TextBlock HorizontalAlignment="Center"><Run Text="大门"/></TextBlock>
+                            </StackPanel>
+                        </RadioButton>
+
+                        <RadioButton x:Name="Wall" HorizontalAlignment="Left" Margin="8,268.999,0,0" Style="{DynamicResource RDOButton}" Width="60" Height="60" VerticalAlignment="Top" Checked="RadioButton_Checked">
+                            <StackPanel HorizontalAlignment="Center">
+                                <Image Width="40" Height="40" Source="Resources/Wall.png"/>
+                                <TextBlock HorizontalAlignment="Center"><Run Text="墙"/></TextBlock>
+                            </StackPanel>
+                        </RadioButton>
+                        <RadioButton x:Name="Bookshelf" Margin="136,479.833,0,0" VerticalAlignment="Top" Style="{DynamicResource RDOButton}" Height="60" HorizontalAlignment="Left" Width="60" Checked="RadioButton_Checked">
+                            <StackPanel HorizontalAlignment="Center">
+                                <Image Width="40" Height="40" Source="Resources/Bookshelf.png"/>
+                                <TextBlock HorizontalAlignment="Center"><Run Text="书架"/></TextBlock>
+                            </StackPanel>
+                        </RadioButton>
+                        <RadioButton x:Name="Pillar" Margin="72,268.5,0,0" Style="{DynamicResource RDOButton}" Height="60" VerticalAlignment="Top" HorizontalAlignment="Left" Width="60" Checked="RadioButton_Checked">
+                            <StackPanel HorizontalAlignment="Center">
+                                <Image Width="40" Height="40" Source="Resources/Pillar.png"/>
+                                <TextBlock HorizontalAlignment="Center"><Run Text="柱子"/></TextBlock>
+                            </StackPanel>
+                        </RadioButton>
+                        <RadioButton x:Name="Stairway" HorizontalAlignment="Left" Margin="8,392.5,0,0" Style="{DynamicResource RDOButton}" Width="60" Height="60" VerticalAlignment="Top" Checked="RadioButton_Checked">
+                            <StackPanel HorizontalAlignment="Center">
+                                <Image Width="40" Height="40" Source="Resources/Stairway.png"/>
+                                <TextBlock HorizontalAlignment="Center"><Run Text="楼梯"/></TextBlock>
+                            </StackPanel>
+                        </RadioButton>
+                        <RadioButton x:Name="Elevator" HorizontalAlignment="Left" Margin="72,392.5,0,0" VerticalAlignment="Top" Style="{DynamicResource RDOButton}" Height="60" Width="60" Checked="RadioButton_Checked">
+                            <StackPanel HorizontalAlignment="Center">
+                                <Image Width="40" Height="40" Source="Resources/Elevator.png"/>
+                                <TextBlock HorizontalAlignment="Center"><Run Text="电梯"/></TextBlock>
+                            </StackPanel>
+                        </RadioButton>
+                        <RadioButton x:Name="AirConditioning" HorizontalAlignment="Left" Margin="72,479.833,0,0" VerticalAlignment="Top" Style="{DynamicResource RDOButton}" Height="60" Width="60" Checked="RadioButton_Checked">
+                            <StackPanel HorizontalAlignment="Center">
+                                <Image Width="40" Height="40" Source="Resources/AirConditioning.png"/>
+                                <TextBlock HorizontalAlignment="Center"><Run Text="空调"/></TextBlock>
+                            </StackPanel>
+                        </RadioButton>
+                        <RadioButton x:Name="Steps" Margin="136,268.999,0,0" VerticalAlignment="Top" Style="{DynamicResource RDOButton}" Height="60" HorizontalAlignment="Left" Width="60" Checked="RadioButton_Checked">
+                            <StackPanel HorizontalAlignment="Center">
+                                <Image Width="40" Height="40" Source="Resources/Steps.png"/>
+                                <TextBlock HorizontalAlignment="Center"><Run Text="台阶"/></TextBlock>
+                            </StackPanel>
+                        </RadioButton>
+                        <RadioButton x:Name="Window" Margin="72,328.5,0,0"  Style="{DynamicResource RDOButton}" Width="60" HorizontalAlignment="Left" d:LayoutOverrides="Width" Height="60" VerticalAlignment="Top" Checked="RadioButton_Checked">
+                            <StackPanel HorizontalAlignment="Center">
+                                <Image Width="40" Height="40" Source="Resources/Window.png"/>
+                                <TextBlock HorizontalAlignment="Center"><Run Text="窗户"/></TextBlock>
+                            </StackPanel>
+                        </RadioButton>
+                        <TextBlock Height="19.333" Margin="8,94.333,0,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left" Width="191" Background="#FFF1EDED" Style="{DynamicResource TextBlockStyle_com}"><Run Language="zh-cn" Text="桌椅"/></TextBlock>
+                        <TextBlock Height="19.333" Margin="8,245.666,0,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left" Width="191" Background="#FFF1EDED" Style="{DynamicResource TextBlockStyle_com}"><Run Language="zh-cn" Text="建筑结构"/></TextBlock>
+                        <TextBlock Height="19.333" Margin="8,456.5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left" Width="191" Background="#FFF1EDED" Style="{DynamicResource TextBlockStyle_com}"><Run Language="zh-cn" Text="装饰物"/></TextBlock>
+                        <TextBlock Height="19.333" Margin="8,543.833,0,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left" Width="191" Background="#FFF1EDED" Style="{DynamicResource TextBlockStyle_com}"><Run Language="zh-cn" Text="组合"/></TextBlock>
+                        <RadioButton x:Name="MIX_TS_1" HorizontalAlignment="Left" Margin="8,567.166,0,0" VerticalAlignment="Top" Style="{DynamicResource RDOButton}" Height="60" Width="60" Checked="RadioButton_Checked">
+                            <StackPanel HorizontalAlignment="Center">
+                                <Image Width="40" Height="40" Source="Resources/TwoSeat.jpg"/>
+                                <TextBlock HorizontalAlignment="Center"><Run Text="双座-1"/></TextBlock>
+                            </StackPanel>
+                        </RadioButton>
+                        <RadioButton x:Name="MIX_TS_2" Margin="72,567.166,71.167,0" VerticalAlignment="Top" Style="{DynamicResource RDOButton}" Height="60" Checked="RadioButton_Checked">
+                            <StackPanel HorizontalAlignment="Center">
+                                <Image Width="40" Height="40" Source="Resources/TwoSeat.jpg" RenderTransformOrigin="0.5,0.5">
+                                    <Image.RenderTransform>
+                                        <TransformGroup>
+                                            <ScaleTransform/>
+                                            <SkewTransform/>
+                                            <RotateTransform Angle="90"/>
+                                            <TranslateTransform/>
+                                        </TransformGroup>
+                                    </Image.RenderTransform>
+                                </Image>
+                                <TextBlock HorizontalAlignment="Center"><Run Text="双座-2"/></TextBlock>
+                            </StackPanel>
+                        </RadioButton>
+                        <RadioButton x:Name="MIX_PC_1" HorizontalAlignment="Right" Margin="0,567.166,7.167,0" VerticalAlignment="Top" Style="{DynamicResource RDOButton}" Height="60" Width="60" Checked="RadioButton_Checked">
+                            <StackPanel HorizontalAlignment="Center">
+                                <Image Width="40" Height="40" Source="Resources/PCSeat.png"/>
+                                <TextBlock HorizontalAlignment="Center"><Run Text="PC座-1"/></TextBlock>
+                            </StackPanel>
+                        </RadioButton>
+                        <RadioButton x:Name="MIX_FS_1" HorizontalAlignment="Left" Margin="7.167,642.499,0,0" VerticalAlignment="Top" Style="{DynamicResource RDOButton}" Height="60" Width="60" Checked="RadioButton_Checked">
+                            <StackPanel HorizontalAlignment="Center">
+                                <Image Width="40" Height="40" Source="Resources/FourSeat.png"/>
+                                <TextBlock HorizontalAlignment="Center"><Run Text="四座-1"/></TextBlock>
+                            </StackPanel>
+                        </RadioButton>
+                        <RadioButton x:Name="MIX_FS_2" Margin="71.167,642.499,72,0" VerticalAlignment="Top" Style="{DynamicResource RDOButton}" Height="60" Checked="RadioButton_Checked">
+                            <StackPanel HorizontalAlignment="Center">
+                                <Image Width="40" Height="40" Source="Resources/FourSeat.png" RenderTransformOrigin="0.5,0.5">
+                                    <Image.RenderTransform>
+                                        <TransformGroup>
+                                            <ScaleTransform/>
+                                            <SkewTransform/>
+                                            <RotateTransform Angle="90"/>
+                                            <TranslateTransform/>
+                                        </TransformGroup>
+                                    </Image.RenderTransform>
+                                </Image>
+                                <TextBlock HorizontalAlignment="Center"><Run Text="四座-2"/></TextBlock>
+                            </StackPanel>
+                        </RadioButton>
+                        <RadioButton x:Name="MIX_PC_2" HorizontalAlignment="Right" Margin="0,642.499,8,0" VerticalAlignment="Top" Style="{DynamicResource RDOButton}" Height="60" Width="60" Checked="RadioButton_Checked">
+                            <StackPanel HorizontalAlignment="Center">
+                                <Image Width="40" Height="40" Source="Resources/PCSeat.png" RenderTransformOrigin="0.5,0.5">
+                                    <Image.RenderTransform>
+                                        <TransformGroup>
+                                            <ScaleTransform/>
+                                            <SkewTransform/>
+                                            <RotateTransform Angle="90"/>
+                                            <TranslateTransform/>
+                                        </TransformGroup>
+                                    </Image.RenderTransform>
+                                </Image>
+                                <TextBlock HorizontalAlignment="Center"><Run Text="PC座-2"/></TextBlock>
+                            </StackPanel>
+                        </RadioButton>
+                        <RadioButton x:Name="MIX_SS_1" HorizontalAlignment="Left" Margin="7.167,717.833,0,0" VerticalAlignment="Top" Style="{DynamicResource RDOButton}" Height="60" Width="60" Checked="RadioButton_Checked">
+                            <StackPanel HorizontalAlignment="Center">
+                                <Image Width="40" Height="40" Source="Resources/SixSeat.png"/>
+                                <TextBlock HorizontalAlignment="Center"><Run Text="六座-1"/></TextBlock>
+                            </StackPanel>
+                        </RadioButton>
+                        <RadioButton x:Name="MIX_SS_2" Margin="71.167,717.833,72,0" VerticalAlignment="Top" Style="{DynamicResource RDOButton}" Height="60" Checked="RadioButton_Checked">
+                            <StackPanel HorizontalAlignment="Center">
+                                <Image Width="40" Height="40" Source="Resources/SixSeat.png" RenderTransformOrigin="0.5,0.5">
+                                    <Image.RenderTransform>
+                                        <TransformGroup>
+                                            <ScaleTransform/>
+                                            <SkewTransform/>
+                                            <RotateTransform Angle="90"/>
+                                            <TranslateTransform/>
+                                        </TransformGroup>
+                                    </Image.RenderTransform>
+                                </Image>
+                                <TextBlock HorizontalAlignment="Center"><Run Text="六座-2"/></TextBlock>
+                            </StackPanel>
+                        </RadioButton>
+                        <RadioButton x:Name="MIX_PC_3" HorizontalAlignment="Right" Margin="0,717.833,8,0" VerticalAlignment="Top" Style="{DynamicResource RDOButton}" Height="60" Width="60" Checked="RadioButton_Checked">
+                            <StackPanel HorizontalAlignment="Center">
+                                <Image Width="40" Height="40" Source="Resources/PCSeat.png" RenderTransformOrigin="0.5,0.5">
+                                    <Image.RenderTransform>
+                                        <TransformGroup>
+                                            <ScaleTransform/>
+                                            <SkewTransform/>
+                                            <RotateTransform Angle="180"/>
+                                            <TranslateTransform/>
+                                        </TransformGroup>
+                                    </Image.RenderTransform>
+                                </Image>
+                                <TextBlock HorizontalAlignment="Center"><Run Text="PC座-3"/></TextBlock>
+                            </StackPanel>
+                        </RadioButton>
+                        <RadioButton x:Name="MIX_ES_1" HorizontalAlignment="Left" Margin="7.167,792.833,0,0" VerticalAlignment="Top" Style="{DynamicResource RDOButton}" Height="60" Width="60" Checked="RadioButton_Checked">
+                            <StackPanel HorizontalAlignment="Center">
+                                <Image Width="40" Height="40" Source="Resources/EightSeat.jpg"/>
+                                <TextBlock HorizontalAlignment="Center"><Run Text="八座-1"/></TextBlock>
+                            </StackPanel>
+                        </RadioButton>
+                        <RadioButton x:Name="MIX_ES_2" Margin="71.167,792.833,72,0" VerticalAlignment="Top" Style="{DynamicResource RDOButton}" Height="60" Checked="RadioButton_Checked">
+                            <StackPanel HorizontalAlignment="Center">
+                                <Image Width="40" Height="40" Source="Resources/EightSeat.jpg" RenderTransformOrigin="0.5,0.5">
+                                    <Image.RenderTransform>
+                                        <TransformGroup>
+                                            <ScaleTransform/>
+                                            <SkewTransform/>
+                                            <RotateTransform Angle="90"/>
+                                            <TranslateTransform/>
+                                        </TransformGroup>
+                                    </Image.RenderTransform>
+                                </Image>
+                                <TextBlock HorizontalAlignment="Center"><Run Text="八座-2"/></TextBlock>
+                            </StackPanel>
+                        </RadioButton>
+                        <RadioButton x:Name="MIX_PC_4" HorizontalAlignment="Right" Margin="0,792.833,8,0" VerticalAlignment="Top" Style="{DynamicResource RDOButton}" Height="60" Width="60" Checked="RadioButton_Checked">
+                            <StackPanel HorizontalAlignment="Center">
+                                <Image Width="40" Height="40" Source="Resources/PCSeat.png" RenderTransformOrigin="0.5,0.5">
+                                    <Image.RenderTransform>
+                                        <TransformGroup>
+                                            <ScaleTransform/>
+                                            <SkewTransform/>
+                                            <RotateTransform Angle="270"/>
+                                            <TranslateTransform/>
+                                        </TransformGroup>
+                                    </Image.RenderTransform>
+                                </Image>
+                                <TextBlock HorizontalAlignment="Center"><Run Text="PC座-4"/></TextBlock>
+                            </StackPanel>
+                        </RadioButton>
+                    </Grid>
+                </ScrollViewer>
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="菜单栏" Height="62.167" Margin="8,8,8,0" VerticalAlignment="Top">
+            <Grid>
+                <TextBlock HorizontalAlignment="Left" Margin="181.167,10.34,0,0" TextWrapping="Wrap" Text="阅览室选择：" Width="75" Height="18" VerticalAlignment="Top" Style="{DynamicResource TextBlockStyle_com}"/>
+                <ComboBox HorizontalAlignment="Left" Margin="260.167,6.34,0,0" Width="155.5" Height="22" VerticalAlignment="Top" x:Name="roomcb" SelectedIndex="0" ItemsSource="{Binding ReadingRooms}" DisplayMemberPath="Name" SelectedValuePath="No" SelectionChanged="roomcb_SelectionChanged" Style="{DynamicResource ComboBoxStyleSelect_Blue}" />
+                <Button Content="保存" ToolTip="保存座位图" x:Name="saveBtn" HorizontalAlignment="Right" Margin="0,8,8,0" Width="42.001" Height="22" VerticalAlignment="Top" Click="saveBtn_Click" Style="{DynamicResource ButtonStyle_Submit}" />
+                <TextBlock HorizontalAlignment="Left" Margin="419.667,10.34,0,0" TextWrapping="Wrap" Text="朝向选择：" Width="62" Height="18" VerticalAlignment="Top" Style="{DynamicResource TextBlockStyle_com}"/>
+                <ComboBox HorizontalAlignment="Left" Margin="481.667,6.34,0,0" Width="67.5" Height="22" VerticalAlignment="Top" x:Name="poscb" SelectedIndex="0" ItemsSource="{Binding ReadingRoomPostion}" DisplayMemberPath="PositionName" SelectedValuePath="PositionValue" SelectionChanged="poscb_SelectionChanged" Style="{DynamicResource ComboBoxStyleSelect_Blue}" />
+                <TextBlock Margin="561.5,10.34,561.5,0" TextWrapping="Wrap" Text="尺寸：" Height="18" VerticalAlignment="Top" Style="{DynamicResource TextBlockStyle_com}"/>
+                <TextBox HorizontalAlignment="Left" Margin="600.5,8,0,0" TextWrapping="Wrap" Text="{Binding ElementName=seatCanvas, Path=Width}" Width="56" IsReadOnly="True" Height="20.34" VerticalAlignment="Top" Style="{DynamicResource TextBoxStylePutIn_Blue}"  />
+                <TextBox Margin="674,8,0,0" TextWrapping="Wrap" Text="{Binding ElementName=seatCanvas, Path=Height}" IsReadOnly="True" Height="20.34" VerticalAlignment="Top" HorizontalAlignment="Left" Width="49" Style="{DynamicResource TextBoxStylePutIn_Blue}" />
+                <TextBlock HorizontalAlignment="Left" Margin="660.5,11,0,0" TextWrapping="Wrap" Text="X" Width="9.5" Height="18" VerticalAlignment="Top" Style="{DynamicResource TextBlockStyle_com}"/>
+                <TextBlock HorizontalAlignment="Left" Margin="727.5,10.34,0,0" TextWrapping="Wrap" Text="阅览室编号：" Width="75.5" Height="18" VerticalAlignment="Top" Style="{DynamicResource TextBlockStyle_com}"/>
+                <TextBox HorizontalAlignment="Left" Margin="802.5,8,0,0" TextWrapping="Wrap" Text="{Binding Room.No}" Width="86" IsReadOnly="True" Height="20.34" VerticalAlignment="Top" Style="{DynamicResource TextBoxStylePutIn_Blue}"/>
+                <Button Content="编辑阅览室" ToolTip="编辑学校信息" HorizontalAlignment="Left" Margin="8,8.33,0,0" Width="70" Height="23" VerticalAlignment="Top" x:Name="addroom" Click="addroom_Click" Style="{DynamicResource ButtonStyle_Submit}" />
+                <Button Content="导出SQL脚本" ToolTip="导出成SQL脚本" x:Name="sqlbtn" Click="sqlbtn_Click" Margin="82,8.83,0,0" Height="22" VerticalAlignment="Top" Style="{DynamicResource ButtonStyle_Submit}" HorizontalAlignment="Left" Width="83" />
+                <ComboBox HorizontalAlignment="Left" Margin="894,7,0,0" Width="138" Height="22" VerticalAlignment="Top" x:Name="roomCopycb" SelectedIndex="0" ItemsSource="{Binding ReadingRooms}" DisplayMemberPath="Name" SelectedValuePath="No" Style="{DynamicResource ComboBoxStyleSelect_Blue}" />
+                <Button Content="套用模板" ToolTip="保存座位图" x:Name="roomCopyBtn" HorizontalAlignment="Right" Margin="0,7,69,0" Width="56" Height="22" VerticalAlignment="Top"  Style="{DynamicResource ButtonStyle_Submit}" Click="roomCopyBtn_Click" />
+            </Grid>
+        </GroupBox>
+
+        <GroupBox Header="操作" HorizontalAlignment="Right" Margin="0,104,8,8" Width="110" x:Name="operBox" Foreground="#FF1181E9" BorderBrush="#FF1181E9" Style="{DynamicResource GroupBoxStyle_Blue}">
+            <Grid>
+                <Button Content="←" ToolTip="向左扩充座位图" x:Name="lifeadd" Click="lifeadd_Click" Margin="8.333,60.333,0,0" HorizontalAlignment="Left" Width="25" FontSize="9.333" RenderTransformOrigin="1,1.268" Background="{x:Null}" Height="25" VerticalAlignment="Top"/>
+                <Button Content="→" ToolTip="向右扩充座位图" x:Name="rightadd" Click="rightadd_Click" Margin="66.333,60.333,0,0" HorizontalAlignment="Left" Width="25" FontSize="9.333" Height="25" Background="{x:Null}" VerticalAlignment="Top"/>
+                <Button Content="↑" ToolTip="向上扩充座位图" x:Name="upadd" Click="upadd_Click" Margin="37,31.333,0,0" FontSize="9.333" Height="25" Background="{x:Null}" Width="25" d:LayoutOverrides="Width" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+                <Button Content="↓" ToolTip="向下扩充座位图" x:Name="downadd"  Click="downadd_Click" Margin="37,89.333,0,0" FontSize="9.333" Height="25" Width="25" Background="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Left" d:LayoutOverrides="Width"/>
+                <Button Content="90°" ToolTip="整体顺时针旋转90°" x:Name="allrightnighty" Margin="66,31.333,0,0" FontSize="9.333" Height="25" HorizontalAlignment="Left" Width="25" VerticalAlignment="Top" Click="allrightnighty_Click">
+                    <Button.Background>
+                        <ImageBrush ImageSource="/Resources/Clockwise.png" Stretch="Uniform" TileMode="None" />
+                    </Button.Background>
+                </Button>
+                <Button Content="90°" ToolTip="整体逆时针转90°" x:Name="alllifenighty" Margin="8,31.333,0,0" HorizontalAlignment="Left" Width="25" FontSize="9.333" Height="25" VerticalAlignment="Top" Click="alllifenighty_Click">
+                    <Button.Background>
+                        <ImageBrush ImageSource="/Resources/Counterclockwise.png" Stretch="Fill" TileMode="None" />
+                    </Button.Background>
+                </Button>
+                <TextBlock Margin="8,8,0,0" TextWrapping="Wrap" Background="#FFF1EDED" Height="19.333" VerticalAlignment="Top" HorizontalAlignment="Left" Width="82" Style="{DynamicResource TextBlockStyle_com}"><Run Language="zh-cn" Text="平面图操作"/></TextBlock>
+                <TextBlock Margin="9.333,149.334,0,0" TextWrapping="Wrap" Background="#FFF1EDED" Height="19.333" VerticalAlignment="Top" HorizontalAlignment="Left" Width="82" Style="{DynamicResource TextBlockStyle_com}"><Run Language="zh-cn" Text="控件操作"/></TextBlock>
+                <Button x:Name="liftrten" Content="5°" ToolTip="选中控件顺时针旋转5°" Margin="52.833,172.667,0,0" FontSize="9.333" Height="25" HorizontalAlignment="Left" Width="37.167" VerticalAlignment="Top" Click="liftrten_Click">
+                    <Button.Background>
+                        <ImageBrush ImageSource="Resources/Clockwise.png" Stretch="Uniform" TileMode="None" />
+                    </Button.Background>
+                </Button>
+                <Button x:Name="rightrten" ToolTip="选中控件逆时针旋转5°" Content="5°" Margin="9.333,172.667,0,0" HorizontalAlignment="Left" Width="39.5" FontSize="9.333" Height="25" VerticalAlignment="Top" Click="rightrten_Click">
+                    <Button.Background>
+                        <ImageBrush ImageSource="Resources/Counterclockwise.png" Stretch="Uniform" TileMode="None" />
+                    </Button.Background>
+                </Button>
+                <Button x:Name="powerbtn" ToolTip="设置座位电源（有电源）" Content="" Margin="9.333,259.667,0,0" HorizontalAlignment="Left" Width="39.5" FontSize="9.333" Height="25" VerticalAlignment="Top" Click="powerbtn_Click" Visibility="Collapsed" >
+                    <Button.Background>
+                        <ImageBrush ImageSource="Resources/power.png" Stretch="Uniform" />
+                    </Button.Background>
+                </Button>
+                <Button x:Name="nopowerbtn" ToolTip="设置座位电源（无电源）" Content="" Margin="9.333,259.667,0,0" HorizontalAlignment="Left" Width="39.5" FontSize="9.333" Height="25" VerticalAlignment="Top" Click="powerbtn_Click" Visibility="Collapsed" >
+                    <Button.Background>
+                        <ImageBrush ImageSource="Resources/nopower.png" Stretch="Uniform" />
+                    </Button.Background>
+                </Button>
+                <Button x:Name="stopuserbtn" ToolTip="暂停使用座位" Content="" Margin="0,259.667,8,0" FontSize="9.333" Height="25" VerticalAlignment="Top" Click="stopuserbtn_Click" HorizontalAlignment="Right" Width="37.167"  Visibility="Collapsed">
+                    <Button.Background>
+                        <ImageBrush ImageSource="Resources/Suspended.png" Stretch="Uniform" />
+                    </Button.Background>
+                </Button>
+                <Button x:Name="startuserbtn" ToolTip="启用座位" Content="" Margin="0,259.667,8,0" FontSize="9.333" Height="25" VerticalAlignment="Top" Click="stopuserbtn_Click" HorizontalAlignment="Right" Width="37.167" Visibility="Collapsed">
+                    <Button.Background>
+                        <ImageBrush ImageSource="/SchoolNoteEditer;component/Resources/startuse.png" Stretch="Uniform" />
+                    </Button.Background>
+                </Button>
+                <Button x:Name="liftrff" Content="45°" ToolTip="选中控件顺时针旋转45°" Margin="52.833,201.667,0,0" FontSize="9.333" Height="25" HorizontalAlignment="Left" Width="37.167" VerticalAlignment="Top" Click="liftrff_Click">
+                    <Button.Background>
+                        <ImageBrush ImageSource="Resources/Clockwise.png" Stretch="Uniform" TileMode="None" />
+                    </Button.Background>
+                </Button>
+                <Button x:Name="rightrff" Content="45°" ToolTip="选中控件逆时针旋转45°" Margin="9.333,201.667,0,0" HorizontalAlignment="Left" Width="39.5" FontSize="9.333" Height="25" VerticalAlignment="Top" Click="rightrff_Click">
+                    <Button.Background>
+                        <ImageBrush ImageSource="Resources/Counterclockwise.png" Stretch="Uniform" TileMode="None" />
+                    </Button.Background>
+                </Button>
+                <Button x:Name="liftrn" Content="90°" Margin="52.833,230.667,0,0" ToolTip="选中控件顺时针旋转90°" FontSize="9.333" Height="25" HorizontalAlignment="Left" Width="37.167" VerticalAlignment="Top" Click="liftrn_Click">
+                    <Button.Background>
+                        <ImageBrush ImageSource="Resources/Clockwise.png" Stretch="Uniform" TileMode="None" />
+                    </Button.Background>
+                </Button>
+                <Button x:Name="rightn" Content="90°" Margin="9.333,230.667,0,0" ToolTip="选中控件逆时针旋转90°" FontSize="9.333" Height="25" VerticalAlignment="Top" Click="rightn_Click" HorizontalAlignment="Left" Width="39.5">
+                    <Button.Background>
+                        <ImageBrush ImageSource="Resources/Counterclockwise.png" Stretch="Uniform" TileMode="None" />
+                    </Button.Background>
+                </Button>
+                <Button Content="" ToolTip="自动收缩" x:Name="autowh" Margin="37.333,60.333,0,0" FontSize="9.333" Height="25" Width="25" VerticalAlignment="Top" HorizontalAlignment="Left" d:LayoutOverrides="Width" Click="autowh_Click">
+                    <Button.Background>
+                        <ImageBrush ImageSource="/SchoolNoteEditer;component/Resources/autobtn.png" />
+                    </Button.Background>
+                </Button>
+                <Button Content="X2" ToolTip="放大座位图：尺寸X2" x:Name="toNewVer" Margin="8,89.333,0,0" FontSize="8" Height="25" Width="25" VerticalAlignment="Top" HorizontalAlignment="Left" Click="toNewVer_Click" d:LayoutOverrides="HorizontalAlignment, Width">
+                    <Button.Background>
+                        <ImageBrush ImageSource="/SchoolNoteEditer;component/Resources/ToNewVer.png" Stretch="Uniform" TileMode="None" />
+                    </Button.Background>
+                </Button>
+                <Button Content="" ToolTip="删除所选控件" FontSize="9.333" Height="25" HorizontalAlignment="Left" Margin="37,118.333,0,0" Name="UCdelete" VerticalAlignment="Top" Width="25" Click="UCdelete_Click">
+                    <Button.Background>
+                        <ImageBrush ImageSource="/SchoolNoteEditer;component/Resources/RemoveBtn.png" />
+                    </Button.Background>
+                </Button>
+                <Button Content="New" ToolTip="初始化座位图：清空全部内容" HorizontalAlignment="Left" Margin="66,118.333,0,0" Name="reNew" Height="25" Background="{x:Null}" Width="25"  VerticalAlignment="Top"  Click="reNew_Click"  FontSize="8" />
+                <TextBlock Margin="9.333,298,0,0" TextWrapping="Wrap" Background="#FFF1EDED" HorizontalAlignment="Left" Width="82" Style="{DynamicResource TextBlockStyle_com}" Height="19.333" VerticalAlignment="Top"><Run Language="zh-cn" Text="画布缩放"/></TextBlock>
+                <Button Content="1/2" ToolTip="收缩座位图：尺寸/2" x:Name="toOldVer" Margin="66.333,89.333,0,0" FontSize="8" Height="25" Width="25" VerticalAlignment="Top" HorizontalAlignment="Left" Click="toOldVer_Click" >
+                    <Button.Background>
+                        <ImageBrush ImageSource="Resources/ToNewVer.png" Stretch="Uniform" TileMode="None" />
+                    </Button.Background>
+                </Button>
+                <Slider  x:Name="slider_seat" ToolTip="缩放座位图" Height="22" Margin="-21.833,385.663,26.333,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Minimum="0.1" Maximum="2" SmallChange="0.01" Value="1" ValueChanged="Slider_ValueChanged">
+                    <Slider.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="-90"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Slider.RenderTransform>
+                </Slider>
+                <TextBlock Margin="44.166,347.163,40.433,0" TextWrapping="Wrap" Text="+" Width="auto" Height="20" VerticalAlignment="Top" FontSize="16"/>
+                <TextBlock Margin="48.599,416.663,36,0" TextWrapping="Wrap" Text="-" Width="auto" Height="20" VerticalAlignment="Top" FontSize="16" RenderTransformOrigin="0.46,-2.058"/>
+                <TextBlock Margin="9,442,56,0" TextWrapping="Wrap" Text="x0.1" Width="auto" Height="20" VerticalAlignment="Top" FontSize="16"/>
+                <TextBlock Margin="6,331,59,0" TextWrapping="Wrap" Text="x2.0" Width="auto" Height="20" VerticalAlignment="Top" FontSize="16" RenderTransformOrigin="0.46,-2.058"/>
+                <TextBlock Margin="8,469.334,0,0" TextWrapping="Wrap" Background="#FFF1EDED" Height="19.333" VerticalAlignment="Top" HorizontalAlignment="Left" Width="82" Style="{DynamicResource TextBlockStyle_com}"><Run Language="zh-cn" Text="数据导出"/></TextBlock>
+                <Button Content="导出布局图片" ToolTip="导出预览座位图" x:Name="toImage" Margin="8,492.667,8,0" Height="22" VerticalAlignment="Top" Click="toImage_Click" Style="{DynamicResource ButtonStyle_Submit}" />
+                <Button Content="导出二维码" ToolTip="导出座位二维码" x:Name="toCode" Margin="8,518.667,8,0" Height="22" VerticalAlignment="Top" Style="{DynamicResource ButtonStyle_Submit}" Click="toCode_Click" />
+                <Button Content="微信二维码" ToolTip="导出座位微信二维码" x:Name="toCode_wechar" Margin="8,546,8,0" Height="22" VerticalAlignment="Top" Style="{DynamicResource ButtonStyle_Submit}" Click="toCode_wechar_Click" />
+                <Button Content="批量二维码" ToolTip="导出座位微信二维码" x:Name="toCode_all" Margin="8,573,8,0" Height="22" VerticalAlignment="Top" Style="{DynamicResource ButtonStyle_Submit}" Click="toCode_all_Click" />
+            </Grid>
+        </GroupBox>
+        <ScrollViewer HorizontalContentAlignment="Left" HorizontalScrollBarVisibility="Visible" x:Name="svMap" Margin="244,121,122,8" VerticalContentAlignment="Top" VerticalScrollBarVisibility="Visible">
+            <Viewbox Stretch="Fill" Height="500" Width="500" x:Name="VB_Seat">
+                <Canvas Name="seatCanvas" Height="500" Width="500"  PreviewMouseLeftButtonDown="seatCanvas_PreviewMouseLeftButtonDown"  PreviewMouseRightButtonDown="seatCanvas_PreviewMouseRightButtonDown" PreviewMouseMove="seatCanvas_PreviewMouseMove" PreviewMouseUp="seatCanvas_PreviewMouseUp" SizeChanged="seatCanvas_SizeChanged" MouseWheel="seatCanvas_MouseWheel" >
+                </Canvas>
+            </Viewbox>
+        </ScrollViewer>
+        <TextBlock Height="15.667" Margin="46,77,39,0" TextWrapping="Wrap" Text="{Binding ErrorMessage}" VerticalAlignment="Top" Foreground="Red"/>
+        <Button Background="{x:Null}" Content=">>" ToolTip="展开工具箱" FontSize="9.333" Height="25" HorizontalAlignment="Left" Margin="12,77,0,0" Name="opentool" Visibility="Collapsed"  VerticalAlignment="Top" Width="25" Click="opentool_Click"  Style="{DynamicResource ButtonStyle_Submit}" />
+        <Button Background="{x:Null}" ToolTip="收起工具箱" Content="&lt;&lt;" FontSize="9.333" Height="25" HorizontalAlignment="Left" Margin="12,77,0,0" Name="closetool" VerticalAlignment="Top" Width="25" Click="closetool_Click" Style="{DynamicResource ButtonStyle_Submit}" />
+        <Button Background="{x:Null}" Content="&lt;&lt;" ToolTip="展开操作栏" FontSize="9.333" Height="25" HorizontalAlignment="Right" Margin="0,77,8,0" Name="openOpetor" VerticalAlignment="Top" Width="25" Click="closeOpetor_Click" Visibility="Collapsed"  Style="{DynamicResource ButtonStyle_Submit}"  />
+        <Button Background="{x:Null}" Content=">>" ToolTip="收起操作栏" FontSize="9.333" Height="25" HorizontalAlignment="Right" Margin="0,77,8,0" Name="closeOpetor"  VerticalAlignment="Top" Width="25" Click="openOpetor_Click" Style="{DynamicResource ButtonStyle_Submit}" />
+        <Button Content="Button" x:Name="btn_close" ToolTip="关闭" HorizontalAlignment="Right" Margin="0,-35,3,0" Width="20" Height="20" VerticalAlignment="Top" Style="{DynamicResource ButtonStyle_Close}" Click="btn_close_Click" />
+        <Button Content="Button" x:Name="btn_max" ToolTip="最大化" HorizontalAlignment="Right" Margin="0,-35,27,0" Width="20" Height="20" VerticalAlignment="Top" Style="{DynamicResource ButtonStyle_Full}" Click="btn_max_Click" />
+        <Button Content="Button" x:Name="btn_min" ToolTip="最小化" HorizontalAlignment="Right" Margin="0,-35,51,0" Width="20" Height="20" VerticalAlignment="Top" Style="{DynamicResource ButtonStyle_Min}" Click="btn_min_Click" />
+    </Grid>
+</Window>

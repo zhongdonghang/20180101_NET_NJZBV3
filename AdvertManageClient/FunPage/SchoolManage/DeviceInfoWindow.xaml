@@ -1,0 +1,22 @@
+﻿<Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="AdvertManageClient.FunPage.SchoolManage.DeviceInfoWindow"
+        Title="DeviceInfoWindow" Height="300" Width="350"
+        Style="{StaticResource ChildWindowsStyle}" WindowStartupLocation="CenterScreen">
+    <Grid  Margin="0,0,0,0" >
+        <Image Style="{StaticResource ImageStyleLogo}"/>
+        <Label Content="添加设备" Style="{StaticResource LabelStyleTitle}"/>
+        <Grid>
+            <TextBlock Text="备注信息：" HorizontalAlignment="Left" Margin="13,98,0,118" x:Name="label12" Width="73" FontWeight="Normal" FontSize="13.333" />
+            <TextBlock Text="{Binding ViewModelDevice.CampusNum}" Height="24" Margin="91,34,127,0" x:Name="label13" VerticalAlignment="Top" RenderTransformOrigin="0.28,0.46" FontWeight="Normal" FontSize="13.333" Foreground="Black" />
+            <TextBox Text= "{Binding ViewModelDevice.DeviceNum, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  Height="23" HorizontalAlignment="Left" Margin="217,34,0,0" x:Name="textBox7" VerticalAlignment="Top" Width="30" Style="{DynamicResource TextBoxStylePutIn}" />
+            <TextBlock Text="设备编号：" Height="24" HorizontalAlignment="Left" Margin="13,34,0,0" x:Name="label15" VerticalAlignment="Top" FontWeight="Normal" FontSize="13.333" d:LayoutOverrides="VerticalAlignment, GridBox" RenderTransformOrigin="0.574,0.607" />
+            <TextBox Text= "{Binding ViewModelDevice.Describe}"  Height="76" HorizontalAlignment="Left" Margin="91,96,0,0" x:Name="textBox10" Width="237" Style="{DynamicResource TextBoxStylePutIn}" d:LayoutOverrides="GridBox" VerticalAlignment="Top" />
+            <Button Click="button4_Click" Content="保存" HorizontalAlignment="Right"  x:Name="button4" Width="60" Style="{DynamicResource ButtonStyleSubmit}" RenderTransformOrigin="1.217,0.5" Margin="0,0,72,8" Height="30" VerticalAlignment="Bottom" d:LayoutOverrides="GridBox" />
+            <Button Content="关闭" Height="30" HorizontalAlignment="Right"  x:Name="button5" VerticalAlignment="Bottom" Width="60" Style="{DynamicResource ButtonStyleSubmit}" Margin="0,0,8,8" Click="button5_Click" d:LayoutOverrides="GridBox" />
+            <TextBlock Text="{Binding ViewModelDevice.ErrorMessage}" Foreground="Red" Height="22" HorizontalAlignment="Left" Margin="13,176,0,0" Name="label1" VerticalAlignment="Top" Width="315" />
+            <TextBlock Text="注销设备：" HorizontalAlignment="Left" Margin="13,66,0,0" x:Name="label12_Copy" Width="73" FontWeight="Normal" FontSize="13.333" Height="24" VerticalAlignment="Top" />
+            <CheckBox Content="注销设备" Margin="91,67.41,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+        </Grid>
+    </Grid>
+</Window>

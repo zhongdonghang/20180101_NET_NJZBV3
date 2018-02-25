@@ -1,0 +1,71 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ImageBrush x:Key="UserNameMouseOver" ImageSource="../Image/UserNameMouseOver.png"/>
+    <ImageBrush x:Key="UserNameGotFocus" ImageSource="../Image/UserNameGotFocus.png"/>
+    <ImageBrush x:Key="PwdMouseOver" ImageSource="../Image/PwdMouseOver.png"/>
+    <ImageBrush x:Key="PwdGotFocus" ImageSource="../Image/PwdGotFocus.png"/>
+    <ImageBrush x:Key="closeDbtn" ImageSource="../Image/CloseD.png"/>
+    <ImageBrush x:Key="closeMbtn" ImageSource="../Image/CloseM.png"/>
+    <ImageBrush x:Key="LoginbtnDown" ImageSource="../Image/btnMouseDown.png"/>
+    <ImageBrush x:Key="LoginbtnU" ImageSource="../Image/btnLoginU.png"/>
+    <ImageBrush x:Key="AdverMediabtn" ImageSource="../Image/AdverMediabtn.png"/>
+    <ImageBrush x:Key="AdverMediabtnM" ImageSource="../Image/AdverMediabtnM.png"/> 
+    <ImageBrush x:Key="Indexbtn" ImageSource="../Image/Indexbtn.png"/>
+    <ImageBrush x:Key="IndexbtnM" ImageSource="../Image/IndexbtnM.png"/> 
+    <ImageBrush x:Key="SchoolInfobtn" ImageSource="../Image/SchoolInfobtn.png"/>
+    <ImageBrush x:Key="SchoolInfobtnM" ImageSource="../Image/SchoolInfobtnM.png"/> 
+    <ImageBrush x:Key="StatisticsBtn" ImageSource="../Image/StatisticsBtn.png"/>
+    <ImageBrush x:Key="StatisticsBtnM" ImageSource="../Image/StatisticsBtnM.png"/> 
+    <ImageBrush x:Key="UsersManagebtn" ImageSource="../Image/UsersManagebtn.png"/>
+    <ImageBrush x:Key="UsersManagebtnM" ImageSource="../Image/UsersManagebtnM.png"/>
+    <ImageBrush x:Key="AddSchoolInfobtn" ImageSource="../Image/AddSchoolInfobtn.png"/>
+    <ImageBrush x:Key="AddSchoolInfobtnM" ImageSource="../Image/AddSchoolInfobtnM.png"/>
+    <ImageBrush x:Key="Systembtn" ImageSource="../Image/Systembtn.png"/>
+    <ImageBrush x:Key="SystembtnM" ImageSource="../Image/SystembtnM.png"/>
+   
+
+    <ImageBrush x:Key="AddProvincebtn" ImageSource="../Image/AddProvincebtn.png"/>
+    <ImageBrush x:Key="AddProvincebtnM" ImageSource="../Image/AddProvincebtnM.png"/>
+    <ImageBrush x:Key="CustomerManagebtn" ImageSource="../Image/CustomerManagebtn.png"/>
+    <ImageBrush x:Key="CustomerManagebtnM" ImageSource="../Image/CustomerManagebtnM.png"/>
+    <ImageBrush x:Key="DerviceStatusbtn" ImageSource="../Image/DerviceStatusbtn.png"/>
+    <ImageBrush x:Key="DerviceStatusbtnM" ImageSource="../Image/DerviceStatusbtnM.png"/>
+    <ImageBrush x:Key="ErrorCallbackbtn" ImageSource="../Image/ErrorCallbackbtn.png"/>
+    <ImageBrush x:Key="ErrorCallbackbtnM" ImageSource="../Image/ErrorCallbackbtnM.png"/>
+    <ImageBrush x:Key="FilesSharebtn" ImageSource="../Image/FilesSharebtn.png"/>
+    <ImageBrush x:Key="FilesSharebtnM" ImageSource="../Image/FilesSharebtnM.png"/>
+    <ImageBrush x:Key="HardAdbtn" ImageSource="../Image/HardAdbtn.png"/>
+    <ImageBrush x:Key="HardAdbtnM" ImageSource="../Image/HardAdbtnM.png"/>
+    <ImageBrush x:Key="Issuedprogressbtn" ImageSource="../Image/Issuedprogressbtn.png"/>
+    <ImageBrush x:Key="IssuedprogressbtnM" ImageSource="../Image/IssuedprogressbtnM.png"/>
+    <ImageBrush x:Key="PasswordChangebtn" ImageSource="../Image/PasswordChangebtn.png"/>
+    <ImageBrush x:Key="PasswordChangebtnM" ImageSource="../Image/PasswordChangebtnM.png"/>
+    <ImageBrush x:Key="PlayListbtn" ImageSource="../Image/PlayListbtn.png"/>
+    <ImageBrush x:Key="PlayListbtnM" ImageSource="../Image/PlayListbtnM.png"/>
+    <ImageBrush x:Key="PrintSlipbtn" ImageSource="../Image/PrintSlipbtn.png"/>
+    <ImageBrush x:Key="PrintSlipbtnM" ImageSource="../Image/PrintSlipbtnM.png"/>
+    <ImageBrush x:Key="Slipcustomerbtn" ImageSource="../Image/Slipcustomerbtn.png"/>
+    <ImageBrush x:Key="SlipcustomerbtnM" ImageSource="../Image/SlipcustomerbtnM.png"/>
+    <ImageBrush x:Key="TiliteADbtn" ImageSource="../Image/TiliteADbtn.png"/>
+    <ImageBrush x:Key="TiliteADbtnM" ImageSource="../Image/TiliteADbtnM.png"/>
+    <ImageBrush x:Key="AddUserbtn" ImageSource="../Image/AddUserbtn.png"/>
+    <ImageBrush x:Key="AddUserbtnM" ImageSource="../Image/AddUserbtnM.png"/>
+    <ImageBrush x:Key="VerManagebtn" ImageSource="../Image/VerManagebtn.png"/>
+    <ImageBrush x:Key="VerManagebtnM" ImageSource="../Image/VerManagebtnM.png"/>
+
+    <ImageBrush x:Key="StackPanelTopDown" ImageSource="../Image/loginTop.jpg"/>
+    <ImageBrush x:Key="StackPanelMiddle" ImageSource="../Image/LoginMiddle.png"/>
+    <ImageBrush x:Key="SubmitBtn" ImageSource="../Image/btnLoginU.png"/>
+
+    <ImageBrush x:Key="MB_erroeIOC" ImageSource="../Image/MB_erroeIOC.png"/>
+    <ImageBrush x:Key="MB_messageICO" ImageSource="../Image/MB_messageICO.png"/>
+    <ImageBrush x:Key="MB_okICO" ImageSource="../Image/MB_okICO.png"/>
+    <ImageBrush x:Key="MB_problemICO" ImageSource="../Image/MB_problemICO.png"/>
+    <ImageBrush x:Key="MB_WarningICO" ImageSource="../Image/MB_WarningICO.png"/>
+
+    <ImageBrush x:Key="JuneberryLogo" ImageSource="../Image/juneberry.png"/>
+    <ImageBrush x:Key="TestLogo" ImageSource="../Image/BGb.jpg"/>
+
+    <ImageBrush x:Key="GD" ImageSource="../Image/gdgg1.png"/>
+    <ImageBrush x:Key="GDMAX" ImageSource="../Image/gdgg2.png"/>
+</ResourceDictionary>

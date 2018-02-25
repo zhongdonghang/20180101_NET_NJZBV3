@@ -1,0 +1,17 @@
+﻿<Window x:Class="SeatLayoutTool.FunPage.ReadingRoom"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="ReadingRoom"  Height="220" Width="300" MouseLeftButtonDown="Window_MouseLeftButtonDown">
+    <Grid>
+    	<TextBlock HorizontalAlignment="Left" Height="22" Margin="20,23,0,0" TextWrapping="Wrap" Text="阅览室编号：" VerticalAlignment="Top" Width="72"/>
+        <TextBox Height="22" Margin="103,21,37,0" TextWrapping="Wrap" Text="{Binding No}" VerticalAlignment="Top" IsReadOnly="{Binding IsEdit}"/>
+    	<TextBlock HorizontalAlignment="Left" Height="22" Margin="20,54,0,0" TextWrapping="Wrap" Text="阅览室名称：" VerticalAlignment="Top" Width="72"/>
+        <TextBox Height="22" Margin="103,52,37,0" TextWrapping="Wrap" Text="{Binding Name}" VerticalAlignment="Top"/>
+    	<Button Content="保存" Margin="41.5,134.833,0,0" HorizontalAlignment="Left" Width="75" VerticalAlignment="Top" Click="Button_Click" />
+    	<Button Content="关闭" Margin="0,134.833,58.5,0" HorizontalAlignment="Right" Width="75" VerticalAlignment="Top" Click="Button_Click_1" />
+    	<TextBlock HorizontalAlignment="Left" Height="22" Margin="20,84.833,0,0" TextWrapping="Wrap" Text="所属图书馆：" VerticalAlignment="Top" Width="72"/>
+        <ComboBox Height="22" Margin="103,84.833,37,0" VerticalAlignment="Top" x:Name="libcb" SelectedIndex="0" ItemsSource="{Binding LibraryList}" DisplayMemberPath="Name" SelectedValuePath="No" SelectionChanged="libcb_SelectionChanged" />
+        <TextBlock Height="20" HorizontalAlignment="Left" Margin="20,110.833,0,0" x:Name="textBlock1" Text="{Binding ErrorMessage}" VerticalAlignment="Top" Width="227" Foreground="Red" />
+        
+    </Grid>
+</Window>

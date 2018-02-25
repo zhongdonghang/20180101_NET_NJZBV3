@@ -1,0 +1,16 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="AdvertManageClient.ProgressBarWindow"
+        Title="ProgressBarWindow" Height="170" Width="400" WindowStartupLocation="CenterScreen" Style="{StaticResource ChildWindowsStyle}" >
+    <Grid>
+        <Label Content="{Binding ProgressType}" Style="{StaticResource LabelStyleTitle}"/>
+        <Image Style="{StaticResource ImageStyleLogo}"/>
+        <Label Content="总进度" Height="24" HorizontalAlignment="Left" Margin="23.352,53.996,0,0" x:Name="label1" VerticalAlignment="Top" Width="62.417" />
+        <ProgressBar Height="18" HorizontalAlignment="Left" Margin="23.352,81.996,0,0" x:Name="progressBar1" VerticalAlignment="Top" Width="316.648"  Value="{Binding ProgressFull, Mode=OneWay}" />
+        <TextBlock Height="16" HorizontalAlignment="Left" Margin="344,83.996,0,0" x:Name="textBlock1" Text="{Binding NowFullProgress}" VerticalAlignment="Top" Width="36" />
+        <Label Content="{Binding ProgressName}" Height="24" Margin="32,3.996,10,0" x:Name="label2" VerticalAlignment="Top" />
+        <ProgressBar Height="18" HorizontalAlignment="Left" Margin="23.352,31.996,0,0" x:Name="progressBar2" VerticalAlignment="Top" Width="316.648" Value="{Binding Progress, Mode=OneWay}" d:LayoutOverrides="VerticalAlignment"/>
+        <TextBlock Height="16" HorizontalAlignment="Left" Margin="344,33.996,0,0" x:Name="textBlock2" Text="{Binding NowProgress}" VerticalAlignment="Top" Width="36" d:LayoutOverrides="VerticalAlignment" />
+    </Grid>
+</Window>

@@ -1,0 +1,58 @@
+﻿<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:uc="clr-namespace:WpfApplication10"
+             xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
+             xmlns:ee="http://schemas.microsoft.com/expression/2010/effects"
+             mc:Ignorable="d"
+             x:Class="WpfApplication10.PhotoFrame"
+             x:Name="UserControl"
+             d:DesignWidth="110"
+             d:DesignHeight="110" Width="150" Height="156"   >
+    <UserControl.Resources>
+        <uc:PathToImage x:Key="PathToImage" />
+    </UserControl.Resources>
+    <Grid x:Name="LayoutRoot"
+          DataContext="{Binding ElementName=UserControl}" Margin="0,0,0,0" Width="150" Height="156">
+    	<Grid.Background>
+    		<ImageBrush ImageSource="BGb.jpg"/>
+    	</Grid.Background>
+    	<VisualStateManager.VisualStateGroups>
+    		<VisualStateGroup x:Name="CommonStates">
+    			<VisualStateGroup.Transitions>
+    				<VisualTransition From="ImageChanged1" GeneratedDuration="0:0:1" To="ImageChanged2">
+                        <ei:ExtendedVisualStateManager.TransitionEffect>
+                            <ee:SlideInTransitionEffect SlideDirection="TopToBottom"/>
+                        </ei:ExtendedVisualStateManager.TransitionEffect>
+                        <VisualTransition.GeneratedEasingFunction>
+                            <BackEase EasingMode="EaseIn" Amplitude="0"/>
+                        </VisualTransition.GeneratedEasingFunction>
+                    </VisualTransition>
+    				<VisualTransition From="ImageChanged2" GeneratedDuration="0:0:1" To="ImageChanged1">
+    					<ei:ExtendedVisualStateManager.TransitionEffect>
+                            <ee:SlideInTransitionEffect SlideDirection="TopToBottom" />
+    					</ei:ExtendedVisualStateManager.TransitionEffect>
+    					<VisualTransition.GeneratedEasingFunction>
+                            <BackEase EasingMode="EaseIn" Amplitude="0"/>
+    					</VisualTransition.GeneratedEasingFunction>
+    				</VisualTransition>
+    			</VisualStateGroup.Transitions>
+    			<VisualState x:Name="ImageChanged2"/>
+    			<VisualState x:Name="ImageChanged1"/>
+    		</VisualStateGroup>
+    	</VisualStateManager.VisualStateGroups>
+		<VisualStateManager.CustomVisualStateManager>
+    		<ei:ExtendedVisualStateManager/>
+    	</VisualStateManager.CustomVisualStateManager>
+        <Grid.RowDefinitions>
+        	<RowDefinition Height="Auto" MinHeight="110"/> 
+        </Grid.RowDefinitions>
+        <Image x:Name="img"
+               Margin="0,23,0,0"
+               Source="{Binding ImageUrl}"
+               Stretch="Fill"
+               Width="130" Height="130" VerticalAlignment="Bottom" 
+                  />
+    </Grid>
+</UserControl>

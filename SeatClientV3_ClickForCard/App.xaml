@@ -1,0 +1,24 @@
+﻿<Application x:Class="SeatClientV3.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+         
+    	<ResourceDictionary>
+    		<ResourceDictionary.MergedDictionaries>
+    			<ResourceDictionary Source="Dictionary/MainWindowStyleDictionary.xaml"/>
+    			<ResourceDictionary Source="Dictionary/ReadingRoomWindowStyleDictionary.xaml"/>
+    			<ResourceDictionary Source="Dictionary/SeatRoomStyleDictionary.xaml"/>
+    			<ResourceDictionary Source="Dictionary/CommStyleDictionary.xaml"/>
+    			<ResourceDictionary Source="Dictionary/UC_ReadingRoomDictionary.xaml"/>
+    			<ResourceDictionary Source="Dictionary/KeyboardStyleDictionary.xaml"/>
+    			<ResourceDictionary Source="Dictionary/UsuallySeatDictionary.xaml"/>
+    			<ResourceDictionary Source="Dictionary/UC_UsuallySeatDictionary.xaml"/>
+    			<ResourceDictionary Source="Dictionary/AppLoadingDictionary.xaml"/>
+    			<ResourceDictionary Source="Dictionary/ReaderNoteWindowDictionary.xaml"/>
+    			<ResourceDictionary Source="Dictionary/RollDictionary.xaml"/>
+    		</ResourceDictionary.MergedDictionaries>
+    	</ResourceDictionary>
+         
+    </Application.Resources>
+</Application>

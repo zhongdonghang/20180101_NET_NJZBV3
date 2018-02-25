@@ -1,0 +1,33 @@
+﻿<Window x:Class="AdvertManageClient.FunPage.NewMediaState.W_IssuedSchoolList"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:viewModel="clr-namespace:AMS.ViewModel;assembly=AMS.ViewModel"
+        Title="W_IssuedSchoolList" Height="600" Width="400" WindowStartupLocation="CenterScreen">
+    <Window.Style>
+        <StaticResource ResourceKey="ChildWindowsStyle_Orange"/>
+    </Window.Style>
+    <Grid>
+        <Image Style="{StaticResource ImageStyleLogo}"/>
+        <Label Content="下发学校选择" Style="{StaticResource LabelStyleTitle}"/>
+        <TreeView Margin="8,8,8,52" BorderBrush="#FFE28B5D" x:Name="tv" ItemsSource="{Binding SchoolNodeList}">
+            <TreeView.ItemContainerStyle>
+                <Style TargetType="{x:Type TreeViewItem}">
+                    <Setter Property="IsExpanded" Value="{Binding IsExpanded}"></Setter>
+                </Style>
+            </TreeView.ItemContainerStyle>
+            <TreeView.ItemTemplate>
+                <HierarchicalDataTemplate DataType="{x:Type viewModel:IssuedNode}"  ItemsSource="{Binding Path=ChildNodes}">
+                    <StackPanel Orientation="Horizontal">
+                        <CheckBox VerticalAlignment="Center" Content="{Binding Name}"  IsChecked="{Binding IsChecked,UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Style="{DynamicResource CheckBoxStyle_OrangeMini}"></CheckBox>
+                        <TextBlock Text="{Binding Name}"></TextBlock>
+                        <StackPanel.ToolTip>
+                            <TextBlock VerticalAlignment="Center" Text="{Binding ID}" TextWrapping="Wrap" MaxWidth="200" ></TextBlock>
+                        </StackPanel.ToolTip>
+                    </StackPanel>
+                </HierarchicalDataTemplate>
+            </TreeView.ItemTemplate>
+        </TreeView>
+        <Button Content="取 消" x:Name="btn_Close" HorizontalAlignment="Right" Height="40" Margin="0,0,8,8" VerticalAlignment="Bottom" Width="80" Style="{DynamicResource ButtonStyle_SubmitOrange}" Click="btn_Close_Click" />
+        <Button Content="下 发" x:Name="btn_Submit" HorizontalAlignment="Right" Height="40" Margin="0,0,92,8" VerticalAlignment="Bottom" Width="80" Style="{DynamicResource ButtonStyle_SubmitOrange}" Click="btn_Submit_Click" />
+    </Grid>
+</Window>

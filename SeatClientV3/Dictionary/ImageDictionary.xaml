@@ -1,0 +1,10 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ImageBrush x:Key="MainBackgroundImage" ImageSource="../Resources/Background/MainWindowBackground.png"/>
+    <ImageBrush x:Key="BackgroundImage" ImageSource="../Resources/Background/ResourceImage.png"/>
+    <ImageBrush x:Key="LoadingImage" ImageSource="../Resources/Background/loading.gif"/>
+    <ImageBrush x:Key="ErrorImage" ImageSource="../Resources/btnImg/cry.png"/>
+    <ImageBrush x:Key="QuestionImage" ImageSource="../Resources/btnImg/question.png"/>
+    <ImageBrush x:Key="SuccessImage" ImageSource="../Resources/btnImg/small.png"/>
+    <ImageBrush x:Key="WarmImage" ImageSource="../Resources/btnImg/warm.png"/>
+</ResourceDictionary>

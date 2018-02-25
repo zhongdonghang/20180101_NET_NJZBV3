@@ -1,0 +1,20 @@
+﻿<Window x:Class="AdvertManageTools.EditPage.HardAdEditWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="硬广编辑" Height="300" Width="420" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
+    <Grid>
+        <GroupBox Header="图片预览" Height="228" HorizontalAlignment="Left" Margin="12,12,0,0" Name="groupBox1" VerticalAlignment="Top" Width="186">
+            <Grid>
+                <Image Height="166" HorizontalAlignment="Left" Margin="6,7,0,0" Name="image1" Stretch="Fill" VerticalAlignment="Top" Width="162" Source="{Binding HardVm.AdImage}" />
+                <Button Content="选择图片" Height="23" HorizontalAlignment="Left" Margin="6,179,0,0" Name="SelectImage" VerticalAlignment="Top" Width="162" Click="SelectImage_Click" />
+            </Grid>
+        </GroupBox>
+        <Label Content="硬广编号:" Height="28" HorizontalAlignment="Left" Margin="204,12,0,0" Name="label1" VerticalAlignment="Top" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="274,12,0,0" Name="textBox1" VerticalAlignment="Top" Width="115" Text="{Binding HardVm.Number}" />
+        <Label Content="生效日期:" Height="28" HorizontalAlignment="Left" Margin="204,46,0,0" Name="label2" VerticalAlignment="Top" />
+        <DatePicker Height="25" HorizontalAlignment="Left" Margin="274,46,0,0" Name="datePicker1" VerticalAlignment="Top" Width="115" SelectedDate="{Binding HardVm.EffectDate}"/>
+        <Label Content="失效日期:" Height="28" HorizontalAlignment="Left" Margin="204,80,0,0" Name="label3" VerticalAlignment="Top" />
+        <DatePicker Height="25" HorizontalAlignment="Left" Margin="274,80,0,0" Name="datePicker2" VerticalAlignment="Top" Width="115"  SelectedDate="{Binding HardVm.EndDate}"/>
+        <Button Content="发布" Height="23" HorizontalAlignment="Left" Margin="257,205,0,0" Name="btnSave" VerticalAlignment="Top" Width="84" Click="btnSave_Click" />
+    </Grid>
+</Window>
